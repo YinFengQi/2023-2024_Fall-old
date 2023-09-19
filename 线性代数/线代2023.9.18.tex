@@ -1,0 +1,196 @@
+% !TeX root = 线性代数.tex
+
+\section{线性空间}
+线性空间$\mathbb{R}^{m}$, $m$是一个自然数.
+
+$m=1$时, 是实数.有两个代数运算$+$和$*$, 有两个特殊元素$0$和$1$.
+
+\subsection{实数中运算的性质}
+
+\paragraph{$+$满足的性质:}
+\begin{itemize}
+    \item 交换的, $a+b=b+a$
+    \item 对于任意一个$a$, 存在$b$, 使得$a+b=0$, $b=-a$\\$\implies$减法运算 $a-b=a+(-b)$
+    \item 加法满足结合律 $a+(b+c)=(a+b)+c$
+\end{itemize}
+
+
+\paragraph{$*$满足的性质:}
+
+\begin{itemize}
+    \item 交换的 $a*b = b*a$
+    \item 对于一个非$0$元素$a$, 存在一个元素$b$, 使得$a*b=1$, $b=a^{-1}$
+    \item 结合律 $a*(b*c)=(a*b)*c$
+\end{itemize}
+
+
+
+\paragraph{$+$和$*$满足分配律:}
+$a*(b+c)=a*b+a*c$
+
+
+\begin{definition}
+    $\mathbb{R}^{m}$中的元素为$\begin{bmatrix} a_1 \\ a_2 \\ \vdots \\ a_m \end{bmatrix}$, 其中$a_1, \ldots a_m$为任意实数.
+
+    $\mathbb{R}^{m}$中的元素$v=\begin{bmatrix} a_1 \\ a_2 \\ \vdots \\ a_m \end{bmatrix}$称为列向量. 有时一个元素表示为$\begin{bmatrix} a_1, a_2, \cdots, a_m \end{bmatrix}$, 称作行向量.
+\end{definition}
+
+$\mathbb{R}^{m}$上定义两个运算$+$和$*$(用列向量来表示)
+
+\begin{definition}
+    $+$加法: 
+    任意两个列向量$a,b$得到一个新的列向量.
+    \begin{equation}
+      v+w=\begin{bmatrix} a_1 \\ a_2 \\ \vdots \\ a_m \end{bmatrix}+\begin{bmatrix} b_1 \\ b_2 \\ \vdots \\ b_m \end{bmatrix}
+      =\begin{bmatrix} a_1+b_1 \\ a_2+b_2 \\ \vdots \\ a_m+b_m \end{bmatrix}
+    \end{equation}
+\end{definition}
+
+\begin{example}
+    在$\mathbb{R}^2$中, $\begin{bmatrix}
+     2\\
+     3\\
+    \end{bmatrix}
+    +
+    \begin{bmatrix}
+     1\\
+     2\\
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+     3\\
+     5\\
+    \end{bmatrix}$
+\end{example}
+
+\begin{definition}
+    $*$数乘:
+    任意一个实数$c$, 以及一个列向量$v$, 得到一个新的列向量$cv$
+    \begin{equation}
+      cv=c\begin{bmatrix} a_1 \\ a_2 \\ \vdots \\ a_m \end{bmatrix}=\begin{bmatrix} ca_1 \\ ca_2 \\ \vdots \\ ca_m \end{bmatrix}
+    \end{equation}
+\end{definition}
+
+\subsection{\textbf{$\left( \mathbb{R}^m, +, * \right) $为一个线性空间}}
+\paragraph{两种运算满足:}
+\begin{itemize}
+    \item 交换律$v+w=w+v$
+    \item 结合律$c_1(c_2v)=(c_1c_2)v$
+    \item 分配律$c(v+w)=cv+cw$
+    \item 通过加法可以定义减法运算$v-w=\begin{bmatrix} a_1 \\ a_2 \\ \vdots \\ a_m \end{bmatrix}-\begin{bmatrix} b_1 \\ b_2 \\ \vdots \\ b_m \end{bmatrix}=\begin{bmatrix} a_1-b_1 \\ a_2-b_2 \\ \vdots \\ a_m-b_m \end{bmatrix}$.
+    \item 给定一组$\mathbb{R}^m$中的向量, $\left( v_1, v_2, \ldots ,v_n \right) $,可以构成新的向量
+    \begin{equation}
+  x_1 v_1 +x_2v_2+ \cdots +x_n v_n \quad (x_1, \ldots ,x_n\text{为实数})
+\end{equation}
+这个新的向称为$\left( v_1, v_2, \ldots ,v_n \right) $的线性组合.
+\end{itemize}
+
+\subsection{矩阵}
+\begin{definition}
+    $m\times n$矩阵, 
+    \begin{equation}
+      A = \begin{bmatrix}
+          a_{11} & a_{12} & \cdots & a_{1n} \\
+          a_{21} & a_{22} & \cdots & a_{2n} \\
+          \vdots & \vdots & \ddots & \vdots \\
+          a_{m1} & a_{m2} & \cdots & a_{mn}
+      \end{bmatrix}
+    \end{equation}
+    $a_{ij}$为实数
+\end{definition}
+
+从线性空间的角度, 矩阵可以有下列的理解:
+\begin{itemize}
+    \item 从矩阵列的角度, $A = \begin{bmatrix} \vec{v}_1, \vec{v}_2, \cdots, \vec{v}_n \end{bmatrix}$
+
+    \item 从矩阵行的角度, $A = \begin{bmatrix} \vec{v}_1\\ \vec{v}_2\\ \vdots\\ \vec{v}_m \end{bmatrix}$
+\end{itemize}
+
+固定$m$和$n$, 矩阵空间上可以定义两个自然的运算
+
+\begin{definition}
+    矩阵加法:\begin{equation}
+      A= \left( a_{ij} \right) ,\quad B = \left( b_{ij} \right) ,\quad \left( A+B \right) _{ij}=\left( a_{ij}+b_{ij} \right) 
+    \end{equation}
+\end{definition}
+
+\begin{definition}
+    数乘, 任意一个实数$c$, 一个矩阵$A$, 得到
+    \begin{equation}
+      \left( cA \right) _{ij}= \left( c a_{ij} \right) 
+    \end{equation}
+\end{definition}
+
+\begin{definition}
+    矩阵乘法. 
+    
+    定义: 矩阵乘法是把一个$m \times n$矩阵乘上一个$n \times k$矩阵, 得到一个$m \times k$矩阵.
+
+    运算规则:
+    \begin{equation}
+      \left( C \right) _{ij} = a_{i1} b_{1j} + a_{i_2} b_{2j} + \cdots + a_{in} b_{nj} = \sum_{k=1}^{m} a_{ik}b_{kj}
+    \end{equation}
+\end{definition}
+
+\paragraph{矩阵乘法的性质:}
+\begin{itemize}
+    \item 结合律:\begin{equation}
+    \left( AB \right) C =A\left( BC \right) 
+    \end{equation}
+    \item 分配律:\begin{align}
+  A\left( B+C \right) = AB+AC
+  \\
+  \left( A+B \right) C = AC+AB
+\end{align}
+    \item \textbf{矩阵乘法不满足交换律}\begin{equation}
+  AB \mathop{\neq }\limits^{\text{不一定}}_{} BA
+\end{equation}不论交换有没有定义, 都不一定相等.
+\end{itemize}
+
+
+
+\paragraph{矩阵乘法的几种理解:}
+\begin{itemize}
+    \item $C=AB$, $C_{ij}$为把$A$的第$i$行和$B$的第$j$列乘起来.
+    
+    \item 从矩阵$A$的列向量的角度看
+    \begin{equation}
+        A=\begin{bmatrix} \vec{v}_1, \vec{v}_2, \cdots, \vec{v}_n \end{bmatrix}
+    \end{equation}
+    那么$C$的第$j$列为$A$的列向量的线性组合, 组合系数为$B$的第$j$列,
+    \begin{equation}
+      b_{1j}\vec{v}_1 + b_{2j}\vec{v}_2+ \cdots + b_{nj}\vec{v}_n
+    \end{equation}
+
+    \item 从矩阵$B$的行向量来看
+    \begin{equation}
+      B = \begin{bmatrix} \vec{w}_1 \\ \vec{w}_2 \\ \vdots \\ \vec{w}_m \end{bmatrix}
+    \end{equation}
+    矩阵$C$的第$i$行为$B$的行向量的线性组合, 组合系数为矩阵$A$的第$i$行.
+    \begin{equation}
+      a_{i1}\vec{w}_1 + a_{i 2}\vec{w}_2 + \cdots +a_{in}\vec{w}_n
+    \end{equation}
+\end{itemize}
+
+
+\paragraph{几种特殊矩阵:}
+\begin{itemize}
+    \item 方阵:行和列数目一致, $n \times n$
+    \item 零矩阵:元素都为$0$
+    
+    \item $n$阶单位矩阵: \begin{equation}
+        \begin{bmatrix}1&0&\cdots&0\\0&1&\cdots&0\\\vdots&\vdots&\ddots&\vdots\\0&0&\cdots&1\end{bmatrix}
+      \end{equation}
+      对角线全为$1$
+
+    \item 上三角矩阵:
+    \begin{equation}
+      \begin{bmatrix}*&*&\cdots&*\\0&*&\cdots&*\\\vdots&\vdots&\ddots&\vdots\\0&0&\cdots&*\end{bmatrix}
+    \end{equation}
+
+    \item 下三角矩阵:
+    \begin{equation}
+      \begin{bmatrix}*&0&\cdots&0\\ *&*&\cdots&0\\\vdots&\vdots&\ddots&\vdots\\ *&*&\cdots&*\end{bmatrix}
+    \end{equation}
+\end{itemize}
+

@@ -1,0 +1,92 @@
+% !TeX root = 场论与凝聚态.tex
+\section{Invitation: The Cartoon of Confinement}
+Never see individual quarks.
+
+For separatable particles, like electron charges, their potential is 
+$V(r) \sim \frac{1}{r}$, thus $V(r)-V(r_0)$ is always bounded.
+
+Two quarks forms a pion. They interacts through gluon, and forms a structure called gluon tube or string. The potential is $V(r) \sim r$ and the energy density per length is appropriately constant. To separate a quark pair, the energy inputed $V(r)-V(r_0)$ is unbounded.
+
+Similar phenomenon appears in superconductor(type II). When electronic charge condensed, the interaction of magneticmonopole becomes $V(r) \sim r$. According to EM duality, when magneticmonopole condensed, analogy goes to its counterpart. (Perspective by t'Hooft, Polyakov and Manldstan.)
+
+\section{Path Integral for Single Particles}
+From the two-slit interference, we've known the picture of wave. Whilst, the view of particle could recover the result by computing the phase $\mathrm{e}^{\mathrm{i} S}$.
+
+For single particle mechanic, we start from the Schr\"odinger equation
+\begin{equation}
+  \mathrm{i} \hbar \partial_t \ket{\psi(t)} = H(p,x,t) \ket{\psi(t)}.
+\end{equation}
+We have the time evolution operator
+\begin{equation}
+  \ket{\psi(t)}=U(t,t_0)\ket{\psi(t)},
+\end{equation}
+which is unitary,
+\begin{equation}
+  U^{\dagger}(t,t_0) U(t,t_0) = 1.
+\end{equation}
+
+If $H$ is time-dependent, we split the time interval into small slices, and we get the infinitesimal $U$ operator as time-independent cases,
+\begin{equation}
+  U(t,t_0) = \prod_{n=0}^{N-1} U(\overbrace{t_{n-1}, t_{n}}^{\delta t}),
+\end{equation}
+where $t_n \equiv t + n \delta t$. Note that the product is time ordered.
+
+Another perspective is from the Schr\"odinger equation, by finite differential,
+\begin{equation}
+  \ket{\psi(t+\delta t)} = \left[ 1- \frac{\mathrm{i} }{\hbar}H(p, x, t+ \frac{\delta t}{2}) \right] \ket{\psi(t)}
+\end{equation}
+To the order of $\delta t$, we have 
+\begin{equation}
+    \ket{\psi(t+\delta t)} = \mathrm{e}^{- \frac{\mathrm{i} }{\hbar}H(p,x,t+ \frac{\delta t}{2})} \ket{\psi(t)}
+\end{equation}
+
+Next, we put the time evolution operator in spacial basis, considering
+\begin{equation}
+  \bra{x'}U(t+\delta t,t)\ket{x}.
+\end{equation}
+Suppose $H = \frac{p^{2}}{2m}+ V(x)$ for simplicity, we obtain
+\begin{equation}
+  \bra{x'}\left[ 1- \frac{\mathrm{i}  \delta t}{\hbar}\left( \frac{p^{2}}{2m} + V(x, t+ \frac{\delta t}{2}) \right)  \right] \ket{x}.
+\end{equation}
+Make a substitution
+\begin{equation}
+  V \rightarrow \frac{V(x',t+ \frac{\delta t}{2})+ V(x, t+\frac{\delta t}{2})}{2} 1,
+\end{equation}
+and insert a completeness relation of $p$ in each time slice, we arrive at
+\begin{equation}
+    \bra{x'}U(t+\delta t,t)\ket{x} = \int_{}^{} \mathrm{d}p \, \frac{1}{2\pi\hbar} \mathrm{e}^{\frac{\mathrm{i} p(x'-x)}{\hbar}} \exp \left[ - \frac{i\delta t}{\hbar} \frac{H(p,x',t+ \frac{\delta t}{2})+H(p,x,t+ \frac{\delta t}{2})}{2} \right] .
+\end{equation}
+written in a more compact form,
+\begin{equation}
+    \bra{x'}U(t+\delta t,t)\ket{x} \sim \int_{}^{} \mathrm{d}p \, \frac{1}{2\pi\hbar} \mathrm{e}^{\mathrm{i} \frac{p \delta x}{\hbar}-\mathrm{i}  \frac{H \delta t}{\hbar}}. 
+\end{equation}
+
+The finite-time evolution operator,
+\begin{equation}
+  U(t_N, t_0) = \prod_{n=0}^{N-1} U(t_{n-1},t_n)
+\end{equation}
+inserting an identity operator as $x$ basis completeness relation,
+the element is 
+\begin{equation}
+  U(t_{n+2},t_{n+1}) \underbrace{{1}}_{\int_{}^{} \mathrm{d}x_n \, \ket{x_n}\bra{x_n} } U(t_{n+1},t_{n})
+\end{equation}
+then we obtain
+\begin{equation}
+  \begin{aligned}
+    \bra{x_N}U(t_N, t_0)\ket{x_0}
+    & = \left( \prod_{n=1}^{N-1} \int_{}^{} \mathrm{d}x_n \, \bra{x_{n+1}}U(t_{n+1},t_{n}) \ket{x_n}  \right) 
+    \\
+    & \times \bra{x_1}U(t_1,t_0)\ket{x_0}
+    \end{aligned}  
+\end{equation}
+in full,
+\begin{equation}
+  \begin{gathered}
+    \bra{x_N}U(t_N, t_0)\ket{x_0}
+    =\left( \prod_{n=1}^{N-1} \int \frac{\mathrm{d} p_{n+ \frac{1}{2}} \, \mathrm{d} x_n}{2\pi \hbar} \right) \int \frac{\mathrm{d} p_{\frac{1}{2}}}{2\pi \hbar} 
+    \\
+    \times \exp \left( \frac{\mathrm{i} }{\hbar} \sum_{n=0}^{N-1} \left[ p_{n+ \frac{1}{2}}(x_{n+1}-x_n) - \delta t  \frac{H(p_{n+ \frac{1}{2}},x_{n+1}, t_{n+ \frac{1}{2}})+H(p_{n+ \frac{1}{2}},x_{n}, t_{n+ \frac{1}{2}}) }{2}\right]  \right) 
+    \\
+    \sim \left( \prod_{n=0}^{N-1} \int \frac{\mathrm{d} p_{n+ \frac{1}{2}} \, \mathrm{d} x_n}{2\pi \hbar} \right) \int \frac{\mathrm{d} p_{\frac{1}{2}}}{2\pi \hbar} \mathrm{e}^{\frac{\mathrm{i} }{\hbar} \int p\, \mathrm{d} x - H \, \mathrm{d} t}
+  \end{gathered}
+\end{equation}

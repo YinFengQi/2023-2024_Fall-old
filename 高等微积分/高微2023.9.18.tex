@@ -1,0 +1,155 @@
+% !TeX root = 高等微积分.tex
+
+\section{微积分简介}
+
+\subsection{阿基米德时代}
+问题:设$D= \left\{ (x,y)\middle| 
+ a\le x\le b, \quad 0\le y\le h(x)
+ \right\} $求曲边梯形$D$的面积$\operatorname{area}\left( D \right) $.
+
+特例: $a=0$, 剖分$D = \bigcup D_i$, 分点$x_i = \frac{ib}{n}$
+
+\begin{itemize}
+    \item 算$\operatorname{area}\left( D_i \right)\simeq \left( x_i - x_{i-1} \right) h(\xi_i), \quad \xi_i \in \left[ x_{i-1}, x_i \right]  $
+    \item 求和
+    \begin{equation}
+      \operatorname{area}\left( D \right) \simeq \sum_{i=1}^{n} \left( x_{i-1}-x_i \right) h(\xi)
+    \end{equation}
+    \item 相信随着剖分越来越细, 上述近似越来越好
+\end{itemize}
+
+
+
+
+\begin{example}
+    $h(x)=x^{2}$
+    \begin{align}
+      \operatorname{area}\left( D \right) 
+      & \simeq \sum_{i=1}^{n} \frac{b}{n} h\left( \xi_i = x_i \right) =\sum_{i=1}^{n} \frac{b}{n}\left( \frac{ib}{n} \right) ^{2} = \frac{b^{3}}{n^{3}}\sum_{i=1}^{n} i^{2}
+      \\
+      & = \frac{b^{3}}{n^{3}} \frac{1}{6} n(n+1)(2n+1)
+      \\
+      & = \frac{b^{3}}{6} \left( 1+ \frac{1}{n} \right) \left( 2+ \frac{1}{n} \right) 
+      \\
+      & = \frac{b^{3}}{6} \left( 2 + \frac{3}{n} + \frac{1}{n^2} \right) 
+      \xlongequal{\text{记为}}_{} x_n
+    \end{align}
+    研究: 当$n$越大时, $x_n$最终会靠近哪个常值$L$ 
+\end{example}
+
+\begin{example}\label{阿基米德}
+    $h(x)=x^{k}, \quad \left( k\ge 2 \right) $
+    相应的
+    \begin{equation}
+      \operatorname{area}\left( D \right) \simeq \frac{b^{k+1}}{n^{k+1}}\sum_{i=1}^{n} i^k
+    \end{equation}
+    更接近哪个数$L$? 对于更一般$h$, 以上计算更加复杂.
+\end{example}
+
+\subsection{Newton时代}
+上述问题反问题:
+已知面积函数$S(a)$, 如何求高度?
+
+$x$流动到$x+o$, 
+\begin{align}
+  S(x+o)-S(x) \simeq o\cdot h(x)
+  \\
+  \implies h(x) \simeq \frac{S(x+o)-S(x)}{o} \quad \text{(流数法)}
+\end{align}
+相信当$o$越接近零, 此近似越好.
+
+\begin{example}
+    $S(a) = a^{m}, \quad \left( m \in \mathbb{Z}_+ \right) $
+    \begin{equation}
+      \implies h(x) \simeq \frac{(x+o)^m-x^m}{o}
+    \end{equation}
+    使用牛顿二项式公式
+    \begin{equation}
+      \left( x+y \right) ^{m} = x^{m} + C_{m}^{1} x^{m-1}y + \cdots  + C_{m}^{m} y^{m}
+    \end{equation}
+    带入, 得到
+    \begin{equation}
+      h(x)\simeq C_{m}^{1} x^{m-1} +C_{m}^{2} x^{m-2} o  \cdots  + C_{m}^{m} o^{m-1}
+      \xlongequal{\text{令$o$等于零}} mx^{m-1}
+    \end{equation}
+\end{example}
+
+由此可知, 例\ref{阿基米德} 答案为$S(a) = \frac{1}{k+1} a^{k+1}$
+
+\begin{itemize}
+    \item 从高度函数得到面积称作积分$S(b) = \int_{0}^{b} h(x) \, \mathrm{d}x$
+    \item 从面积函数得到高度函数称作求导 $h(x) = S'(x)$
+\end{itemize}
+
+
+进行一个循环, 可以得到
+\begin{equation}
+  \left( \int_{0}^{x} h(\xi) \, \mathrm{d}\xi \right) ' = h(x)
+\end{equation}
+和
+\begin{equation}
+  \int_{0}^{b} S'(x) \, \mathrm{d}x = S(b) - S(0)
+\end{equation}
+
+
+
+\section{集合与映射}
+\begin{definition}
+    设$X, Y$是集合, 所谓$X$到$Y$的一个映射是指如下的数据
+    
+    对于$X$中的每一个元素$x$, 指定$Y$中唯一的元素(记为$f(x)$)与之对应.
+    记此映射为
+    \begin{equation}
+      f \colon X \rightarrow Y
+    \end{equation}
+    (这个符号直到1940年代才开始出现, 标志着范畴论的开始)
+
+    称$X$为$f$的定义域 domain, $Y$为$f$的陪域 co-domain.
+    \begin{equation}
+      \forall A \subseteq X, \quad f(A) = \left\{ y \in Y \middle|\exists a \in A \text{使} y= f(a) \right\} 
+    \end{equation}
+    称之为$A$在$f$下的像集.特别的, 称$f(X) = \operatorname{Im}(f)$为$f$的值域或像集.
+\end{definition}
+
+%定义原像集
+\begin{definition}
+    原像集. 对$V \subseteq Y$, 定义在$f$下的原像集
+    \begin{equation}
+        f^{-1}(V) = \left\{ x \in X \middle| f(x) \in V \right\}
+    \end{equation}
+    对于$V$的补集$V^c$显然有,
+    \begin{equation}
+      f^{-1}(V^c) = \left( f^{-1}(V) \right) ^c
+    \end{equation}
+
+\end{definition}
+
+
+\subsection{映射的性质}
+
+\begin{itemize}
+    \item 映射可复合.设$f\colon X\rightarrow Y,\ g \colon Y \rightarrow Z$, 可定义复合映射$g \circ f \colon X \rightarrow Z$,
+    \begin{equation}
+      g \circ f(x) = g\left( f(x) \right) , \quad \forall x\in X
+    \end{equation}
+
+    \item 映射的复合满足结合律.设$f\colon X\rightarrow Y,\ g\colon Y\rightarrow Z, \ h\colon Z\rightarrow W $, 则
+    \begin{equation}
+      h \circ \left( g\circ f \right) = (h \circ g) \circ f
+    \end{equation}
+    证明是直接的.
+
+    \item 对于集合$X$有一个恒同映射, $\operatorname{id}_X \colon X \to X$, 定义为 $\operatorname{Id}_X(x) = x, \quad \forall x \in X$
+    
+    \item 恒同映射是映射复合的单位, 即$\forall f\colon X\rightarrow Y $有
+    \begin{equation}
+      \operatorname{id}_Y \circ f = f = f \circ \operatorname{id}_X
+    \end{equation}
+\end{itemize}
+
+
+对于两个集合$X,Y$, 存在一个集合
+\begin{equation}
+  \operatorname{Hom}(X,Y) = \left\{ \text{从$X$到$Y$的映射} \right\} 
+\end{equation}
+
