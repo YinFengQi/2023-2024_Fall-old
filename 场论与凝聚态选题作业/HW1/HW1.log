@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  20 SEP 2023 21:17
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  20 SEP 2023 22:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -824,7 +824,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [1
 
-] [2] [3] (./HW1.aux)
+] [2] [3] [4] (./HW1.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2022/07/14>
@@ -833,12 +833,12 @@ Package rerunfilecheck Info: File `HW1.out' has not changed.
 (rerunfilecheck)             Checksum: B9033924E706618E8667EBA3F9F09697;452.
  ) 
 Here is how much of TeX's memory you used:
- 28645 strings out of 476376
- 619216 string characters out of 5799322
- 1868394 words of memory out of 5000000
- 48690 multiletter control sequences out of 15000+600000
+ 28647 strings out of 476376
+ 619272 string characters out of 5799322
+ 1870394 words of memory out of 5000000
+ 48692 multiletter control sequences out of 15000+600000
  526187 words of font info for 107 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,11n,97p,578b,342s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,12n,97p,578b,342s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on HW1.pdf (3 pages).
+Output written on HW1.pdf (4 pages).

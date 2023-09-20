@@ -119,12 +119,12 @@
 \end{equation}
 它的幺正性可以写成
 \begin{equation}
-  \int \mathrm{d} x_b \left( \bra{x_b}U(t_N, t_0) \ket{x_c}\right) ^{\dagger} \bra{x_a}U(t_N,t_0)\ket{x_a} = \bra{x_c}\ket{x_a} = \delta(x_c - x_a)
+  \int \mathrm{d} x_b \left( \bra{x_b}U(t_N, t_0) \ket{x_c}\right) ^{*} \bra{x_b}U(t_N,t_0)\ket{x_a} = \bra{x_c}\ket{x_a} = \delta(x_c - x_a)
 \end{equation}
 幺正性是对于每个时刻成立的, $t$不是这个算符(矩阵)的角标, 不需要对$t$积分.
 \begin{equation}
   \begin{gathered}
-    \left( \bra{x_b} U(t_N, t_0) \ket{x_c}\right)^{\dagger} \bra{x_a}U(t_N,t_0)\ket{x_a}
+    \left( \bra{x_b} U(t_N, t_0) \ket{x_c}\right)^{*} \bra{x_b}U(t_N,t_0)\ket{x_a}
     \\ \\
     =  
     \left( \prod_{n=1}^{N-1} \int \frac{\mathrm{d} p'_{n+ \frac{1}{2}} \, \mathrm{d} x'_n}{2\pi \hbar} \right) \int  \frac{\mathrm{d} p'_{\frac{1}{2}}}{2\pi\hbar} 
@@ -133,7 +133,7 @@
     \\
     \times 
     \exp\left( 
-      - \frac{\mathrm{i} }{\hbar} \sum_{n=0}^{N-1} \left[ p'_{n+ \frac{1}{2}}(x'_{n+1}- x'_n) - \delta t \frac{H(p'_{n+\frac{1}{2}},x'_{n+1}, t_{n+ \frac{1}{2}}) + H(\cdots, x'_{n},\cdots)}{2} \right] 
+      - \frac{\mathrm{i} }{\hbar} \sum_{n=0}^{N-1} \left[ p'_{n+ \frac{1}{2}}(x'_{n+1}- x'_n) - \delta t \frac{H(p'_{n+\frac{1}{2}},x'_{n+1}, t_{n+ \frac{1}{2}}') + H(\cdots, x'_{n},\cdots)}{2} \right] 
       \right)
     \\
     \times 
@@ -142,6 +142,39 @@
       \right)
   \end{gathered}
 \end{equation}
+其中$x_a = x_0 ,\ x_b = x_N,\ x_b = x'_0,\ x_c = x'_N,\ t'_{n} = t_{N-n}$
 
+我们考虑其中包含$x_b$的项,
+\begin{equation}
+  \exp\left[ \frac{\mathrm{i} }{\hbar}\left( 
+    -p_{\frac{1}{2}}' x_1' + p_{\frac{1}{2}}' x_b + p_{N - \frac{1}{2}}x_b - p_{N-\frac{1}{2}}x_{N -1}
+    + \delta t \frac{H(p_{\frac{1}{2}}', x_1',t_{\frac{1}{2}})- H(p_{N-\frac{1}{2}},x_{N-1},t_{N- \frac{1}{2}})}{2}
+   \right)  \right] 
+\end{equation}
+这个式子当中$H(p_{\frac{1}{2}}', x_1',t_{\frac{1}{2}})- H(p_{N-\frac{1}{2}},x_{N-1},t_{N- \frac{1}{2}})$, 只有与$p$有关的项, 消去了$x_b$. 
+
+于是可以对$x_b$积分得到一个关于$p$的$\delta$函数, 得到的式子为
+\begin{equation}
+  2\pi \delta\left( \frac{p_{\frac{1}{2}}' + p_{N -\frac{1}{2}}}{\hbar} \right) \exp \left[ \frac{\mathrm{i} }{\hbar} \left( - p_{\frac{1}{2}}' x_1' - p_{N - \frac{1}{2}}x_{N-1} + \delta t \frac{V(p_{\frac{1}{2}}')-V(p_{N - \frac{1}{2}})}{2} \right)  \right] 
+\end{equation}
+
+之后可以对$p_{\frac{1}{2}}'$积分, 恰好消去了$\frac{1}{2\pi\hbar}$的系数, 右侧的动能项也被消去. 
+\begin{gather}
+  \int \frac{\mathrm{d} p_{\frac{1}{2}}}{2\pi \hbar} \, 2\pi \delta\left( \frac{p_{\frac{1}{2}}' + p_{N -\frac{1}{2}}}{\hbar} \right) \exp \left[ \frac{\mathrm{i} }{\hbar} \left( - p_{\frac{1}{2}}' x_1' - p_{N - \frac{1}{2}}x_{N-1} + \delta t \frac{K(p_{\frac{1}{2}}')-K(p_{N - \frac{1}{2}})}{2} \right)  \right] 
+  \\
+  = \exp \left[ \frac{\mathrm{i} }{\hbar} \left( - p_{N-\frac{1}{2}} x_1' - p_{N - \frac{1}{2}}x_{N-1}  \right)  \right] 
+\end{gather}
+再对$p_{N-\frac{1}{2}}$积分, 成为$x$的$\delta$函数
+\begin{equation}
+  \delta\left( \frac{x_1' - x_{N-1}}{\hbar} \right) .
+\end{equation}
+
+再重复这个过程, 对$x$积分消去$\delta$函数, 再对$x$积分, 得到关于$p$的$\delta$函数. 再对$p$积分两次消去$\delta$函数并得到$x$的$\delta$函数...
+
+这个过程是$x-p-x-p$d 循环, 由于这里有$2\times (N-1)$个需要积分的$p$, $2\times (N-2) +1$个需要积分的$x$, 最终的式子会在完成对$p$的积分后出现,
+最终得到
+\begin{equation}
+  \delta \left( \frac{x_c - x_a}{\hbar} \right) .
+\end{equation}
 
 \end{document}
