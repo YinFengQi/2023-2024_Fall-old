@@ -1,0 +1,69 @@
+% !TeX root = 费曼(3).tex
+
+\chapter{Wave-Particle Duality}
+When we perform different experiments, electrons behaves differently. The word \textbf{duality} was used when we can not obtain a universally description. The concept \textbf{state} was invented and complex number was introduced. 
+
+We use $\psi_1$ and $\psi_2$ to describe the complex amplitude of hole 1 opened and hole 2 opened respectively. Add up the two terms and the tensity is
+\begin{equation}
+  \left| \psi(x) \right| ^{2} = \left| \psi_1(x) + \psi_2(x) \right| ^{2} = \left| \psi_1 \right| ^{2} + \left| \psi_2 \right| ^{2} + \psi_1 \psi_2^{*} + \psi_1^{*}\psi_2.
+\end{equation}
+In the formula above we have implicitly utilized the \textbf{Born rule} of probability.
+
+All possible quantum states forms a space, in which some looks like waves and some like particles.
+
+Plank has put forward that $E = \hbar \omega$ and he believes that this property appears only when light interacts with other materials.
+While Einstein supposed that this it a inner property of light when dealing with photoelectric effect.
+
+We may notice that 
+\begin{equation}
+  p^{\mu} = (E, \vec{p}), \quad k^{\mu} = (\omega, \vec{k}),
+\end{equation}
+are all Lorentz four vectors, thus $\vec{p} = \hbar \vec{k}$.
+
+\section{Fourier Transformation}
+A wave mode with definite $\vec{k}$, we have $\psi_{\vec{k}} (\vec{x}) \sim \mathrm{e}^{\mathrm{i} \vec{k} \cdot \vec{x}}$. 
+For an arbitrary wave packet within some mathematical restriction, it can be written as
+\begin{equation}
+  f(\vec{x}) = \int_{\mathbb{R}^{3}} \frac{\mathrm{d} ^{3}\vec{k}}{\left( 2\pi \right) ^{3}} \mathrm{e}^{\mathrm{i} \vec{k} \cdot \vec{x}} \tilde{f}(\vec{k}).
+\end{equation}
+The inverse transformation is
+\begin{equation}
+  \tilde{f}(\vec{k}) = \int \mathrm{d} ^{3}\vec{x} \mathrm{e}^{- \mathrm{i}  \vec{k} \cdot \vec{x}} f(\vec{x}).
+\end{equation}
+This is guaranteed by the orthogonal-normalization of plane waves,
+\begin{equation}
+  \begin{gathered}
+    \int \mathrm{d} ^{3} \vec{x} \mathrm{e}^{- \mathrm{i}  \vec{q}\cdot \vec{x}} \mathrm{e}^{\mathrm{i} \vec{k}\cdot \vec{x}} = (2\pi)^{3} \delta^{(3)} (\vec{k} - \vec{q}),
+    \\
+    \int \frac{\mathrm{d} ^{3} \vec{k}}{2\pi} \mathrm{e}^{ \mathrm{i}  \vec{k}\cdot \vec{x}} \mathrm{e}^{-\mathrm{i} \vec{k}\cdot \vec{y}} = (2\pi)^{3} \delta^{(3)} (\vec{x} - \vec{y}).
+  \end{gathered}
+\end{equation}
+The Dirac $\delta$ function satisfies
+\begin{equation}
+  \delta(x) = 0 \quad \text{if } x\neq 0,
+\end{equation}
+and
+\begin{gather}
+  \int_{-\infty}^{\infty} \mathrm{d}x \, \delta(x) = 1
+  \\
+  \implies \forall f(x),\  \int_{-\infty}^{\infty} \mathrm{d}x \, \delta(x-y)f(x) = f(y) .
+\end{gather}
+
+\section{Gaussian Wave Packet}
+For Gaussian wave packet, $\psi(\vec{x}) = \mathrm{e}^{-\frac{x^{2}}{4 \sigma^2}}$, we would find out how many component of wave-number $\vec{k}$ does it contains. 
+\begin{equation}
+  \int_{}^{} \mathrm{d}x \, \mathrm{e}^{-\mathrm{i}  \vec{k}\cdot \vec{x}} \mathrm{e}^{- \frac{\left| \vec{x} \right| ^{2}}{4\sigma^{2}}} = \int_{}^{} \mathrm{d}x \, \mathrm{e}^{\frac{-\left( x + \mathrm{i} 2k \sigma^2 \right) ^2}{4\sigma ^2}} \mathrm{e}^{- k^2 \sigma^2}  .
+\end{equation}
+It's still Gaussian in frequency space, and $\sigma_{k} = \frac{1}{2\sigma}$, thus $\Delta x \Delta k = \frac{1}{2}$, i.e.,
+\begin{equation}
+    \Delta x \cdot \Delta p \ge \frac{\hbar}{2}.
+\end{equation}
+
+\section{Hydrogen Atom}
+Assuming the electron goes in a circle trajectory with diameter $a$, according the uncertainty principle, we can write the hamiltonian,
+\begin{equation}
+  E = \frac{p^2}{2m} - \frac{e^2}{a} = \frac{\hbar^2}{2ma^2} - \frac{e^2}{a},
+\end{equation}
+thus it have a minimum at which $a\neq 0$, the result is $a = \frac{\hbar^2}{me^2} \sim 0.5 \mathop{A}\limits^{\circ}_{}, E = -13.6 eV$
+
+For bounded states, the possible energy levels are always discrete, when it transit from a higher level $E_1$ to a lower $E_2$, it emits a photon with frequency $\omega = \frac{E_1 - E_2}{\hbar}$

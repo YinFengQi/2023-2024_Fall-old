@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  18 SEP 2023 21:41
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  20 SEP 2023 18:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -201,7 +201,7 @@ Package fontspec Info: Font family 'SimSun(0)' created for font 'SimSun' with
 
 )) (c:/texlive/2023/texmf-dist/tex/latex/ctex/config/ctex.cfg
 File: ctex.cfg 2022/07/14 v2.5.10 Configuration file (CTEX)
-) (../../preamble.tex (c:/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
+) (../preamble.tex (c:/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
  (c:/texlive/2023/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
@@ -844,11 +844,11 @@ Package rerunfilecheck Info: File `线性代数.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  28671 strings out of 476376
- 619887 string characters out of 5799322
+ 619869 string characters out of 5799322
  1865394 words of memory out of 5000000
  48705 multiletter control sequences out of 15000+600000
  523145 words of font info for 101 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,9n,97p,579b,480s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,9n,97p,576b,480s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on 线性代数.pdf (5 pages).

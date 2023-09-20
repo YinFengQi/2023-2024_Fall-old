@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  20 SEP 2023 10:25
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  20 SEP 2023 18:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -202,7 +202,7 @@ Package fontspec Info: Font family 'SimSun(0)' created for font 'SimSun' with
 
 )) (c:/texlive/2023/texmf-dist/tex/latex/ctex/config/ctex.cfg
 File: ctex.cfg 2022/07/14 v2.5.10 Configuration file (CTEX)
-) (../../preamble.tex (c:/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
+) (../preamble.tex (c:/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
  (c:/texlive/2023/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
@@ -816,23 +816,30 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ]
 第一章
-) (./费曼(3)临时.tex) [2
+) (./费曼(3)2023.9.20.tex [2
 
-] (./费曼(3).aux)
+]
+第二章
+[3
+
+]) (./费曼(3)临时.tex)
+LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <10.53937> not available
+(Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 16.
+ [4] (./费曼(3).aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
 Package rerunfilecheck Info: File `费曼(3).out' has not changed.
-(rerunfilecheck)             Checksum: 26AAD1F18EF8A2C5838080D34B7D62F9;412.
+(rerunfilecheck)             Checksum: 3343423A4C4E2EA73CF3F4D98973CC2B;1012.
  ) 
 Here is how much of TeX's memory you used:
- 28758 strings out of 476376
- 622267 string characters out of 5799322
- 1854394 words of memory out of 5000000
- 48800 multiletter control sequences out of 15000+600000
- 523097 words of font info for 95 fonts, out of 8000000 for 9000
+ 28776 strings out of 476376
+ 622727 string characters out of 5799322
+ 1858394 words of memory out of 5000000
+ 48812 multiletter control sequences out of 15000+600000
+ 523113 words of font info for 97 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,6n,97p,580b,357s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,8n,97p,577b,357s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 费曼(3).pdf (3 pages).
+Output written on 费曼(3).pdf (5 pages).
