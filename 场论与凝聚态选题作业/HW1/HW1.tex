@@ -7,6 +7,54 @@
 
 \maketitle
 
-a
+\section{Path Integral without $\int \mathrm{d} p$}
+标准的路径积分
+\begin{equation}
+  \begin{gathered}
+    \bra{x_N}U(t_N, t_0)\ket{x_0} = \left( \prod_{n=1}^{N-1} \int \frac{\mathrm{d} p_{n+ \frac{1}{2}} \, \mathrm{d} x_n}{2\pi \hbar} \right) \int  \frac{\mathrm{d} p_{\frac{1}{2}}}{2\pi\hbar} 
+    \\
+    \times 
+    \exp\left( 
+        \frac{\mathrm{i} }{\hbar} \sum_{n=0}^{N-1} \left[ p_{n+ \frac{1}{2}}(x_{n+1}- x_n) - \delta t \frac{H(p_{n+\frac{1}{2}},x_{n+1}, t_{n+ \frac{1}{2}}) + H(\cdots, x_{n},\cdots)}{2} \right] 
+     \right) ,
+  \end{gathered}
+\end{equation}
+其中动量的部分是高斯型的, 我们把它写出来
+\begin{equation}\label{integral on momenta}
+  \prod_{n=0}^{N-1} \left[ 
+    \frac{\mathrm{d} p_{n+ \frac{1}{2}}}{2\pi\hbar} \exp \left( 
+        \frac{\mathrm{i} }{\hbar}\left[ p_{n+ \frac{1}{2}}\delta x_n - \delta t \left( \frac{p^2}{2m}+ \frac{V(x_{n+1}+V(x_n))}{2} \right)  \right] 
+     \right) 
+   \right] .
+\end{equation}
+应用高斯积分公式
+\begin{equation}
+  \int_{-\infty}^{\infty} \mathrm{e}^{-a x^2 + bx} \, \mathrm{d}x = \sqrt{\frac{\pi}{a}} \mathrm{e}^{ \frac{b^2}{4a}}.
+\end{equation}
+对应到这里,
+\begin{equation}
+  \begin{cases} 
+    a = \frac{\mathrm{i} \delta t}{\hbar} \frac{1}{2m}
+    \\ 
+    b = \frac{\mathrm{i} \delta x_n}{\hbar}
+  \end{cases}
+\end{equation}
+于是\eqref{integral on momenta}的结果为
+\begin{equation}
+  \prod_{n=0}^{N-1} \frac{1}{2\pi\hbar} \sqrt{\frac{2\pi \hbar m}{\mathrm{i} \delta t}} \mathrm{e}^{\frac{\mathrm{i} (\delta x_n)^2 m}{2\hbar \delta t}} 
+  \mathrm{e}^{- \frac{\mathrm{i} }{\hbar}\delta t \frac{V(x_{n+1}+ V(x_n))}{2}}
+\end{equation}
+
+路径积分去掉动量之后的结果为
+\begin{equation}
+  \bra{x_{N}}U(t_N, t_0) \ket{x_0} = \left( \prod_{n=1}^{N-1} \mathrm{d} x_n \right) 
+  \left( \prod_{n=0}^{N-1} \sqrt{\frac{m}{2\pi \mathrm{i} \hbar \delta t }}\mathrm{e}^{ \frac{\mathrm{i} \delta t}{\hbar}\left[ \frac{m}{2} \left( \frac{\delta x_n}{\delta t} \right) ^2 - \frac{V(x_{n+1}) + V(x_n)}{2} \right] }  \right) 
+\end{equation}
+也可以写成紧致的形式
+\begin{equation}
+  \bra{x_N}U(t_N, t_0)\ket{x_0} = \sqrt{\frac{m}{2\pi \mathrm{i}  \hbar \delta t}} \prod_{n=1}^{N-1} \left( \mathrm{d} x_n \, \sqrt{\frac{m}{2\pi \mathrm{i}  \hbar \delta t}} \right) \mathrm{e}^{\frac{\mathrm{i} }{\hbar}\int \mathrm{d} t \,L}
+\end{equation}
+
+
 
 \end{document}

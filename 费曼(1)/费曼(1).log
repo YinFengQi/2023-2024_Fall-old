@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  20 SEP 2023 12:22
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  20 SEP 2023 11:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**HW1
-(./HW1.tex
+**费曼(1)
+(./费曼(1).tex
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-06-16>
 (c:/texlive/2023/texmf-dist/tex/latex/ctex/ctexart.cls (c:/texlive/2023/texmf-dist/tex/latex/ctex/config/ctexbackend.cfg
@@ -201,7 +201,7 @@ Package fontspec Info: Font family 'SimSun(0)' created for font 'SimSun' with
 
 )) (c:/texlive/2023/texmf-dist/tex/latex/ctex/config/ctex.cfg
 File: ctex.cfg 2022/07/14 v2.5.10 Configuration file (CTEX)
-) (../../../preamble.tex (c:/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
+) (../../preamble.tex (c:/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
  (c:/texlive/2023/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
@@ -679,8 +679,8 @@ File: pgflibrarycurvilinear.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \c@lemma=\count341
 \c@theorem=\count342
 \c@example=\count343
-) (./HW1.aux)
-\openout1 = `HW1.aux'.
+) (./费曼(1).aux)
+\openout1 = `费曼(1).aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
@@ -794,9 +794,9 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 6.
-(./HW1.out) (./HW1.out)
+(./费曼(1).out) (./费曼(1).out)
 \@outlinefile=\write4
-\openout4 = `HW1.out'.
+\openout4 = `费曼(1).out'.
 
 LaTeX Font Info:    Trying to load font information for U+msa on input line 9.
  (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -805,40 +805,23 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 9.
  (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
+) (./费曼(1)2023.9.20.tex) [1
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 10.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\intop' on input line 10.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\ilimits@' on input line 10.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 10.
-
-[1
-
-] [2] (./HW1.aux)
+] (./费曼(1).aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
-Package rerunfilecheck Info: File `HW1.out' has not changed.
-(rerunfilecheck)             Checksum: 19F2130EAEF0885646FF9FAD2BDDD3DC;180.
+Package rerunfilecheck Info: File `费曼(1).out' has not changed.
+(rerunfilecheck)             Checksum: A4D38B7CB412DD10A2D792A055E0D1FE;136.
  ) 
 Here is how much of TeX's memory you used:
- 28637 strings out of 476376
- 619027 string characters out of 5799322
- 1868394 words of memory out of 5000000
- 48684 multiletter control sequences out of 15000+600000
- 526171 words of font info for 105 fonts, out of 8000000 for 9000
+ 28599 strings out of 476376
+ 618317 string characters out of 5799322
+ 1852394 words of memory out of 5000000
+ 48656 multiletter control sequences out of 15000+600000
+ 520218 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,10n,97p,581b,341s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,6n,97p,580b,335s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on HW1.pdf (2 pages).
+Output written on 费曼(1).pdf (1 page).
