@@ -22,7 +22,7 @@
 其中动量的部分是高斯型的, 我们把它写出来
 \begin{equation}\label{integral on momenta}
   \prod_{n=0}^{N-1} \left[ 
-    \frac{\mathrm{d} p_{n+ \frac{1}{2}}}{2\pi\hbar} \exp \left( 
+    \int \frac{\mathrm{d} p_{n+ \frac{1}{2}}}{2\pi\hbar} \exp \left( 
         \frac{\mathrm{i} }{\hbar}\left[ p_{n+ \frac{1}{2}}\delta x_n - \delta t \left( \frac{p^2}{2m}+ \frac{V(x_{n+1}+V(x_n))}{2} \right)  \right] 
      \right) 
    \right] .
@@ -47,14 +47,101 @@
 
 路径积分去掉动量之后的结果为
 \begin{equation}
-  \bra{x_{N}}U(t_N, t_0) \ket{x_0} = \left( \prod_{n=1}^{N-1} \mathrm{d} x_n \right) 
+  \bra{x_{N}}U(t_N, t_0) \ket{x_0} = \left( \prod_{n=1}^{N-1} \int \mathrm{d} x_n \right) 
   \left( \prod_{n=0}^{N-1} \sqrt{\frac{m}{2\pi \mathrm{i} \hbar \delta t }}\mathrm{e}^{ \frac{\mathrm{i} \delta t}{\hbar}\left[ \frac{m}{2} \left( \frac{\delta x_n}{\delta t} \right) ^2 - \frac{V(x_{n+1}) + V(x_n)}{2} \right] }  \right) 
 \end{equation}
 也可以写成紧致的形式
 \begin{equation}
-  \bra{x_N}U(t_N, t_0)\ket{x_0} = \sqrt{\frac{m}{2\pi \mathrm{i}  \hbar \delta t}} \prod_{n=1}^{N-1} \left( \mathrm{d} x_n \, \sqrt{\frac{m}{2\pi \mathrm{i}  \hbar \delta t}} \right) \mathrm{e}^{\frac{\mathrm{i} }{\hbar}\int \mathrm{d} t \,L}
+  \bra{x_N}U(t_N, t_0)\ket{x_0} = \sqrt{\frac{m}{2\pi \mathrm{i}  \hbar \delta t}} \prod_{n=1}^{N-1} \left( \int\mathrm{d} x_n \, \sqrt{\frac{m}{2\pi \mathrm{i}  \hbar \delta t}} \right) \mathrm{e}^{\frac{\mathrm{i} }{\hbar}\int \mathrm{d} t \,L}
 \end{equation}
 
-对于相对论性的哈密顿量
+相对论性的哈密顿量$H = \sqrt{p^2 + m^2}$. 对指数上的项$p \dot{x} - \sqrt{p^2 + m^2}$使用鞍点近似(saddle approximation),
+带入
+\begin{equation}
+  p = \frac{m \dot{x}}{\sqrt{1 - \dot{x}^2}} + p_{(1)},
+\end{equation}
+这一项变为
+\begin{equation}
+  \begin{aligned}
+    p \dot{x} - H  
+    & = \frac{m \dot{x}^2}{\sqrt{1- \dot{x}^2}}+ p_{(1)} \dot{x}
+    - \sqrt{m^2 + \frac{m^2 \dot{x}^2}{1- \dot{x} ^2}+ 2 \frac{m \dot{x}}{\sqrt{1- \dot{x}^2}}p_{(1)} + p_{(1)}^2}
+    \\
+    & = \frac{m \dot{x}^2}{\sqrt{1- \dot{x}^2}}+ p_{(1)} \dot{x}
+    - \frac{m}{\sqrt{1- \dot{x}^2}}\sqrt{ 1 + \frac{2 \dot{x} \sqrt{1- \dot{x}^2}}{m} p_{(1)} + \frac{1- \dot{x}^2}{m^2} p_{(1)}^2}
+    \\
+    & \kern -5em   = \frac{m \dot{x}^2}{\sqrt{1-\dot{x}^2}}- \frac{m}{\sqrt{1- \dot{x}^2}} + p_{(1)}\dot{x} - p_{(1)} \dot{x} 
+    -\frac{m \dot{x}^2}{\sqrt{1- \dot{x}^2}} \frac{1-\dot{x}^2}{2m^2}p_{(1)}^2 - \frac{m}{\sqrt{1- \dot{x}^2}}\left( -\frac{1}{8} \right) \frac{4 \dot{x}^2 (1-\dot{x}^2)}{m^2}p_{(1)}^2
+    \\
+    & = -m \sqrt{1-\dot{x}^2}+ \left( 1- \dot{x}^2 \right) ^{\frac{3}{2}} \frac{p_{(1)}^2}{2m}
+  \end{aligned}
+\end{equation}
+于是, 含有动量的积分为
+\begin{equation}
+  \prod_{n=0}^{N-1} \left[ \int\frac{\mathrm{d} p_{n+ \frac{1}{2}}}{2\pi\hbar} \exp\left( \frac{\mathrm{i} \delta t}{\hbar}  \left[ -m \sqrt{1-\dot{x}^2} + \left( 1- \dot{x}^2 \right) ^{\frac{3}{2}} \frac{p_{(1)}^2}{2m} \right]  \right)  \right] 
+\end{equation}
+完成积分, 它变为
+\begin{equation}
+  \prod_{n=0}^{N-1} \left(  \sqrt{\frac{ m }{2\pi\mathrm{i} \hbar  \delta t (1-\dot{x}^2)^{\frac{3}{2}}}} \mathrm{e}^{- \frac{\mathrm{i} \delta t }{\hbar}m \sqrt{1- \dot{x}^2}} \right) 
+\end{equation}
+最终的结果是
+\begin{equation}
+  \bra{x_N}U(t_N, t_0)\ket{x_0} = \sqrt{\frac{m}{2\pi \mathrm{i} \hbar \delta t}} \frac{1}{\left( 1-\dot{x}_N^2 \right) ^{\frac{4}{3}}} \prod_{n=1}^{N-1} 
+  \left( 
+    \sqrt{\frac{m}{2\pi \mathrm{i} \hbar \delta t}} \frac{\mathrm{d} x_n}{\left( 1- \dot{x}_n^2 \right) ^{\frac{4}{3}}} \mathrm{e}^{- \frac{\mathrm{i} \delta t}{\hbar}m \sqrt{1-\dot{x}^2}}
+   \right) ,
+\end{equation}
+其中$\dot{x}_n \equiv \frac{x_n - x_{n-1}}{\delta t}$.
+
+对于零质量情形, $H =p$, 上面的小量展开条件不再成立, 
+
+
+\section{Unitary}
+\subsection{算符方法}在$t=0$时, 满足. 所以我们只计算$\frac{\mathrm{d}}{\mathrm{d} t} \left( U^{\dagger} U \right) $. 
+
+由Schr\"odinger方程, 我们有
+\begin{equation}
+  \frac{\mathrm{d}}{\mathrm{d} t} U(t,0) = -\frac{\mathrm{i} }{\hbar}\hat{H}(t)U(t,0),
+  \quad
+  \frac{\mathrm{d}}{\mathrm{d} t}\left( U(t,0) \right) ^{\dagger} = \frac{\mathrm{i} }{\hbar}\left( U(t.0) \right) ^{\dagger}\hat{H}(t)
+\end{equation}
+所以,
+\begin{equation}
+  \frac{\mathrm{d}}{\mathrm{d} t}\left( U^{\dagger} U \right)  = \frac{\mathrm{d}}{\mathrm{d} t} (U^{\dagger} )U + U^{\dagger} \frac{\mathrm{d}}{\mathrm{d} t}U
+  = \frac{\mathrm{i} }{\hbar} U^{\dagger}\hat{H} U - \frac{\mathrm{i} }{\hbar} U^{\dagger} \hat{H} U =0
+\end{equation}
+这保证了幺正性.
+
+\subsection{路径积分方法}
+路径积分当中我们得到的是一个矩阵元, 
+\begin{equation}
+  \bra{x_N}U(t_N,t_0)\ket{x_0}
+\end{equation}
+它的幺正性可以写成
+\begin{equation}
+  \int \mathrm{d} x_b \left( \bra{x_b}U(t_N, t_0) \ket{x_c}\right) ^{\dagger} \bra{x_a}U(t_N,t_0)\ket{x_a} = \bra{x_c}\ket{x_a} = \delta(x_c - x_a)
+\end{equation}
+幺正性是对于每个时刻成立的, $t$不是这个算符(矩阵)的角标, 不需要对$t$积分.
+\begin{equation}
+  \begin{gathered}
+    \left( \bra{x_b} U(t_N, t_0) \ket{x_c}\right)^{\dagger} \bra{x_a}U(t_N,t_0)\ket{x_a}
+    \\ \\
+    =  
+    \left( \prod_{n=1}^{N-1} \int \frac{\mathrm{d} p'_{n+ \frac{1}{2}} \, \mathrm{d} x'_n}{2\pi \hbar} \right) \int  \frac{\mathrm{d} p'_{\frac{1}{2}}}{2\pi\hbar} 
+    \quad
+    \left( \prod_{n=1}^{N-1} \int \frac{\mathrm{d} p_{n+ \frac{1}{2}} \, \mathrm{d} x_n}{2\pi \hbar} \right) \int  \frac{\mathrm{d} p_{\frac{1}{2}}}{2\pi\hbar} 
+    \\
+    \times 
+    \exp\left( 
+      - \frac{\mathrm{i} }{\hbar} \sum_{n=0}^{N-1} \left[ p'_{n+ \frac{1}{2}}(x'_{n+1}- x'_n) - \delta t \frac{H(p'_{n+\frac{1}{2}},x'_{n+1}, t_{n+ \frac{1}{2}}) + H(\cdots, x'_{n},\cdots)}{2} \right] 
+      \right)
+    \\
+    \times 
+    \exp\left( 
+      \frac{\mathrm{i} }{\hbar} \sum_{n=0}^{N-1} \left[ p_{n+ \frac{1}{2}}(x_{n+1}- x_n) - \delta t \frac{H(p_{n+\frac{1}{2}},x_{n+1}, t_{n+ \frac{1}{2}}) + H(\cdots, x_{n},\cdots)}{2} \right] 
+      \right)
+  \end{gathered}
+\end{equation}
+
 
 \end{document}
