@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  21 SEP 2023 13:29
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  21 SEP 2023 13:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -820,8 +820,15 @@ LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <10.53937> not availa
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
-Package rerunfilecheck Info: File `高等微积分.out' has not changed.
-(rerunfilecheck)             Checksum: 683A11AAA042DBE7EEC63B85D8E07067;619.
+
+
+Package rerunfilecheck Warning: File `高等微积分.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `高等微积分.out':
+(rerunfilecheck)             Before: 75E854F9E16BB5E38F7866C818460422;724
+(rerunfilecheck)             After:  DB9D593FC66C82AECCE4604D97C9C35C;821.
  ) 
 Here is how much of TeX's memory you used:
  28714 strings out of 476376
@@ -830,6 +837,6 @@ Here is how much of TeX's memory you used:
  48739 multiletter control sequences out of 15000+600000
  524743 words of font info for 112 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,18n,97p,577b,529s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,18n,97p,577b,566s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on 高等微积分.pdf (8 pages).
