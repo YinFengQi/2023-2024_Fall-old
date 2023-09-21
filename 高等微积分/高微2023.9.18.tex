@@ -116,6 +116,7 @@ $x$流动到$x+o$,
     原像集. 对$V \subseteq Y$, 定义在$f$下的原像集
     \begin{equation}
         f^{-1}(V) = \left\{ x \in X \middle| f(x) \in V \right\}
+        = \bigcup_{y \in V} F_{y}
     \end{equation}
     对于$V$的补集$V^c$显然有,
     \begin{equation}
@@ -123,7 +124,11 @@ $x$流动到$x+o$,
     \end{equation}
 
 \end{definition}
-
+显然有
+\begin{equation}
+  f^{-1} \left( A \cup B \right) = f^{-1}(A) \cup f^{-1}(B)
+\end{equation}
+%%%%% 缺
 
 \subsection{映射的性质}
 
@@ -152,4 +157,6 @@ $x$流动到$x+o$,
 \begin{equation}
   \operatorname{Hom}(X,Y) = \left\{ \text{从$X$到$Y$的映射} \right\} 
 \end{equation}
+
+
 

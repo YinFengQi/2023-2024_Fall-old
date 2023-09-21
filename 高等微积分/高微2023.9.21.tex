@@ -1,0 +1,261 @@
+% !TeX root = 高等微积分.tex
+
+\begin{definition}
+    所谓一个范畴(Category)$\mathcal{C}$是指如下一个数据:
+    \begin{itemize}
+        \item 对象$X,Y,Z$\footnote{在线性代数里面它们是线性空间}, 构成object$\operatorname{Obj}(\mathcal{C})$
+        
+        \item 对任何$X,Y \in \mathcal{C}$, 指定一个集合 $\operatorname{Hom}_{\mathcal{C}}(X,Y)$, 称$\operatorname{Hom}_{\mathcal{C}}$中的任意元素为范畴$\mathcal{C}$中的一个态射(morphism), 记$\operatorname{Hom}_{\mathcal{C}}$中的元素为
+        \begin{equation}
+          f\colon X\rightarrow Y
+        \end{equation}
+
+        \item 对任何$X,Y \in \mathcal{C}$, 指定一个集合 $\operatorname{Hom}_{\mathcal{C}}(X,Y)$, 称$\operatorname{Hom}_{\mathcal{C}}$中的任意元素为范畴$\mathcal{C}$中的一个态射(morphism), 记$\operatorname{Hom}_{\mathcal{C}}$中的元素为
+        \begin{equation}
+          f\colon X\rightarrow Y
+        \end{equation}
+
+        \item 态射复合是结合的, 即$\forall X,Y,Z,W \in \operatorname{Obj}(\mathcal{C})$,设
+        \begin{equation}
+          f \in \operatorname{Hom}_{\mathcal{C}}(X,Y), \ 
+          g \in \operatorname{Hom}_{\mathcal{C}}(Y,Z), \ 
+          h \in \operatorname{Hom}_{\mathcal{C}}(Z,W), \ 
+        \end{equation}
+        有(结合律)
+        \begin{gather}
+            h \circ (g \circ f) = (h\circ g) \circ f
+            \\
+            X \xlongrightarrow{f} Y \xlongrightarrow{g} Z \xlongrightarrow{h} W
+        \end{gather}
+
+        \item 态射的复合是有单位元的, 对任何对象$X \in \operatorname{Obj} (\mathcal{C})$, 指定态射
+        \begin{equation}
+          \operatorname{id}_{X} \in \operatorname{Hom}_{\mathcal{C}}(X,Y)
+        \end{equation}
+        满足, 对$\forall f \in \operatorname{Hom}_{\mathcal{C}} (X,Y) , \ \forall g \in \operatorname{Hom}_{\mathcal{C}}(W,X)$,有
+        \begin{equation}
+          f \circ \operatorname{id}_{X} = f , \ 
+          \operatorname{id}_{X} \circ g = g
+        \end{equation}
+    \end{itemize}
+\end{definition}
+
+\begin{example}
+    范畴Set, 其中的对象是集合$X,Y$, 此时
+    \begin{itemize}
+        \item 态射$\longleftrightarrow$映射
+        \begin{equation}
+          \operatorname{Hom}_{\text{Set}} (X,Y) = \left\{ \text{映射}f\colon X \rightarrow Y \right\} 
+        \end{equation}
+
+        \item 态射复合$\longleftrightarrow$映射复合
+        
+        \item $\operatorname{id}_{X} = \text{恒同映射}$
+    \end{itemize}
+\end{example}
+
+\begin{example}
+    矢量空间Vect:对象是线性空间, 态射是线性映射.
+
+\end{example}
+
+\begin{example}
+    拓扑空间Top:对象是拓扑空间, 态射是连续映射.
+\end{example}
+
+\begin{definition}[集合论中]
+    称映射$f \colon x \to y$是
+    \begin{itemize}
+        \item 单射$\iff$ $\forall x \neq x'$, 有$f(x)\neq f(x')$.
+        \item 满射$\iff$ $\forall y\in Y, \ \exists x\in X \text{使}f(x) = y$.
+        \item 双射$\iff$既单又满.
+    \end{itemize}
+\end{definition}
+
+\begin{definition}
+    称映射$f\colon X\to Y$是
+    \begin{itemize}
+        \item 单射
+        \begin{equation}
+          \iff \exists \text{映射}g \colon Y \to  X, \text{使} g\circ f = \operatorname{id}_{X} \quad \text{(只在集合当中适用)}
+        \end{equation}
+        一般的范畴中:
+        \begin{equation}
+          \iff \forall \text{集合}W, \forall \text{映射} g_1, g_2 \colon W \to X ,\text{若} f \circ g_1 = f\circ g_2, \text{则有} g_1=g_2
+        \end{equation}
+
+        \item 满射
+        \begin{equation}
+          \iff\forall \text{集合}Z , \forall \text{映射}h_1,h_2 \colon Y\to Z .
+          \text{若有}h_1\circ f = h_2 \circ f , \text{则有}h_1=h_2
+        \end{equation}
+    \end{itemize}
+\end{definition}
+
+
+\begin{theorem}
+    映射$f\colon X\to Y$是双射$\iff$$\exists \text{映射}g\colon Y\to X \text{使}g\circ f =\operatorname{id}_X \text{且} f\circ g = \operatorname{id}_Y$
+\end{theorem}
+\begin{proof}从充分和必要两个方面说明.
+
+    ``$\implies$'':
+
+    由$f$满知$f^{-1}(\{y\})\neq  \varnothing$.
+
+    由$f$单知$f^{-1}(\{y\})$至多一个元素.
+
+    于是$\forall y\in Y$有$f^{-1}(\{y\})$是单元集. 记$f^{-1}(\{y\}) = \{g(y)\}$, 得到映射$g$.
+
+    ``$\impliedby$'':
+    
+    设$\exists g\colon Y\to X$使
+    \begin{equation}
+      g\circ f = \operatorname{id}_X, 
+      \ f\circ g= \operatorname{id}_Y
+    \end{equation}
+
+    证$f$单:
+    若$f(x) = f(x')$, 则
+    \begin{equation}
+      g\circ f(x) = g[f(x)] = g[f(x')] = g\circ f(x')
+    \end{equation}
+    即
+    \begin{equation}
+      x=x'
+    \end{equation}
+    矛盾, 故$f$单.
+
+    证$f$满:
+    \begin{equation}
+      \forall y\in Y, \ f[g(y)] = f\circ g(y) = \operatorname{id}_Y (y) = y
+    \end{equation}
+    所以$y\in \operatorname{Im} f$, 故$f$满.
+
+\end{proof}
+
+
+\begin{definition}
+    在范畴$\mathcal{C}$中, 称态射$f \in \operatorname{Hom}_{\mathcal{C}}(X,Y)$为一个同构, 如果
+    \begin{equation}
+      \exists g \in \operatorname{Hom}_{\mathcal{C}}(Y,X)
+    \end{equation}
+    使得
+    \begin{equation}\label{isomorphism condition}
+      g \circ f = \operatorname{id}_{X} \ \text{且} \ 
+      f \circ g =\operatorname{id}_{Y}
+    \end{equation}
+
+    称对象$X$与对象$Y$同构, 如果$\exists \text{同构态射}f \colon X\to Y$.
+\end{definition}
+
+\begin{proposition}
+    满足\eqref{isomorphism condition}的$g$至多一个.
+\end{proposition}
+
+\begin{proof}
+    若$g_1,g_2 \colon Y\to X$都满足\eqref{isomorphism condition}, 则
+    \begin{equation}
+      g_2=(g_1\circ f) \circ g_2 = g_1 \circ (f\circ g_2) = g_1\circ \operatorname{id}_{Y} = g_1.
+    \end{equation}
+\end{proof}
+
+
+\section{实数}
+出于计数的需要, 引入了自然数$0,1,2,3, \ldots $. 
+
+由于要做不交并, 
+\begin{equation}
+  \left| S \cup T \right|  = |S| + |T|
+\end{equation}
+引入了加法.
+
+由于要做笛卡尔积,
+\begin{equation}
+  S \times T = \left\{ (s,t) \middle| s\in S, t \in T \right\} 
+\end{equation}
+引入了乘法.
+
+加法在$\mathbb{N}$上未必有逆, 引入负整数. 这样将整数集扩充为$\mathbb{Z}$.但$\mathbb{Z}$上乘法未必有逆, 形式化引入分数$\frac{m}{n} ,\ (m \in \mathbb{Z}, n \in \mathbb{Z}_+)$, 将$\mathbb{Z}$扩充为$\mathbb{Q}$
+\footnote{这些``逆''都是等价类, 就像不定积分那样, 可以理解为一个集合
+\begin{equation}
+  \int f(x) \, \mathrm{d} x = \{\text{所有}F(x)| F' = f\}.
+\end{equation}}
+.
+
+\begin{proposition}
+    $\sqrt{2}$不是有理数 (定义$\sqrt{2}$是满足$x^2 = 2$的正数).
+\end{proposition}
+\begin{proof}
+    假设$\sqrt{2} = \frac{m}{n}$, $m,n$无公因子. 则 $2 = \frac{m^2}{n^2}.$
+
+    $m^2 = 2 n^2$说明$m$是偶数, 代回发现$n$是偶数.
+\end{proof}
+
+这表明有理数集$\mathbb{Q}$需要进一步扩充.
+
+\begin{proposition}
+    $x$是有理数$\iff$ $x$是有限或无限循环小数.\footnote{小数的定义略去. 但是小数是无穷级数, 加法和乘法的定义现在都没定义.}
+\end{proposition}
+
+微积分当中需要介值定理, 但人们一直没有严格证明, 问题在于没有实数的严格定义.
+
+1872年戴德金首次严格定义实数.
+
+\begin{definition}
+    所谓戴德金分隔是指一个有序对$(A,B)$, 满足:
+    \begin{itemize}
+        \item $A,B$是$\mathbb{Q}$的非空子集.
+        \item $A \cap B = \varnothing, \ A \cup B = \mathbb{Q}$
+        \item $\forall x\in A, \forall y\in B, \text{有} x< y$
+        \item 集合$B$无最小元素.
+    \end{itemize}
+
+    称两个戴德金分割$(A,B) = (A',B') \iff A = A'$.
+\end{definition}
+
+\begin{definition}
+    所谓一个戴德金实数, 就是一个戴德金分割.
+    \begin{equation}
+      \mathbb{R}_{D} = \{\text{所有戴德金分割}\}
+    \end{equation}
+\end{definition}
+
+\begin{itemize}
+    \item 每个有理数$a$确定一个戴德金分割
+    \begin{equation}
+      (A_a,B_a), \ \text{其中} A_a = \{x\in \mathbb{Q} | x \le a\}
+    \end{equation}
+
+    \item 序.
+
+    定义$(A,B) \le  (A',B') \iff A \subseteq A'$
+    
+    \item 和.
+    
+    \begin{equation}
+      (A,B) + (A',B') = (A+A', \mathbb{Q}-(A+A'))
+    \end{equation}
+
+    \item 称一个戴德金实数$(A,B)$为一个戴德金有理数$\iff$ $A$有最大元素.
+\end{itemize}
+
+以上定义好实数集$\mathbb{R}$, 由此可以证出介值定理, 严格建立微积分.
+
+\subsection{确界定理}
+\begin{definition}
+    设非空集合$E\in \mathbb{R}$, 称$E$的元素$a$为$E$的最大元素, 如果
+    $\forall x\in E, x\le a$, 记为 $a = \max E$
+
+    最小元素:
+    $a =\min E \iff a \in E \text{且} \forall x\in E \text{有} x\ge a$
+\end{definition}
+
+\begin{definition}
+    称$c$为$E$的一个上界, 如果$\forall x\in E\text{有}x\le c$.
+
+    称$d$为$E$的一个上界, 如果$\forall x\in E\text{有}x\le d$.
+    (任意数都是空集的上界, 每个数也都是空集的下界.)
+
+    最小的上界为上确界.
+\end{definition}
+

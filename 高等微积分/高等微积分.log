@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  20 SEP 2023 18:08
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  21 SEP 2023 13:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -678,7 +678,8 @@ File: pgflibrarycurvilinear.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \c@definition=\count340
 \c@lemma=\count341
 \c@theorem=\count342
-\c@example=\count343
+\c@proposition=\count343
+\c@example=\count344
 ) (./高等微积分.aux)
 \openout1 = `高等微积分.aux'.
 
@@ -814,21 +815,21 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ]
 LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <10.53937> not available
 (Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 88.
- [2] [3]) (./高微临时.tex) [4] (./高等微积分.aux)
+ [2] [3]) (./高微2023.9.21.tex [4] [5] [6] [7]) (./高微临时.tex) [8] (./高等微积分.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
 Package rerunfilecheck Info: File `高等微积分.out' has not changed.
-(rerunfilecheck)             Checksum: 4C3B0F6E7B38941435FE5DCAFF28D447;471.
+(rerunfilecheck)             Checksum: 683A11AAA042DBE7EEC63B85D8E07067;619.
  ) 
 Here is how much of TeX's memory you used:
- 28681 strings out of 476376
- 620123 string characters out of 5799322
+ 28714 strings out of 476376
+ 620809 string characters out of 5799322
  1863394 words of memory out of 5000000
- 48710 multiletter control sequences out of 15000+600000
- 523177 words of font info for 105 fonts, out of 8000000 for 9000
+ 48739 multiletter control sequences out of 15000+600000
+ 524743 words of font info for 112 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,16n,97p,577b,483s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,18n,97p,577b,529s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 高等微积分.pdf (4 pages).
+Output written on 高等微积分.pdf (8 pages).
