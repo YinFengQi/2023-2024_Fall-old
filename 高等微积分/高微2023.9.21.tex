@@ -12,9 +12,13 @@
           f\colon X\rightarrow Y
         \end{equation}
 
-        \item 对任何$X,Y \in \mathcal{C}$, 指定一个集合 $\operatorname{Hom}_{\mathcal{C}}(X,Y)$, 称$\operatorname{Hom}_{\mathcal{C}}$中的任意元素为范畴$\mathcal{C}$中的一个态射(morphism), 记$\operatorname{Hom}_{\mathcal{C}}$中的元素为
+        \item 态射可复合, 即$\forall X,Y,Z \in \operatorname{Obj}(\mathcal{C}) $, 指定出映射
         \begin{equation}
-          f\colon X\rightarrow Y
+          \operatorname{Hom}_{\mathcal{C}} (X,Y) \times \operatorname{Hom}_{\mathcal{C}}(Y,Z) \longrightarrow \operatorname{Hom}_{\mathcal{C}}(X,Z)
+        \end{equation}
+        记为
+        \begin{equation}
+          (f,g) \rightarrow g \circ f \in \operatorname{Hom}_{\mathcal{C}}(X,Z)
         \end{equation}
 
         \item 态射复合是结合的, 即$\forall X,Y,Z,W \in \operatorname{Obj}(\mathcal{C})$,设
