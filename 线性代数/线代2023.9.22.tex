@@ -1,0 +1,205 @@
+% !TeX root = 线性代数.tex
+
+\subsection{矩阵的乘法的应用}
+
+% 1
+对于$n \times n$的方阵$A$, 可以利用矩阵的乘法来定义它的逆矩阵$A^{-1}$
+\begin{definition}
+    $A^{-1}$称为$A$的逆矩阵, 如果$A^{-1}$满足
+    \begin{equation}
+      A^{-1} A = I_{n \times n}, \text{且} A A^{-1} = I_{n \times n}.
+    \end{equation}
+\end{definition}
+
+\begin{proposition}
+    \begin{equation}
+      I_{n \times n} A = A I_{n \times n} = A
+    \end{equation}
+\end{proposition}
+\begin{proof}
+    根据乘法的定义, 不难证明. 
+\end{proof}
+
+\subsubsection{逆矩阵的一些性质}
+
+\begin{proposition}
+    一个矩阵的逆矩阵不一定存在
+\end{proposition}
+\begin{example}
+    非平凡的例子$\begin{bmatrix}
+     0 & 1\\
+     0 & 0\\
+    \end{bmatrix}$.
+    \begin{proof}
+        假设存在$A^{-1} = \begin{bmatrix}
+            a & b\\
+            c & d\\
+           \end{bmatrix}$, 那么$A^{-1}$满足
+           \begin{equation}
+             \begin{bmatrix}
+              0 & 1\\
+              0 & 0\\
+             \end{bmatrix}
+             \begin{bmatrix}
+              a & b\\
+              c & d\\
+             \end{bmatrix}
+             =
+             \begin{bmatrix}
+              1 & 0\\
+              0 & 1\\
+             \end{bmatrix}
+           \end{equation}
+           左侧
+           \begin{equation}
+             = \begin{bmatrix}
+              c & d\\
+              0 & 0\\
+             \end{bmatrix} \neq I_{2\times 2}
+           \end{equation}
+    \end{proof}
+\end{example}
+
+\begin{proposition}
+    如果逆矩阵存在, 它是唯一的.
+\end{proposition}
+\begin{proof}
+    假设$A$有两个逆矩阵$B,C$,则
+    \begin{equation}
+      AB = BA = AC = CA = I_{n \times n}
+    \end{equation}
+    所以
+    \begin{equation}
+      B = B(AC) = (BA)C = C.
+    \end{equation}
+\end{proof}
+
+\begin{proposition}
+    若一个矩阵存在左逆$L$, 满足$LA = I_{n \times n}$, 那么矩阵$A$的逆矩阵存在, 且等于$L$.\footnote{将在后面证明.}
+\end{proposition}
+
+\begin{proposition}
+    如果$A$的逆为$A^{-1}$, $B$的逆为$B^{-1}$, 则
+    \begin{equation}
+      (AB)^{-1} = B^{-1} A^{-1}
+    \end{equation}
+\end{proposition}
+\begin{proof}
+    \begin{equation}
+      \begin{aligned}
+        &(AB)B^{-1}A^{-1}
+        \\
+        & = A(B B^{-1})A^{-1}
+        \\
+        & = A A^{-1}
+        \\
+        & = I_{n \times n} .
+      \end{aligned}
+    \end{equation}
+    证明也可以推广到一般情况.
+\end{proof}
+
+\begin{proposition}
+    $2\times 2$矩阵$A = \begin{bmatrix}
+     a & b\\
+     c & d\\
+    \end{bmatrix}$的逆矩阵
+    \begin{equation}
+      A^{-1} = \frac{1}{ad -bc} \begin{bmatrix}
+       d & -b\\
+       -c & a\\
+      \end{bmatrix}
+    \end{equation}
+\end{proposition}
+
+\begin{proposition}
+    对角矩阵$D = \begin{bmatrix}
+        d_1&0&\cdots&0\\
+        0&d_2&\cdots&0\\
+        \vdots&\vdots&\ddots&\vdots\\
+        0&0&\cdots&d_n
+    \end{bmatrix}$的逆为
+    \begin{equation}
+      D^{-1}
+      =
+      \begin{bmatrix}
+        \frac{1}{d_1}&0&\cdots&0\\
+        0&\frac{1}{d_2}&\cdots&0\\
+        \vdots&\vdots&\ddots&\vdots\\
+        0&0&\cdots&\frac{1}{d_n}
+      \end{bmatrix}
+    \end{equation}
+    这意味着$D^{-1}$存在当且仅当对角元素都不为零!
+\end{proposition}
+
+\subsubsection{线性组合的矩阵乘法表示}
+线性组合
+\begin{equation}
+  x_1\vec{v}_1 + x_2 \vec{v}_2 + \cdots +x_n \vec{v}_n,
+\end{equation}
+引入两个矩阵
+\begin{equation}
+  A = \begin{bmatrix} \vec{v}_1, \vec{v}_2, \cdots, \vec{v}_n \end{bmatrix}, \quad 
+  X = \begin{bmatrix} 
+  x_1 \\ 
+  x_2 \\ 
+  \vdots \\ 
+  x_n 
+  \end{bmatrix}
+\end{equation}
+其中$A$为$m \times n$矩阵, $X$为$n \times 1$矩阵. 线性组合的矩阵表示为
+$AX$.
+
+\subsubsection{矩阵方程}
+方程为$AX = b$. 这个方程的解的性质取决于$A$中的向量$\begin{bmatrix} \vec{v}_1, \vec{v}_2, \cdots, \vec{v}_n \end{bmatrix}$和向量$b$的关系.
+
+我们把这个方程写成分量的形式
+\begin{equation}
+  \begin{bmatrix}
+    a_{11}&a_{12}&\cdots&a_{1n}\\
+    a_{21}&a_{22}&\cdots&a_{2n}\\
+    \vdots&\vdots&\ddots&\vdots\\
+    a_{m 1}&a_{m 2}&\cdots&a_{m n}
+  \end{bmatrix}
+  \begin{bmatrix} 
+  x_1 \\ 
+  x_2 \\ 
+  \vdots \\ 
+  x_n 
+  \end{bmatrix}
+  =
+  \begin{bmatrix} 
+  b_1 \\ 
+  b_2 \\ 
+  \vdots \\ 
+  b_m
+  \end{bmatrix}.
+\end{equation}
+
+采用高斯(Gauss)消元法.
+
+
+把第$2$个方程到第$m$个方程中的$x_1$消掉. 把第$i$个方程变为
+\begin{equation}
+  \text{方程}(i) - \frac{a_{i 1}}{a_{11}} \times \text{方程}(1)
+\end{equation}
+于是方程的增广矩阵变为
+\begin{equation}
+  \left[
+    \begin{matrix}
+        a_{11}&\cdots&a_{1n}'\\
+        0&\cdots&a_{2n}'\\
+        \vdots&\ddots&\vdots\\
+        0&\cdots&a_{m n}'
+    \end{matrix}
+    \ 
+  \middle|
+    \ 
+    \begin{matrix} 
+    b_1 \\ 
+    b_2 \\ 
+    \vdots \\ 
+    b_m
+    \end{matrix}
+  \right] 
+\end{equation}

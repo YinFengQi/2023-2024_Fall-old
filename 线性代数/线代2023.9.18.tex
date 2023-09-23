@@ -71,16 +71,16 @@ $\mathbb{R}^{m}$上定义两个运算$+$和$*$(用列向量来表示)
     \end{equation}
 \end{definition}
 
-\subsection{\textbf{$\left( \mathbb{R}^m, +, * \right) $为一个线性空间}}
+\subsection{$\left( \mathbb{R}^m, +, * \right) $为一个线性空间}
 \paragraph{两种运算满足:}
 \begin{itemize}
     \item 交换律$v+w=w+v$
     \item 结合律$c_1(c_2v)=(c_1c_2)v$
     \item 分配律$c(v+w)=cv+cw$
     \item 通过加法可以定义减法运算$v-w=\begin{bmatrix} a_1 \\ a_2 \\ \vdots \\ a_m \end{bmatrix}-\begin{bmatrix} b_1 \\ b_2 \\ \vdots \\ b_m \end{bmatrix}=\begin{bmatrix} a_1-b_1 \\ a_2-b_2 \\ \vdots \\ a_m-b_m \end{bmatrix}$.
-    \item 给定一组$\mathbb{R}^m$中的向量, $\left( v_1, v_2, \ldots ,v_n \right) $,可以构成新的向量
+    \item 给定一组$\mathbb{R}^m$中的向量, $\left( \vec{v}_1, \vec{v}_2, \ldots ,\vec{v}_n \right) $, 和一组实数$(x_1,x_2,\ldots ,x_n)$可以构成新的向量
     \begin{equation}
-  x_1 v_1 +x_2v_2+ \cdots +x_n v_n \quad (x_1, \ldots ,x_n\text{为实数})
+  x_1 \vec{v}_1 +x_2 \vec{v}_2+ \cdots +x_n \vec{v}_n
 \end{equation}
 这个新的向称为$\left( v_1, v_2, \ldots ,v_n \right) $的线性组合.
 \end{itemize}
@@ -137,6 +137,16 @@ $\mathbb{R}^{m}$上定义两个运算$+$和$*$(用列向量来表示)
     \item 结合律:\begin{equation}
     \left( AB \right) C =A\left( BC \right) 
     \end{equation}
+    \begin{proof}
+      设$A:m \times n, B: n \times k, C: k \times l$,根据定义
+      \begin{equation}
+        [(AB)C]_{ij} = \sum_{u=1}^{k} (AB)_{iu} C _{uj} = \sum_{u=1}^{k} \sum_{v=1}^{n} a_{iv} b_{vu} c_{vj} 
+      \end{equation}
+      同样
+      \begin{equation}
+          [A(BC)]_{ij} = \sum_{v=1}^{n} A_{iv}(BC)_{vj} = \sum_{u=1}^{k} \sum_{v=1}^{n} a_{iv} b_{vu} c_{vj} 
+      \end{equation}
+  \end{proof}
     \item 分配律:\begin{align}
   A\left( B+C \right) = AB+AC
   \\
