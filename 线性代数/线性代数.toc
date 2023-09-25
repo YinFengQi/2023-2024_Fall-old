@@ -13,8 +13,8 @@
 \contentsline {subsubsection}{\numberline {1.4.1}逆矩阵的一些性质}{6}{subsubsection.1.4.1}%
 \contentsline {subsubsection}{\numberline {1.4.2}线性组合的矩阵乘法表示}{8}{subsubsection.1.4.2}%
 \contentsline {subsubsection}{\numberline {1.4.3}矩阵方程}{8}{subsubsection.1.4.3}%
-\contentsline {subsubsection}{\numberline {1.4.4}矩阵的初等变换}{9}{subsubsection.1.4.4}%
-\contentsline {subsubsection}{\numberline {1.4.5}初等变换的应用}{9}{subsubsection.1.4.5}%
+\contentsline {section}{\numberline {2}矩阵的初等变换}{9}{section.2}%
+\contentsline {subsection}{\numberline {2.1}初等变换的应用}{9}{subsection.2.1}%
 \contentsline {paragraph}{$LU$分解}{9}{paragraph*.9}%
 \contentsline {paragraph}{用初等变换求逆(Gauss-Jordan)}{11}{paragraph*.10}%
 \contentsline {paragraph}{行约化阶梯形及一般线性方程组的一般解}{12}{paragraph*.11}%

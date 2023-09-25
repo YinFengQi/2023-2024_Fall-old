@@ -1,5 +1,5 @@
 % !TeX root = 线性代数.tex
-\subsubsection{矩阵的初等变换}
+\section{矩阵的初等变换}
 下面我们要将初等变换用矩阵乘法来实现.
 
 \begin{itemize}
@@ -49,13 +49,14 @@
 \end{itemize}
 
 
-\subsubsection{初等变换的应用}
+\subsection{初等变换的应用}
 \paragraph{$LU$分解}
 把方矩阵分解成下列形式 
 \begin{equation}
   A = LU,
 \end{equation}
 $L$为下三角矩阵, $U$为上三角矩阵.
+
 方法: 通过初等变换, 把方矩阵变成一个上三角矩阵(如果这个过程不涉及到换行的话)那么有
 \begin{equation}
   E_1 E_2 \cdots E_{n} A = U \iff A = E_n ^{-1} \cdots E_2^{-1} E_1^{-1} U
@@ -102,11 +103,11 @@ $L$为下三角矩阵, $U$为上三角矩阵.
     \end{equation}
     用矩阵乘法写起来
     \begin{equation}
-      E_{42}(-3)E_{42}(-8)E_{32}(5)E_{41}(3)E_{31}(-2)E_{21}(1)A = U
+      E_{43}(-3)E_{42}(-8)E_{32}(5)E_{41}(3)E_{31}(-2)E_{21}(1)A = U
     \end{equation}
     即
     \begin{equation}
-      L = E_{21}(-1) E_{31}(2)E_{41}(-3)E_{32}(-5)E_{42}(8)E_{43}(3)
+      L = E_{21}(-1) E_{31}(2)E_{41}(-3)E_{32}(-5)E_{42}(8)E_{43}(-3)
     \end{equation}
     计算可得
     \begin{equation}
@@ -228,13 +229,35 @@ $A$的逆可以这样求解:
 
 \begin{itemize}
     \item 找到第一个不为零的列, 然后, 如果需要的话, 做换行操作, 使得这一列的第一个元素不为零. 之后消元操作, 把下方的元素都变为零.
+    % \begin{equation}
+    %   A \to \begin{bmatrix}
+    %    0 & 0 & 1 & * & * & *\\
+    %    0 & 0 & 0 &  &  & \\
+    %    0 & 0 & 0 &  & \text{\Large$B$} & \\
+    %    0 & 0 & 0 &  &  & \\
+    %   \end{bmatrix}
+    % \end{equation}
+    % 换了一种方式
     \begin{equation}
-      A \to \begin{bmatrix}
-       0 & 0 & 1 & * & * & *\\
-       0 & 0 & 0 &  &  & \\
-       0 & 0 & 0 &  & \text{\Large $B$} & \\
-       0 & 0 & 0 &  &  & \\
-      \end{bmatrix}
+      A \to  
+      \left[ \begin{matrix}
+       0 & 0 & 1\\
+       0 & 0 & 0\\
+       0 & 0 & 0\\
+       0 & 0 & 0\\
+      \end{matrix}
+      \quad
+      \begin{matrix}
+       \begin{matrix}
+        *\  & *\  & *\ \\
+       \end{matrix}\\
+       \boxed{\begin{matrix}
+          &  & \\
+          & \text{\ \Large $B$ } & \\
+          &  & \\
+        \end{matrix}}
+      \end{matrix}\ 
+      \right] 
     \end{equation}
 
     \item 对子矩阵$B$做同样的操作.
