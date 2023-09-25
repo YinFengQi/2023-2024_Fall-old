@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  20 SEP 2023 18:08
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  25 SEP 2023 16:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -679,7 +679,8 @@ File: pgflibrarycurvilinear.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \c@definition=\count341
 \c@lemma=\count342
 \c@theorem=\count343
-\c@example=\count344
+\c@proposition=\count344
+\c@example=\count345
 ) (./费曼(3).aux)
 \openout1 = `费曼(3).aux'.
 
@@ -822,24 +823,44 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 第二章
 [3
 
-]) (./费曼(3)临时.tex)
+]) (./费曼(3)2023.9.25.tex
 LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <10.53937> not available
-(Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 16.
- [4] (./费曼(3).aux)
+(Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 5.
+ [4] [5]
+第三章
+[6
+
+]
+Overfull \hbox (54.35574pt too wide) in paragraph at lines 42--44
+\TU/lmr/m/n/10.53937 In a valid measurement, which means $\OMS/cmsy/m/n/10.53937 j\OML/cmm/m/it/10.53937 u\OMS/cmsy/m/n/10.53937 j ^^] j\OML/cmm/m/it/10.53937 v\OMS/cmsy/m/n/10.53937 j$\TU/lmr/m/n/10.53937 , there will be no interference term $[] \OML/cmm/m/it/10.53937 v [] [] v []$
+ []
+
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 47.
+
+) (./费曼(3)临时.tex) [7] (./费曼(3).aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
-Package rerunfilecheck Info: File `费曼(3).out' has not changed.
-(rerunfilecheck)             Checksum: 3343423A4C4E2EA73CF3F4D98973CC2B;1012.
+
+
+Package rerunfilecheck Warning: File `费曼(3).out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `费曼(3).out':
+(rerunfilecheck)             Before: A75A250BDAA261D6F6069267460E61A8;695
+(rerunfilecheck)             After:  D8FBEC2CAE1977BFFDC6D8182B2F0A1C;786.
  ) 
 Here is how much of TeX's memory you used:
- 28776 strings out of 476376
- 622727 string characters out of 5799322
- 1858394 words of memory out of 5000000
- 48812 multiletter control sequences out of 15000+600000
- 523113 words of font info for 97 fonts, out of 8000000 for 9000
+ 28797 strings out of 476376
+ 623185 string characters out of 5799322
+ 1859394 words of memory out of 5000000
+ 48826 multiletter control sequences out of 15000+600000
+ 523137 words of font info for 100 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,8n,97p,577b,357s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 费曼(3).pdf (5 pages).
+Output written on 费曼(3).pdf (8 pages).

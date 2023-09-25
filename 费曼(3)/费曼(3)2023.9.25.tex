@@ -1,0 +1,55 @@
+% !TeX root = 费曼(3).tex
+\section[量子力学的哲学]{The Philosophy of Quantum Mechanic}
+The observables are the numbers that can be measured in experiments. Physicist works for finding the numerical relations under the observables. The mission of physics is to explain the phenomena of observables qualificationally. 
+There's no need to debate on what is the entity of something, or which conception is more fundamental.
+
+\chapter[概率幅]{Probability Amplitude}
+The superposition law of quantum mechanic imply that there lies a structure of linear algebra beneath the description of quantum mechanic, from which, Schr\"odinger developed the Wave Mechanic, Heisenberg the Matrix Formalism, and Feynman the Path Integral Methodology.
+
+When we are asked about the probability of a certain process, we compute the magnitude squared of a complex number, that is, \textit{probability amplitude}. This gives the first law
+\begin{equation}
+  \text{Probability} = |\text{amplitude}|^2.
+\end{equation}
+
+Dirac introduced his notation $\bra{A}\ket{B}$, which means the amplitude of transferring from the initial state $A$ to a final process $B$.
+
+The second law
+\begin{equation}
+  \bra{B}\ket{A} = \bra{B}\ket{A}_{\text{path 1}} + \bra{B}\ket{A}_{\text{path 2}}.
+\end{equation}
+
+The third law
+\begin{equation}
+    \bra{B}\ket{A}_{\text{path 1}} = \bra{B}\ket{1} \bra{1}\ket{A}.
+\end{equation}
+
+Suppose a $M$-fold $\{H_i\}$ hole interference of electron, using the notation of $j_{i}$ to represent the $j$ hole of plate $i$.We can write the amplitude
+\begin{equation}
+  \bra{B}\ket{A} = \sum_{j_M = 1}^{H_M} \sum_{j_{M-1} = 1}^{H_{M-1}}\cdots \sum_{j_1 = 1}^{H_1} \bra{B} \ket{(j_M)_M}\bra{(j_M)_M} \ket{(J_{M-1})_{M-1}} \times \cdots \times 
+  \ket{(j_1)_1}\bra{(j_1)_1} \ket{A}  .
+\end{equation}
+Or, in continuum form, 
+\begin{equation}
+  \bra{B}\ket{A} = \sum_{\text{all paths}} \bra{B}\ket{A}_{\text{a certain path}}.
+\end{equation}
+To some extend, this is quite similar to the path integral, ignoring the fact that we choose $y(x)$ instead of $\vec{r}(t)$ to be the integration variable, which led us to be unable to include the paths in which a electron turns back.
+
+Let us go back to the two-slit interference experiment and consider why observation influences the pattern. There are two detectors, $D_1$ and $D_2$, setting up closing to hole 1 and 2, using $u$ to denote the amplitude of electrons passing hole 1 and kicking the photon into $D_1$, and $v$ for hole-2-electrons kicking photons into hole 1.
+
+Then the amplitude of electrons from $A$ to $B$ through hole 1 is
+\begin{equation}
+  \bra{B}\ket{A}_{\text{photon to $D_1$}} = \bra{B}\ket{1}u\bra{1}\ket{A} + \bra{B}\ket{2}v\bra{2}\ket{A}.
+\end{equation}
+In a valid measurement, which means $|u|\gg |v|$, there will be no interference term $\bra{B}\ket{1}v\bra{1}\ket{A} \bra{B}\ket{2}v\bra{2}\ket{A}$ in the probability.
+
+\textbf{Measurement caused the decoherence of electrons, and thus pattern disappears.}
+
+\subsection[路径积分]{Path Integral}
+For non-relativistic cases, we can define synchronousness, and any particle cannot go backward in time, the amplitude can be written as
+\begin{equation}
+  \bra{B(t_2)}\ket{A(t_1)} = \sum_{\text{all paths}} \bra{B(t_2)}\ket{A(t_1)}_{\text{a certain path}}.
+\end{equation}
+Note that the amplitude is a complex function of path, when finding how to calculate its value, we need to go back to the classical situation. Feynman gives the result
+\begin{equation}
+  \bra{B(t_2)}\ket{A(t_1)} = \mathrm{e}^{\mathrm{i} S / \hbar}.
+\end{equation}

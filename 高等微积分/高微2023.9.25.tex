@@ -1,1 +1,175 @@
 % !TeX root = 高等微积分.tex
+
+\begin{definition}
+    确界.
+
+    称$c$是$E$的上确界(supremum), 记作$c = \sup E$, 如果$c$是$E$的最小的上界.
+    
+    $\iff c = \min\{\text{$E$的上界}\}$
+
+    称$d$是$E$的下确界(infimum), 记作$d = \inf E$, 如果$d$是$E$的最大的下界.
+    
+    $\iff d = \max\{\text{$E$的下界}\}$
+\end{definition}
+
+\begin{proposition}
+    任意非空实数集$F$, $\min F, \max F$非必存在.
+\end{proposition}
+\begin{example}
+    $F = (0,1)$, 则$\min F, \max F$皆不存在.
+\end{example}
+\begin{proof}
+    因为
+    \begin{equation}
+        \forall a\in F \implies \frac{a}{2}\in F \implies a\text{不是最小元素},
+    \end{equation}
+    \begin{equation}
+      \forall b \in F \implies \frac{b+1}{2} \in F \implies b\text{不是最大元素}.
+    \end{equation}
+\end{proof}
+
+这样, 从字面上有
+\begin{itemize}
+    \item 若$E$无上界, 则$E$无上确界.
+    
+    \item 若$E$有上界, $\{\text{$E$上界}\}$非空, \textbf{是否有最小元素需要证明}.
+\end{itemize}
+
+
+\begin{theorem}[确界定理]
+    有上界的非空实数集一定有上确界, 有下界的非空实数集一定有下确界.
+\end{theorem}
+\begin{proof}
+    只证明上确界.
+    对于实数采用戴德金实数的定义.
+
+    设
+    \begin{equation}
+        E = \{x_\alpha = \text{戴德金分割$(A_\alpha, B_\alpha)$} | \alpha \in \text{指标集$\Lambda$}\}
+    \end{equation}
+    已知$E$有上界 $\tilde{c} = (\tilde{A}, \tilde{B}),\ (\tilde{A} \subsetneqq \mathbb{Q})$.
+
+    由$\forall \alpha, \ \tilde{c}\ge x_\alpha$,根据定义有
+    \begin{equation}
+      \forall \alpha,\ \tilde{A} \supseteq A_\alpha 
+      \implies \tilde{A} \supseteq \bigcup_{\alpha\in \Lambda} A_\alpha \xlongequal{\text{定义为}} \{y| \exists \alpha \in \Lambda \text{使}y\in A_\alpha\}
+    \end{equation}
+
+    令$A \displaystyle = \bigcup_{\alpha\in \Lambda}A_\alpha$ ($A$必是$\mathbb{Q}$的非空真子集).
+
+    考虑$(A, B = \mathbb{Q}/A)$, 可以直接验证它是一个戴德金分割.
+    \begin{itemize}
+        \item 定义中的第三条:
+        \begin{equation}
+          \forall x \in A, \ \exists \alpha \text{使} x \in A_\alpha
+        \end{equation}
+        而且
+        \begin{equation}
+          B = \left( \bigcup A_\alpha \right) ^C = \bigcap A_\alpha^C = \bigcap_\alpha B_\alpha
+          \implies \forall y \in B , \forall \alpha, \ y \in B_\alpha
+        \end{equation}
+        即我们可以找到一个$\alpha$,
+        \begin{equation}
+          x \in A_\alpha , y \in B_\alpha \implies x<y.
+        \end{equation}
+
+        \item 定义中的第四条: 要证$A$中无最大元, 采用反证法.
+        
+        若$A$中有最大元, 记为$z$, 则
+        \begin{equation}
+          z \in A = \bigcup_\alpha A_\alpha \implies \exists \alpha \text{使} z\in A_\alpha.
+        \end{equation}
+        由于$z$是$A$最大元, 并且$A_\alpha \subseteq A$, $z$也是$A_\alpha$最大元, 矛盾.
+    \end{itemize}
+ 
+
+    这样$y = (A,B) = (\bigcup_\alpha A, \bigcup_\alpha B)$是一个戴德金实数, \textbf{我们可以断言$y = \sup E$}, 分为两部分内容:
+
+    \begin{itemize}
+        \item  $y$是$E$上界 $\iff y\ge  x_\alpha \iff A \supseteq A_\alpha, \ \forall \alpha$显然成立.
+        
+        \item $y\le E$的任何上界$z\  \xlongequal{\text{记为}}  (A_0 , B_0)$, 由$z$是上界可知, 
+        \begin{equation}
+          \forall \alpha ,\  A_0 \supseteq A_\alpha
+          \implies A \supseteq \bigcup_\alpha A_\alpha = A \implies z>y. 
+        \end{equation}
+    \end{itemize}
+\end{proof}
+
+\begin{proposition}[判断上确界]
+    $C = \sup E$等价于下列两点同时成立:
+    \begin{enumerate}
+        \item $\forall x \in E$有$x\le c$.
+        \item $\forall \varepsilon > 0 \ \exists x \in E$使$x\ge c - \varepsilon$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{definition}
+    称$E$是有界的, 如果$E$既有上界又有下界.
+    $\iff \exists k>0 \text{使} \forall x \in E \text{有}|x| \le k$
+\end{definition}
+
+\begin{example}
+    设$E$是有界的非空实数集, 则
+    \begin{equation}
+      \sup \{x-y|x,y \in E\} = \sup E - \inf E.
+    \end{equation}
+\end{example}
+\begin{proof}
+    记$F = \{x-y|x,y \in  E\}$, 可知$F$非空有界.
+
+    由确界定理知, $\sup F, \sup E, \inf E$皆存在, 有
+    \begin{itemize}
+        \item $\sup E - \inf E$是$F$的上界, 因为$\forall  x,y \in E$,有$x\le \sup E, y\ge \inf E$, 所以
+        \begin{equation}
+          x-y \le \sup E - \inf E.
+        \end{equation}
+        说明$\sup E - \inf E$不小于$F$的任何成员, 是上界.
+        \item 对于$\forall \varepsilon > 0$, $\sup E - \frac{\varepsilon}{2}$不是$E$上界, $\inf E + \frac{\varepsilon}{2}$不是$E$下界.
+        \begin{equation}
+          \exists x,y\in E, \ x- y > \sup E - \inf E - \varepsilon
+        \end{equation}
+        说明$\forall \varepsilon> 0 , \ \sup E - \inf E - \varepsilon$不是$F$上界.
+    \end{itemize}
+
+    所以$\sup E - \inf E = \sup F$.
+\end{proof}
+
+
+
+\subsection[确界定理应用]{确界定理应用:证明阿基米德定理(命题\ref{Archimedes thm})}
+\begin{proposition}\label{Archimedes thm}
+    $\forall x \in \mathbb{R}, \ \exists n \in \mathbb{Z} \text{使} x<n$.
+\end{proposition}
+\begin{proof}
+    反证法.假设结论不对, 则$x \ge n, \ \forall n \in  \mathbb{Z}$, 即$x$是$\mathbb{Z}$的一个上界. 这说明$\mathbb{Z}$非空且有上界.
+
+    由确界定理知, $\sup \mathbb{Z}$存在, 记$M \equiv \sup \mathbb{Z}$, 那么
+    \begin{equation}
+      n+1 \in \mathbb{Z} \implies n + 1 \le  M \implies n\le M-1.
+    \end{equation}
+    这与$M = \sup \mathbb{Z}$矛盾.
+\end{proof}
+
+
+
+\begin{proposition}
+    任何两个实数$a<b$之间必有有理数.
+\end{proposition}
+\begin{proof}寻找一个有理数$\frac{m}{n} \in (a,b)$
+
+    对于$x = \frac{1}{b-a}$, 由命题\ref{Archimedes thm}结论可知,
+    \begin{equation}
+        \exists n \in \mathbb{Z}, \ n > \frac{1}{b-a}.
+    \end{equation}
+    对于$y = nb$, 由命题\ref{Archimedes thm}的结论可知, $m_1 \in \mathbb{Z}, \ m_1 > y $, 即有
+    \begin{equation}
+      \frac{m_1}{n}>b \quad (m_1 \in  \mathbb{Z})
+    \end{equation}
+    对于$z = -na$, 由命题\ref{Archimedes thm}的结论可知, $\exists m \in \mathbb{Z},\ m > -na$, 记$m_0 = -m \in \mathbb{Z}$, 从而有 
+    \begin{equation}
+        -m_0 > -na \iff \frac{m_0}{n} < a.
+    \end{equation}
+
+    这样总能找到整数$m_0,m_1$使$\frac{m_0}{n}<a < b < \frac{m_1}{n}$.于是在$m_0$和$m_1$之间总有一个$m$满足$a < \frac{m}{n} < b$.
+\end{proof}
