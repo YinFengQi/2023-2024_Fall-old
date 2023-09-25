@@ -2,56 +2,52 @@
 \subsubsection{矩阵的初等变换}
 下面我们要将初等变换用矩阵乘法来实现.
 
-% 1
-倍乘变换: 矩阵$A$的第$i$行乘上$c$, 其他行不变, $S_i(c) A = A'$.
-\begin{equation}
-  S_i (c) = \begin{bmatrix}
-    \ddots&0&\cdots&0\\
-    0&c&\cdots&0\\
-    \vdots&\vdots&\ddots&\vdots\\
-    0&0&\cdots&1
-  \end{bmatrix}
-\end{equation}
-% 
-% 
-% 
-% ==============补充一下==============
-% 
-% 
-% 
-% 
-$S^{-1}_i (c)$是可逆的
-\begin{equation}
-  S^{-1}_i (c) = \begin{bmatrix}
-    \ddots&0&\cdots&0\\
-    0&\frac{1}{c}&\cdots&0\\
-    \vdots&\vdots&\ddots&\vdots\\
-    0&0&\cdots&1
-  \end{bmatrix}
-\end{equation}
+\begin{itemize}
+    \item 倍乘变换: 矩阵$A$的第$i$行乘上$c$, 其他行不变, $S_i(c) A = A'$. $S_i(c)$为将单位矩阵的第$i$个元素换为$c$.
+    \begin{equation}
+      S_i (c) = \begin{bmatrix}
+        \ddots&0&\cdots&0\\
+        0&c&\cdots&0\\
+        \vdots&\vdots&\ddots&\vdots\\
+        0&0&\cdots&1
+      \end{bmatrix}
+    \end{equation}
+    $S^{-1}_i (c)$是可逆的
+    \begin{equation}
+      S^{-1}_i (c) = \begin{bmatrix}
+        \ddots&0&\cdots&0\\
+        0&\frac{1}{c}&\cdots&0\\
+        \vdots&\vdots&\ddots&\vdots\\
+        0&0&\cdots&1
+      \end{bmatrix}
+    \end{equation}
 
-% 2
-消元变换: 
-把第$i$行换成第$i$行$+ a \times $第$j$行.
-% 
-% 
-% ===========补充============
-% 
-% 
-% 
-% 
-$E_{ij}(a)$是可逆的
-\begin{equation}
-  E_{ij}^{-1}(a) = E_{ij}(-a)
-\end{equation}
+    \item 消元变换: 
+    把第$i$行换成$\text{第$i$行} + a \times \text{第$j$行}$. 它的形式为
+    \begin{equation}
+      E_{ij}(a) = \begin{bmatrix}
+       1 &  &  &  & \\
+        & \ddots &  &  & \\
+        &  & \ddots &  & \\
+        & a &  & \ddots & \\
+        &  &  &  & 1\\
+      \end{bmatrix}.
+    \end{equation}
+    其中的$a$位于$E_{ij}(a)$的第$i$行第$j$列, 对角线元素都为$1$.
+    
+    $E_{ij}(a)$是可逆的
+    \begin{equation}
+      E_{ij}^{-1}(a) = E_{ij}(-a)
+    \end{equation}
 
-% 3
-换行变换:
-把第$i$行和第$j$行交换. 用一个矩阵$P_{ij} = (\text{交换单位矩阵的$i,j$列})$来表示.
-它是可逆的,
-\begin{equation}
-  P^{-1}_{ij}= P_{ij}.
-\end{equation}
+    \item 换行变换:
+    把第$i$行和第$j$行交换. 用一个矩阵$P_{ij} = (\text{交换单位矩阵的$i,j$列})$来表示.
+    它是可逆的,
+    \begin{equation}
+      P^{-1}_{ij}= P_{ij}.
+    \end{equation}
+\end{itemize}
+
 
 \subsubsection{初等变换的应用}
 \paragraph{$LU$分解}
@@ -67,6 +63,7 @@ $L$为下三角矩阵, $U$为上三角矩阵.
 由于$E_1 ,\cdots ,E_n$都是下三角矩阵, 它们的乘积也是下三角矩阵.
 
 \begin{example}
+    对矩阵$A$做$LU$分解.
     \begin{equation}
       A = \begin{bmatrix}
        3 & -7 & -2 & 2\\
@@ -112,14 +109,14 @@ $L$为下三角矩阵, $U$为上三角矩阵.
       L = E_{21}(-1) E_{31}(2)E_{41}(-3)E_{32}(-5)E_{42}(8)E_{43}(3)
     \end{equation}
     计算可得
-    % 
-    % 
-    % =========补充计算==========
-    % 
-    % 
-    % 
-    % 
-    % 
+    \begin{equation}
+      L = \begin{bmatrix}
+       1 & 0 & 0 & 0\\
+       -1 & 1 & 0 & 0\\
+       2 & -5 & 1 & 0\\
+       -3 & 8 & 3 & 1\\
+      \end{bmatrix}.
+    \end{equation}
 \end{example}
 
 如果$U$的对角线都不为零, 那么
@@ -173,63 +170,78 @@ $A$的逆可以这样求解:
            \\
            \xlongrightarrow{E_{12}(\frac{2}{3})E_{23}(\frac{3}{4})E_{32}(\frac{2}{3})E_{21}(\frac{1}{2})}
            \left[ \begin{matrix}
-            2 & -1 & 0\\
-            -1 & 2 & -1\\
-            0 & -1 & 2\\
+            2 & 0 & 0\\
+            0 & \frac{3}{2} & 0\\
+            0 & 0 & \frac{4}{3}\\
            \end{matrix}
            \ 
            \middle|
            \ 
            \begin{matrix}
+            \frac{3}{2} & 1 & \frac{1}{2}\\
+            \frac{3}{4} & \frac{3}{2} & \frac{3}{4}\\
+            \frac{1}{3} & \frac{2}{3} & 1\\
+           \end{matrix}
+           \right] 
+           \\
+           \xlongrightarrow{S_3(\frac{3}{4})S_2(\frac{2}{3})S_1(\frac{1}{2})}
+           \left[ \begin{matrix}
             1 & 0 & 0\\
             0 & 1 & 0\\
             0 & 0 & 1\\
            \end{matrix}
-           \right] 
+           \ 
+           \middle|
+           \ 
+           \begin{matrix}
+            \frac{3}{4} & \frac{1}{2} & \frac{1}{4}\\
+            \frac{1}{2} & 1 & \frac{1}{2}\\
+            \frac{1}{4} & \frac{1}{2} & \frac{3}{4}\\
+           \end{matrix}
+           \right]
       \end{gathered}
     \end{equation}
-    % 
-    % 
-    % 
-    % =========补充===========
-    % 
-    % 
-    % 
-    % 
-    % 
+    最终的增广矩阵右侧就是$A$的逆,
+    \begin{equation}
+      A^{-1} = \begin{bmatrix}
+       \frac{3}{4} & \frac{1}{2} & \frac{1}{4}\\
+       \frac{1}{2} & 1 & \frac{1}{2}\\
+       \frac{1}{4} & \frac{1}{2} & \frac{3}{4}\\
+      \end{bmatrix}
+    \end{equation}
 \end{example}
 
 \paragraph{行约化阶梯形及一般线性方程组的一般解}
-行约化阶梯形式为: 
-% 1
-如果第$i$行都是零, 那么对于$j>i$行都是零.
+\subparagraph{行约化阶梯形式}
+\begin{itemize}
+    \item 如果第$i$行都是零, 那么对于$j>i$行都是零.
+    
+    \item 如果第$i$行不都是零, 那么第一个非零元素为$1$, 称为主元.
+    
+    \item 如果第$(i+1)$行不都是零, 那么这一行的主元在第$i$行的主元右边.
 
-% 2
-如果第$i$行不都是零, 那么第一个非零元素为$1$, 称为主元.
+    \item 主元上方的元素都为零.
+\end{itemize}
 
-% 4
-如果第$(i+1)$行不都是零, 那么这一行的主元在第$i$行的主元右边.
-
-% 5
-主元上的元素都为零.
 
 \subparagraph{找到一个矩阵行约化阶梯形的方法}
-% 1
-找到第一个不为零的列, 然后, 如果需要的话, 做换行操作, 使得这一列的第一个元素不为零, 之后消元操作, 把下面的元素都变为零.
-\begin{equation}
-  A \to \begin{bmatrix}
-   0 & 0 & 1 & * & * & *\\
-   0 & 0 & 0 &  &  & \\
-   0 & 0 & 0 &  & \large{B} & \\
-   0 & 0 & 0 &  &  & \\
-  \end{bmatrix}
-\end{equation}
 
-% 2
-对$B$做同样的操作.
+\begin{itemize}
+    \item 找到第一个不为零的列, 然后, 如果需要的话, 做换行操作, 使得这一列的第一个元素不为零. 之后消元操作, 把下方的元素都变为零.
+    \begin{equation}
+      A \to \begin{bmatrix}
+       0 & 0 & 1 & * & * & *\\
+       0 & 0 & 0 &  &  & \\
+       0 & 0 & 0 &  & \text{\Large $B$} & \\
+       0 & 0 & 0 &  &  & \\
+      \end{bmatrix}
+    \end{equation}
 
-% 3
-把主元上方的元素变为零.
+    \item 对子矩阵$B$做同样的操作.
+    
+    \item 把主元上方的元素变为零.
+\end{itemize}
+
 
 \begin{example}\label{reduction}
     行约化阶梯形式:
@@ -262,30 +274,33 @@ $A$的逆可以这样求解:
     \end{equation}
 \end{example}
 
-% 1
-主元列: 如果该列有一个主元, 该列只有一个非零元素
+\subparagraph{行约化阶梯形式的一些名词}
+\begin{itemize}
+    \item 主元列: 如果该列有一个主元, 该列只有一个非零元素.
+    
+    \item 自由列: 没有主元之列.
+    
+    \item 主元变量, 自由变量:
+    
+    对于一个方程
+    \begin{equation}
+      Rx = x_1 Y_1 + x_2  Y_2 + \cdots  + x_n Y_n,
+    \end{equation}
+    如果$Y_i$为自由列, 则$x_i$为自由变量. 如果$Y_i$为主元列, 则$x_i$为主元变量.
 
-% 2
-自由列: 没有主元之列.
-
-% 3
-主元变量, 自由变量:
-\begin{equation}
-  Rx = x_1 Y_1 + x_2  Y_2 + \cdots  + x_n Y_n,
-\end{equation}
-如果$Y_i$为自由列, 则$x_i$为自由变量. 如果$Y_i$为主元列, 则$x_i$为主元变量.
-例\ref{reduction}中, 约化后的方程为
-\begin{equation}
-  \begin{bmatrix}
-   1 & 0 & 2 & 3\\
-   0 & 1 & 0 & 1\\
-   0 & 0 & 0 & 0\\
-  \end{bmatrix}
-  \begin{bmatrix}
-   x_1\\
-   x_2\\
-   x_3\\
-   x_4\\
-  \end{bmatrix},
-\end{equation}
-其中的$x_1,x_2$为主元变量, $x_3, x_4$为自由变量.
+    对于例\ref{reduction}, 约化后的方程为
+    \begin{equation}
+      \begin{bmatrix}
+       1 & 0 & 2 & 3\\
+       0 & 1 & 0 & 1\\
+       0 & 0 & 0 & 0\\
+      \end{bmatrix}
+      \begin{bmatrix}
+       x_1\\
+       x_2\\
+       x_3\\
+       x_4\\
+      \end{bmatrix},
+    \end{equation}
+    其中的$x_1,x_2$为主元变量, $x_3, x_4$为自由变量.
+\end{itemize}
