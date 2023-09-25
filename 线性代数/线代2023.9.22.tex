@@ -2,7 +2,7 @@
 
 \subsection{矩阵的乘法的应用}
 
-% 1
+
 对于$n \times n$的方阵$A$, 可以利用矩阵的乘法来定义它的逆矩阵$A^{-1}$
 \begin{definition}
     $A^{-1}$称为$A$的逆矩阵, 如果$A^{-1}$满足
@@ -176,8 +176,13 @@ $AX$.
   \end{bmatrix}.
 \end{equation}
 
-采用高斯(Gauss)消元法.
-
+采用高斯(Gauss)消元法. 引入三种变换, 这些变换都不改变方程的解.
+\begin{itemize}
+  \item 把某一个方程乘上一个系数$a$.
+  \item 消元: $\text{第$i$个方程} + a \times \text{第$j$个方程}$.
+  \item 换行: 把第$i$行和第$j$行交换.
+\end{itemize}
+这三种称为矩阵的初等变换.
 
 把第$2$个方程到第$m$个方程中的$x_1$消掉. 把第$i$个方程变为
 \begin{equation}
@@ -187,7 +192,7 @@ $AX$.
 \begin{equation}
   \left[
     \begin{matrix}
-        a_{11}&\cdots&a_{1n}'\\
+        a_{11}&\cdots&a_{1n}\\
         0&\cdots&a_{2n}'\\
         \vdots&\ddots&\vdots\\
         0&\cdots&a_{m n}'

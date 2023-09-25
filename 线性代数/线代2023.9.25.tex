@@ -1,0 +1,291 @@
+% !TeX root = 线性代数.tex
+\subsubsection{矩阵的初等变换}
+下面我们要将初等变换用矩阵乘法来实现.
+
+% 1
+倍乘变换: 矩阵$A$的第$i$行乘上$c$, 其他行不变, $S_i(c) A = A'$.
+\begin{equation}
+  S_i (c) = \begin{bmatrix}
+    \ddots&0&\cdots&0\\
+    0&c&\cdots&0\\
+    \vdots&\vdots&\ddots&\vdots\\
+    0&0&\cdots&1
+  \end{bmatrix}
+\end{equation}
+% 
+% 
+% 
+% ==============补充一下==============
+% 
+% 
+% 
+% 
+$S^{-1}_i (c)$是可逆的
+\begin{equation}
+  S^{-1}_i (c) = \begin{bmatrix}
+    \ddots&0&\cdots&0\\
+    0&\frac{1}{c}&\cdots&0\\
+    \vdots&\vdots&\ddots&\vdots\\
+    0&0&\cdots&1
+  \end{bmatrix}
+\end{equation}
+
+% 2
+消元变换: 
+把第$i$行换成第$i$行$+ a \times $第$j$行.
+% 
+% 
+% ===========补充============
+% 
+% 
+% 
+% 
+$E_{ij}(a)$是可逆的
+\begin{equation}
+  E_{ij}^{-1}(a) = E_{ij}(-a)
+\end{equation}
+
+% 3
+换行变换:
+把第$i$行和第$j$行交换. 用一个矩阵$P_{ij} = (\text{交换单位矩阵的$i,j$列})$来表示.
+它是可逆的,
+\begin{equation}
+  P^{-1}_{ij}= P_{ij}.
+\end{equation}
+
+\subsubsection{初等变换的应用}
+\paragraph{$LU$分解}
+把方矩阵分解成下列形式 
+\begin{equation}
+  A = LU,
+\end{equation}
+$L$为下三角矩阵, $U$为上三角矩阵.
+方法: 通过初等变换, 把方矩阵变成一个上三角矩阵(如果这个过程不涉及到换行的话)那么有
+\begin{equation}
+  E_1 E_2 \cdots E_{n} A = U \iff A = E_n ^{-1} \cdots E_2^{-1} E_1^{-1} U
+\end{equation}
+由于$E_1 ,\cdots ,E_n$都是下三角矩阵, 它们的乘积也是下三角矩阵.
+
+\begin{example}
+    \begin{equation}
+      A = \begin{bmatrix}
+       3 & -7 & -2 & 2\\
+       -3 & 5 & 1 & 0\\
+       6 & -4 & 0 & -5\\
+       -9 & 5 & -5 & 12\\
+      \end{bmatrix}
+    \end{equation}
+    做操作
+    \begin{equation}
+        \begin{gathered}
+            A \xlongrightarrow{E_{41}(3)E_{31}(-2)E_{21}(1)} 
+            \begin{bmatrix}
+             3 & -7 & -2 & 2\\
+             0 & -2 & -1 & 2\\
+             0 & 10 & 4 & -9\\
+             0 & -16 & -11 & 18\\
+            \end{bmatrix}
+            \\
+            \xlongrightarrow{E_{42}(-8)E_{32}(5)}
+            \begin{bmatrix}
+             3 & -7 & -2 & 2\\
+             0 & -2 & -1 & 2\\
+             0 & 0 & -1 & 1\\
+             0 & 0 & -3 & 2\\
+            \end{bmatrix}
+            \\
+            \xlongrightarrow{E_{43}(-3)}
+            \begin{bmatrix}
+             3 & -7 & -2 & 2\\
+             0 & -2 & -1 & 2\\
+             0 & 0 & -1 & 1\\
+             0 & 0 & 0 & 1\\
+            \end{bmatrix}
+        \end{gathered}
+    \end{equation}
+    用矩阵乘法写起来
+    \begin{equation}
+      E_{42}(-3)E_{42}(-8)E_{32}(5)E_{41}(3)E_{31}(-2)E_{21}(1)A = U
+    \end{equation}
+    即
+    \begin{equation}
+      L = E_{21}(-1) E_{31}(2)E_{41}(-3)E_{32}(-5)E_{42}(8)E_{43}(3)
+    \end{equation}
+    计算可得
+    % 
+    % 
+    % =========补充计算==========
+    % 
+    % 
+    % 
+    % 
+    % 
+\end{example}
+
+如果$U$的对角线都不为零, 那么
+\begin{equation}
+  U = D U' , \quad (U'\text{对角线都为1})
+\end{equation}
+
+\paragraph{用初等变换求逆(Gauss-Jordan)}
+原理: 先找到一组初等变换来使得矩阵$A$变为单位矩阵,
+\begin{equation}
+  (E_p \cdots E_1)A = I.
+\end{equation}
+$A$的逆可以这样求解:
+\begin{equation}
+  AB = I
+\end{equation}
+在两边同时做行变换.
+\begin{equation}
+  (E_p\cdots E_1) AB = (E_p\cdots E_1)I
+\end{equation}
+即
+\begin{equation}
+  B = I B = (E_p \cdots E_1)I
+\end{equation}
+在实际操作时, 考虑增广矩阵$[A|I]$, 做初等变换, 变为$[I|A^{-1}]$
+\begin{example}
+    \begin{equation}
+      A = \begin{bmatrix}
+       2 & -1 & 0\\
+       -1 & 2 & -1\\
+       0 & -1 & 2\\
+      \end{bmatrix}
+    \end{equation}
+    做初等变换
+    \begin{equation}
+      \begin{gathered}
+        \relax [ A | I ] = \left[ \begin{matrix}
+            2 & -1 & 0\\
+            -1 & 2 & -1\\
+            0 & -1 & 2\\
+           \end{matrix}
+           \ 
+           \middle|
+           \ 
+           \begin{matrix}
+            1 & 0 & 0\\
+            0 & 1 & 0\\
+            0 & 0 & 1\\
+           \end{matrix}
+           \right] 
+           \\
+           \xlongrightarrow{E_{12}(\frac{2}{3})E_{23}(\frac{3}{4})E_{32}(\frac{2}{3})E_{21}(\frac{1}{2})}
+           \left[ \begin{matrix}
+            2 & -1 & 0\\
+            -1 & 2 & -1\\
+            0 & -1 & 2\\
+           \end{matrix}
+           \ 
+           \middle|
+           \ 
+           \begin{matrix}
+            1 & 0 & 0\\
+            0 & 1 & 0\\
+            0 & 0 & 1\\
+           \end{matrix}
+           \right] 
+      \end{gathered}
+    \end{equation}
+    % 
+    % 
+    % 
+    % =========补充===========
+    % 
+    % 
+    % 
+    % 
+    % 
+\end{example}
+
+\paragraph{行约化阶梯形及一般线性方程组的一般解}
+行约化阶梯形式为: 
+% 1
+如果第$i$行都是零, 那么对于$j>i$行都是零.
+
+% 2
+如果第$i$行不都是零, 那么第一个非零元素为$1$, 称为主元.
+
+% 4
+如果第$(i+1)$行不都是零, 那么这一行的主元在第$i$行的主元右边.
+
+% 5
+主元上的元素都为零.
+
+\subparagraph{找到一个矩阵行约化阶梯形的方法}
+% 1
+找到第一个不为零的列, 然后, 如果需要的话, 做换行操作, 使得这一列的第一个元素不为零, 之后消元操作, 把下面的元素都变为零.
+\begin{equation}
+  A \to \begin{bmatrix}
+   0 & 0 & 1 & * & * & *\\
+   0 & 0 & 0 &  &  & \\
+   0 & 0 & 0 &  & \large{B} & \\
+   0 & 0 & 0 &  &  & \\
+  \end{bmatrix}
+\end{equation}
+
+% 2
+对$B$做同样的操作.
+
+% 3
+把主元上方的元素变为零.
+
+\begin{example}\label{reduction}
+    行约化阶梯形式:
+    \begin{equation}
+      \begin{gathered}
+        \begin{bmatrix}
+         1 & 1 & 2 & 4\\
+         1 & 2 & 2 & 5\\
+         1 & 3 & 2 & 6\\
+        \end{bmatrix}
+        \longrightarrow
+        \begin{bmatrix}
+         1 & 1 & 2 & 4\\
+         0 & 1 & 0 & 1\\
+         0 & 2 & 0 & 2\\
+        \end{bmatrix}
+        \longrightarrow
+        \begin{bmatrix}
+         1 & 1 & 2 & 4\\
+         0 & 1 & 0 & 1\\
+         0 & 0 & 0 & 0\\
+        \end{bmatrix}
+        \longrightarrow
+        \begin{bmatrix}
+         1 & 0 & 1 & 3\\
+         0 & 1 & 0 & 1\\
+         0 & 0 & 0 & 0\\
+        \end{bmatrix}
+      \end{gathered}
+    \end{equation}
+\end{example}
+
+% 1
+主元列: 如果该列有一个主元, 该列只有一个非零元素
+
+% 2
+自由列: 没有主元之列.
+
+% 3
+主元变量, 自由变量:
+\begin{equation}
+  Rx = x_1 Y_1 + x_2  Y_2 + \cdots  + x_n Y_n,
+\end{equation}
+如果$Y_i$为自由列, 则$x_i$为自由变量. 如果$Y_i$为主元列, 则$x_i$为主元变量.
+例\ref{reduction}中, 约化后的方程为
+\begin{equation}
+  \begin{bmatrix}
+   1 & 0 & 2 & 3\\
+   0 & 1 & 0 & 1\\
+   0 & 0 & 0 & 0\\
+  \end{bmatrix}
+  \begin{bmatrix}
+   x_1\\
+   x_2\\
+   x_3\\
+   x_4\\
+  \end{bmatrix},
+\end{equation}
+其中的$x_1,x_2$为主元变量, $x_3, x_4$为自由变量.

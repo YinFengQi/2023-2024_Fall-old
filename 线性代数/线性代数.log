@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  23 SEP 2023 14:52
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  25 SEP 2023 09:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -834,22 +834,26 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 74.
 
 LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <10.53937> not available
-(Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 78.
-[2] [3] [4] [5]) (./线代2023.9.22.tex [6] [7]) (./线代临时.tex) [8] (./线性代数.aux)
+(Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 77.
+[2] [3] [4] [5]) (./线代2023.9.22.tex [6] [7]) (./线代2023.9.25.tex [8] [9] [10]
+
+LaTeX Font Warning: Command \large invalid in math mode on input line 223.
+
+[11]) (./线代临时.tex) [12] (./线性代数.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
 Package rerunfilecheck Info: File `线性代数.out' has not changed.
-(rerunfilecheck)             Checksum: 57DAC2F0BFE3DDE00297A6B12B0443D2;974.
+(rerunfilecheck)             Checksum: E586A752FC237F09E0121DD6A206ECEA;1221.
  ) 
 Here is how much of TeX's memory you used:
- 28712 strings out of 476376
- 620797 string characters out of 5799322
- 1864394 words of memory out of 5000000
- 48737 multiletter control sequences out of 15000+600000
+ 28721 strings out of 476376
+ 620981 string characters out of 5799322
+ 1869394 words of memory out of 5000000
+ 48743 multiletter control sequences out of 15000+600000
  524743 words of font info for 112 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,10n,97p,576b,482s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,16n,97p,576b,486s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 线性代数.pdf (8 pages).
+Output written on 线性代数.pdf (12 pages).
