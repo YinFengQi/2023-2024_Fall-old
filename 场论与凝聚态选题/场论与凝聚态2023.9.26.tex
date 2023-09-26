@@ -1,0 +1,141 @@
+% !TeX root = 场论与凝聚态.tex
+
+
+Insert a operator $\hat{B}(x)$ in between the path integral, 
+\begin{equation}
+    \begin{gathered}
+        \bra{x_N} U(t_N, t_m) \hat{B}(x) U(t_m, t_0) \ket{x_0} = 
+        \left( \prod_{n=1}^{N-1} \int \frac{\mathrm{d} p_{n+\frac{1}{2}}\mathrm{d} x_n}{2\pi \hbar} \right) \int \frac{\mathrm{d} p_{\frac{1}{2}}}{2\pi\hbar} 
+        B(x_m)
+        \\
+        \times \exp \frac{\mathrm{i} }{\hbar} \sum_{n=0}^{N-1} \left[ p_{\frac{1}{2}}(x_{n-1}- x_{n})  - \delta t \frac{H(p_{n+\frac{1}{2}}, x_{n+1}, t_{n+\frac{1}{2}}) + H(p_{n+\frac{1}{2}}, x_{n}, t_{n+ \frac{1}{2}})}{2}\right] .
+    \end{gathered}
+\end{equation}
+We simply need to add the value of the operator as a function of certain space coordinate in the expression of path integral.
+
+\section{Observables in QM}
+
+% 0
+\begin{equation}
+  \bra{\psi} A \ket{\psi}, \ A^{\dagger} = A.
+\end{equation}
+
+% 1
+Probability of projection,
+\begin{equation}
+  P = |\bra{\phi}\ket{\psi}|^2 = \bra{\psi} \underbrace{\ket{\phi} \bra{\phi}}_{\hat{A}}\ket{\psi}
+\end{equation}
+
+% 2
+Observables after evaluation,
+\begin{equation}
+  \bra{\phi} \underbrace{\mathrm{e}^{\mathrm{i} H t / \hbar} A \mathrm{e}^{- i H t / \hbar}}_{\hat{A}(t)} \ket{\psi}
+\end{equation}
+
+% 3
+Projection after evaluation: scattering
+\begin{equation}
+  P = |\bra{\psi} \mathrm{e}^{- \mathrm{i}  Ht / \hbar}\ket{\psi}|^2 = \bra{\psi} \underbrace{\mathrm{e}^{\mathrm{i} H t / \hbar} \ket{\phi}\bra{\phi} \mathrm{e}^{- i H t / \hbar}}_{\hat{A}(t)} \ket{\psi}
+\end{equation}
+
+% 4
+Retarded correlation
+\begin{equation}
+  H(t) = H_0 + \underbrace{a(t)}_{\text{small}} B.
+\end{equation}
+The contribution of $\bra{\psi}U^{\dagger}(t,0) A U(t,0)\ket{\psi}$ to the first order correction in $a$ is
+% 
+% 
+% 
+\begin{equation}
+    - \frac{\mathrm{i} }{\hbar} \int \mathrm{d} t' a(t')\Big[ \bra{\psi}U_0^{\dagger}(t,0) A U_0(t,t') B U_0(t',0) - U_0^{\dagger}(t,0) B U_0(t,t') A U_0(t',0)\ket{\psi} \Big] 
+\end{equation}
+
+
+
+
+\section{Path Integrals for Fields}
+There's a mattress with springs and massive balls connected. Denoting the offset of each ball as $\phi_{\vec{r}}$ the Hamiltonian is
+\begin{equation}
+  H = \sum_{\vec{r} \text{ on lattice}}\left[ \frac{p_{\vec{r}}^2}{2m} + V(\phi_{\vec{r}}) + \sum_{\hat{\tau} = 1}^d \frac{k}{2}\left( \phi_{\vec{r} + \alpha \vec{\tau}}  - \phi_{\vec{\tau}}\right)^2  \right] ,
+\end{equation}
+with a commutation relation 
+\begin{equation}
+  \left[ \phi_{\vec{r}}, p_{\vec{r}'} \right]  = \mathrm{i}  \hbar \delta_{\vec{r},\vec{r}'}.
+\end{equation}
+The interacting part of the Hamiltonian only involves pairs nearby.
+
+In continuum limit, $\displaystyle H = \int \mathrm{d} ^{d}\vec{r} \mathcal{H}(\vec{r})$, and we can write the Hamilton density as
+\begin{equation}
+  \mathcal{H}  = \frac{\pi(\vec{r})^2}{2\rho} + \mathcal{V} (\phi(\vec{r})) + \frac{\kappa}{2} \left[ \partial_{\vec{r}} \phi(\vec{r}) \right] ^2,
+\end{equation}
+where $\displaystyle \pi(\vec{r}) = \frac{p_{\vec{r}}}{\alpha^d}, \mathcal{V} = \frac{V}{\alpha^d}, \rho = \frac{m}{\alpha^d}, \kappa = \frac{k\alpha^2}{\alpha^d}$.
+
+\paragraph{Path Integral}
+At $t_n$, we use $\bigotimes_{\vec{r}} \ket{\phi(\vec{r})} $ basis, and $\bigotimes_{\vec{r}} \ket{\pi(\vec{r})} $ for $t_{n + \frac{1}{2}}$. 
+
+Analogously, we get
+\begin{equation}
+    \begin{gathered}
+        \bra{\text{end}}U(t,0)\ket{\text{start}} = 
+        \left( \prod_{t_n, \vec{r}} \frac{\mathrm{d} p_{t_n+\frac{1}{2}, \vec{r}} \ \mathrm{d} \phi_{t_n, \vec{r}}}{2\pi\hbar}  \right) _{\text{suitable boundary condition}}
+        \\
+        \times \exp
+        \frac{\mathrm{i} }{\hbar} \sum_{t_n, \vec{r}}\left[ 
+            p _{t_{n+\frac{1}{2}}, \vec{r}}\left( \phi_{t_{n+1}, \vec{r}} - \phi_{t_n, \vec{r}} \right)
+            -\delta t \left( 
+                \frac{p_{n+ \frac{1}{2}, \vec{r}}^2}{2m} + \frac{k}{2} \sum_{\hat{\tau} = 1}^d \left( \phi_{t_{n}, \vec{r} + \alpha \hat{\tau} } - \phi_{t_n, \vec{r}} \right) ^2 + V(\phi_{t_n, \vec{r}})
+             \right)  
+         \right] .
+    \end{gathered}
+\end{equation}
+Integrate out $p$, we obtain
+\begin{equation}
+  \begin{gathered}
+    \left( \prod_{t_n, \vec{r}} \sqrt{\frac{2\pi\hbar m}{\mathrm{i} \delta t}} \frac{\mathrm{d} \phi_{t_n, \vec{r}}}{2\pi\hbar}  \right) _{\text{suitable boundary condition}}
+    \\
+    \times 
+    \exp \frac{i\delta}{\hbar} \sum_{t_n, \vec{r}} 
+     \left[  
+            \frac{m}{2}\left( \frac{\phi_{t_{n+1},\vec{r}} - \phi_{t_n, \vec{r}}}{\delta t} \right)  - \frac{k\alpha^2}{2} \sum_{\hat{\tau} = 1}^d \left( \frac{\phi_{t_{n}, \vec{r} + \alpha \hat{\tau} } - \phi_{t_n, \vec{r}}}{\alpha} \right) ^2 - V(\phi_{t_n, \vec{r}})
+     \right],
+  \end{gathered}
+\end{equation}
+in which time and space stand in the same place, similar to relativistic K-G field.
+
+
+\section{Free Field Theory}
+For free fields, $V(\phi_{\vec{r}}) = \frac{u}{2}\phi_{\vec{r}}^2$, it behaves just like coupled simple harmonic oscillators.
+To find the normal modes, we use Fourier transformation.
+\begin{equation}
+  \phi_{\vec{r}} = \int_{-\frac{\pi}{\alpha}}^{\frac{\pi}{\alpha}} \frac{\mathrm{d}^d \vec{k}}{(2\pi)^d} \, \mathrm{e}^{\mathrm{i} \vec{k}\cdot \vec{r}}\phi_{\vec{k}} ,
+\end{equation}
+likewise for $p_{\vec{r}}$.
+
+$\phi_{\vec{r}}$ is real, thus $\phi_{\vec{r}} = \phi_{\vec{r}}^\dagger \implies \phi_{-\vec{k}} = \phi_{\vec{k}}^\dagger$, and the commutation relation is
+\begin{equation}
+  \left[ \phi_{\vec{k}}, p_{\vec{k}'} \right] = \mathrm{i} \hbar (2\pi)^d \delta^{d}(\vec{k} + \vec{k}').
+\end{equation}
+
+The Hamiltonian becomes
+\begin{equation}
+  H = \int_{-\frac{\pi}{\alpha}}^{\frac{\pi}{\alpha}} \frac{\mathrm{d} ^d \vec{k}}{(2\pi)^d}\frac{1}{2}
+  \left[ 
+    \frac{p_{-\vec{k}}p_{\vec{k}}}{2m} + \left( \frac{k}{2} \sum_{\vec{\tau} = 1}^d \left( 2 \sin \frac{\alpha k_i}{2} \right) ^2 + \frac{u}{2}  \right) \phi_{-\vec{k}}\phi_{\vec{k}}
+   \right] ,
+\end{equation}
+from which we can directly figure out the frequency $\omega_{\vec{k}} = \omega_{-\vec{k}} = \sqrt{\frac{k \sum_{\vec{\tau}} \left( \sin \frac{\alpha k_i}{2} \right) ^2 + U}{m}}$
+
+Next, we need to make a substitution, or Bogoliubov transformation:
+\begin{align}
+  \phi_{\vec{k}}^c = \frac{\phi_{\vec{k}}+\phi_{-\vec{k}}}{\sqrt{2}},
+  \\
+  \phi_{\vec{k}}^s = \mathrm{i} \frac{\phi_{\vec{k}} - \phi_{-\vec{k}}}{\sqrt{2}}.
+\end{align}
+the integration range becomes half of $\vec{k}$.
+
+
+
+
+\subsection{Ground State Wave Function and Entanglement}
+\subsection{Energy Gap and Corelation}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  20 SEP 2023 18:07
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  26 SEP 2023 20:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -678,7 +678,8 @@ File: pgflibrarycurvilinear.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \c@definition=\count340
 \c@lemma=\count341
 \c@theorem=\count342
-\c@example=\count343
+\c@proposition=\count343
+\c@example=\count344
 ) (./场论与凝聚态.aux)
 \openout1 = `场论与凝聚态.aux'.
 
@@ -805,23 +806,27 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 9.
  (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./场论凝聚态2023.9.19.tex [1
+) (./场论与凝聚态.toc)
+\tf@toc=\write5
+\openout5 = `场论与凝聚态.toc'.
 
-] [2]) [3] (./场论与凝聚态.aux)
+ (./场论凝聚态2023.9.19.tex [1
+
+] [2]) (./场论与凝聚态2023.9.26.tex [3] [4] [5]) (./场论与凝聚态临时.tex) [6] (./场论与凝聚态.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
 Package rerunfilecheck Info: File `场论与凝聚态.out' has not changed.
-(rerunfilecheck)             Checksum: 4302014F643E49A0A94D00572E7226A9;470.
+(rerunfilecheck)             Checksum: 496F13B39636998FA61ADC685A39E889;1393.
  ) 
 Here is how much of TeX's memory you used:
- 28620 strings out of 476376
- 618732 string characters out of 5799322
- 1861394 words of memory out of 5000000
- 48671 multiletter control sequences out of 15000+600000
- 523065 words of font info for 91 fonts, out of 8000000 for 9000
+ 28656 strings out of 476376
+ 619406 string characters out of 5799322
+ 1864394 words of memory out of 5000000
+ 48695 multiletter control sequences out of 15000+600000
+ 523089 words of font info for 94 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 93i,10n,97p,578b,349s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 93i,11n,97p,578b,348s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 场论与凝聚态.pdf (3 pages).
+Output written on 场论与凝聚态.pdf (6 pages).
