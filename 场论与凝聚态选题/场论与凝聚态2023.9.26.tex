@@ -14,43 +14,38 @@ Insert a operator $\hat{B}(x)$ in between the path integral,
 We simply need to add the value of the operator as a function of certain space coordinate in the expression of path integral.
 
 \section{Observables in QM}
+\begin{itemize}
+  \item \begin{equation}
+    \bra{\psi} A \ket{\psi}, \ A^{\dagger} = A.
+  \end{equation}
 
-% 0
-\begin{equation}
-  \bra{\psi} A \ket{\psi}, \ A^{\dagger} = A.
-\end{equation}
+  \item Probability of projection,
+  \begin{equation}
+    P = |\bra{\phi}\ket{\psi}|^2 = \bra{\psi} \underbrace{\ket{\phi} \bra{\phi}}_{\hat{A}}\ket{\psi}
+  \end{equation}
+  
+  \item Observables after evaluation,
+  \begin{equation}
+    \bra{\phi} \underbrace{\mathrm{e}^{\mathrm{i} H t / \hbar} A \mathrm{e}^{- i H t / \hbar}}_{\hat{A}(t)} \ket{\psi}
+  \end{equation}
 
-% 1
-Probability of projection,
-\begin{equation}
-  P = |\bra{\phi}\ket{\psi}|^2 = \bra{\psi} \underbrace{\ket{\phi} \bra{\phi}}_{\hat{A}}\ket{\psi}
-\end{equation}
+  \item Projection after evaluation: scattering
+  \begin{equation}
+    P = |\bra{\psi} \mathrm{e}^{- \mathrm{i}  Ht / \hbar}\ket{\psi}|^2 = \bra{\psi} \underbrace{\mathrm{e}^{\mathrm{i} H t / \hbar} \ket{\phi}\bra{\phi} \mathrm{e}^{- i H t / \hbar}}_{\hat{A}(t)} \ket{\psi}
+  \end{equation}
 
-% 2
-Observables after evaluation,
-\begin{equation}
-  \bra{\phi} \underbrace{\mathrm{e}^{\mathrm{i} H t / \hbar} A \mathrm{e}^{- i H t / \hbar}}_{\hat{A}(t)} \ket{\psi}
-\end{equation}
-
-% 3
-Projection after evaluation: scattering
-\begin{equation}
-  P = |\bra{\psi} \mathrm{e}^{- \mathrm{i}  Ht / \hbar}\ket{\psi}|^2 = \bra{\psi} \underbrace{\mathrm{e}^{\mathrm{i} H t / \hbar} \ket{\phi}\bra{\phi} \mathrm{e}^{- i H t / \hbar}}_{\hat{A}(t)} \ket{\psi}
-\end{equation}
-
-% 4
-Retarded correlation
-\begin{equation}
+  \item Retarded correlation
+  \begin{equation}
   H(t) = H_0 + \underbrace{a(t)}_{\text{small}} B.
 \end{equation}
-The contribution of $\bra{\psi}U^{\dagger}(t,0) A U(t,0)\ket{\psi}$ to the first order correction in $a$ is
-% 
-% 
-% 
-\begin{equation}
+  The contribution of $\bra{\psi}U^{\dagger}(t,0) A U(t,0)\ket{\psi}$ to the first order correction in $a$ is
+  \begin{equation}
     - \frac{\mathrm{i} }{\hbar} \int \mathrm{d} t' a(t')\Big[ \bra{\psi}U_0^{\dagger}(t,0) A U_0(t,t') B U_0(t',0) - U_0^{\dagger}(t,0) B U_0(t,t') A U_0(t',0)\ket{\psi} \Big] 
-\end{equation}
+  \end{equation}
 
+
+
+\end{itemize}
 
 
 
