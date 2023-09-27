@@ -1,0 +1,74 @@
+% !TeX root = 统力.tex
+
+\section{量子初步}
+
+\subsection{单粒子状态的量子描述}
+定态的波函数可以分离出时间项
+\begin{equation}
+  \psi(\vec{x},t) = \psi(\vec{x}) \mathrm{e}^{-\mathrm{i} E t / \hbar}
+\end{equation}
+满足定态薛定谔方程
+\begin{equation}
+  \hat{H}\psi = E \psi.
+\end{equation}
+
+\begin{example}
+    一维无限深方势阱.
+    \begin{equation}
+      \varepsilon_n = \frac{h^2 n^2}{8m L^2}.
+    \end{equation}
+    可以由驻波条件得到.
+
+    估算一下能级差, 对于经典系统, 取$L\sim 10^{-2}\text{m}, m\sim 10^{-27}\text{kg}$, 可以计算得到$\frac{h^2}{8mL^2} \sim 10^{-36}\text{J} \ \ll k_B T \sim 10^{-27}\text{J}$.
+    可见能量间距是非常小的.
+\end{example}
+
+\begin{example}
+    三维容器中的自由粒子.
+    \begin{equation}
+        \varepsilon_{n_1,n_2,n_3} = \frac{h^2}{8m L^2}(n_1^2 + n_2^2 + n_3^2).
+      \end{equation}
+\end{example}
+
+\begin{example}
+    谐振子.
+    \begin{equation}
+      \varepsilon_n = \hbar \omega \left( n+ \frac{1}{2} \right) .
+    \end{equation}
+\end{example}
+
+\begin{example}
+    转子.
+    \begin{equation}
+      H = -\frac{\hbar}{2I}\left[ \frac{1}{\sin\theta} \frac{\partial }{\partial \theta} \left( \sin\theta \frac{\partial }{\partial \theta} \right) + \frac{1}{\sin^2 \theta} \frac{\partial^2 }{\partial \phi^2} \right] 
+    \end{equation}
+    能级
+    \begin{equation}
+      \varepsilon_l = \frac{\hbar^2}{2I}l(l+1),
+    \end{equation}
+    简并度
+    \begin{equation}
+      \omega_l = 2l +1
+    \end{equation}
+    磁量子数:
+    \begin{equation}
+      L_z  = \hbar m
+    \end{equation}
+\end{example}
+
+\section{量子系统的状态}
+\paragraph{微观态:} 按照量子态的占据来区分.
+\paragraph{宏观态:} 依据能量来区分.
+
+\subsection{等几率假设}
+\textbf{Boltzmann等几率假设: 处于平衡态的孤立系统, 各可能微观状态出现的几率相等.}
+
+
+\chapter{系综理论}
+\subsection{系统微观状态的描述}
+
+\subsubsection{经典}
+描述经典系统时, 使用广义坐标$q$, 广义动量$p$. 单粒子的相空间为$\mu$空间, 例子的状态可以用$\mu$空间的点来描述. 粒子自由度为$\gamma$, 有$N$个粒子, 总共$f=\gamma N$个自由度. 系统的相空间为$\Gamma$空间, $\Gamma$空间的维数为$2 N \gamma$.
+
+\subsubsection{量子}
+使用力学量完全集$\{L,M, \cdots\}$的量子数$\{l,m,\cdots\}$来描述, 每微观态在$\Gamma$空间占据$h^f$的体积.

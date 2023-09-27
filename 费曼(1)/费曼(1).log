@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  22 SEP 2023 07:56
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  27 SEP 2023 09:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -806,7 +806,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 9.
  (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./费曼(1)2023.9.20.tex) (./费曼(1)2023.9.22.tex) (./费曼(1)临时.tex) [1
+) (./费曼(1)2023.9.20.tex) (./费曼(1)2023.9.22.tex) (./费曼(1)2023.9.26.tex) (./费曼(1)临时.tex) [1
 
 ] (./费曼(1).aux)
  ***********
@@ -817,10 +817,10 @@ Package rerunfilecheck Info: File `费曼(1).out' has not changed.
 (rerunfilecheck)             Checksum: A4D38B7CB412DD10A2D792A055E0D1FE;136.
  ) 
 Here is how much of TeX's memory you used:
- 28618 strings out of 476376
- 618613 string characters out of 5799322
+ 28624 strings out of 476376
+ 618744 string characters out of 5799322
  1852394 words of memory out of 5000000
- 48669 multiletter control sequences out of 15000+600000
+ 48672 multiletter control sequences out of 15000+600000
  520218 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,6n,97p,577b,335s stack positions out of 10000i,1000n,20000p,200000b,200000s

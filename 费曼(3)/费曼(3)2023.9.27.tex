@@ -1,0 +1,78 @@
+% !TeX root = 费曼(3).tex
+We can write in ths form,
+\begin{equation}
+  \bra{B(t_2)}\ket{A(t_1)} = \int \mathcal{D} x (t) \, \mathrm{e}^{\mathrm{i} S[x(t)]}.
+\end{equation}
+
+\subsection[单粒子力学]{Single Particle Mechanics}
+The Lagrangian is 
+\begin{equation}
+  \mathcal{L} = \frac{1}{2} m \dot{x}^2 - V(x)
+\end{equation}
+
+\subsection[电磁场]{Electromagnetic Field}
+Any field configuration can be described by a four-vector field.
+\begin{equation}
+  A_{\mu}(t,\vec{x}) = (\phi,\vec{A})
+\end{equation}
+The gauge invariant strength tensor is
+\begin{equation}
+  F_{\mu\nu} = \partial_{\mu}A_{\nu} - \partial_{\nu} A_{\mu}.
+\end{equation}
+The Lagrangian of EM field is
+\begin{equation}
+  \mathcal{L}  = -\frac{1}{4} F^{\mu\nu} F_{\mu\nu} + e j_{\mu} A^{\mu}.
+\end{equation}
+
+We can get the Maxwell equation by variation,
+\begin{equation}
+  -\partial ^{\nu} F_{\mu\nu} + ej _{\mu} = 0.
+\end{equation}
+
+\subsection[正规化和重整化]{Regularization and Renormalization}
+Some (perhaps most) path integrals are not well defined and we need to discretize the spacetime, or explicitly, describe the divergence in our theory. This process is called \textit{regularization}.
+
+However, the experiment results should have no business of the way of regularization. When we take all factors into consideration, we should get a relationship of the observables, independent of our way of regularization, which is called \textit{Renormalization}.
+
+\subsection[路径积分的检验]{Verify of Path Integral}
+Any quantum theory should satisfy two conditions, giving out the right evaluation and going back to classical mechanic when $\hbar \to 0$.
+
+\section[中子的晶格散射]{Neutron Scattering in Crystal Lattice}
+When we get a interference pattern on the observation screen, surprisingly we find out that except normal spiculate peaks, there are a homogeneous background in some kinds of crystal.
+
+We may write the amplitude of this scattering process on the $i$th point
+\begin{equation}
+  \bra{B}\ket{i}S\bra{i}\ket{A},
+\end{equation}
+where the $S$ is the scattering amplitude.
+
+Given that a quantum degree called \textit{spin} exists in both neutrons and atoms, several situations are we now faced up with. Scattering by nuclear forces may cause spin flip even if energy is low. 
+
+\begin{enumerate}
+    \item All \textit{in} and \textit{out} neutrons are spin-paralleled with atoms.
+    \begin{equation}
+      \bra{B}\ket{A} = \sum_i \bra{B}\ket{i}S\bra{i}\ket{A}.
+    \end{equation}
+    
+    \item All \textit{in} and \textit{out} neutrons are spin-anti-paralleled with atoms. This is the same as former.
+    
+    \item A non-trivial situation is that when a neutron and atom suffered spin flip in the process, final states are not the same and thus we need to sum up the probability \textbf{not the amplitude}.
+    \begin{equation}
+      P = \sum_{i} \left| \bra{B}\ket{i} R \bra{i} \ket{A} \right| ^2.
+    \end{equation}
+    There's no cross term, i.e., interference disappears.
+
+    Another explanation is, when spin flips, we can determine which lattice point the neutron passed. It becomes a which-way detector effectively, similar to electron two-slit interference!
+\end{enumerate}
+
+
+\section[全同粒子]{Identical Particles}
+In Rutherford scatter experiment, for instance, $\alpha$ particle collide with oxygen atom. We use a detector which can not distinguish $\alpha$ particles and oxygen atoms. In the center-of-mass reference frame, the probability is
+\begin{equation}
+  P = f(\theta) + f(\pi -\theta).
+\end{equation}
+
+This result does not hold on when we do the experiment of $\alpha-\alpha$ scattering. The final state are identical, we cannot label the $\alpha$ particles, thus,
+\begin{equation}
+  P = \left| f(\theta) + \mathrm{e}^{\mathrm{i} \delta} f(\pi - \theta) \right| ^2.
+\end{equation}
