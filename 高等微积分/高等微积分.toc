@@ -8,3 +8,19 @@
 \contentsline {subsection}{\numberline {3.1}戴德金分割}{7}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}确界定理}{8}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}确界定理应用}{11}{subsection.3.3}%
+\contentsline {section}{\numberline {4}极限理论}{11}{section.4}%
+\contentsline {paragraph}{解}{12}{paragraph*.2}%
+\contentsline {paragraph}{总结}{13}{paragraph*.3}%
+\contentsline {subsection}{\numberline {4.1}极限的性质}{13}{subsection.4.1}%
+\contentsline {paragraph}{推论}{13}{paragraph*.4}%
+\contentsline {paragraph}{推论}{14}{paragraph*.5}%
+\contentsline {paragraph}{推论}{14}{paragraph*.6}%
+\contentsline {paragraph}{推论(极限不等式)}{15}{paragraph*.7}%
+\contentsline {paragraph}{注意!}{15}{paragraph*.8}%
+\contentsline {subsection}{\numberline {4.2}极限的计算方法}{15}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}从定义直接计算}{15}{subsubsection.4.2.1}%
+\contentsline {paragraph}{证法一}{15}{paragraph*.9}%
+\contentsline {paragraph}{证法二(从定义验证)}{16}{paragraph*.10}%
+\contentsline {subsubsection}{\numberline {4.2.2}极限的四则运算}{16}{subsubsection.4.2.2}%
+\contentsline {paragraph}{乘积}{16}{paragraph*.11}%
+\contentsline {paragraph}{商}{17}{paragraph*.12}%

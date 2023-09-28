@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  25 SEP 2023 20:48
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  28 SEP 2023 22:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -814,22 +814,22 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ]
 LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <10.53937> not available
-(Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 82.
- [2] [3]) (./高微2023.9.21.tex [4] [5] [6] [7]) (./高微2023.9.25.tex [8] [9] [10]) (./高微临时.tex) [11] (./高等微积分.aux)
+(Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 69.
+ [2] [3]) (./高微2023.9.21.tex [4] [5] [6] [7]) (./高微2023.9.25.tex [8] [9] [10]) (./高微2023.9.28.tex [11] [12] [13] [14] [15] [16]) (./高微临时.tex) [17] (./高等微积分.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
 Package rerunfilecheck Info: File `高等微积分.out' has not changed.
-(rerunfilecheck)             Checksum: FF1E42EF8BB869411359FBDF1406BE10;927.
+(rerunfilecheck)             Checksum: 280AD13F8B45F73EC7B93214D52398E2;1463.
  ) 
 Here is how much of TeX's memory you used:
- 28723 strings out of 476376
- 621000 string characters out of 5799322
+ 28738 strings out of 476376
+ 621291 string characters out of 5799322
  1864394 words of memory out of 5000000
- 48745 multiletter control sequences out of 15000+600000
+ 48757 multiletter control sequences out of 15000+600000
  524743 words of font info for 112 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,18n,97p,577b,566s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 高等微积分.pdf (11 pages).
+Output written on 高等微积分.pdf (17 pages).
