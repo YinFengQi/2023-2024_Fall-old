@@ -267,15 +267,13 @@
     \begin{equation}\label{乘积中三角不等式}
       |a_n b_n- AB| = |(a_n -A)b_n + A(b_n - B)| \le  |a_n-A|\cdot|b_n| + |A|\cdot |b_n -B|
     \end{equation}
-
-    % 1
-    由$\left\{ b_n \right\} $收敛知其有界, 即$\exists M$使$|b_n| \le M, \forall n$.
-
-    % 2
-    由$\displaystyle \lim_{n \to \infty}a_n =A$知$\exists N_1 \in \mathbb{Z}_{1}, \forall n\ge N_1$有$|a_n -A| < \frac{\varepsilon}{2M}$.
-
-    % 3
-    由$\displaystyle \lim_{n \to \infty}b_n =B$知$\exists N_2 \in \mathbb{Z}_{1}, \forall n\ge N_2$有$|b_n -B| < \frac{\varepsilon}{2(|A|+1)}$.
+    \begin{itemize}
+      \item 由$\left\{ b_n \right\} $收敛知其有界, 即$\exists M$使$|b_n| \le M, \forall n$.
+      
+      \item 由$\displaystyle \lim_{n \to \infty}a_n =A$知$\exists N_1 \in \mathbb{Z}_{1}, \forall n\ge N_1$有$|a_n -A| < \frac{\varepsilon}{2M}$.
+      
+      \item 由$\displaystyle \lim_{n \to \infty}b_n =B$知$\exists N_2 \in \mathbb{Z}_{1}, \forall n\ge N_2$有$|b_n -B| < \frac{\varepsilon}{2(|A|+1)}$.
+    \end{itemize}
 
     从而, 令$N =\max\left\{ N_1,N_2 \right\} $, 对$n\ge N$, 代回\eqref{乘积中三角不等式}得
     \begin{equation}
@@ -290,15 +288,14 @@
       \le \frac{|a_n-A|}{|b_n|} + \frac{|A| \cdot |B - b_n|}{|b_n| |B|}.
     \end{gather}
 
-    % 1
-    由$B\neq 0$, 不妨设$B>0$. 由命题\ref{充分大指标的项保持极限不等式}知$\exists M\in \mathbb{Z}_{+}$使$\forall n \ge M$有$b_n > \frac{B}{2}$
-
-    % 2
-    由$\lim_{n \to \infty}a_n = A$知$\exists N_2, \forall  n\ge  N_2$有$|a_n -A| < \varepsilon' = \frac{\varepsilon}{2} \frac{B}{2} $
-
-    % 3
-    由$\lim_{n \to \infty}b_n = B$知$\exists N_3, \forall n\ge N_3$有$|b_n-B| < \varepsilon'' = \frac{\varepsilon}{2} \frac{\frac{1}{2}B^2 }{|A|+1} $
-
+    \begin{itemize}
+      \item 由$B\neq 0$, 不妨设$B>0$. 由命题\ref{充分大指标的项保持极限不等式}知$\exists M\in \mathbb{Z}_{+}$使$\forall n \ge M$有$b_n > \frac{B}{2}$
+      
+      \item 由$\lim_{n \to \infty}a_n = A$知$\exists N_2, \forall  n\ge  N_2$有$|a_n -A| < \varepsilon' = \frac{\varepsilon}{2} \frac{B}{2} $
+      
+      \item 由$\lim_{n \to \infty}b_n = B$知$\exists N_3, \forall n\ge N_3$有$|b_n-B| < \varepsilon'' = \frac{\varepsilon}{2} \frac{\frac{1}{2}B^2 }{|A|+1} $
+    \end{itemize}
+  
     $\forall \varepsilon > 0$取$N = \max\left\{ N_1, N_2,N_3 \right\} $, 对$\forall n\ge  N$有(代回\eqref{商中用到三角不等式})
     \begin{equation}
       \left| \frac{a_n}{b_n} - \frac{A}{B} \right|  \le  \frac{\frac{\varepsilon}{2} \frac{B}{2}}{\frac{B}{2}} + \frac{|A| \frac{\varepsilon}{2} \frac{\frac{1}{2} B^2}{|A|+1}}{\frac{B}{2} B} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
