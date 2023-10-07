@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  27 SEP 2023 17:15
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  7 OCT 2023 15:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -835,21 +835,32 @@ Overfull \hbox (54.35574pt too wide) in paragraph at lines 42--44
 \TU/lmr/m/n/10.53937 In a valid measurement, which means $\OMS/cmsy/m/n/10.53937 j\OML/cmm/m/it/10.53937 u\OMS/cmsy/m/n/10.53937 j ^^] j\OML/cmm/m/it/10.53937 v\OMS/cmsy/m/n/10.53937 j$\TU/lmr/m/n/10.53937 , there will be no interference term $[] \OML/cmm/m/it/10.53937 v [] [] v []$
  []
 
-) (./费曼(3)2023.9.27.tex [7] [8]) (./费曼(3)临时.tex) [9] (./费曼(3).aux)
+) (./费曼(3)2023.9.27.tex [7] [8]) (./费曼(3)2023.10.7.tex [9]
+第四章
+) (./费曼(3)临时.tex) [10
+
+] (./费曼(3).aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
-Package rerunfilecheck Info: File `费曼(3).out' has not changed.
-(rerunfilecheck)             Checksum: 709A94A8D5DD8DDB50FC91AA56712214;1403.
+
+
+Package rerunfilecheck Warning: File `费曼(3).out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `费曼(3).out':
+(rerunfilecheck)             Before: 709A94A8D5DD8DDB50FC91AA56712214;1403
+(rerunfilecheck)             After:  4C39EDBBEFE0DB9E89D554D6E1C9EF9B;1479.
  ) 
 Here is how much of TeX's memory you used:
- 28807 strings out of 476376
- 623402 string characters out of 5799322
+ 28813 strings out of 476376
+ 623533 string characters out of 5799322
  1859394 words of memory out of 5000000
- 48833 multiletter control sequences out of 15000+600000
+ 48836 multiletter control sequences out of 15000+600000
  523137 words of font info for 100 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,8n,97p,577b,431s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 费曼(3).pdf (10 pages).
+Output written on 费曼(3).pdf (11 pages).

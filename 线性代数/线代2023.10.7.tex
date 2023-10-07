@@ -1,0 +1,285 @@
+% !TeX root = 线性代数.tex
+
+\subsection{用行约化阶梯形式求解线性方程组}
+用行约化阶梯形式求解方程$Ax = b$, 方法如下
+
+\begin{itemize}
+    \item 考虑增广矩阵$[A|b]$, 做初等行变换, 把$A$变成行约化阶梯形式, 得到增广矩阵
+    \begin{equation}
+      [R|b']
+    \end{equation}
+    新的方程组$Rx = b'$的解空间和原来的方程一样.
+
+    \item $Rx = b'$的解(如果存在)为
+    \begin{equation}
+      x=x_p+x_n
+    \end{equation}
+    其中$x_p$为$Rx = b'$的特解, $x_n$为对应的齐次线性方程组($b'=0$)的所有解.
+    \begin{enumerate}
+        \item $x_p$可以求解如下: 取自由变量为零, 主元变量任意, 可以得到一个解.
+        \begin{example}
+            \begin{equation}
+              R = \begin{bmatrix}
+               1 & 0 & 2 & 3\\
+               0 & 1 & 0 & 1\\
+               0 & 0 & 0 & 0\\
+              \end{bmatrix}
+              , \quad
+              b' = \begin{bmatrix}
+               2\\
+               3\\
+               0\\
+              \end{bmatrix}
+            \end{equation}
+            特解为
+            \begin{equation}
+              x_p=\begin{bmatrix}
+               2\\
+               3\\
+               0\\
+               0\\
+              \end{bmatrix}.
+            \end{equation}
+        \end{example}
+
+        \item 齐次线性方程的解可以这样求:
+        取某一个自由变量为$1$, 其他自由变量为$0$, 主元变量任意. 这样可以一共得到$n-r$个解, 记为$s_i$, $n$是变量数目, $r$是主元数目.
+        则, 
+        \begin{equation}
+          x_n = a_1 s_1 +a_2s_2+ \cdots +a_n s_n.
+        \end{equation}
+        \begin{example}
+            继续求解上例中的线性方程.
+        
+            第一个通解:
+            \begin{equation}
+              \begin{bmatrix}
+               1 & 0 & 2 & 3\\
+               0 & 1 & 0 & 1\\
+               0 & 0 & 0 & 0\\
+              \end{bmatrix}
+              \begin{bmatrix}
+               x_1\\
+               x_2\\
+               1\\
+               0\\
+              \end{bmatrix} = 0
+            \end{equation}
+            得到$x_1=-2, x_2=0$, 特解向量为$s = \begin{bmatrix}
+             -2\\
+             0\\
+             1\\
+             0\\
+            \end{bmatrix}$.
+            另一个通解:
+            \begin{equation}
+              \begin{bmatrix}
+               1 & 0 & 2 & 3\\
+               0 & 1 & 0 & 1\\
+               0 & 0 & 0 & 0\\
+              \end{bmatrix}
+              \begin{bmatrix}
+               x_1\\
+               x_2\\
+               0\\
+               1\\
+              \end{bmatrix}=0
+            \end{equation}
+            解向量为$s_2 = \begin{bmatrix}
+             -3\\
+             -1\\
+             0\\
+             1\\
+            \end{bmatrix}$.
+        
+            于是原方程的所有解为
+            \begin{equation}
+              x = \begin{bmatrix}
+               2\\
+               3\\
+               0\\
+               0\\
+              \end{bmatrix}
+              + a_1 \begin{bmatrix}
+                -2\\
+                0\\
+                1\\
+                0\\
+            \end{bmatrix}+ a_2 \begin{bmatrix}
+                -3\\
+                -1\\
+                0\\
+                1\\
+            \end{bmatrix}.
+        \end{equation}
+    \end{example}
+\end{enumerate}
+\end{itemize}
+
+\subsection{齐次线性方程解空间的性质}
+\paragraph{基本性质}
+\begin{itemize}
+    \item 证明: 任何一个解都可以做上面的分解.
+
+    $x'$为一个解, $x_p$为另一个解, 那么
+    \begin{equation}
+      \begin{cases} 
+        Ax' = b
+        \\ 
+        A x_p = b 
+      \end{cases}
+    \end{equation}
+    两式相减得到
+    \begin{equation}
+      A(x' -x_p)=0
+    \end{equation}
+    即, $x' = x_p +x_n$ 中的$x_n$是齐次线性方程的解.
+
+    \item 反之, 对于任意的齐次线性方程的解$x_n$, $x_p + x_n$都是方程$Ax=b$的解.
+
+    证明: 
+    因为$\begin{cases} 
+      A x_p=b 
+      \\ 
+      A x_n=0 
+    \end{cases}
+    \implies A(x_p+ x_n) = b$.
+    
+\end{itemize}
+
+\paragraph{为什么$Ax=b$的解可以写成这种形式}
+
+\begin{itemize}
+    \item 如果 $v_1$ 为$Ax=0$的解, $v_2$也为解, 那么$v_1+v_2$也是方程的解.
+    
+    \item 如果$v$是一个解, 那么乘上一个系数$c$, $cv$也是方程的解.
+
+    因为$Av=0$, 那么$A (cv) = c (Av) = 0$.
+\end{itemize}
+
+这证明了$Ax=0$的解空间$N(A)$在向量加法及数乘下是封闭的.
+
+\subsection[一些概念]{线性子空间, 线性无关, 基, 维数}
+
+\paragraph{线性子空间}
+$\mathbb{R}^{m}$中的一个子空间$V$, 如果$V$在加法和数乘下面是封闭的, 那么这个子空间称为线性子空间.
+\subparagraph{构造线性子空间的方法}
+给定一组固定的向量$(v_1,v_2, \cdots ,v_n)$, 考虑所有的线性组合构成的空间
+\begin{equation}
+  V = \{ x_1 v_1 + x_2v_2 + \cdots + x_n v_n \}
+\end{equation}
+$V$是一个线性子空间, 称之为$(v_1, v_2, \cdots , v_n)$张成的线性子空间.
+
+\paragraph{线性无关}
+\begin{definition}
+    一组向量$(v_1,v_2, \cdots, v_n)$称为线性无关的, 如果下列的方程
+    \begin{equation}
+      x_1v_1+x_2v_2+ \cdots  +x_n v_n = 0
+    \end{equation}
+    只有$0$解, 即对应的齐次线性方程$Ax=0$只有$0$解.
+\end{definition}
+
+\begin{example}
+    $\mathbb{R}^{2}$中的$v_1 = \begin{bmatrix}
+     1\\
+     0\\
+    \end{bmatrix}, v_2 = \begin{bmatrix}
+     0\\
+     1\\
+    \end{bmatrix}$是线性无关的.
+\end{example}
+
+\begin{example}
+    如果$0$向量在这组向量中, 那么这组向量是线性相关的.
+\end{example}
+
+\paragraph{线性空间的基}
+\begin{definition}
+    一组线性无关的向量$(e_1,e_2, \cdots , e_m)$称之为$V$的一组基, 如果$V$中任意一个向量都可以表示为这组向量的线性组合,
+    \begin{equation}
+      v = x_1e_1+x_2e_2+ \cdots  + x_n e_n.
+    \end{equation}
+    基中的向量个数称作维数.
+\end{definition}
+
+\begin{example}
+    $\mathbb{R}^{2}$中的$e_1 = \begin{bmatrix}
+     1\\
+     0\\
+    \end{bmatrix}, \quad e_2 = \begin{bmatrix}
+     0\\
+     1\\
+    \end{bmatrix}$为一组基. 所以$\mathbb{R}^{2}$的维数为$2$.
+\end{example}
+
+\paragraph{基的几个重要性质}
+% 1
+坐标唯一性: 给定一组基$(e_1,e_2,\cdots , e_m)$, 根据基的定义, 任意的向量都可以写成$(e_1,e_2,\cdots , e_m)$的线性组合, 即
+\begin{equation}
+  v = a_1e_1+a_2e_2+ \cdots +a_m e_m.
+\end{equation}
+其中$(a_1,a_2,\cdots ,a_m)$称为$v$在基$(e_1,e_2,\cdots, e_m)$下的坐标.
+
+坐标是\textbf{唯一}的.
+\begin{proof}
+    假设坐标不唯一, $v$可以有两种展开方式:
+    \begin{equation}
+      \begin{aligned}
+        v & = a_1 e_1+a_2e_2+ \cdots +a_m e_m 
+        \\
+        v & = b_1 e_1+b_2e_2+ \cdots +b_m e_m 
+      \end{aligned}
+    \end{equation}
+    两式相减得到
+    \begin{equation}
+      0 = (a_1-b_1)e_1+(a_2-b_2)e_2+ \cdots (a_m - b_m)e_m
+    \end{equation}
+    这与基的线性无关矛盾.
+\end{proof}
+
+% 2
+基不唯一, 但维数定义的维数一样.
+\begin{proof}
+    反证法. 假设有两组基$(e_1,e_2,\cdots,e_m)$,$(f_1,f_2,\cdots,f_n)$, $n>m$.
+     
+    根据基的定义, $(f_1,f_2,\cdots,f_n)$可以写成$e_1,e_2,\cdots,e_m$的线性组合.
+    \begin{equation}
+      \begin{matrix}
+        f_1 = a_{11}e_1
+        + \cdots a_{m1} e_m
+        \\
+        \vdots
+        \\
+        f_n = a_{1n}e_1
+        + \cdots a_{mn} e_m
+      \end{matrix}
+    \end{equation}
+    把上述过程写成矩阵乘法的形式
+    \begin{equation}
+      F = \begin{bmatrix} f_1, f_2, \cdots, f_n \end{bmatrix},\quad E = \begin{bmatrix} e_1, e_2, \cdots, e_m \end{bmatrix}
+    \end{equation}
+    并且
+    \begin{equation}
+      F = EA,
+    \end{equation}
+    其中$A = (a_{ij})$, $A$为一个$m \times n$的矩阵.
+
+    考虑$Ax = 0$的解, 利用之前齐次线性方程组的解的性质, 参数个数为$(n-r)$, $r$为主元数目, 且$r \le m$.
+    所以$Ax=0$一定有非$0$的解($m\neq n$).
+
+    利用方程$F=EA$, 如果$Ax=0$有非零解, 那么
+    \begin{equation}
+      Fx=EAx = 0
+    \end{equation}
+    也有非零解, 和假设矛盾.
+\end{proof}
+
+% 3
+基的变换矩阵$A$为可逆的.
+\begin{proof}
+    有两组基$(f_1,f_2,\cdots,f_m), \ (e_1,e_2,\cdots,e_m)$, 
+    \begin{equation}
+      F = [f_1,f_2,\cdots,f_m], \quad E = [e_1,e_2,\cdots,e_m], \quad F=EA.
+    \end{equation}
+    $A$为$m \times m$矩阵.
+\end{proof}

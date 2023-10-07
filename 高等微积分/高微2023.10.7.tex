@@ -1,0 +1,165 @@
+% !TeX root = 高等微积分.tex
+
+\paragraph{推论}
+有限次四则运算和极限可交换.
+\begin{equation}
+    \lim_{k \to \infty}\sum_{i=1}^{n} x_{i,k} = \sum_{i=1}^{n} \lim_{k \to \infty} x_{i,k}
+\end{equation}
+
+\begin{equation}
+    \lim_{k \to \infty}\left( \prod_{i=1}^{n} x_{i,k} \right) = \prod_{i[=1]}^{n} \left( \lim_{k \to \infty} x_{i,k} \right)  
+\end{equation}
+
+\begin{proof}
+    只需$k-1$次使用前述定理.
+\end{proof}
+\paragraph{注意} 无限和/无限积与极限未必可交换.
+\begin{equation}
+    \lim_{k \to \infty}\sum_{i=1}^{\infty} x_{i,k} \neq \sum_{i=1}^{\infty} \left( \lim_{k \to \infty}x_{i,k} \right) 
+\end{equation}
+\begin{example}
+   待补充 
+\end{example}
+
+\textbf{类似地}, 有例子表明无限乘积与极限未必可交换.
+\subsubsection{夹逼定理}
+\begin{theorem}
+    设$a_n\le b_n\le c_n \ (\forall n \ge N_0 )$, 如果
+    \begin{equation}
+        \lim_{n \to \infty}a_n = \lim_{n \to \infty} c_n = L
+    \end{equation}
+    则$\displaystyle \lim_{n \to \infty} b_n$存在且等于$L$.
+\end{theorem}
+\begin{proof}
+    % 1
+    由$\displaystyle \lim_{n \to \infty}a_n = L$定义可知, 
+    \begin{equation}
+      \exists N_1,\ \forall n\ge N_1, \text{有} \left| a_n - L \right| < \varepsilon
+    \end{equation}
+    从而
+    \begin{equation}
+      L -\varepsilon < a_n
+    \end{equation}
+
+    % 2
+    由$\displaystyle \lim_{n \to \infty}c_n = L$定义可知, 
+    \begin{equation}
+      \exists N_2,\ \forall n\ge N_2, \text{有} \left| c_n - L \right| < \varepsilon
+    \end{equation}
+    从而
+    \begin{equation}
+      c_n < L+\varepsilon
+    \end{equation}
+
+    结合起来, $\forall  n \ge \max \{ N_i \}$, 有 $L-\varepsilon < a_n \le b_n \le c_n < L+\varepsilon$.
+\end{proof}
+
+\begin{example}
+    计算极限
+    \begin{equation}
+      \lim_{n \to \infty} \frac{a_k n^{k} + a_{k-1}n^{k-1} + \cdots + a_0}{n^{k}} = a_k
+    \end{equation}
+    因为
+    \begin{align}
+        \text{LHS} & = \lim_{n \to \infty}\left( a_k + \frac{a_{k-1}}{n} + \cdots + \frac{a_0}{n^{k}} \right) 
+        \\
+        & = \lim a_k + \lim \frac{a_{k-1}}{n} + \cdots 
+        \\
+        & = a_k + 0 + \cdots = a_k.
+    \end{align}
+\end{example}
+
+\begin{example}
+    \begin{align}
+      & \lim_{n \to \infty} \frac{a_kn^{k}+ a_{k-1}n^{k-1} + \cdots + a_0}{b_l n^{l} + b_{l-1} n^{l-1} + \cdots +b_0}
+      \\
+      & = \lim_{n \to \infty}\left( \frac{a_kn^{k}+ \cdots +a_0}{n^{k}} \frac{n^{l}}{b_l n^{l}+ \cdots +b_0} n^{k-l} \right) 
+      \\
+      & = \begin{cases} 
+        a_k \cdot \frac{1}{b_l}\cdot 0 = 0 , & k<l 
+        \\ 
+        a_k\cdot \frac{1}{b_l} \cdot 1 = 0, &  k=l
+        \\
+        \text{不存在(由引理)} , & k>l
+      \end{cases}
+    \end{align}
+    \begin{lemma}
+        设
+        % ============= 补充 ===============
+    \end{lemma}
+    \begin{proof}
+        
+    \end{proof}
+\end{example}
+
+
+\subsubsection[Stolz 定理]{计算极限的一个有用方法: Stolz theorem}
+\begin{definition}
+    称$\displaystyle \lim_{n \to \infty}x_n = +\infty$, 如果对$\forall k>0$,
+    \begin{equation}
+      \exists n\in \mathbb{Z}_{+} ,\ \forall n\ge N \text{有} x_n>k.
+    \end{equation}
+\end{definition}
+
+\begin{theorem}[Stolz Theorem]
+    设$\{ b_n \}$严格单调递增且无上界(或等价地说$\lim b_n = +\infty$).
+
+    设$\displaystyle \lim_{n \to \infty} \frac{a_{n+1}-a_n}{b_{n+1}-b_n}=L$, 则
+    \begin{equation}
+      \lim_{n \to \infty} \frac{a_n}{b_n} = L.
+    \end{equation}
+\end{theorem}
+
+\begin{proof}[证明 Stolz 定理]
+    由$\displaystyle \lim_{n \to \infty} \frac{a_{n+1}-a_n}{b_{n+1}-b_n}=L$的定义可知, $\exists N \in \mathbb{Z}_{+},\ \forall n \ge N$有
+    \begin{equation}
+      L-\varepsilon< \frac{a_{i+1}-a_i}{b_{i+1}-b_i} < L+\varepsilon 
+      \implies (L-\varepsilon)(b_{i+1}-b_{i}) < a_{i+1}-a_i < (L+\varepsilon)(b_{i+1}-b_i)
+    \end{equation} 
+    我们可以对上式对$i$从$N$到$n-1$求和, 得到
+    \begin{gather}
+      (L-\varepsilon)(b_{n}-b_{N}) < a_{n} - a_{N} < (L+\varepsilon)(b_{n}-b_{N})
+      \\
+      \mathop{\implies}\limits^{\text{除以}b_n}_{} 
+      (L-\varepsilon)\left( 1- \frac{b_{N}}{b_n} \right) + \frac{a_{N}}{b_n} < \frac{a_n}{b_n} < (L+\varepsilon)\left( 1- \frac{b_{N}}{b_n} \right) + \frac{a_{N}}{b_n}.
+    \end{gather}
+    同时注意到
+    \begin{equation}
+      \lim_{n \to \infty} \frac{b_{N}}{b_n} = 0,\ 
+      \lim_{n \to \infty} \frac{a_{N}}{b_n} = 0
+    \end{equation}
+    由于命题\ref{充分大指标的项保持极限不等式}``充分大指标的项保持极限不等式''
+    , 可知$\exists N_0 \in \mathbb{Z}_{+}$, 使得$\forall n > N_0$都有
+    \begin{equation}
+      \left| \frac{a_n}{b_n}-L \right| < 2\varepsilon.
+    \end{equation}
+\end{proof}
+
+% ===================== 补充 =================
+% 威尔斯特拉斯定理
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+% 
+
+
+\begin{theorem}[Euler]
+    $\displaystyle \lim_{n \to \infty}\left( 1+\frac{1}{n} \right) ^{n}$存在(记为$\mathrm{e}^{}$).
+\end{theorem}
+
+\begin{proof}
+    记$x_n = \left( 1+\frac{1}{n} \right) ^{n}$.
+    % 1
+    $\{ x_n \}$有上界, 因为
+
+\end{proof}
+
