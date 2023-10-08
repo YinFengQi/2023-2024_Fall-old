@@ -1,3 +1,84 @@
 % !TeX root = 费曼(3).tex
 \chapter[全同粒子]{Identical Particles}
+\section[自旋-统计关系]{Spin-Statistic Relation}
 
+At the end of last chapter, we discussed the effect of identity particle in scattering process. The additional phase factor comes from exchanging the pair of identical particles. We find that either $\mathrm{e}^{\mathrm{i} \delta} = 1$ or $\mathrm{e}^{\mathrm{i} \delta} = -1$, we can sort particles into two categories according to this factor, $+1$ called \textbf{Boson}, $-1$ called \textbf{Fermion}.
+
+Now we consider scattering experiment by electrons, note that
+\begin{equation}
+  P_{\uparrow \uparrow} = P_{\downarrow \downarrow} = \left| f(\theta) - f(\pi + \theta) \right| ^{2}
+\end{equation}
+\begin{equation}
+  P_{\uparrow \downarrow} = P_{\downarrow \uparrow} = |f(\theta)|^2 + |f(\theta + \pi)|^{2}
+\end{equation}
+In this experiment, we use a unpolarized source of electron (for instance, a electron tube), then
+\begin{equation}
+  P_1 = \frac{1}{4} \left( P_{\uparrow \uparrow} + P_{\downarrow \downarrow} + P_{\uparrow \downarrow} + P_{\downarrow \uparrow} \right) .
+\end{equation}
+
+\paragraph{Why there are only two possible factor}
+We have two particles in coordinate eigenstate, we now exchange them two times and this operation is effectively an identity operation and thus we have
+\begin{equation}
+  \left( \mathrm{e}^{\mathrm{i} \delta} \right) ^{2} = 1.
+\end{equation}
+Hence, we proofed the formal statement.
+
+However, we claimed that, ``exchange equals to no operation''. We have to note that a close path in 3D space is trivial in topology.
+
+\section[多粒子态]{Multi-Particle State}
+We now consider an experiment with two sources, A and B, emitting particles and there are two detectors, 1 and 2.
+Denote the amplitude of a particle going from A to 1 by $a_1$, and so on.
+
+Denote the probability of the two detectors both receiving particles by $P$.
+
+For identical ones, 
+\begin{equation}
+  P = \left| a_1 \right| ^{2}\left| b_2 \right| ^{2}+\left| a_2 \right| ^{2} \left| b_2 \right| ^{2}.
+\end{equation}
+
+For non-identical,
+\begin{equation}
+    P = \left| a_1 b_2 + a_2 b_1\right| ^{2}.
+\end{equation}
+
+If we move the two detectors close to each other in the limit $1\to 2$, we will find a difference.
+\begin{equation}
+  P_{\text{identical}} = 2 P_{\text{non-identical}}.
+\end{equation}
+
+\subsection[末态相空间积分]{Final State Phase Space Integral}
+When discussing the probability of getting an initial state at $\theta$, we are actually talking about the probability per unit solid angle $\mathrm{d} \Omega = \mathrm{d} \cos\theta \mathrm{d} \phi$.
+
+The probability of detector 1 receiving the particle is
+\begin{equation}
+  P = \int_{S_1}^{} \mathrm{d}S_1 \, |a_1|^{2} = |a_1|^{2} \Delta S.
+\end{equation}
+
+Now we repeat the experiment mentioned before.
+
+For different-type particles,
+\begin{equation}
+  P = \int_{S_1}^{} \mathrm{d}S_1 \, \int_{S_2}^{} \mathrm{d}S_2 \, \left( \left| a_1b_2 \right| ^{2} + \left| a_2 b_1 \right| ^{2} \right)   \simeq \left( \left| a_1b_2 \right| ^{2} + \left| a_2 b_1 \right| ^{2} \right) \Delta S_1 \Delta S_2
+\end{equation}
+When we take the limit, we have two divide the measurement by 2 for the overlap of detectors,
+\begin{equation}
+  P = \int_{S_1} \frac{\mathrm{d} S_1 \, \mathrm{d} S_2}{2} \left( \left| a_1b_2 \right| ^{2} + \left| a_2 b_1 \right| ^{2} \right).
+\end{equation}
+
+For identical particles,
+\begin{equation}
+  P = \int_{S_1} \frac{\mathrm{d} S_1\, \mathrm{d} S_2}{2} \left( \left| a_1b_2+a_2b_1 \right| ^{2} \right) 
+\end{equation}
+
+\paragraph{final state of n-Bosons}
+\begin{gather}
+  P = \int_{S_1} \frac{\mathrm{d} S_1 \cdots \mathrm{d} S_n}{n!} \left( \left| a_{1}^{(1)} a_2^{(2)} \cdots a_n^{(n)} + \text{all permutations of subscripts}  \right|  \right) 
+  \\
+  = n! \left| a_1^{(1)} a_2^{(2)} \cdots a_n^{(n)} \right| ^{2} \left( \Delta S_1 \right) ^{n}
+\end{gather}
+
+\subsection[黑体辐射]{Black Body Radiation}
+We now turn to study a box of photon gas in thermal equilibrium. 
+Photons (almost) do not interact with each other, and when they reach equilibrium, they must interact with atoms on the box.
+
+We choose an atom model which can absorb and emit photons, with the amplitude of $a$ and $a^{\dagger}$

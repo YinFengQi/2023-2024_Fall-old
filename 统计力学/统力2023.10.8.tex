@@ -1,0 +1,60 @@
+% !TeX root = 统力.tex
+\section{微正则系综}
+内能$U$, 体积$V$, 粒子数$N$给定的系综称为微正则系综.
+
+它的分布为
+\begin{equation}
+  \rho =\frac{1}{\Omega}
+\end{equation}
+对于量子系统, $\Omega$为能量的简并度. 对于经典系统, $\Omega$是和能量区间$\mathrm{d} E$有关的. 但是实际上$\mathrm{d} E$当作一个常数, 在取$\ln$的时候是无关紧要的.
+
+\section{正则系综}
+体积$V$, 粒子数$N$给定, 与一个温度为$T$的大热源达到热平衡的系综.
+符号规定, 系统: $A, E_{s}, T$, 热源: $A_r, E_r,T$.
+
+系统和热源一起构成了一个孤立系统. 能量是固定的, 忽略相互作用,
+\begin{equation}
+  E^{(0)}=E_s+E_r.
+\end{equation}
+系统在给定能量的微观态数为
+\begin{equation}
+  \Omega^{(0)}(E_s)=\Omega_s(E_s) \Omega_r(E^{(0)}E_s)
+\end{equation}
+于是大热源近似可得
+\begin{equation}
+  \rho \propto \Omega_r.
+\end{equation}
+
+对于上式取对数, 做泰勒展开
+\begin{equation}
+  \ln \Omega_r = (E_r) = \ln \Omega_r(E^{(0)}-E_s) \simeq \ln \Omega_r + \beta (- E_s),
+\end{equation}
+其中
+\begin{equation}
+  \beta =\left. \frac{\partial \ln \Omega}{\partial E} \right|_{E=E^{(0)}}
+\end{equation}
+
+于是我们得到了分布
+\begin{equation}
+  \rho_s \propto \exp(-\beta E_s)
+\end{equation}
+
+\paragraph{下面是一种有趣的估算}
+自由度为$f$, 
+\begin{equation}
+  \begin{gathered}
+    \rho_s \propto \Omega_r(E_r)\propto E_r^{f} =\left( E^{(0)}-E_s \right) ^{f}
+    \\
+    = {E^{(0)}}^{f} \left( 1 - \frac{E_s}{E^{(0)}} \right)^{f} 
+    = {E^{(0)}}^{f} \left( 1-x \right)^{\frac{f}{x} \frac{E_s}{E^{(0)}}} 
+    \\
+    \propto \mathrm{e}^{-\frac{f}{E^{(0)}}E_s} \sim \mathrm{e}^{-\beta E_s}
+  \end{gathered}
+\end{equation}
+最后一行用到了$\displaystyle \lim_{n \to \infty} \left( 1-x \right) ^{\frac{1}{x}} = \mathrm{e}^{}$, 由于能均分, 我们可以近似$\beta = \frac{f}{E^{(0)}}$.
+
+\section{熵和温度}
+熵的定义
+\begin{equation}
+  S \equiv k\ln\Omega(E).
+\end{equation}

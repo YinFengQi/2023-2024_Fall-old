@@ -1,6 +1,6 @@
 \contentsline {section}{\numberline {1}线性空间}{1}{section.1}%
-\contentsline {subsection}{\numberline {1.1}实数中运算的性质}{1}{subsection.1.1}%
-\contentsline {paragraph}{$+$满足的性质:}{1}{paragraph*.2}%
+\contentsline {subsection}{\numberline {1.1}实数中运算的性质}{2}{subsection.1.1}%
+\contentsline {paragraph}{$+$满足的性质:}{2}{paragraph*.2}%
 \contentsline {paragraph}{$*$满足的性质:}{2}{paragraph*.3}%
 \contentsline {paragraph}{$+$和$*$满足分配律:}{2}{paragraph*.4}%
 \contentsline {subsection}{\numberline {1.2}$\left ( \mathbb {R}^m, +, * \right ) $为一个线性空间}{3}{subsection.1.2}%
@@ -31,3 +31,6 @@
 \contentsline {paragraph}{线性无关}{16}{paragraph*.19}%
 \contentsline {paragraph}{线性空间的基}{16}{paragraph*.20}%
 \contentsline {paragraph}{基的几个重要性质}{16}{paragraph*.21}%
+\contentsline {paragraph}{转置的一些性质}{18}{paragraph*.22}%
+\contentsline {paragraph}{特殊矩阵}{19}{paragraph*.23}%
+\contentsline {subsection}{\numberline {2.5}线性代数基本定理}{19}{subsection.2.5}%

@@ -213,73 +213,73 @@ $V$是一个线性子空间, 称之为$(v_1, v_2, \cdots , v_n)$张成的线性�
 \end{example}
 
 \paragraph{基的几个重要性质}
-% 1
-坐标唯一性: 给定一组基$(e_1,e_2,\cdots , e_m)$, 根据基的定义, 任意的向量都可以写成$(e_1,e_2,\cdots , e_m)$的线性组合, 即
-\begin{equation}
-  v = a_1e_1+a_2e_2+ \cdots +a_m e_m.
-\end{equation}
-其中$(a_1,a_2,\cdots ,a_m)$称为$v$在基$(e_1,e_2,\cdots, e_m)$下的坐标.
+\begin{itemize}
+  \item 坐标唯一性: 给定一组基$(e_1,e_2,\cdots , e_m)$, 根据基的定义, 任意的向量都可以写成$$(e_1,e_2,\cdots , e_m)$$的线性组合, 即
+  \begin{equation}
+    v = a_1e_1+a_2e_2+ \cdots +a_m e_m.
+  \end{equation}
+  其中$(a_1,a_2,\cdots ,a_m)$称为$v$在基$(e_1,e_2,\cdots, e_m)$下的坐标.
+  
+  坐标是\textbf{唯一}的.
+  \begin{proof}
+      假设坐标不唯一, $v$可以有两种展开方式:
+      \begin{equation}
+        \begin{aligned}
+          v & = a_1 e_1+a_2e_2+ \cdots +a_m e_m 
+          \\
+          v & = b_1 e_1+b_2e_2+ \cdots +b_m e_m 
+        \end{aligned}
+      \end{equation}
+      两式相减得到
+      \begin{equation}
+        0 = (a_1-b_1)e_1+(a_2-b_2)e_2+ \cdots (a_m - b_m)e_m
+      \end{equation}
+      这与基的线性无关矛盾.
+  \end{proof}
 
-坐标是\textbf{唯一}的.
-\begin{proof}
-    假设坐标不唯一, $v$可以有两种展开方式:
-    \begin{equation}
-      \begin{aligned}
-        v & = a_1 e_1+a_2e_2+ \cdots +a_m e_m 
-        \\
-        v & = b_1 e_1+b_2e_2+ \cdots +b_m e_m 
-      \end{aligned}
-    \end{equation}
-    两式相减得到
-    \begin{equation}
-      0 = (a_1-b_1)e_1+(a_2-b_2)e_2+ \cdots (a_m - b_m)e_m
-    \end{equation}
-    这与基的线性无关矛盾.
-\end{proof}
+  \item 基不唯一, 但维数定义的维数一样.
+  \begin{proof}
+      反证法. 假设有两组基$(e_1,e_2,\cdots,e_m)$,$(f_1,f_2,\cdots,f_n)$, $n>m$.
+       
+      根据基的定义, $(f_1,f_2,\cdots,f_n)$可以写成$e_1,e_2,\cdots,e_m$的线性组合.
+      \begin{equation}
+        \begin{matrix}
+          f_1 = a_{11}e_1
+          + \cdots a_{m1} e_m
+          \\
+          \vdots
+          \\
+          f_n = a_{1n}e_1
+          + \cdots a_{mn} e_m
+        \end{matrix}
+      \end{equation}
+      把上述过程写成矩阵乘法的形式
+      \begin{equation}
+        F = \begin{bmatrix} f_1, f_2, \cdots, f_n \end{bmatrix},\quad E = \begin{bmatrix} e_1, e_2, \cdots, e_m \end{bmatrix}
+      \end{equation}
+      并且
+      \begin{equation}
+        F = EA,
+      \end{equation}
+      其中$A = (a_{ij})$, $A$为一个$m \times n$的矩阵.
+  
+      考虑$Ax = 0$的解, 利用之前齐次线性方程组的解的性质, 参数个数为$(n-r)$, $r$为主元数目, 且$r \le m$.
+      所以$Ax=0$一定有非$0$的解($m\neq n$).
+  
+      利用方程$F=EA$, 如果$Ax=0$有非零解, 那么
+      \begin{equation}
+        Fx=EAx = 0
+      \end{equation}
+      也有非零解, 和假设矛盾.
+  \end{proof}
 
-% 2
-基不唯一, 但维数定义的维数一样.
-\begin{proof}
-    反证法. 假设有两组基$(e_1,e_2,\cdots,e_m)$,$(f_1,f_2,\cdots,f_n)$, $n>m$.
-     
-    根据基的定义, $(f_1,f_2,\cdots,f_n)$可以写成$e_1,e_2,\cdots,e_m$的线性组合.
-    \begin{equation}
-      \begin{matrix}
-        f_1 = a_{11}e_1
-        + \cdots a_{m1} e_m
-        \\
-        \vdots
-        \\
-        f_n = a_{1n}e_1
-        + \cdots a_{mn} e_m
-      \end{matrix}
-    \end{equation}
-    把上述过程写成矩阵乘法的形式
-    \begin{equation}
-      F = \begin{bmatrix} f_1, f_2, \cdots, f_n \end{bmatrix},\quad E = \begin{bmatrix} e_1, e_2, \cdots, e_m \end{bmatrix}
-    \end{equation}
-    并且
-    \begin{equation}
-      F = EA,
-    \end{equation}
-    其中$A = (a_{ij})$, $A$为一个$m \times n$的矩阵.
+  \item 基的变换矩阵$A$为可逆的.
+  \begin{proof}
+      有两组基$(f_1,f_2,\cdots,f_m), \ (e_1,e_2,\cdots,e_m)$, 
+      \begin{equation}
+        F = [f_1,f_2,\cdots,f_m], \quad E = [e_1,e_2,\cdots,e_m], \quad F=EA.
+      \end{equation}
+      $A$为$m \times m$
+  \end{proof}
+\end{itemize}
 
-    考虑$Ax = 0$的解, 利用之前齐次线性方程组的解的性质, 参数个数为$(n-r)$, $r$为主元数目, 且$r \le m$.
-    所以$Ax=0$一定有非$0$的解($m\neq n$).
-
-    利用方程$F=EA$, 如果$Ax=0$有非零解, 那么
-    \begin{equation}
-      Fx=EAx = 0
-    \end{equation}
-    也有非零解, 和假设矛盾.
-\end{proof}
-
-% 3
-基的变换矩阵$A$为可逆的.
-\begin{proof}
-    有两组基$(f_1,f_2,\cdots,f_m), \ (e_1,e_2,\cdots,e_m)$, 
-    \begin{equation}
-      F = [f_1,f_2,\cdots,f_m], \quad E = [e_1,e_2,\cdots,e_m], \quad F=EA.
-    \end{equation}
-    $A$为$m \times m$矩阵.
-\end{proof}

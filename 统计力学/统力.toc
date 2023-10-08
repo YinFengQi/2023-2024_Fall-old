@@ -12,3 +12,7 @@
 \contentsline {subsection}{\numberline {2.0.1}系统微观状态的描述}{5}{subsection.2.0.1}%
 \contentsline {subsubsection}{经典}{5}{subsubsection*.4}%
 \contentsline {subsubsection}{量子}{5}{subsubsection*.5}%
+\contentsline {section}{\numberline {2.1}微正则系综}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}正则系综}{5}{section.2.2}%
+\contentsline {paragraph}{下面是一种有趣的估算}{6}{paragraph*.6}%
+\contentsline {section}{\numberline {2.3}熵和温度}{6}{section.2.3}%
