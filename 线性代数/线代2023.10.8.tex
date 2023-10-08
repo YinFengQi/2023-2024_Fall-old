@@ -11,111 +11,111 @@
 \end{definition}
 
 \paragraph{转置的一些性质}
-% 1
-\begin{equation}
-  \left( A^{\mathrm{T}} \right) ^{\mathrm{T}} = A.
-\end{equation}
+\begin{itemize}
+    \item \begin{equation}
+        \left( A^{\mathrm{T}} \right) ^{\mathrm{T}} = A.
+      \end{equation}
+    
+    \item \begin{equation}
+        \left( AB \right) ^{\mathrm{T}} = B^{\mathrm{T}}A^{\mathrm{T}}
+      \end{equation}
+    \begin{proof}
+          设$A\colon m \times n$, $B\colon k \times n$, 那么
+          \begin{equation}
+            \left( AB \right) _{ij} = \sum_{l=1}^{k} a_{ik}b_{lj}.
+          \end{equation}
+          根据转置的定义, 有
+          \begin{equation}
+            \left( AB \right) ^{\mathrm{T}}_{ij} = \left( AB \right) _{ji} = \sum_{l=1}^{k} a_{jl} b_{li}.
+          \end{equation}
+      
+          另一方面,
+          \begin{equation}
+            \left( B^{\mathrm{T}}A^{\mathrm{T}} \right) _{ij} = \sum_{l=1}^{k} \left( B^{\mathrm{T}} \right) _{li} \left( A^{\mathrm{T}} \right) _{jl} = \sum_{l=1}^{k} a_{jl} b_{li}.
+          \end{equation}
+    \end{proof}
 
-% 2
-\begin{equation}
-  \left( AB \right) ^{\mathrm{T}} = B^{\mathrm{T}}A^{\mathrm{T}}
-\end{equation}
-\begin{proof}
-    设$A\colon m \times n$, $B\colon k \times n$, 那么
-    \begin{equation}
-      \left( AB \right) _{ij} = \sum_{l=1}^{k} a_{ik}b_{lj}.
-    \end{equation}
-    根据转置的定义, 有
-    \begin{equation}
-      \left( AB \right) ^{\mathrm{T}}_{ij} = \left( AB \right) _{ji} = \sum_{l=1}^{k} a_{jl} b_{li}.
-    \end{equation}
+    \item \begin{equation}
+        \left( A^{\mathrm{T}} \right) ^{-1} = \left( A^{-1} \right) ^{\mathrm{T}}.
+      \end{equation}
+      \begin{proof}
+          因为
+          \begin{equation}
+            A A^{-1} = I,
+          \end{equation}
+          两边取转置得到
+          \begin{equation}
+            \left( A^{-1} \right) ^{\mathrm{T}} A^{\mathrm{T}} = I \implies \left( A^{\mathrm{T}} \right) ^{-1} = \left( A^{-1} \right) ^{\mathrm{T}}.
+          \end{equation}
+      \end{proof}
+\end{itemize}
 
-    另一方面,
-    \begin{equation}
-      \left( B^{\mathrm{T}}A^{\mathrm{T}} \right) _{ij} = \sum_{l=1}^{k} \left( B^{\mathrm{T}} \right) _{li} \left( A^{\mathrm{T}} \right) _{jl} = \sum_{l=1}^{k} a_{jl} b_{li}.
-    \end{equation}
-\end{proof}
-
-% 3
-\begin{equation}
-  \left( A^{\mathrm{T}} \right) ^{-1} = \left( A^{-1} \right) ^{\mathrm{T}}.
-\end{equation}
-\begin{proof}
-    因为
-    \begin{equation}
-      A A^{-1} = I,
-    \end{equation}
-    两边取转置得到
-    \begin{equation}
-      \left( A^{-1} \right) ^{\mathrm{T}} A^{\mathrm{T}} = I \implies \left( A^{\mathrm{T}} \right) ^{-1} = \left( A^{-1} \right) ^{\mathrm{T}}.
-    \end{equation}
-\end{proof}
 
 \paragraph{特殊矩阵}
-% 1
-对称矩阵: $A^{\mathrm{T}}=A$.
-\begin{equation}
-  A_{ij}=A_{ji}.
-\end{equation}
-\begin{example}
+\begin{itemize}
+    \item 对称矩阵: $A^{\mathrm{T}}=A$.
     \begin{equation}
-      \begin{bmatrix}
-       2 & 4\\
-       4 & 3\\
-      \end{bmatrix}.
+      A_{ij}=A_{ji}.
     \end{equation}
-\end{example}
-\begin{example}
-    \begin{equation}
-      \begin{bmatrix}
-       2 & 3 & 1\\
-       3 & 4 & 3\\
-       1 & 3 & 4\\
-      \end{bmatrix}.
-    \end{equation}
-\end{example}
+    \begin{example}
+        \begin{equation}
+          \begin{bmatrix}
+           2 & 4\\
+           4 & 3\\
+          \end{bmatrix}.
+        \end{equation}
+    \end{example}
+    \begin{example}
+        \begin{equation}
+          \begin{bmatrix}
+           2 & 3 & 1\\
+           3 & 4 & 3\\
+           1 & 3 & 4\\
+          \end{bmatrix}.
+        \end{equation}
+    \end{example}
 
-% 2
-反对称矩阵: $A^{\mathrm{T}} = -A$.
-可知, 其对角线都为零.
+    \item 反对称矩阵: $A^{\mathrm{T}} = -A$.
+    可知, 其对角线都为零.
+    
+    \begin{example}
+        \begin{equation}
+          \begin{bmatrix}
+           0 & 1 & 1\\
+           -1 & 0 & -1\\
+           -1 & 1 & 0\\
+          \end{bmatrix}.
+        \end{equation}
+    \end{example}
+\end{itemize}
 
-\begin{example}
-    \begin{equation}
-      \begin{bmatrix}
-       0 & 1 & 1\\
-       -1 & 0 & -1\\
-       -1 & 1 & 0\\
-      \end{bmatrix}.
-    \end{equation}
-\end{example}
 
 下面我们回到方程$Ax=b$, $A$可以定义四个线性子空间.
-% enumerate
-% 1
-$A$的列向量张成的线性子空间$C(A)$, 它的维数称为$A$的列秩.
-\begin{example}
-    对于 $$
-    \begin{bmatrix}
-     1 & 0 & 0\\
-     0 & 0 & 1\\
-     0 & 0 & 0\\
-    \end{bmatrix}.
-    $$
-    $C(A) = \begin{bmatrix}
-     x_1\\
-     x_3\\
-     0\\
-    \end{bmatrix}$, 是三维空间的$x-y$平面.
-\end{example}
+\begin{enumerate}
+    \item $A$的列向量张成的线性子空间$C(A)$, 它的维数称为$A$的列秩.
+    \begin{example}
+        对于 $$
+        \begin{bmatrix}
+         1 & 0 & 0\\
+         0 & 0 & 1\\
+         0 & 0 & 0\\
+        \end{bmatrix}.
+        $$
+        $C(A) = \begin{bmatrix}
+         x_1\\
+         x_3\\
+         0\\
+        \end{bmatrix}$, 是三维空间的$x-y$平面.
+    \end{example}
 
-% 2
-$A$的行向量张成的线性子空间$C(A^{\mathrm{T}})$, 它的维数称为$A$的行秩.
+    \item $A$的行向量张成的线性子空间$C(A^{\mathrm{T}})$, 它的维数称为$A$的行秩.
+    
+    \item $A$的零空间$N(A)$. 线性方程组$Ax=0$的所有解. $N(A)$的维数为$n-r$, $r$为主元数.
+    
+    \item $A^{\mathrm{T}}$的零空间$N(A^{\mathrm{T}})$. 线性方程组$A^{\mathrm{T}}x = 0$的所有解.
+\end{enumerate}
 
-% 3
-$A$的零空间$N(A)$. 线性方程组$Ax=0$的所有解. $N(A)$的维数为$n-r$, $r$为主元数.
 
-% 4
-$A^{\mathrm{T}}$的零空间$N(A^{\mathrm{T}})$. 线性方程组$A^{\mathrm{T}}x = 0$的所有解.
 
 \subsection{线性代数基本定理}
 \begin{theorem}
@@ -148,7 +148,7 @@ $A^{\mathrm{T}}$的零空间$N(A^{\mathrm{T}})$. 线性方程组$A^{\mathrm{T}}x
     \end{equation}
     所以有$V(w') \subset V(w)$. 反之, 也有$V(w) \subset V(w')$.
 
-    所以$V(w')=V(w)$.
+    可得$V(w')=V(w)$.
 
     \textbf{初等行变换对于列向量子空间的影响}
 
@@ -166,12 +166,10 @@ $A^{\mathrm{T}}$的零空间$N(A^{\mathrm{T}})$. 线性方程组$A^{\mathrm{T}}x
 
 \end{proof}
 
-所以, 我们只需考虑行约化阶梯形式$R$, 通过观察$R$的形式, 可以发现
-
-% 1
-$R$的列秩等于行秩.
-
-% 2
-$R$的行向量子空间及列向量子空间的维数等于主元数目.
-
+我们只需考虑行约化阶梯形式$R$, 通过观察$R$的形式, 可以发现
+\begin{itemize}
+    \item $R$的列秩等于行秩.
+    
+    \item $R$的行向量子空间及列向量子空间的维数等于主元数目.
+\end{itemize}
 
