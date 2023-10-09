@@ -18,7 +18,17 @@
     \lim_{k \to \infty}\sum_{i=1}^{\infty} x_{i,k} \neq \sum_{i=1}^{\infty} \left( \lim_{k \to \infty}x_{i,k} \right) 
 \end{equation}
 \begin{example}
-   待补充 
+   对于一个下表这样一个数列$x_{i,k}$,
+   \begin{center}
+    \begin{tabular}{c|c|c|c|c}
+           &$k=1$&$k=2$  &$k=3$  &$\cdots$    \\ \hline
+      $i=1$&$\frac{1}{1}$  &$\frac{1}{2}$  &$\frac{1}{3}$  &  \\ \hline
+      $i=2$&$0$  &$\frac{1}{2}$  &$\frac{1}{3}$  &  \\ \hline
+      $i=3$&$0$  &$0$  &$\frac{1}{3}$  &  \\ \hline
+      $\vdots$
+    \end{tabular}
+  \end{center}
+  纵向求和, 值是$1$, 但先取极限$k\to \infty$每一项都变为零, 再纵向求和, 值是$0$.
 \end{example}
 
 \textbf{类似地}, 有例子表明无限乘积与极限未必可交换.
@@ -31,8 +41,9 @@
     则$\displaystyle \lim_{n \to \infty} b_n$存在且等于$L$.
 \end{theorem}
 \begin{proof}
-    % 1
-    由$\displaystyle \lim_{n \to \infty}a_n = L$定义可知, 
+  对于左右两边的数列极限,
+  \begin{itemize}
+    \item 由$\displaystyle \lim_{n \to \infty}a_n = L$定义可知, 
     \begin{equation}
       \exists N_1,\ \forall n\ge N_1, \text{有} \left| a_n - L \right| < \varepsilon
     \end{equation}
@@ -41,8 +52,7 @@
       L -\varepsilon < a_n
     \end{equation}
 
-    % 2
-    由$\displaystyle \lim_{n \to \infty}c_n = L$定义可知, 
+    \item 由$\displaystyle \lim_{n \to \infty}c_n = L$定义可知, 
     \begin{equation}
       \exists N_2,\ \forall n\ge N_2, \text{有} \left| c_n - L \right| < \varepsilon
     \end{equation}
@@ -50,7 +60,8 @@
     \begin{equation}
       c_n < L+\varepsilon
     \end{equation}
-
+  \end{itemize}
+    
     结合起来, $\forall  n \ge \max \{ N_i \}$, 有 $L-\varepsilon < a_n \le b_n \le c_n < L+\varepsilon$.
 \end{proof}
 
@@ -85,13 +96,64 @@
     \end{align}
     \begin{lemma}
         设
-        % ============= 补充 ===============
+        \begin{equation}
+          \begin{aligned}
+            & \lim_{n \to \infty}x_n = X \neq 0,
+            \\
+            & \lim_{n \to \infty} y_n = Y \neq 0,
+            \\
+            & \lim_{n \to \infty}Z_n \text{不存在},
+          \end{aligned}
+        \end{equation}
+        则 
+        \begin{equation}
+          \lim_{n \to \infty} \left( x_n y_n z_n \right) \text{不存在}.
+        \end{equation}
     \end{lemma}
     \begin{proof}
-        
+        反证法, 设$\displaystyle \lim_{n \to \infty}\left( x_n y_n z_n \right) = L$存在, 则
+        \begin{align}
+          \lim_{n \to \infty} z_n & = \lim_{n \to \infty} \left[ \left( x_n y_n z_n  \right) \frac{1}{x_n} \frac{1}{y_n} \right] 
+          \\
+          & = \lim_{n \to \infty} \left( x_n y_n z_n \right) \lim_{n \to \infty} \frac{1}{x_n} \lim_{n \to \infty} \frac{1}{y_n}
+          \\
+          & = L \cdot X \cdot Y.
+        \end{align}
+        与条件$\displaystyle \lim_{n \to \infty}z_n \text{不存在}$矛盾!
     \end{proof}
 \end{example}
 
+\begin{example}
+  设$a_1,a_2,\cdots,a_k$是正数, 求
+  \begin{equation}
+    \lim_{n \to \infty} \left( a^n_1,a^n_2,\cdots,a^n_k \right)^{\frac{1}{n}}. 
+  \end{equation}
+  \textbf{解} 不妨设$a_1=\max \{ a_i \}$, 有
+  \begin{equation}
+    \left( a_1^{n} \right) ^{\frac{1}{n}} \le \left( a^n_1,a^n_2,\cdots,a^n_k \right) ^{\frac{1}{n}} \le \left( k a_1^{n} \right) ^{\frac{1}{n}}.
+  \end{equation}
+  注意到
+  \begin{equation}
+    \lim_{n \to \infty} \left( a_1^{n} \right) ^{\frac{1}{n}} = a_1, \ \lim_{n \to \infty}\left( k a_1^{n} \right) ^{\frac{1}{n}} = \lim_{n \to \infty} \sqrt[n]{k} a_1 = a_1.
+  \end{equation}
+  使用夹逼定理得到
+  \begin{equation}
+    \lim_{n \to \infty} \left( a^n_1,a^n_2,\cdots,a^n_k \right)^{\frac{1}{n}} = \max \{ a_i \}
+  \end{equation}
+\end{example}
+
+\begin{example}
+  进一步,
+  \begin{align}
+    & \lim_{n \to \infty} \left( a^{-n}_1,a^{-n}_2,\cdots,a^{-n}_k \right) ^{-\frac{1}{n}}
+    \\
+    = & \lim_{n \to \infty} \frac{1}{\left[ \left( \frac{1}{a_1} \right) ^{n} + \cdots + \left( \frac{1}{a_n} \right) ^{n} \right] ^{\frac{1}{n}}}
+    \\
+    = & \frac{1}{\max\left\{ \frac{1}{a_i} \right\}} = \frac{1}{1 / \min \{ a_i \}} 
+    \\
+    = & \min \{ a_i \}.
+  \end{align}
+\end{example}
 
 \subsubsection[Stolz 定理]{计算极限的一个有用方法: Stolz theorem}
 \begin{definition}
@@ -135,21 +197,32 @@
     \end{equation}
 \end{proof}
 
-% ===================== 补充 =================
-% 威尔斯特拉斯定理
-% 
-% 
-% 
-% 
-% 
-% 
-% 
-% 
-% 
-% 
-% 
-% 
-% 
+\subsubsection[单调极限定理]{单调极限定理(Weierstrass定理)(Monotone Converge Theorem)}
+\begin{theorem}[单调极限定理]
+  有上界且递增的数列一定收敛; 有下界且递降的数列一定收敛.
+\end{theorem}
+\begin{proof}
+  设$\{ x_i \}$递增且有上界, 考虑单步点集
+  \begin{equation}
+    X = \{ x_n | n\in \mathbb{Z}_{+} \},
+  \end{equation}
+  可知$X$非空且有上界, 由确界定理知, $\sup X$存在, 记为$L$.
+
+  由$\sup X = L$的定义知,
+  \begin{equation}
+    \forall \varepsilon >0 ,\ L- \varepsilon \text{不是$X$上界},
+  \end{equation}
+  即$\exists  N\in \mathbb{Z}_{+}$, 使得$x_N > L-\varepsilon $, 从而对于
+  $\forall n \ge  N$都有
+  \begin{equation}
+    L-\varepsilon < x_N \le  x_n \le  L,
+  \end{equation}
+  即
+  \begin{equation}
+    \left| x_n - L  \right| < \varepsilon.
+  \end{equation}
+  这表明$\displaystyle \lim_{n \to \infty}x_n = L$.
+\end{proof}
 
 
 \begin{theorem}[Euler]
@@ -160,6 +233,15 @@
     记$x_n = \left( 1+\frac{1}{n} \right) ^{n}$.
     % 1
     $\{ x_n \}$有上界, 因为
-
+    $\boxed{ \quad \text{待补充}\quad }$
+    % ==================== 待补充 =================
+    % 
+    % 
+    % 
+    % 
+    % 
+    % 
+    % 
+    % 
 \end{proof}
 

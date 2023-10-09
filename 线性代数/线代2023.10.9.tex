@@ -1,0 +1,133 @@
+% !TeX root = 线性代数.tex
+
+\begin{example}
+    秩为$1$的矩阵的形式: 
+    从列向量的角度来看, 
+    \begin{equation}
+      A = \begin{bmatrix} a_1v_i, \cdots, v_i, \cdots, a_nv_i \end{bmatrix}.
+    \end{equation}
+    (其中$v_1$是非零向量)
+\end{example}
+
+\begin{definition}
+    一个矩阵称为满秩的, 如果秩为最大可能值(行数列数中较小的一个).
+\end{definition}
+
+\begin{equation}
+  \begin{aligned}
+    \operatorname{dim}\left( N(A) \right) & = n-r 
+    \\
+    \operatorname{dim}\left( N(A^{\mathrm{T}}) \right) & = m-r
+    \\
+    \operatorname{dim}\left( C(A) \right) & = r
+    \\
+    \operatorname{dim}\left( C(A^{\mathrm{T}}) \right) & = r
+  \end{aligned}
+\end{equation}
+
+我们给线性空间上附加一个新的结构: 内积
+\begin{definition}
+    对于线性空间$\mathbb{R}^{m}$中的两个向量, 定义内积
+    \begin{equation}
+      \vec{v}\cdot \vec{w} = \sum_{i=1}^{m} v_i w_i.
+    \end{equation}
+\end{definition}
+
+把 $v,w$看成$m \times 1$的矩阵, 可以把内积写成矩阵乘法的形式,
+\begin{equation}
+  \vec{v}\cdot \vec{w} = v^{\mathrm{T}}w=w^{\mathrm{T}}v.
+\end{equation}
+
+有了内积, 可以定义一些东西
+\begin{itemize}
+    \item 向量$v$的长度
+    \begin{equation}
+        |v| = \sqrt{v\cdot v}=\sqrt{v^{\mathrm{T}}v}.
+    \end{equation}
+    \item 两个向量垂直$v\bot w$, 如果
+    \begin{equation}
+        v \cdot w = 0.
+    \end{equation}
+\end{itemize}
+
+对于线性方程组$Ax=b$, 当$b$属于$C(A)$时, 有解. 此时
+\begin{equation}
+  A'= [A\  b], \quad \operatorname{rank}(A')=\operatorname{rank}A
+\end{equation}
+无解时, 
+\begin{equation}
+  \operatorname{rank}(A')=\operatorname{rank}(A)+1.
+\end{equation}
+
+考虑$Ax=0$齐次线性方程组的解, 
+\begin{equation}
+  Ax = \begin{bmatrix} 
+  \vec{w}_1\cdot x \\ 
+  \vec{w}_2\cdot x \\ 
+  \vdots \\ 
+  \vec{w}_n\cdot x 
+  \end{bmatrix}=0
+\end{equation}
+这意味着$Ax=0$的解垂直于$A$的行向量子空间
+\begin{equation}
+  N(A)\bot C(A^{\mathrm{T}}).
+\end{equation}
+
+\subsection{正交投影}
+
+如果$Ax=b$无解, $b \notin C(A)$. 在这种情况, 我们寻找一个最接近的$b' \in C(A)$, 此时$e=\vec{b}-\vec{b}' \bot C(A)$.
+\begin{definition}
+    上述的$b'$称为$b$在空间$C(A)$中的正交投影.
+\end{definition}
+
+\begin{example}
+    下面考虑一个矢量$\vec{b}$在另一个矢量$\vec{a}$上的投影$\vec{p}$,
+    \begin{equation}
+      \vec{p} \parallel \vec{a} ,\ \  |\vec{p}| = |\vec{b}| \cos \theta
+    \end{equation}
+    于是
+    \begin{equation}
+      \vec{p} = |\vec{b}|\cos\theta \frac{\vec{a}}{|\vec{a}|} =\frac{\vec{b}\cdot \vec{a}}{|\vec{a}|} \frac{\vec{a}}{|\vec{a}|}= \frac{\left( a^{\mathrm{T}}b \right) a}{a^{\mathrm{T}}a} = \left( \frac{a a^{\mathrm{T}}}{a^{\mathrm{T}} a} \right) b \equiv  P b.
+    \end{equation}
+    上式中的的$\displaystyle P= \frac{a a^{\mathrm{T}}}{a^{\mathrm{T}} a}$称为投影矩阵.
+\end{example}
+
+\subsubsection{投影矩阵}
+考虑一般情况, 有一组向量$(v_1,v_2,\cdots,v_n)$, 这组向量张成一个线性子空间, 记为$C(A)$. 
+下面我们要将一个向量$\vec{b}$正交投影到这个空间, 投影后的向量记为$\vec{p}$. 正交投影意味着$\vec{b}-\vec{p}$垂直于$C(A)$.
+
+回忆前面线性方程组的几何意义, $(\vec{b}-\vec{p})\bot C(A)$等价于
+\begin{equation}
+  A^{\mathrm{T}} \left( b-p \right) = 0. 
+\end{equation}
+因为$\vec{p}$在$C(A)$中, 可以用$(v_1,v_2,\cdots,v_n)$来线性表示, 表示系数记为$\hat{x}$, 具体来说,
+\begin{equation}
+  p = \hat{x}_1 v_1 + \cdots + \hat{x}_n v_n = \hat{x} A.
+\end{equation}
+带入上面的垂直条件, 
+\begin{equation}
+  A^{\mathrm{T}}b - A^{\mathrm{T}}A \hat{x} = 0 \implies A^{\mathrm{T}} A \hat{x} = A^{\mathrm{T}} b .
+\end{equation}
+
+如果$A^{\mathrm{T}}A$可逆, 那么我们有
+\begin{equation}
+  \hat{x} = \left( A^{\mathrm{T}}A  \right) ^{-1} A^{\mathrm{T}} b .
+\end{equation}
+
+于是我们得到
+\begin{equation}
+  p = A \hat{x} = \underbrace{\left[ A \left( A^{\mathrm{T}}A \right) ^{-1} A^{\mathrm{T}} \right] }_{\text{投影矩阵} P} b .
+\end{equation}
+
+\paragraph{投影矩阵的两个性质}
+\begin{itemize}
+    \item $P^{2}=P$
+    \begin{equation}
+      P^{2} = A \left( A^{\mathrm{T}}A \right) ^{-1} A^{\mathrm{T}} A \left( A^{\mathrm{T}}A \right)^{-1} A^{\mathrm{T}} = A\left( A^{\mathrm{T}}A \right) ^{-1} A^{\mathrm{T}} = P.
+    \end{equation}
+
+    \item $P^{\mathrm{T}}=P$
+    \begin{equation}
+      P^{\mathrm{T}} = \left[ A \left( A^{\mathrm{T}}A \right) ^{-1}A^{\mathrm{T}} \right] ^{\mathrm{T}} = A \left[ \left( A^{\mathrm{T}}A \right) ^{-1} \right] ^{\mathrm{T}} A^{\mathrm{T}} = A \left( A^{\mathrm{T}}A \right) ^{-1} A^{\mathrm{T}}.
+    \end{equation}
+\end{itemize}
