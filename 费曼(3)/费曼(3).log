@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  9 OCT 2023 13:17
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  9 OCT 2023 16:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -839,7 +839,7 @@ Overfull \hbox (54.35574pt too wide) in paragraph at lines 42--44
 第四章
 [10
 
-] [11]) (./费曼(3)临时.tex) [12] (./费曼(3).aux)
+] [11]) (./费曼(3)2023.10.9.tex [12]) (./费曼(3)临时.tex) [13] (./费曼(3).aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2022/07/14>
@@ -848,12 +848,12 @@ Package rerunfilecheck Info: File `费曼(3).out' has not changed.
 (rerunfilecheck)             Checksum: 154DB2AE7755F34EC45C7379AE735967;1886.
  ) 
 Here is how much of TeX's memory you used:
- 28815 strings out of 476376
- 623557 string characters out of 5799322
+ 28821 strings out of 476376
+ 623688 string characters out of 5799322
  1860394 words of memory out of 5000000
- 48838 multiletter control sequences out of 15000+600000
+ 48841 multiletter control sequences out of 15000+600000
  523137 words of font info for 100 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,12n,97p,577b,431s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 费曼(3).pdf (13 pages).
+Output written on 费曼(3).pdf (14 pages).

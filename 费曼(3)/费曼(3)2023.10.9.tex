@@ -1,0 +1,58 @@
+% !TeX root = 费曼(3).tex
+
+We would like to ask the question that what is the number of photons in $[\omega, \omega + \mathrm{d} \omega]$ emitted per unit time.
+
+Assume that the expected photon number on a given state ($\omega$)
+is $\bar{n}(\omega)$.
+Then, the amplitude of an atom becoming excited is
+\begin{equation}
+  A_{n \text{ to } n+1} = \sqrt{n+1} a.
+\end{equation}
+The amplitude for de-excitation is
+\begin{equation}
+  A_{n+1 \text{ to } n} = \sqrt{n} a^{*}.
+\end{equation}
+
+Given that the atoms are in Boltzmann distribution,
+\begin{equation}
+  N_e = \mathrm{e}^{-\beta (E_e - E_g)} N_g.
+\end{equation}
+
+When photon gas is in thermal equilibrium, the radiation rate must equal to the absorption rate. And we have
+\begin{equation}
+  \Gamma_r = (n+1) |a|^{2} N_e,\ \Gamma_a = n |a|^2 N_g.
+\end{equation}
+
+Then, by $\Gamma_r = \Gamma_a$, we get
+\begin{equation}
+  \mathrm{e}^{- \frac{\hbar \omega}{kT}} = \frac{N_e}{N_g} = \frac{n}{n+1}.
+\end{equation}
+The result is
+\begin{equation}
+  \bar{n}_\omega = \frac{1}{\mathrm{e}^{\frac{\hbar \omega}{kT}}-1}.
+\end{equation}
+
+By consider a box of photon gas, we can get the state density
+\begin{equation}
+  \mathrm{d} N = V \frac{\mathrm{d} ^{3} \vec{k}}{\left( 2\pi \right) ^{3}},
+\end{equation}
+and it should be multiplied by 2, for two degree of polarize.
+
+We now arrive at the photon number per unit frequency interval
+\begin{equation}
+  \frac{\mathrm{d}E}{\mathrm{d} \omega} = \frac{\hbar\omega}{\mathrm{e}^{\frac{\hbar\omega}{kT}}-1}\cdot \frac{V \omega^{2}}{\pi^{2}c^{3}}.
+\end{equation}
+
+We now try to quantize the electromagnetic field. We will begin from a one-dimensional scalar field theory on a space interval $L$.
+\begin{equation}
+  \left( \frac{1}{c^{2}} \frac{\partial^2 }{\partial t^2} - \frac{\partial^2 }{\partial x^2} \right) \phi (t,x)= 0.
+\end{equation}
+we can guess the solution of this equation by writing down the Fourier component, 
+\begin{equation}
+  \ddot{\phi}_{k}(t) + \omega^{2} \phi_{k} = 0,
+\end{equation}
+which is the motion equation of a harmonic oscillator!
+The average total energy of photons on $\omega$ is
+\begin{equation}
+  \left< E \right> = \frac{\hbar\omega\mathrm{e}^{- \frac{\hbar\omega}{kT}}+ 2\hbar \omega \mathrm{e}^{- \frac{2\hbar\omega}{kT}}+ \cdots }{1 + \mathrm{e}^{- \frac{\hbar\omega}{kT}}+\mathrm{e}^{-\frac{2\hbar\omega}{kT}}+ \cdots } = \frac{\hbar \omega}{\mathrm{e}^{- \frac{\hbar\omega}{kT}}-1}
+\end{equation} 
