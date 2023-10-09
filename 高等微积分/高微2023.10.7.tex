@@ -197,7 +197,7 @@
     \end{equation}
 \end{proof}
 
-\subsubsection[单调极限定理]{单调极限定理(Weierstrass定理)(Monotone Converge Theorem)}
+\subsection[单调极限定理]{单调极限定理(Weierstrass定理)(Monotone Converge Theorem)}
 \begin{theorem}[单调极限定理]
   有上界且递增的数列一定收敛; 有下界且递降的数列一定收敛.
 \end{theorem}
@@ -231,17 +231,25 @@
 
 \begin{proof}
     记$x_n = \left( 1+\frac{1}{n} \right) ^{n}$.
-    % 1
-    $\{ x_n \}$有上界, 因为
-    $\boxed{ \quad \text{待补充}\quad }$
-    % ==================== 待补充 =================
-    % 
-    % 
-    % 
-    % 
-    % 
-    % 
-    % 
-    % 
+    \begin{itemize}
+      \item $\{ x_n \}$有上界, 
+      \begin{equation}
+        \begin{aligned}
+          x_n \le  & 1 + \frac{1}{1!} + \frac{1}{2!} + \cdots + \frac{1}{n!}
+          \\
+          < & 1 + \frac{1}{1} + \frac{1}{1\times 2} + \frac{1}{2\times 3} + \cdots + \frac{1}{\left( n-1 \right) \times n} <3
+        \end{aligned}
+      \end{equation}
+
+      \item $\{ x_n \}$递增,
+      \begin{equation}
+        \sqrt[n+1]{x_n} = \sqrt[n+1]{\underbrace{\left( 1+\frac{1}{x} \right) \cdots \left( 1+\frac{1}{x} \right) }_{\text{$n$个}}\cdot 1} \le  \frac{\left( 1+\frac{1}{n} \right) + \cdots + \left( 1+\frac{1}{n} \right) +1}{n+1} = 1 + \frac{1}{n+1}.
+      \end{equation}
+      所以我们得到了
+      \begin{equation}
+        \left( 1+\frac{1}{n} \right) ^{n} \le \left( 1+\frac{1}{n+1} \right) ^{n+1}.
+      \end{equation}
+      由单调极限定理可知, 极限存在, 称为自然常熟$\mathrm{e}$.
+    \end{itemize}
 \end{proof}
 

@@ -1,1 +1,173 @@
 % !TeX root = 高等微积分.tex
+
+\begin{proposition}
+    令$y_n = 1 + \frac{1}{1!} + \frac{1}{2!} + \cdots + \frac{1}{n!}$, 则$\displaystyle \lim_{n \to \infty}y_n = \mathrm{e}$
+\end{proposition}
+\begin{proof}
+    注意到$\{ y_n \}$递增且有上界, 可知$\displaystyle \lim_{n \to \infty}y_n$存在, 记为$Y$.
+
+    由上例可知,
+    \begin{equation}
+      x_n\le y_n \ \left( \forall n \right) \implies \mathrm{e}=\lim_{n \to \infty}x_n \le \lim_{n \to \infty}y_n = Y.
+    \end{equation}
+
+    最后来证$Y\le e$. 我们固定一个$k\in \mathbb{Z}_{+}$, 对于$\forall n\ge k$, 有
+    \begin{equation}
+      \begin{aligned}
+        x_n & = \left( 1+\frac{1}{n} \right) ^{n}
+        \\
+        & \ge 1 + C_{n}^{1} \frac{1}{n} + \cdots + C_{n}^{k} \left( \frac{1}{n} \right) ^{k}
+        \\
+        & = 1 + \frac{1}{1!}\left( \frac{n}{n} \right) + \frac{1}{2!}\left( \frac{n}{n} \cdot \frac{n}{n-1} \right) + \cdots + \frac{1}{k!} \left( \frac{n}{n}\cdots \frac{n-k+1}{n} \right) 
+      \end{aligned}
+    \end{equation}
+    利用极限不等式可知, 
+    \begin{equation}
+      \begin{aligned}
+        e = \lim_{n \to \infty}x_n & \ge \lim_{n \to \infty} \left( 1 + \frac{1}{1!} \frac{n}{n} + \cdots + \frac{1}{k!} \frac{n}{n} \cdots \frac{n-k+1}{n} \right) 
+        \\
+        & = 1 + \frac{1}{1!} + \frac{1}{2!} + \cdots +\frac{1}{k!} = y_k.
+      \end{aligned}
+    \end{equation}
+      之后再取极限可知
+    \begin{equation}
+      \mathrm{e} \ge \lim_{k \to \infty} y_k = Y.
+    \end{equation}
+\end{proof}
+
+\begin{theorem}\label{e不是有理数}
+    $\mathrm{e}$不是有理数.
+\end{theorem}
+\begin{proof}
+    我们需要使用一个引理.
+    \begin{lemma}
+        $\forall n\in \mathbb{Z} _{+}$有
+        \begin{equation}
+            0<\mathrm{e}-y_n< \frac{2}{(n+1)!}.
+        \end{equation}
+    \end{lemma}
+    \begin{proof}
+        一方面, $\forall m\ge n+1$, 有
+        \begin{equation}
+          y_m \ge y_{n+1}.
+        \end{equation}
+        由极限不等式可知$\displaystyle \lim_{m \to \infty}y_m \ge y_{n+1}$, 从而
+        \begin{equation}
+          \mathrm{e}\ge y_{n+1} >y_n
+        \end{equation}
+
+        另一方面, $\forall m > n+3$, 有
+        \begin{align}
+            y_{m} - y_n & = \frac{1}{(n+1)!} + \frac{1}{(n+2)!}+ \cdots + \frac{1}{m!}
+            \\
+            & \le \frac{1}{(n+1)!}\left[ 1 + \frac{1}{n+2} + \frac{1}{(n+2)(n+3)} + \frac{1}{(n+3)(n+4)} + \cdots + \frac{1}{(m-1)m} \right]
+            \\
+            & = \frac{1}{(n+1)!} \left( 1 + \frac{1}{n+2} + \frac{1}{n+2} - \frac{1}{n+3} + \cdots + \frac{1}{m-1} - \frac{1}{m} \right) 
+            \\
+            & < \frac{1}{(n+1)!} \left( 1+\frac{2}{n+2} \right) 
+            \\
+            & \le \frac{2}{(n+1)!}  .
+        \end{align}
+        所以
+        \begin{equation}
+          \mathrm{e}-y_n = \lim_{m \to \infty}(y_m - y_n) < \frac{2}{(n+1)!}.
+        \end{equation}
+    \end{proof}
+    
+    对于定理\ref{e不是有理数}的证明, 我们采用反证法. 
+
+    设$\mathrm{e} \in \mathbb{Q}, \ \mathrm{e} = \frac{A}{B}$, 其中$A,B \in \mathbb{Z}_{+}$.
+    由引理, 
+    \begin{equation}
+      0 < \mathrm{e} - y_2 < \frac{2}{3!} = \frac{1}{3}
+    \end{equation}
+    这表明$\mathrm{e} \notin \mathbb{Z} \implies B \ge 2$.
+
+    再次使用引理, 有
+    \begin{equation}\label{e的不等式}
+      0<\mathrm{e}-y_{B} < \frac{2}{(B+1)!},
+    \end{equation}
+    而
+    \begin{equation}
+      \mathrm{e}^{} - y_B = \frac{A}{B} - \left( 1+\frac{1}{1!} + \cdots + \frac{1}{B!} \right) \xlongequal{\text{通分}} \frac{\text{整数}C}{B!}.
+    \end{equation}
+    代回\eqref{e的不等式}可知
+    \begin{equation}
+      0 < \frac{C}{B!} < \frac{2}{(B+1)!} = \frac{1}{B!} - \frac{2}{B+1} < \frac{1}{B!},
+    \end{equation}
+    这表明
+    \begin{equation}
+      0<C<1.
+    \end{equation}
+    与$C \in \mathbb{Z}$矛盾!
+\end{proof}
+
+\subsection{柯西收敛准则}
+单调极限定理(MCT)的适用范围太小, 只能用于单调数列, 我们需要一般的判据.
+
+要证$\{ x_n \}$有极限$L$, 我们需要证当$n$无穷大时$|x_n - L|<\varepsilon$, 但是如果猜不出$L$, 往往无用. 我们只能比较大指标的$|x_n-x_m|$.
+
+\begin{theorem}[Cauchy收敛原理]\label{柯西收敛原理}
+    实数列$\{ x_n \}$收敛, 当且仅当
+    \begin{equation}
+      \forall \varepsilon > 0, \ \exists N \in \mathbb{Z}_{+},\ \ 
+      \forall m,n \text{ 都有} |x_m - x_n| < \varepsilon.
+    \end{equation}
+\end{theorem}
+\begin{definition}
+    称$\{ x_n \}$为一个Cauchy列, 如果 $\forall \varepsilon > 0$, $\exists N \in  \mathbb{Z}_{+}$, $\forall m,n > N$ 有 $|x_m-x_n|<\varepsilon$.
+
+    这样, 定理\ref{柯西收敛原理}可以表述为$\{ x_n \}$收敛当且仅当它是Cauchy序列.
+\end{definition}
+
+\begin{proof}[Cauchy收敛原理的证明]
+    从充分性和必要性两方面来证明.
+
+    \textbf{先证"$\implies$":}
+    设$\displaystyle \lim_{n \to \infty}x_n = L$, 对于$\forall  \varepsilon >0$, $\exists N \in \mathbb{Z}_{+}$, 使得
+    \begin{equation}
+      \forall m,n >N \text{有} |x_n-L|<\frac{\varepsilon}{2}, |x_m-L|<\frac{\varepsilon}{2}.
+    \end{equation}
+    从而由三角不等式可得, $|x_m - x_n|<\varepsilon$
+
+    \textbf{再证"$\impliedby$"}
+
+    首先$\{ x_n \}$有界, 因为对于$\forall \varepsilon>0$, $\exists N \in \mathbb{Z}_{+}$, $\forall m,n >N$ 有 $|x_m-x_n|<1$.
+    特别地, 有$|x_{n}-x_{N+1}|<1$. 于是我们得到
+    \begin{equation}
+      \min\{ x_1,x_N, x_{N+1}-1 \} \le x_n \le \max \{ x_1, x_N, x_{N+1}-1 \}.
+    \end{equation}
+    这表明$\{ x_n \}$有界.
+
+    对于每个$k\in \mathbb{Z}_{+}$, 集合$\{ x_n \colon n\ge k \}$非空且有界, 有确界定理可知上确界和下确界都存在, 记
+    \begin{gather}
+        a_k = \inf \{ x_k \colon k\ge n \}
+        \\
+        b_k = \sup \{ x_k \colon k\ge n \}
+    \end{gather}
+    注意到$\{ a_k \}$递增, $\{ b_k \}$递减
+    \footnote{因为若$F \subset E$则$\inf F \ge  \inf E, \ \sup F \le \sup E$.}
+    , 特别地,
+    \begin{equation}
+      a_1\le a_2\le \cdots \le a_k \le b_k \le b_{k-1} \le \cdots \le b_1.
+    \end{equation}
+
+    这表明$\{ a_k \}$递增且有上界$b_1$, $\{ b_k \}$递减且有下界$a_1$.
+    由 MCT 知这两个数列的极限都存在, 记$\displaystyle \lim_{k \to \infty}a_k = A ,\ \lim_{k \to \infty} b_k = B$. 并且有$A \le B$.
+
+    由Cauchy列的定义可知, $\forall  \varepsilon > 0$, $\exists k \in \mathbb{Z}_{+}$使$\forall m,n \ge  k$有$|x_m -x_n|< \varepsilon$.
+    
+    所以, $\forall N \ge k$, $\varepsilon$是集合$\{ x_m -x_n | \forall m,n \ge  N \}$的上界, 我们可以得到
+    \begin{equation}
+      \varepsilon \ge \sup \{ x_m -x_n | \forall  m,n\ge N \} = b_N - a_N , \forall 
+      N \ge  k.
+    \end{equation}
+    取极限, 得到极限不等式
+    \begin{equation}
+      \varepsilon \ge \lim_{N \to \infty} \left( b_N -a_N \right) = B -A.
+    \end{equation}
+
+    于是$\forall \varepsilon > 0$有$B-A \le  \varepsilon$, 又因为$B \ge A$, 我们发现$A=B \equiv L$.
+
+    最后由于$a_k \le x_k \le b_k, \ \forall k$, 由夹逼定理可得$\{ x_n \}$极限存在且等于$L$.
+\end{proof}
