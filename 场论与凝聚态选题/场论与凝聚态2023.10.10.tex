@@ -1,0 +1,50 @@
+% !TeX root = 场论与凝聚态.tex
+
+\subsection{Ground State Wave Function and Entanglement}
+
+We get the Hamiltonian 
+\begin{equation}
+  H = \int_{-\frac{\pi}{\alpha}}^{\frac{\pi}{\alpha}} \frac{1}{2} \frac{\mathrm{d} ^{d} k}{\left( 2\pi \right) ^{d}} \left[ \frac{\left( \Pi_{\vec{k}}^{c} \right) ^{2}}{2m} + \frac{m\omega_{\vec{k}}^{2}}{2} \left( \phi_{\vec{k}}^{c} \right) ^{2} + (c \to  s   ) \right] .
+\end{equation}
+Now we would like to calculate the ground state wave function, first write down the laddar operator
+\begin{equation}
+    a_{\vec{k}}^{c} = (\cdots) \sqrt{\omega_{\vec{k}}} \phi_{\vec{k}}^{c} + \mathrm{i} (\cdots) \frac{\Pi_{\vec{k}}^{c}}{\sqrt{\omega_{\vec{k}}}} = \frac{a_{\vec{k}}+ a_{-\vec{k}}}{\sqrt{2}}.
+\end{equation}
+using the basis
+\begin{equation}
+    \hat{\phi}_{\vec{k}}^{c} \ket{\phi_{\vec{k}}^{c}} = \phi_{\vec{k}}^{c} \ket{\phi_{\vec{k}}^{c}}
+\end{equation}
+expand the vacumm state as
+\begin{equation}
+    \begin{gathered}
+        \ket{0} = \bigotimes_{\text{half of all $\vec{k}$}} \ket{0 \text{ for}_{\vec{k}}^{c}} \otimes \ket{0 \text{ for}_{\vec{k}}^{c}} 
+        \\
+        = \bigotimes \left( \int_{-\infty}^{+\infty} \mathrm{d}\phi_{\vec{k}} ^{c} \Psi_{o} ^{\omega = \omega_{\vec{k}}} (\phi_{\vec{k}}^{c}) \ket{\phi_{\vec{k}}^{c} } \otimes (c\to s) \right) 
+    \end{gathered}
+\end{equation}
+
+If we choose another basis $\bigotimes \ket{\phi_{\vec{r}}}$,
+% entanglement
+we would find something like
+\begin{equation}
+  \ket{0} = \left( \prod_{\vec{r}}^{} \int_{-\infty}^{\infty} \mathrm{d}\phi_{\vec{r}} \right) \Bigl( \text{wave function of } \{ \phi_{\vec{r}} \} \Bigr) \bigotimes _{\vec{r}} \ket{\phi_{\vec{r}}}.
+\end{equation}
+where the wave function of $\{ \phi_{\vec{r}} \}$ takes the form of the following when we consider free field,
+\begin{equation}
+  \prod_{\vec{r}, \vec{r}'}^{} \Bigl(\text{functions of } \phi_{\vec{r}} \text{ and } \phi_{\vec{r}'}\Bigr)
+\end{equation}
+the function of $\phi_{\vec{r}}$ and $\phi_{\vec{r}'}$ decay exponentially with $|\vec{r}-\vec{r}'|$, and we find that the entanglement of two area depends on the surface area.
+
+
+\subsection{Energy Gap and Corelation}
+There are three methods to calculate the two-point correlation function, ladder operator, expand the vacumm state into field operate eigenstate and path integral.
+We will use the first one
+\begin{equation}
+    \phi_{\vec{r}} = \sqrt{\frac{\hbar }{2m}} \int_{- \frac{\pi}{\alpha}} ^{\frac{\pi}{\alpha
+    }} \frac{\mathrm{d}^{d} k}{(2\pi)^{d}}  \frac{a_{\vec{k}} + a_{-\vec{k}}^{\dagger}}{\sqrt{\omega_{\vec{k}}}} \mathrm{e}^{\mathrm{i}\vec{k} \cdot \vec{r}}
+\end{equation}
+then we find
+\begin{equation}
+    \phi_{\vec{r}} = \int_{-\frac{\pi}{\alpha}} ^{\frac{\pi}{\alpha}} \frac{\mathrm{d}^{d} k}{(2\pi)^{d}} \frac{a_{\vec{k}} + a_{-\vec{k}}^{\dagger}}{\sqrt{\omega_{\vec{k}}}} \mathrm{e}^{\mathrm{i}\vec{k} \cdot \vec{r}} \ket{-\vec{k}}
+\end{equation}
+
