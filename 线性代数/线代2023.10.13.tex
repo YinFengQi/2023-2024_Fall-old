@@ -1,0 +1,296 @@
+% !TeX root = 线性代数.tex
+
+\begin{example}
+    求投影矩阵
+    \begin{equation}
+      A = \begin{bmatrix}
+       1 & 1\\
+       0 & 1\\
+       0 & 0\\
+      \end{bmatrix}.
+    \end{equation}
+    计算投影矩阵$P = A \left( A A^{\mathrm{T}} \right) ^{-1}A^{\mathrm{T}}$,
+    \begin{equation}
+      A^{\mathrm{T}}A = \begin{bmatrix}
+       1 & 0 & 0\\
+       1 & 1 & 0\\
+      \end{bmatrix}
+      \begin{bmatrix}
+       1 & 1\\
+       0 & 1\\
+       0 & 0\\
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+       1 & 1\\
+       1 & 2\\
+      \end{bmatrix}，
+    \end{equation}
+    \begin{equation}
+      \left( A^{\mathrm{T}}A \right) ^{-1}  = \frac{1}{1\times 2-1\times 1} \begin{bmatrix}
+       2 & -1\\
+       -1 & 1\\
+      \end{bmatrix}
+      =
+      \begin{bmatrix}
+       2 & -1\\
+       -1 & 1\\
+      \end{bmatrix}.
+    \end{equation}  
+    于是可得
+    \begin{equation}
+        \begin{aligned}
+            P = A \left( A^{\mathrm{T}}A \right) A^{\mathrm{T}} & = 
+            \begin{bmatrix}
+             1 & 1\\
+             0 & 1\\
+             0 & 0\\
+            \end{bmatrix}
+            \begin{bmatrix}
+             2 & -1\\
+             -1 & 1\\
+            \end{bmatrix}
+            \begin{bmatrix}
+             1 & 0 & 0\\
+             1 & 1 & 0\\
+            \end{bmatrix}
+            \\
+            & =
+            \begin{bmatrix}
+             1 & 0\\
+             -1 & 1\\
+             0 & 0\\
+            \end{bmatrix}
+            \begin{bmatrix}
+             1 & 0 & 0\\
+             1 & 1 & 0\\
+            \end{bmatrix}
+            \\
+            & =
+            \begin{bmatrix}
+             1 & 0 & 0\\
+             0 & 1 & 0\\
+             0 & 0 & 0\\
+            \end{bmatrix}.
+        \end{aligned}
+    \end{equation}
+\end{example}
+
+下面我们考虑什么时候$A^{\mathrm{T}}A$可逆的问题.
+\begin{proposition}
+    $A^{\mathrm{T}}A$的零空间和$A$的零空间是一样的.
+\end{proposition}
+
+\begin{proof}
+    如果$Ax=0$, 那么两边左乘$A^{\mathrm{T}}$, 得到
+    \begin{equation}
+      A^{\mathrm{T}}A x = 0.
+    \end{equation}
+
+    反之, 如果$A^{\mathrm{T}}Ax=0$, 两边左乘$x^{\mathrm{T}}$, 得到
+    \begin{equation}
+      x^{\mathrm{T}} A^{\mathrm{T}} A x = \left( Ax \right) ^{\mathrm{T}} Ax = 0.
+    \end{equation}
+    也就是说, $Ax$的模长为零, 那它必然是零向量.
+\end{proof}
+
+根据上述命题, 我们可以发现: 假设$A^{\mathrm{T}}A$可逆$\iff$ $A^{\mathrm{T}}Ax = 0$只有零解 $\iff$ $Ax =0 $只有零解.
+
+这意味着:
+\begin{itemize}
+    \item $A$的列向量是线性无关的.
+    
+    \item $A$的秩为$r = n$. 
+\end{itemize}
+
+\subsubsection{正交投影的应用}
+\paragraph{最小二乘法}
+在以后的学习中, 会经常遇到求以下函数的极小值
+\begin{equation}
+  f(x) = \left| Ax + b \right|
+\end{equation}
+其中的$A$是一个$m \times n$的矩阵, $b$是一个$m \times 1$的向量.
+\begin{itemize}
+    \item 如果$b \in C(A)$, 那么$f(x)$的极小值为$0$, $x$的解为$A x = b$的解.
+    \item 如果$b \notin C(A)$, 这时候极小值的$x$对应正交投影的坐标
+    \begin{equation}
+      \hat{x} = \left( A^{\mathrm{T}}A \right) ^{-1} A^{\mathrm{T}} b.
+    \end{equation}
+\end{itemize}
+
+\paragraph{线性回归}
+收集到一些数据, $(y_1,t_1), (y_2,t_2) , \cdots, (y_m, t_m)$. 假设$y$和$t$之间有一个线性关系$y = Dt +C$, 用数据去估计$C$和$D$.
+
+估计方法: 考虑一个损失函数
+\begin{equation}
+  L = \sum_{i=1}^{m} \left( y(t_i)  - y_i \right) ^{2} = \sum_{i=1}^{m} \left( C + D t_i  - y_i \right) ^{2} = \left| Ax -b \right| ^{2}
+\end{equation}
+其中
+\begin{equation}
+  A = \begin{bmatrix}
+   1 & t_1\\
+   1 & t_2\\
+   \vdots & \vdots\\
+   1 & t_m\\
+  \end{bmatrix},
+  \quad 
+  x = \begin{bmatrix}
+   C\\
+   D\\
+  \end{bmatrix},
+  \quad 
+  b = \begin{bmatrix} 
+  y_1 \\ 
+  y_2 \\ 
+  \vdots \\ 
+  y_m 
+  \end{bmatrix}.
+\end{equation}
+我们做一些计算\
+\begin{equation}
+  A^{\mathrm{T}}A = \begin{bmatrix}
+   1 & 1 & \cdots & 1\\
+   t_1 & t_2 & \cdots & t_m\\
+  \end{bmatrix}
+  \begin{bmatrix}
+    1 & t_1\\
+    1 & t_2\\
+    \vdots & \vdots\\
+    1 & t_m\\
+   \end{bmatrix}
+   =
+   \begin{bmatrix}
+    m & \sum_{i=1}^{m} t_i\\
+    \sum_{i=1}^{m} t_i & \sum_{i=1}^{m} t_i^{2}\\
+   \end{bmatrix},
+\end{equation}
+\begin{equation}
+  A^{\mathrm{T}}b = \begin{bmatrix}
+   \sum_{i=1}^{m} y_i\\
+   \sum_{i=1}^{m} y_i t_i\\
+  \end{bmatrix},
+\end{equation}
+\begin{equation}
+  \left( A^{\mathrm{T}}A \right) ^{2}
+  =
+  \frac{1}{m \sum_{i=1}^{m} t_i^{2} - \left( \sum_{i=1}^{m} t_i \right) } \begin{bmatrix}
+   \sum_{i=1}^{m} t_i^{2} & -\sum_{i=1}^{m} t_i\\
+   -\sum_{i=1}^{m} t_i & m\\
+  \end{bmatrix}
+\end{equation}
+最后我们可以得到
+\begin{equation}
+  C = \frac{\sum_{i=1}^{m} y_i \sum_{i=1}^{m} t_i^{2} - \sum_{i=1}^{m} t_i \sum_{i=1}^{m} y_i t_i}{m \sum_{i=1}^{m} t_i^{2} - \left( \sum_{i=1}^{m} t_i \right) ^{2}}
+  ,\quad
+  D = \frac{m\sum_{i=1}^{m} y_i t_i - \sum_{i=1}^{m} y_i \sum_{i=1}^{m} t_i}{m \sum_{i=1}^{m} t_i^{2} - \left( \sum_{i=1}^{m} t_i \right) ^{2}}.
+\end{equation}
+
+\paragraph{正交基}
+一组基需要满足条件:
+\begin{itemize}
+    \item 线性无关.
+    \item 任何向量都可以写成$\left( v_1,v_2,\cdots,v_m \right) $的线性组合.
+\end{itemize}
+
+\begin{definition}
+    $\left( q_1,q_2,\cdots,q_n \right) $是一组基, 且满足
+    \begin{equation}
+      q_i \cdot q_j = \delta_{ij}.
+    \end{equation}
+    则它们是正交归一基.
+\end{definition}
+
+如果$q_1,q_2,\cdots,q_n$是一组正交归一基, 那么对应的矩阵$Q = \begin{bmatrix} q_1, q_2, \cdots, q_n \end{bmatrix}$满足
+\begin{equation}
+  Q^{\mathrm{T}}Q = Q Q^{\mathrm{T}} = I.
+\end{equation}
+验证:
+\begin{equation}
+  Q^{\mathrm{T}}Q = \begin{bmatrix} 
+  q^{\mathrm{T}}_1 \\ 
+  q^{\mathrm{T}}_2 \\ 
+  \vdots \\ 
+  q^{\mathrm{T}}_n 
+  \end{bmatrix}
+  \begin{bmatrix} q^{\mathrm{T}}_1, q^{\mathrm{T}}_2, \cdots, q^{\mathrm{T}}_n \end{bmatrix}
+  =
+  \begin{bmatrix}
+    \ddots & &\\
+    &q^{\mathrm{T}}_j q_i & \\
+    &  &\ddots \\
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    \ddots &  & \\
+    & \delta_{ij} & \\
+    &  & \ddots\\
+  \end{bmatrix}
+  =
+  I.
+\end{equation}
+
+给定一组基, 可以构造一组正交归一基(Gram-Schmit).
+方法如下:
+\begin{enumerate}
+    \item 选一个向量$a$, 令矩阵$A = [a]$.
+    
+    \item 通过$b$构造一个向量$B$, 要求$B$垂直于$A$的列向量.
+    那么,
+    \begin{equation}
+      B  = b - A \left( A^{\mathrm{T}}A \right) ^{-1} A^{\mathrm{T}} b.
+    \end{equation}
+
+    \item 通过$c$构造一个向量$C$,
+    \begin{equation}
+      C = c - A\left( A^{\mathrm{T}}A \right) ^{-1}A^{\mathrm{T}} c - A\left( B^{\mathrm{T}}B \right) ^{-1}B^{\mathrm{T}} c,
+    \end{equation}
+    下面验证它垂直于$A$和$B$:
+    令$Q = [A\ B]$, 则
+    \begin{equation}
+      Q^{\mathrm{T}}Q  =\begin{bmatrix}
+       A^{\mathrm{T}}\\
+       B^{\mathrm{T}}\\
+      \end{bmatrix}
+      \begin{bmatrix}
+       A & B\\
+      \end{bmatrix}
+      = \begin{bmatrix}
+       A^{\mathrm{T}}A & 0\\
+       0 & B^{\mathrm{T}}B\\
+      \end{bmatrix}
+    \end{equation}
+    所以
+    \begin{equation}
+      \left( Q^{\mathrm{T}}Q \right) ^{-1} = \begin{bmatrix}
+       \frac{1}{A^{\mathrm{T}}A} & 0\\
+       0 & \frac{1}{B^{\mathrm{T}}B}\\
+      \end{bmatrix}
+    \end{equation}
+    得到
+    \begin{equation}
+      Q\left( Q^{\mathrm{T}}Q \right) ^{-1}Q^{\mathrm{T}} =
+      \begin{bmatrix}
+       A & B\\
+      \end{bmatrix}
+      \begin{bmatrix}
+       \frac{1}{A^{\mathrm{T}}A} & 0\\
+       0 & \frac{1}{B^{\mathrm{T}}B}\\
+      \end{bmatrix}
+      \begin{bmatrix}
+       A^{\mathrm{T}}\\
+       B^{\mathrm{T}}\\
+      \end{bmatrix}
+      =
+      A\left( A^{\mathrm{T}}A \right) ^{-1} A^{\mathrm{T}} + B \left( B^{\mathrm{T}}B \right) ^{-1} B^{\mathrm{T}}.
+    \end{equation}
+    所以上面的$C$等价于将$c$减去$A,B$面内的投影, 自然$C$是垂直于$A,B$的.
+
+    \item 构造$D$垂直于$A,B,C$,
+    \begin{equation}
+      D = d - A\left( A^{\mathrm{T}}A \right) ^{-1}A^{\mathrm{T}} d - B\left( B^{\mathrm{T}}B \right) ^{-1} B^{\mathrm{T}} d - C\left( C^{\mathrm{T}} \right)^{-1}C^{\mathrm{T}} d. 
+    \end{equation}
+    $$
+    \vdots
+    $$
+\end{enumerate}
+最终可以得到一组正交的基向量, 之后将它们归一化就得到了正交归一基向量.

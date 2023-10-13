@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  9 OCT 2023 09:37
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  13 OCT 2023 15:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -841,28 +841,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 151--154
 
  []
 
-[20]) (./线代2023.10.9.tex [21] [22]) (./线代临时.tex) [23] (./线性代数.aux)
+[20]) (./线代2023.10.9.tex [21] [22]) (./线代2023.10.13.tex
+Missing character: There is no ， (U+FF0C) in font [lmroman10-regular]:mapping=tex-text;!
+[23] [24] [25] [26]) (./线代临时.tex) [27] (./线性代数.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2022/07/14>
  ***********
-
-
-Package rerunfilecheck Warning: File `线性代数.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `线性代数.out':
-(rerunfilecheck)             Before: EDD14BBB0146B98B19F3BD29A76EBE46;1821
-(rerunfilecheck)             After:  5E779B0A6D8CF74B9D34201E7806A29D;1921.
+Package rerunfilecheck Info: File `线性代数.out' has not changed.
+(rerunfilecheck)             Checksum: 08F49BB09DD77217BB61AD724DF0F46F;2045.
  ) 
 Here is how much of TeX's memory you used:
- 28765 strings out of 476376
- 621846 string characters out of 5799322
+ 28772 strings out of 476376
+ 621981 string characters out of 5799322
  1871394 words of memory out of 5000000
- 48772 multiletter control sequences out of 15000+600000
+ 48776 multiletter control sequences out of 15000+600000
  527841 words of font info for 125 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,19n,97p,576b,643s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 线性代数.pdf (23 pages).
+Output written on 线性代数.pdf (27 pages).
