@@ -1,0 +1,243 @@
+% !TeX root = 高等微积分.tex
+从以上证明中可以提炼出上下极限的概念.\footnote{以后幂级数收敛半径 Cauchy-Hadamand公式涉及上极限.}
+\begin{definition}
+    对于任何实数列$\{ x_n \}_{n=1}^{\infty}$, 考虑$b_n = \sup \{ x_k\colon k\ge n \}$(若$\{ x_k \colon k\ge n \}$有上界, 则可定义$b_n \in \mathbb{R}$, 若无上界, 则形式化定义$b_n = +\infty$.)
+    \begin{itemize}
+        \item 若所有$b_n = +\infty$, 记 $\displaystyle  \lim_{n \to \infty} \sup x_n = +\infty$.
+        \item 若$\exists  b_n \in  \mathbb{R}$, 则所有$b_n \in  \mathbb{R}$, 且$\{ b_n \}$递减. 这有两种情况.
+        \begin{enumerate}
+            \item 若$\{ b_n \}$有下界, 则$\displaystyle \lim_{n \to \infty} b_n$存在, 称其值为$\{ x_n \}$的上极限, 记为
+            \begin{equation}
+              \lim_{n \to \infty} \sup x_n = \lim_{n \to \infty} \Bigl( \sup \{ x_k \colon k\ge n \} \Bigr) \in  \mathbb{R}.
+            \end{equation}
+
+            \item 若$\{ b_n \}$无下界, 约定
+            \begin{equation}
+              \lim_{n \to \infty} \sup x_n = -\infty.
+            \end{equation}
+        \end{enumerate}
+    \end{itemize}
+    总结起来, 上下极限的定义为
+    \begin{gather}
+        \lim_{n \to \infty} \sup x_n = \lim_{n \to \infty} \sup \left( \{ x_k \colon k\ge n \} \right) ,
+        \\
+        \lim_{n \to \infty} \inf x_n = \lim_{n \to \infty} \inf \left( \{ x_k \colon k\ge n \} \right) .
+    \end{gather}
+\end{definition}
+
+\begin{proposition}
+    $\{ x_n \}$收敛等价于上下极限存在且相等.
+\end{proposition}
+
+\begin{example}[来自以后极限收敛的例子]
+    考虑
+    \begin{equation}
+      x_n = \sum_{k=1}^{n} \frac{\sin (k\theta)}{k^{2}},
+    \end{equation}
+    证 $\displaystyle \lim_{n \to \infty} x_n$存在.
+\end{example}
+\begin{proof}
+    用Cauchy收敛原理验证, 只要证$x_n$是一个Cauchy列.
+
+    为此对于$\forall \varepsilon > 0 $, 取$N = \left[ \frac{1}{\varepsilon} \right] +1 $, 从而$\forall m>n\ge N$, 有
+    \begin{equation}
+      \left| x_m - x_n \right| = \left| \sum_{k=n+1}^{m} \frac{\sin(k\theta)}{k^{2}} \right| \le \sum_{k= n+1}^{m} \frac{1}{k^{2}} < \sum_{k= n+1}^{m} \frac{1}{(k-1)k} = \frac{1}{n} - \frac{1}{m} < \frac{1}{n} \le \frac{1}{N} < \varepsilon. 
+    \end{equation}
+\end{proof}
+
+\subsection{度量空间}
+\subsubsection{基本概念}
+\begin{definition}
+    所谓集合$X$上的一个度量, 是指映射
+    \begin{equation}
+        \begin{aligned}
+            d\colon X \times X &\longrightarrow \mathbb{R} \\
+                     (x,y) &\longmapsto d((x,y))
+        \end{aligned}
+    \end{equation}
+    需要满足
+    \begin{itemize}
+        \item 对称性 $d(x,y) = d(y,x) \ \ \forall x,y \in X$
+        \item 正定性 $d(x,y) \ge 0 \ \ \forall x,y \in X$, 且 $d(x,y) = 0 \iff x=y$.
+        \item 三角不等式 $\forall x,y,z \in X$有$d(x,y) + d(y,z) \ge d(x,z)$.
+    \end{itemize}
+    称$\left( X,d \right) $为一个度量空间.
+\end{definition}
+\begin{example}
+    对于$X = \mathbb{R}^{n} = \left\{ \vec{x} = (x_1,x_2,\cdots,x_n) \middle| x_i \in \mathbb{R} \right\} $, 
+    \begin{equation}
+      d(\vec{x}, \vec{y}) = \sqrt{\sum \left( x_i - y_i \right) ^{2}}.
+    \end{equation}
+    多元微积分中使用此度量.
+\end{example}
+
+\begin{definition}
+    称$\{ x_n \}$收敛到某点$L \in X$(记为$\displaystyle \lim_{n \to \infty} x_n = L$), 若
+    \begin{equation}
+      \forall  \varepsilon > 0 \ \exists N \in \mathbb{Z}_{+} \ \forall  n> N \text{ 有 } d(x_n, L) < \varepsilon,
+    \end{equation}
+    这等价于
+    \begin{equation}
+      \lim_{n \to \infty} d(x_n, L) = 0.
+    \end{equation}
+\end{definition}
+
+\begin{definition}
+    称$\{ x_n \}_{n=1}^{\infty}$为一个Cauchy列, 若
+    \begin{equation}
+      \forall \varepsilon > 0 \ \exists N \in \mathbb{Z}_{+} \ \forall  m,n \ge N \text{ 有 } d(x_m,x_n) < \varepsilon.
+    \end{equation}
+\end{definition}
+
+\begin{definition}
+    称一个度量空间$(X,d)$是完备的(complete), 如果$X$中的任何Cauchy列都收敛(到$X$中的某点).
+\end{definition}
+
+\begin{example}
+    $\left( \mathbb{R}^{n}, d(x,y) = \sqrt{\sum (x_i - y_i)^{2}} \right) $是完备的度量空间.
+\end{example}
+
+\begin{example}
+    $(\mathbb{Q}, d(x,y) = |x-y|)$是不完备的.
+    \\
+    \textbf{理由}
+    取一个有理数序列$\{ x_n \in \mathbb{Q} \}_{n=1}^{\infty}$满足$\displaystyle \lim_{n \to \infty} x_n = \sqrt{2}$.$\{ x_n \}$是Cauchy列, 但$\{ x_n \}$在$\mathbb{Q}$中无极限.
+\end{example}
+
+\subsubsection{实数的另一种定义}
+我们用Cauchy列可以给出$\mathbb{R}$的另一个定义.
+
+\begin{definition}
+    一个实数为"有理数Cauchy列的等价类".
+\end{definition}
+
+\begin{definition}
+    两个$\mathbb{Q}$中的Cauchy列$\{ x_n \}$于$\{ y_n \}$等价, 如果
+    \begin{equation}
+      \forall \varepsilon >0 \ \exists N \in \mathbb{Z}_{+}, \ \forall n \ge N \text{ 有 } |x_n - y_n| < \varepsilon.
+    \end{equation}
+\end{definition}
+
+\begin{theorem}[压缩映射定理]
+    设$(X,d)$是完备的度量空间, 设$T\colon X \to X$是压缩映射(即$\exists c \in (0,1)$使$\forall x,y \in X$有 $d(T(x),T(y)) \le c \cdot d(x,y)$), 则$T$有唯一的不动点.
+\end{theorem}
+\begin{proof}
+    任取$x_0 \in X$, 定义$x_n = \underbrace{T \circ T \circ \cdots \circ T(x_0)}_{n \text{ 个 }T} = T(x_{n-1})$.
+    \begin{itemize}
+        \item 断言$\{ x_n \}_{n=0}^{\infty}$是Cauchy列. 为此, $\forall m > n$,
+        \begin{equation}
+            \begin{aligned}
+                d(x_n, x_m) & = d(T^{n} x_0, T^{m}x_0) \mathop{\le }\limits^{}_{\text{压缩}} c^{n} d(x_0, x_{m-n})
+                \\
+                &  \mathop{\le }\limits^{}_{\text{三角不等式}}c^{n} \left( d(x_0,x_1) + d(x_1,x_2)+ \cdots + d(x_{m-n-1}, x_{m-n}) \right) 
+                \\
+                & = c^{n} \frac{1- c^{m-n}}{1-c} d(x_0,x_1)
+                \\
+                & < \frac{c^{n}}{1-c} d(x_0,x_1) < \frac{c^{N}}{1-c} d(x_0,x_1) 
+                \\
+                & < \varepsilon \quad \text{(只要$N$足够大)}
+            \end{aligned}
+        \end{equation}
+            
+        \item 由$(X,d)$完备可知, 前述Cauchy列$\{ x_n \}$收敛, 设$\displaystyle \lim_{n \to \infty} x_n = y_0$, 来证$y_0$是$T$的不动点.
+        \begin{proof}
+            考虑不等式
+        \begin{equation}
+          \begin{aligned}
+            0 & \le d(T(y), x_n) = d(T(y), T(x_{n-1}))
+            \\
+            & \le c\cdot d(T(y),x_{n-1})
+          \end{aligned}
+        \end{equation}
+        由夹逼定理知, 
+        \begin{equation}
+          \lim_{n \to \infty} d(T(y), x_n) = 0 \implies \lim_{n \to \infty} x_n = T(y).
+        \end{equation}
+        结合
+        \begin{equation}
+          \lim_{n \to \infty} x_n = y,
+        \end{equation}
+        可得
+        \begin{equation}
+          T(y) = y.
+        \end{equation}
+        \end{proof}
+
+        \item $T$的不动点唯一.
+        \begin{proof}
+            设$T(y) = y, \ \ T(z) = z$, 则
+            \begin{equation}
+              d(y,z) = d(T(y),T(z)) \le c\cdot d(y,z) \implies y=z.
+            \end{equation}
+        \end{proof}
+    \end{itemize}
+    结合起来, $T$有不动点且不动点唯一.
+\end{proof}
+
+\section{函数极限}
+\begin{definition}
+    称当$x\to x_0$时, $f(x) \to L$(记为$\lim_{n \to \infty} f(x) = L$), 如果
+    \begin{equation}
+      \forall \varepsilon > 0 \ \exists \delta > 0 ,\ \forall  |x-x_0| < \delta \text{ 时有 }|f(x) - L|<\varepsilon.
+    \end{equation}
+    这个定义并不要求$f(x_0)$的行为, $f(x_0)$甚至可以无定义.
+\end{definition}
+
+我们引入记号: 
+开球邻域$B_{r}(x_0) = \{ x | d(x,x_0) <r \}$,
+去心开球邻域$B_{r}^{*} (x_0) = B_{r}(x_0)/\{ x_0 \}$.
+
+\begin{definition}
+    如果$f$在$x_0$的某个去心邻域有定义, 称当$x\to x_0$时, $f$以$L$为极限(记为$\displaystyle \lim_{n \to \infty} f(x) = L$)如果 
+    \begin{equation}
+      \forall \varepsilon >0 \ \exists \delta > 0, \text{ 使得 } \forall x, 0 < |x-x_0| < \delta \text{ 都有 } |f(x) - L| < \varepsilon. 
+    \end{equation}
+    这个定义使用了$\varepsilon-\delta$语言.
+\end{definition}
+
+$x\to x_0$时, $f(x)$以$L$为极限
+$$
+\iff \forall \varepsilon > 0 \ \exists \delta > 0, \ \forall |x-x_0|< \delta \text{ 有 }|f(x) - L| < \varepsilon.
+$$
+
+$x\to x_0$时, $f(x)$不以$L$为极限
+$$
+\iff \exists  \varepsilon > 0 \ \forall  \delta > 0, \ \exists |x-x_0|< \delta \text{ 有 }|f(x) - L| \ge \varepsilon.
+$$
+
+\begin{definition}
+    左极限:
+    \begin{equation}
+      \lim_{x \to x_0^{-}} f(x) = L \iff \forall \varepsilon > 0 \ \exists \delta > 0 , \ \forall - \delta < x-x_0 < 0 \text{ 有 } |f(x) - L| < \varepsilon. 
+    \end{equation}
+    右极限, 正负无穷极限同理.
+% ====================== 补充 =======================
+
+\end{definition}
+
+\begin{proposition}
+    $f$在$x_0$处有极限等价于$f$在$x_0$的左右极限存在且相等.
+\end{proposition}
+\begin{proof}
+    证明是直接的.
+\end{proof}
+类似地, 引入符号
+\begin{equation}
+  \lim_{x \to \infty} f(x) = L \iff \lim_{x \to +\infty} f(x) = \lim_{x \to -\infty} f(x) = L.
+\end{equation}
+
+我们会想问, 函数极限和序列极限有什么关系?
+\begin{theorem}[Heine]
+    $\displaystyle \lim_{x \to x_0}f(x) = L$的充要条件为, 对于任何的以$x_0$为极限且项项不等于$x_0$的序列$\{ x_n \}_{n=0}^{\infty}$有$\displaystyle \lim_{n \to \infty}f(x_n) = L$.
+\end{theorem}
+\begin{proof}
+    必要性是显然的, 下面证明充分性.
+
+    为此用反证法, 假设$f$不以$L$为极限, 即
+    \begin{equation}
+      \exists \varepsilon > 0 \ \forall \delta > 0, \ \exists 0< |x-x_0| < \delta \text{ 使 } |f(x) - L| > =\varepsilon . 
+    \end{equation}
+    (这包含无穷个断言, 因为每一个$\delta$给出一个$x$.)
+    这样$\forall n \in \mathbb{Z}_{+}$, $\delta = \frac{1}{n}$ $\exists x$(记为$x_n$)满足$0 < |x_n - x_0| < \frac{1}{n}$且
+    $|f(x_n) - L| \ge \varepsilon$.
+\end{proof}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  9 OCT 2023 15:24
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.6.22)  12 OCT 2023 12:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -806,21 +806,26 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 10.
  (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./高等微积分.toc)
+) (./高等微积分.toc [1
+
+])
 \tf@toc=\write5
 \openout5 = `高等微积分.toc'.
 
- (./高微2023.9.18.tex [1
-
-]
+ (./高微2023.9.18.tex
 LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <10.53937> not available
-(Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 65.
- [2] [3]) (./高微2023.9.21.tex [4] [5] [6] [7]) (./高微2023.9.25.tex [8] [9] [10]) (./高微2023.9.28.tex [11] [12] [13] [14] [15] [16]) (./高微2023.10.7.tex [17] [18]
+(Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 58.
+ [2] [3]) (./高微2023.9.21.tex [4] [5] [6] [7] [8]) (./高微2023.9.25.tex [9] [10] [11]) (./高微2023.9.28.tex [12] [13] [14] [15] [16] [17]) (./高微2023.10.7.tex [18] [19]
 
 LaTeX Font Warning: Font shape `TU/SimSun(0)/b/it' undefined
 (Font)              using `TU/SimSun(0)/b/n' instead on input line 131.
 
-[19] [20] [21]) (./高微2023.10.9.tex [22] [23] [24]) (./高微临时.tex) [25] (./高等微积分.aux)
+[20] [21]) (./高微2023.10.9.tex [22] [23] [24] [25]) (./高微2023.10.12.tex [26] [27] [28]
+Overfull \hbox (1.84213pt too wide) in paragraph at lines 186--189
+[]\TU/SimSun(0)/m/n/10.53937 我 们 引 入 记 号\TU/lmr/m/n/10.53937 : \TU/SimSun(0)/m/n/10.53937 开 球 邻 域 $\OML/cmm/m/it/10.53937 B[]\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 x[]\OT1/cmr/m/n/10.53937 ) = \OMS/cmsy/m/n/10.53937 f\OML/cmm/m/it/10.53937 x\OMS/cmsy/m/n/10.53937 j\OML/cmm/m/it/10.53937 d\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 x; x[]\OT1/cmr/m/n/10.53937 ) \OML/cmm/m/it/10.53937 < r\OMS/cmsy/m/n/10.53937 g$\TU/lmr/m/n/10.53937 , \TU/SimSun(0)/m/n/10.53937 去 心 开 球 邻 域 $\OML/cmm/m/it/10.53937 B[]\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 x[]\OT1/cmr/m/n/10.53937 ) = \OML/cmm/m/it/10.53937 B[]\OT1/cmr/m/n/10.53937 (\OML/cmm/m/it/10.53937 x[]\OT1/cmr/m/n/10.53937 )/\OMS/cmsy/m/n/10.53937 f\OML/cmm/m/it/10.53937 x[]\OMS/cmsy/m/n/10.53937 g$\TU/lmr/m/n/10.53937 . 
+ []
+
+[29]) (./高微临时.tex) [30] (./高等微积分.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2022/07/14>
@@ -830,15 +835,15 @@ L3 programming layer <2022/07/14>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `高等微积分.out' has not changed.
-(rerunfilecheck)             Checksum: 1748360FF01CE064325A2A11813FF9A2;1892.
+(rerunfilecheck)             Checksum: 1C2D7F2B4EB3701C17E3A984F27075B0;2290.
  ) 
 Here is how much of TeX's memory you used:
- 28763 strings out of 476376
- 621826 string characters out of 5799322
- 1867394 words of memory out of 5000000
- 48774 multiletter control sequences out of 15000+600000
+ 28770 strings out of 476376
+ 621961 string characters out of 5799322
+ 1866394 words of memory out of 5000000
+ 48778 multiletter control sequences out of 15000+600000
  524751 words of font info for 113 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,18n,97p,577b,566s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 高等微积分.pdf (25 pages).
+Output written on 高等微积分.pdf (30 pages).
