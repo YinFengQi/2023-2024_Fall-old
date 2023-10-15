@@ -171,7 +171,7 @@
   \end{bmatrix},
 \end{equation}
 \begin{equation}
-  \left( A^{\mathrm{T}}A \right) ^{2}
+  \left( A^{\mathrm{T}}A \right) ^{-1}
   =
   \frac{1}{m \sum_{i=1}^{m} t_i^{2} - \left( \sum_{i=1}^{m} t_i \right) } \begin{bmatrix}
    \sum_{i=1}^{m} t_i^{2} & -\sum_{i=1}^{m} t_i\\
@@ -242,7 +242,7 @@
 
     \item 通过$c$构造一个向量$C$,
     \begin{equation}
-      C = c - A\left( A^{\mathrm{T}}A \right) ^{-1}A^{\mathrm{T}} c - A\left( B^{\mathrm{T}}B \right) ^{-1}B^{\mathrm{T}} c,
+      C = c - A\left( A^{\mathrm{T}}A \right) ^{-1}A^{\mathrm{T}} c - B\left( B^{\mathrm{T}}B \right) ^{-1}B^{\mathrm{T}} c,
     \end{equation}
     下面验证它垂直于$A$和$B$:
     令$Q = [A\ B]$, 则
