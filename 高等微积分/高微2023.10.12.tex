@@ -233,11 +233,13 @@ $$
 \begin{proof}
     必要性是显然的, 下面证明充分性.
 
-    为此用反证法, 假设$f$不以$L$为极限, 即
+    为此用反证法, 假设$f$不以$L$为极限但试探数列的极限为$L$, 即
     \begin{equation}
       \exists \varepsilon > 0 \ \forall \delta > 0, \ \exists 0< |x-x_0| < \delta \text{ 使 } |f(x) - L| > =\varepsilon . 
     \end{equation}
     (这包含无穷个断言, 因为每一个$\delta$给出一个$x$.)
     这样$\forall n \in \mathbb{Z}_{+}$, $\delta = \frac{1}{n}$ $\exists x$(记为$x_n$)满足$0 < |x_n - x_0| < \frac{1}{n}$且
     $|f(x_n) - L| \ge \varepsilon$.
+
+    但是$\lim_{n \to \infty} f(x_n) = L$, 与$\left| f\left( x_n \right) -L \right| \ge \varepsilon$矛盾!
 \end{proof}

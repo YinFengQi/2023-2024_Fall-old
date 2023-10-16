@@ -1,0 +1,115 @@
+% !TeX root = 高等微积分.tex
+
+上述的定理常常用于判断极限的存在性, 如果能找到两个序列$\{ x_n \} \to x_0$和$\{ y_n \}\to x_0$, 但$\lim_{n \to \infty} f\left( x_n \right) = \lim_{n \to \infty}f\left( y_n \right) $, 则$\lim_{x \to x_0} f\left( x \right) $不存在.
+
+\begin{example}
+    当$\alpha > 0 $时, $\lim_{x \to 0} \sin \frac{1}{s^{\alpha}}$. 来证这个极限不存在.
+    \begin{proof}
+        反证法, 设$\lim_{x \to 0}\sin \frac{1}{x^{\alpha}} = L$, 考虑
+        \begin{equation}
+          \left\{ x_n = \left( \frac{1}{2n \pi +\frac{1}{2}\pi} \right) ^{\alpha} \right\}_{n=1}^{\infty}
+        \end{equation}
+        我们有
+        \begin{equation}
+          x_n \neq 0\ \forall n, \ \lim_{n \to \infty} x_n = 0.
+        \end{equation}
+        取另一个序列
+        \begin{equation}
+          \left\{ y_n = \left( \frac{1}{2n\pi + \frac{3}{2}\pi} \right) ^{\alpha} \right\} _{n=1}^{\infty}
+        \end{equation}
+        我们发现, $\lim_{n \to \infty} f\left( x_n \right) = 1,\ \lim_{n \to \infty}f\left( y_n \right) = -1$, 由Heine定理可知, 极限不存在.
+    \end{proof}
+\end{example}
+
+\subsection{函数极限的性质与计算方法}
+\begin{proposition}[保持极限不等式\footnote{这和数列极限中的充分大指标的项保持极限不等式(命题\ref{充分大指标的项保持极限不等式})是一致的}]\label{保持极限不等式}
+    设$\displaystyle \lim_{x \to x_0} f\left( x \right) < \lim_{x \to x_0} g\left( x \right) $, 则
+    \begin{equation}
+      \exists \delta > 0 \ \forall 0 < \left| x-x_0 \right| < \delta \text{ 有 } f\left( x \right) < g\left( x \right) .
+    \end{equation}
+\end{proposition}
+
+\begin{proposition}
+    设$f\left( x \right) \le  g\left( x \right) \ \forall 0 < \left| x-x_0 \right| < r$且 $\displaystyle \lim_{x \to x_0} f\left( x \right) $和$\displaystyle  \lim_{x \to x_0} g\left( x \right) $都存在, 则
+    \begin{equation}
+      \lim_{x \to x_0} f\left( x \right) \le \lim_{x \to x_0} g\left( x \right) .
+    \end{equation}
+\end{proposition}
+
+\begin{proposition}
+    若$f\left( x \right) $在$x_0$处有极限, 则$f\left( x \right) $在$x_0$的某去心邻域中有界. 
+\end{proposition}
+
+\begin{proof}
+    由于$L-1 < \lim_{x \to x_0}f\left( x \right) < L +1$
+    由命题\ref{保持极限不等式}可知$\exists \delta > 0$, $\forall 0 < \left| x-x_0 \right| < \delta$有, 
+    \begin{equation}
+      L-1 < f\left( x \right) < L +1 \ \ \forall x \in B_{\delta} \left( x_0 \right) 
+    \end{equation}
+    说明$f\left( X \right) $在$B_{\delta}\left( x \right) $中有界.
+\end{proof}
+
+\begin{theorem}
+    设$\displaystyle \lim_{x \to x_0}f\left( x \right) = A, \lim_{x \to x_0} g \left( x \right) = B$, 则有
+    \begin{gather}
+        \lim_{x \to x_0} \left( f \left( x \right) \pm g \left( x \right)  \right) = A \pm B,
+        \\
+        \lim_{x \to x_0} \left( f \left( x \right) g \left( x \right)  \right) = AB
+        \\
+        \text{当$B \neq 0$时} \lim_{x \to x_0} \frac{f \left( x \right) }{g \left( x \right) } = \frac{A}{B}
+    \end{gather}
+\end{theorem}
+
+\begin{theorem}[单调收敛定理]
+    设$f$在$[x_0 -r, x_0)$时递增且有上界的(或递减且有下界), 则
+    \begin{equation}
+      \lim_{x \to x_0^{-}} f \left( x \right) 
+    \end{equation}
+    存在.(右极限同理)
+\end{theorem}
+
+\begin{theorem}[Cauchy收敛准则]
+    设$\forall \varepsilon>0$, $\exists \delta $, 使得
+    \begin{equation}
+      \forall x,y \in  B_{\delta}\left( x_0 \right) ^{*}
+    \end{equation}
+    都有
+    \begin{equation}
+      \left| f\left( x \right) -f\left( y \right)  \right|  < \varepsilon
+    \end{equation}
+    则$\displaystyle \lim_{x \to x_0} f\left( x \right) $存在.
+\end{theorem}
+\begin{proof}
+
+    \begin{itemize}
+        \item 先证$f$在$x_0$的某去心邻域中有界.
+        由条件, 对$\varepsilon =1$, $\exists r >0$, $\forall x,y \in B_{2r}\left( x_0 \right) ^{*}$有$\left| f\left( x \right) - f \left( y \right)  \right| < 1$.
+        
+        取$y = x + \frac{r}{2}$, 可知 $\left| f\left( x \right) - f\left( x_0 + \frac{r}{2} \right)  \right| < 1, \ \forall  x \in B_{2r}\left( x_0 \right) ^{*}$, 说明$f$在$B_{2r}\left( x_0 \right) ^{*}$中有界.
+
+        \item 
+    \end{itemize}
+\end{proof}
+
+\subsection{函数极限的计算方法}
+从定义/夹逼定理/四则运算/复合极限定理
+
+\begin{theorem}
+    设$\displaystyle \lim_{x \to x_0}f\left( x \right) = y_0, \ \lim_{y \to y_0}g\left( y \right) = z_0$, 则
+    \begin{equation}
+      \lim_{x \to x_0} g\left( f\left( x \right)  \right) = z_0.
+    \end{equation}
+    但这个定理是错的.
+    有两种修正办法:
+
+    1. 在$x_0$的某个去心邻域$B_{\delta}\left( x_0 \right) $中, 有$f\left( x \right) \neq y_0$.
+
+    2. 若$g\left( y_0 \right) = z_0$, 上述定理没有问题.
+\end{theorem}
+% 
+%
+% 
+%  = = = 补充
+% 
+% 
+

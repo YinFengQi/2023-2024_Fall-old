@@ -1,0 +1,23 @@
+% !TeX root = 费曼(3).tex
+
+\chapter[自旋$\frac{1}{2}$粒子]{Spin-$\frac{1}{2}$}
+
+A system with spin-$\frac{1}{2}$ is a two-state system. And we may call it a qubit. The two states are usually denoted as $\ket{\uparrow}$ and $\ket{\downarrow}$. It is a building block of any spin system. 
+
+\section[旋转的复合]{Combination of rotation}
+Rotation is a form of transformation, under which the distance of 3D space is invariant. We only consider the rotations that can go to the identity transformation continuously(parity transformation is excluded). 
+
+We use $R$ to denote a rotation operation. The combination is $R_1 R_2$, $R_2$ first and $R_1$ latter. The composite of two rotations is not commutable. We now need to find a map from the rotation to a matrix, such that the composite of two rotations is the product of the corresponding matrices. This is called a representation of the rotation.
+\begin{equation}
+  D_{ij}\left( R \right)  = D_{ij}\left( R_2 R_1 \right) = \sum_{k=1}^{3} D_{ik}\left( R_2 \right) D_{kj}\left( R_1 \right).
+\end{equation}
+where $D_{ij}$ is the matrix element of the representation. We have implicitly assumed that the representation is in 3-dimension.
+
+The $D$ matrix is orthogonal, i.e. $D^T D = I$ and the determinant of $D$ is $1$.All $D$ matrix forms a group called $SO\left( 3 \right) $.
+
+
+\section[投影表示]{Projection Representation}
+A physical state is determined up to a uncertain phase, so the representation should satisfy
+\begin{equation}
+  D_{ij}\left( R_2R_1 \right) = \mathrm{e}^{\mathrm{i} \phi\left( R_2,R_1 \right) } \sum_{k} D_{ik}\left( R_2 \right) D_{kj} \left( R_1 \right) .
+\end{equation}
