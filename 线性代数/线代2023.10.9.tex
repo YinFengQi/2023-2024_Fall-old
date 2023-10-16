@@ -73,7 +73,7 @@
   N(A)\bot C(A^{\mathrm{T}}).
 \end{equation}
 
-\subsection{正交投影}
+\section{正交投影}
 
 如果$Ax=b$无解, $b \notin C(A)$. 在这种情况, 我们寻找一个最接近的$b' \in C(A)$, 此时$e=\vec{b}-\vec{b}' \bot C(A)$.
 \begin{definition}
@@ -92,7 +92,7 @@
     上式中的的$\displaystyle P= \frac{a a^{\mathrm{T}}}{a^{\mathrm{T}} a}$称为投影矩阵.
 \end{example}
 
-\subsubsection{投影矩阵}
+\subsection{投影矩阵}
 考虑一般情况, 有一组向量$(v_1,v_2,\cdots,v_n)$, 这组向量张成一个线性子空间, 记为$C(A)$. 
 下面我们要将一个向量$\vec{b}$正交投影到这个空间, 投影后的向量记为$\vec{p}$. 正交投影意味着$\vec{b}-\vec{p}$垂直于$C(A)$.
 
@@ -119,7 +119,7 @@
   p = A \hat{x} = \underbrace{\left[ A \left( A^{\mathrm{T}}A \right) ^{-1} A^{\mathrm{T}} \right] }_{\text{投影矩阵} P} b .
 \end{equation}
 
-\paragraph{投影矩阵的两个性质}
+\subsubsection{投影矩阵的性质}
 \begin{itemize}
     \item $P^{2}=P$
     \begin{equation}

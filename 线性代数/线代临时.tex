@@ -1,3 +1,64 @@
 % !TeX root = 线性代数.tex
 
 
+\begin{proof}
+    找到变换使得$A$变为行约化阶梯形式$A'$
+    \begin{equation}
+      A' = \left( E_p \cdots E_1 \right) A,
+    \end{equation}
+    如果$A'$为单位矩阵, 那么$\delta (A') = 1$
+    \begin{equation}
+      \delta (B) = \delta (A'B) = \delta (E_p \cdots E_1 A B) = \delta (E_p) \cdots \delta (E_1) \delta (AB),
+    \end{equation}
+    所以
+    \begin{equation}
+      \delta (B) = \frac{\delta(AB)}{\delta (A)} \implies \delta (AB) = \delta (A) \delta (B).
+    \end{equation}
+
+    如果$A'$不是单位矩阵, 那么$\delta (A') = 0$, $AB$也不是满秩的, 所以
+    \begin{equation}
+      \delta (AB) = 0 = \delta (A) \delta (B).
+    \end{equation}
+\end{proof}
+
+\subsubsection{行列式的递归定义}
+\begin{definition}
+    余矩阵: $A_{ij}$: 把$A$的第$i$行第$j$列去掉, 得到一个$ \left( n-1 \right) \times  \left( n-1 \right) $的矩阵.
+\end{definition}
+\begin{example}
+    一个矩阵$A = \begin{bmatrix}
+     2 & 3 & 4\\
+     5 & 6 & 7\\
+     8 & 9 & 10\\
+    \end{bmatrix}$,
+    \begin{equation}
+      A_{11} = \begin{bmatrix}
+       6 & 7\\
+       9 & 10\\
+      \end{bmatrix}
+      \quad
+      A_{21} = \begin{bmatrix}
+       3 & 4\\
+       9 & 10\\
+      \end{bmatrix}
+      \quad
+      A_{31} = \begin{bmatrix}
+       3 & 4\\
+       6 & 7\\
+      \end{bmatrix}.
+    \end{equation}
+\end{example}
+
+行列式的递归定义:
+\begin{equation}
+  \det A = a_{11} \det A_{11} - a_{21} \det A_{21} + a_{31} \det A_{31} - \cdots + \left( - \right) ^{1+j} a_{1j} \det A_{1j}. 
+\end{equation}
+
+\begin{example}
+    $1 \times 1$矩阵行列式 $\det [a] = a$.
+
+    $2 \times 2$矩阵行列式 $\det \begin{bmatrix}
+     a & b\\
+     c & d\\
+    \end{bmatrix} = ad - bc.$
+\end{example}

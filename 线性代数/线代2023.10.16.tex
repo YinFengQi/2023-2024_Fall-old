@@ -1,0 +1,212 @@
+% !TeX root = 线性代数.tex
+\subsubsection{$QR$分解}
+正交归一化的过程, 给出了一个可逆矩阵的$QR$分解,
+\begin{equation}
+  A = QR
+\end{equation}
+其中 $Q$是正交矩阵, $Q^{-1} = Q^{\mathrm{T}}$, $R$是上三角矩阵.
+
+正交归一化当中,
+\begin{gather}
+    A = a
+    \\
+    B = b - \frac{a^{\mathrm{T}}b}{a^{\mathrm{T}}a}a
+    \\
+    C = c - \frac{a^{\mathrm{T}}c}{a^{\mathrm{T}}a}a - \frac{b^{\mathrm{T}}c}{b^{\mathrm{T}}b}b
+\end{gather}
+整个过程可以用矩阵乘法表示. 正交归一基为
+\begin{equation}
+  Q = \left[ \frac{A}{|A|} , \frac{B}{|B|}, \cdots   \right] 
+\end{equation}
+有
+\begin{equation}
+  Q = AR
+\end{equation}
+$R$是一个上三角, 可以把原矩阵写为$A = Q R^{-1}$.
+
+\section{行列式}
+我们之前讨论了秩$r\colon M_{n \times n} \to \mathbb{Z}_{+}$, 它在初等行变换下不变.
+
+我们引入行列式
+\begin{equation}
+  \delta\colon M_{n \times n} \to \mathbb{R}
+\end{equation}
+是一个实数.
+
+这个函数满足三个性质:
+\begin{itemize}
+    \item 作用在单位阵上, $\delta(I) = 1$
+    \item 作用在行向量上是线性的
+    \begin{equation}
+      \delta \begin{bmatrix}
+       \vdots\\
+       c A_i + c' B_i\\
+       \vdots\\
+      \end{bmatrix}
+      =
+      c \delta 
+      \begin{bmatrix}
+       \vdots\\
+       A_i\\
+       \vdots\\
+      \end{bmatrix}
+      +
+      c'\delta
+      \begin{bmatrix}
+       \vdots\\
+       B_i\\
+       \vdots\\
+      \end{bmatrix}
+    \end{equation}
+
+    \item 如果$A$有两行是一样的, 那么行列式为零.
+\end{itemize}
+
+下面研究行列式在初等变换下的性质
+\begin{itemize}
+    \item 倍加变换: $\delta (A') = \delta (A)$.
+    \begin{proof}
+        用到了性质三
+        \begin{equation}
+          \delta (A') = \delta \begin{bmatrix}
+           \vdots\\
+           w_j\\
+           \vdots\\
+           w_i + a w_j\\
+           \vdots\\
+          \end{bmatrix}
+          = 
+          \delta \begin{bmatrix}
+            \vdots\\
+            w_j\\
+            \vdots\\
+            w_i \\
+            \vdots\\
+           \end{bmatrix}
+          +
+          a \delta 
+          \begin{bmatrix}
+           \vdots\\
+           w_j\\
+           \vdots\\
+           w_j\\
+           \vdots\\
+          \end{bmatrix}
+          =\delta (A)
+        \end{equation}
+    \end{proof}
+    \item 换行变换: $\delta(A') = -\delta (A)$.
+    \begin{proof}
+        \begin{equation}
+            0=
+            \delta \begin{bmatrix}
+                \vdots\\
+                w_j + w_i\\
+                \vdots\\
+                w_i + w_j\\
+                \vdots\\
+               \end{bmatrix}
+            = \delta
+            \begin{bmatrix}
+                \vdots\\
+                w_j\\
+                \vdots\\
+                w_i\\
+                \vdots\\
+               \end{bmatrix}  
+            +\delta \begin{bmatrix}
+                \vdots\\
+                w_i\\
+                \vdots\\
+                w_j\\
+                \vdots\\
+               \end{bmatrix}
+            = \delta (A') + \delta (A).
+        \end{equation}
+    \end{proof}
+    \item 倍乘变换$\delta (A') = c \delta (A)$. 由线性性可得.
+\end{itemize}
+
+初等矩阵的行列式
+\begin{itemize}
+    \item $\delta (E_{ij}(a)) = 1$
+    \begin{proof}
+        令$I = \begin{bmatrix} 
+        w_1 \\ 
+        w_2 \\ 
+        \vdots \\ 
+        w_n 
+        \end{bmatrix}$, 则初等矩阵可以写为
+        \begin{equation}
+          E_{ij}(a) =  \begin{bmatrix}
+           \vdots\\
+           w_j\\
+           \vdots\\
+           w_i + a w_j\\
+           \vdots\\
+          \end{bmatrix}.
+        \end{equation}
+        于是
+        \begin{equation}
+            \delta(E) = 
+            \delta \begin{bmatrix}
+                \vdots\\
+                w_j\\
+                \vdots\\
+                w_i + a w_j\\
+                \vdots\\
+               \end{bmatrix}
+               = 
+               \delta \begin{bmatrix}
+                 \vdots\\
+                 w_j\\
+                 \vdots\\
+                 w_i \\
+                 \vdots\\
+                \end{bmatrix}
+               +
+               a \delta 
+               \begin{bmatrix}
+                \vdots\\
+                w_j\\
+                \vdots\\
+                w_j\\
+                \vdots\\
+               \end{bmatrix}
+               =\delta (I) = 1.
+        \end{equation}
+    \end{proof}
+
+    \item 换行$\delta (P_{ij})  =-1$.证明同上, 把这个矩阵写成单位阵的换行即可.
+    \item 倍乘$\delta (S_{i}(c)) = c$. 证明利用线性性.
+\end{itemize}
+
+总结上面的结论, 我们可以发现, 对于初等矩阵$E$, 
+\begin{equation}
+  \delta (EA) = \delta (A).
+\end{equation}
+并且, 如果一个矩阵某一行为零, 那么行列式为零.
+
+\begin{proposition}
+    满足行列式定义的三个性质的函数是唯一的.
+\end{proposition}
+
+\begin{proof}
+    对于任意矩阵$A$, 通过初等变换可以变为一个行约化阶梯形式.
+    这分为两种情况.
+
+    如果$A'$为单位矩阵, 那么
+    \begin{equation}
+      \delta (A)  = \frac{1}{\delta(E_p) \cdots \delta(E_1)}.
+    \end{equation}
+
+    如果$A'$不是单位矩阵, 那么$A'$的最后一行为零, 则
+    \begin{equation}
+      \delta (A) = 0.
+    \end{equation}
+\end{proof}
+
+行列式满足的一个重要性质: 
+\begin{equation}
+  \delta (AB) = \delta (A) \delta (B).
+\end{equation}
