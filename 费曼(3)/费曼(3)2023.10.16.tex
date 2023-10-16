@@ -21,3 +21,66 @@ A physical state is determined up to a uncertain phase, so the representation sh
 \begin{equation}
   D_{ij}\left( R_2R_1 \right) = \mathrm{e}^{\mathrm{i} \phi\left( R_2,R_1 \right) } \sum_{k} D_{ik}\left( R_2 \right) D_{kj} \left( R_1 \right) .
 \end{equation}
+
+We will use the convention of Euler angle. The rotation is a combination of three rotations,
+\begin{equation}
+    R\left( \gamma,\beta,\alpha \right) = R_z\left( \gamma \right) R_x\left( \beta \right) R_z\left( \alpha \right) .
+\end{equation}
+Now, in order to find the representation matrix, we will choose a basis for convenient. The basis is chosen as the eigenstates of $S_z$, i.e. $\ket{\uparrow}$ and $\ket{\downarrow}$. We know that a rotation along $z$-axis shouldn't change the state, thus it can only bring a phase factor.
+Denote $C'_{j} = \bra{j T} \ket{\phi},\ C_{j} = \bra{j S}\ket{\phi}$, then we have
+\begin{equation}
+  \begin{cases} 
+    \left| C'_{+} \right| = \left| C_{+} \right|
+    \\ 
+    \left| C'_{-} \right| = \left| C_{-} \right| .
+  \end{cases}
+\end{equation}
+\begin{equation}
+  \implies C'_{+} = \mathrm{e}^{\mathrm{i} \lambda} C_{+},\ C'_{-} = \mathrm{e}^{\mathrm{i} \mu} C_{-}.
+\end{equation}
+Eliminating a phase factor of the whole system, we have
+\begin{equation}
+  C'_{\pm } = \mathrm{e}^{\pm \mathrm{i} \frac{\lambda - \mu}{2}} C_{\pm }.
+\end{equation}
+Now we redefine $\frac{\lambda - \mu}{2} \rightarrow\lambda$.
+According to the product rule of the representation matrix, we have
+\begin{equation}
+  \mathrm{e}^{\mathrm{i} \lambda \left( \phi_1 \right) } \mathrm{e}^{\mathrm{i} \lambda \left( \phi_2 \right) } = \mathrm{e}^{\mathrm{i} \lambda \left( \phi_1 + \phi_2 \right) } .
+\end{equation}
+thus, $\lambda$ depend on $\phi$ linearly. And $\lambda \left( \phi = 0 \right) $ should be zero.
+\begin{equation}
+  \implies \lambda = m \phi,\ m \in \mathbb{R}.
+\end{equation}
+Notice that the state should come back to itself after a $2\pi$ rotation, and shouldn't go back at $\pi$, thus
+\begin{equation}
+  m = \frac{1}{2}.
+\end{equation}
+
+Notice the relation between $z$-rotation and $x$-rotation,
+\begin{equation}
+  R_x \left( \beta \right) = R_y \left( -\frac{\pi}{2} \right) R_z\left( \alpha \right) R_y\left( \frac{\pi}{2} \right) .
+\end{equation}
+
+We now have to figure out the $\frac{\pi}{2}$ rotation along $y$-axis. We know that 
+\begin{equation}
+  D \left[ R_z\left( \phi \right)  \right] = \begin{pmatrix}
+   \mathrm{e}^{\mathrm{i} \frac{\phi}{2}} & \\
+    & \mathrm{e}^{-\mathrm{i} \frac{\phi}{2}}\\
+  \end{pmatrix}
+\end{equation}
+
+Consider a rotation of $\pi$ along $y$-axis, we have
+\begin{equation}
+  C'_{+} = \mathrm{e}^{\mathrm{i} \beta} C_{-} ,\ C'_{-} = \mathrm{e}^{\mathrm{i} \gamma} C_{+}.
+\end{equation}
+meanwhile, for rotation of $2\pi$ along $y$-axis, which should equivalent to identity transformation, we have
+\begin{equation}
+    \beta + \gamma = 2\pi n,\ n \in \mathbb{Z}. 
+\end{equation}
+we define that $\gamma \equiv 0$, then
+\begin{equation}
+  D \left[ R_y\left( \pi \right)  \right] = \begin{pmatrix}
+   0 & 1\\
+   -1 & 0\\
+  \end{pmatrix}.
+\end{equation}
