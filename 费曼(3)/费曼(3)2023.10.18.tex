@@ -1,0 +1,59 @@
+% !TeX root = 费曼(3).tex
+
+and we find
+\begin{equation}
+  D\left[ R_y \left( \frac{\pi}{2} \right)  \right] = \begin{pmatrix}
+   \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}\\
+   -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}\\
+  \end{pmatrix}
+\end{equation}
+
+or, equally,
+\begin{equation}
+  D \left[ R_y \left( \pm \frac{\pi}{2} \right)  \right] = \begin{pmatrix}
+    \frac{1}{\sqrt{2}} & \pm \frac{1}{\sqrt{2}}\\
+    \mp \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}\\
+   \end{pmatrix}
+\end{equation}
+
+\chapter[概率幅的时间依赖]{Time Dependence of Amplitude}
+\section[自由粒子,定态]{Free Particle \& Stationary State}
+We have the relativistic mass-shell relation (dispersion relation):
+\begin{equation}
+  E = \sqrt{\left| \vec{p} \right| ^{2} c^{2} + m^{2} c^{4}}.
+\end{equation}
+
+The amplitude of free particle, with given energy $E$ and momentum $\vec{p}$ to be found at position $\vec{r}$ at time $t$ is
+\begin{equation}
+    \psi_{\vec{p}} \left( t, \vec{x} \right)  = C_{p} \mathrm{e}^{- \mathrm{i} \left( Et - \vec{p}\cdot \vec{x} \right) / \hbar }.
+\end{equation}
+
+Note that the phase is invariant under Lorentz transformation
+\begin{equation}
+  Et - \vec{p}\cdot \vec{x} = \sum_{i=0}^{3} \eta_{\mu\nu}p^{\mu} x^{\nu}
+\end{equation}
+where the $\eta\mu\nu$ is the Minkowski metric tensor, which is
+\begin{equation}
+    \eta_{\mu\nu} = \begin{pmatrix}
+        -1 & & & \\
+         & 1 & & \\
+         & & 1 & \\
+         & & & 1 \\
+    \end{pmatrix}
+\end{equation}
+
+In a system free of gravity, observables are invariant under the change of energy zero point.
+
+\section{Breit-Wigner Approximation}
+The Breit-Wigner approximation is a method to describe the time dependence of a decaying state. The amplitude of a decaying state is (approximately) 
+\begin{equation}
+  \psi = C \mathrm{e}^{- \mathrm{i} E_0 t / \hbar} \mathrm{e}^{- \Gamma t / 2 \hbar}.
+\end{equation}
+And the Fourrier transform of the amplitude is
+\begin{equation}
+  \tilde{\psi} \left( E \right) = \int_{0}^{\infty} \mathrm{d}t \,  \mathrm{e}^{+ \mathrm{i}  Et} \psi\left( t \right) = \frac{\mathrm{i} C}{E - E_0 + \mathrm{i} \Gamma / 2}.
+\end{equation}
+then, the power distribution is
+\begin{equation}
+  \rho \left( E \right) \propto \frac{\Gamma}{\left( E - E_0 \right) ^{2} + \left( \frac{\Gamma}{2} \right) ^{2}}
+\end{equation}
