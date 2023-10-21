@@ -280,7 +280,20 @@ $V$是一个线性子空间, 称之为$(v_1, v_2, \cdots , v_n)$张成的线性�
       \begin{equation}
         F = [f_1,f_2,\cdots,f_m], \quad E = [e_1,e_2,\cdots,e_m], \quad F=EA.
       \end{equation}
-      $A$为$m \times m$
+      $A$为$m \times m$矩阵. 如果$A$是不可逆的, 则$Ax=0$有非零解即
+      \begin{equation}
+        \begin{bmatrix}
+          f_1, f_2, \cdots, f_m
+        \end{bmatrix}
+        \begin{bmatrix}
+          x_1\\
+          x_2\\
+          \vdots\\
+          x_m
+        \end{bmatrix}
+        = 0
+      \end{equation}
+      这与 $f_i$ 这组基的定义矛盾.
   \end{proof}
 \end{itemize}
 
