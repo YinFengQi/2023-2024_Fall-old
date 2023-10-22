@@ -1,0 +1,320 @@
+% !TeX root = 高等微积分.tex
+
+\subsection{极限的计算}
+\begin{example}
+    \begin{equation}
+      \lim_{x \to a^{+}} \left( x - a \right) ^{\alpha} = 
+      \begin{cases} 
+        0, & \alpha > 0 
+        \\ 
+        1, & \alpha = 0
+        \\
+        \text{不存在}, & \alpha < 0 
+      \end{cases}
+    \end{equation}
+\end{example}
+\begin{proof}
+    \begin{itemize}
+        \item 当 $\alpha > 0$ 时, $\forall \varepsilon > 0$, 取$\delta $, 对于任意 $0 < x - a < \delta $, 有
+        \begin{equation}
+            \left| \left( x - a \right) ^{\alpha} - 0 \right| = \left( x - a \right) ^{\alpha} < \varepsilon
+        \end{equation}
+        表明
+        \begin{equation}
+            \lim_{x \to a^{+}} \left( x - a \right) ^{\alpha} = 0
+        \end{equation}
+
+        \item 当 $\alpha < 0 $ 时, 来证$\left( x - a \right)^{\alpha} $ 无上界, 由此知不存在右极限.
+        
+        \textbf{来证}\ 当$\alpha < 0$ 时, $\left( x - a \right)^{\alpha} $ 无上界, 即对于任意 $k > 0$, $\exists x > a $,使得 $\left( x - a \right)^{\alpha} > k$.
+
+        为此, 对于 $\forall k$, 取 $a < x < a + \frac{1}{k^{\frac{1}{\alpha}}}$, 则有
+        \begin{equation}
+            f \left( x \right) = \left( x - a \right)^{\alpha} > \left( \frac{1}{k^{\frac{1}{\alpha}}} \right)^{\alpha} = k
+        \end{equation}
+    \end{itemize}
+\end{proof}
+
+\begin{example}
+    \begin{equation}
+      \lim_{x \to +\infty} x^{\alpha} = \begin{cases} 
+        0, & \alpha < 0 
+        \\ 
+        1, & \alpha = 0
+        \\
+        \text{不存在}, & \alpha > 0 
+      \end{cases}
+    \end{equation}
+\end{example}
+\begin{proof}
+    \textbf{方法一}
+
+    采用复合极限定理, 令 $f \left( x \right)  = \frac{1}{x}$, 令
+    \begin{equation}
+      g \left( f \left( x \right)  \right) = x^{\alpha}.
+    \end{equation}
+    于是自动满足修正条件一.
+    \begin{equation}
+      \lim_{x \to +\infty} g \left( f \left( x \right)  \right) = \lim_{y \to 0^{+}} g \left( y \right) = \lim_{y \to 0^{+}} y^{-\alpha} = \begin{cases} 
+        0, & \alpha < 0 
+        \\ 
+        1, & \alpha = 0
+        \\
+        \text{不存在}, & \alpha > 0
+      \end{cases}
+    \end{equation}
+
+    \textbf{方法二}
+
+    直接计算, 当$\alpha < 0$时, $\forall \varepsilon > 0$, 取 $M = \varepsilon^{\frac{1}{\alpha}}$, 则对 $\forall  x > M$ 有
+    \begin{equation}
+        \left| x^{\alpha} - 0 \right| = x^{\alpha} < M ^{\alpha} = \varepsilon
+    \end{equation}
+\end{proof}
+
+\begin{example}
+    \begin{equation}
+      \lim_{x \to a} \sin x = \sin a , \quad \lim_{x \to a} \cos x = \cos a
+    \end{equation}
+\end{example}
+\begin{proof}
+    \begin{equation}
+      \left| \sin x - \sin a \right| = 2 \left| \sin \frac{x - a}{2} \right| \left| \cos \frac{x + a}{2} \right| \leqslant 2 \left| \sin \frac{x - a}{2} \right|
+    \end{equation}
+    由于 $0 < x < \frac{\pi}{2}$ 时, $\sin x < x < \tan x$, 可得
+    \begin{equation}
+      \forall \left| x \right| < \frac{\pi}{2}, \quad \left| \sin x \right| \le  \left| x \right|.
+    \end{equation}
+    
+    故 $\forall \varepsilon > 0$, 取$ \delta = \min \{ \pi, \varepsilon \}$, 当 $0 < \left| x - a \right| < \delta $ 时, 有
+    \begin{equation}
+      \left| \sin x - \sin a \right| \le  2 \left| \sin \frac{x - a}{2} \right| \le 2 \left| \frac{x-a}{2} \right| < \delta \le  \varepsilon
+    \end{equation}
+    从而
+    \begin{equation}
+      \lim_{x \to a} \sin x = \sin a
+    \end{equation}
+    同理可证 $\displaystyle \lim_{x \to a} \cos x = \cos a$.
+\end{proof}
+
+\begin{proposition}
+    $\displaystyle
+      \lim_{x \to 0} \frac{\sin x}{x} = 1.
+    $
+\end{proposition}
+\begin{proof}
+    我们只证明 $x \to 0^{+}$ 时的情况, $x \to 0^{-}$ 时的情况类似.
+
+    注意到, $\forall 0 < x < \frac{\pi}{2}$ 时, 有
+    \begin{equation}
+      \sin x < x < \tan x = \frac{\sin x}{\cos x} \implies \cos x < \frac{\sin x}{x} < 1
+    \end{equation}
+    于是使用夹逼定理, 可得
+    \begin{equation}
+      \lim_{x \to 0^{+}} \frac{\sin x}{x} = 1.
+    \end{equation}
+\end{proof}
+
+\begin{example}
+    \begin{gather}
+      \lim_{x \to +\infty} \frac{a_n x^{n} + \cdots +a_0}{b_m x^{m} + \cdots +b_0}
+      = \lim_{x \to +\infty} \frac{a_n x^{n}+ \cdots + a_0}{x^{n}} \frac{x^{m}}{b_m x^{m}+ \cdots +b_0} x^{n-m}
+      \\
+      = \lim_{x \to +\infty} a_n + \frac{a_{n-1}}{x} + \cdots + \frac{a_0}{x^{n}} \cdot \frac{1}{ \displaystyle \lim_{x \to +\infty} b_m + \frac{b_{m-1}}{x} + \cdots + \frac{b_0}{x^{m}}} x^{n-m}
+      \\
+      = \begin{cases} 
+        0, & n < m 
+        \\ 
+        \frac{a_n}{b_m}, & n = m
+        \\
+        \text{不存在}, & n > m
+      \end{cases}
+    \end{gather}
+\end{example}
+
+\begin{proposition}[多项式增长远小于指数增长]
+    $\displaystyle 
+    \lim_{x \to +\infty} \frac{x^{k}}{q^{x}} = 0, \quad q > 1, k \in \mathbb{Z}_{\ge 0}
+    $
+\end{proposition}
+
+\begin{proof}
+    记 $q = 1 + a, \ (a > 0)$,
+    \begin{equation}
+        \begin{gathered}
+            q^{x} = \left( 1 + a \right)^{x} \ge \left( 1 + a \right) ^{[x]} = \sum_{k=0}^{[x]} C_{[x]}^{k} a^{k}
+            \\
+            \ge  C_{[x]} ^{k +1} a^{ k+1}
+            \\
+            = \frac{[x] \left( [x] - 1 \right) \cdots \left( [x] - k \right) }{(k+1)!} a^{k+1}
+            \\
+            > \frac{\left( x-1 \right) \left( x-2 \right) \cdots \left( x- k + 1 \right) }{\left( k+1 \right) !} a^{k +1}
+        \end{gathered}
+    \end{equation}
+    于是可得
+    \begin{equation}
+        0 < \frac{x^{k}}{q^{x}} < \frac{x^{k} \left( k +1 \right) !}{\left( x-1 \right) \cdots \left( x -k + 1 \right) a^{k-1}}
+    \end{equation}
+    由前例可得, 右侧极限为零, 所以$\displaystyle \lim_{x \to +\infty} \frac{x^{k}}{q^{x}} = 0$.
+\end{proof}
+
+\begin{example}
+    \begin{gather}
+        \lim_{x \to 0} \frac{1-\cos x}{x^{2}} = \lim_{x \to 0} \frac{2 \sin ^{2} \frac{x}{2}}{x^{2}} 
+        \\
+        = \lim_{x \to 0} \left( \frac{\sin \frac{x}{2}}{\frac{x}{2}} \right) ^{2} \cdot \frac{1}{2} = \frac{1}{2}
+    \end{gather}
+\end{example}
+
+\begin{proposition}[Euler]
+    $\displaystyle 
+    \lim_{x \to +\infty} \left( 1 + \frac{1}{x} \right) ^{x} = e
+    $
+\end{proposition}
+
+\begin{proof}
+    做放缩
+    \begin{equation}
+      \left( 1 + \frac{1}{[x] + 1} \right) ^{[x]} \le \left( 1 + \frac{1}{x} \right) ^{x} \le \left( 1 + \frac{1}{[x]} \right) ^{[x] + 1}
+    \end{equation}
+    对于上界, 
+    \begin{equation}
+       \lim_{n \to +\infty} \left( 1 + \frac{1}{n} \right) ^{n+1} = \lim_{n \to +\infty} \left( 1 + \frac{1}{n} \right) ^{n} \cdot \lim_{n \to +\infty} \left( 1 + \frac{1}{n} \right) = \mathrm{e} \cdot 1 = \mathrm{e}.
+    \end{equation}
+    对于下界,
+    \begin{equation}
+      \lim_{n \to +\infty} \left( 1 + \frac{1}{n+1} \right) ^{n} = \lim_{n \to +\infty} \left( 1 + \frac{1}{n+1} \right) ^{n+1} \cdot \lim_{n \to +\infty} \left( 1 + \frac{1}{n+1} \right) ^{-1} = \mathrm{e} \cdot 1 = \mathrm{e}.
+    \end{equation}
+    由夹逼定理可得,
+    \begin{equation}
+      \lim_{x \to +\infty} \left( 1 + \frac{1}{x} \right) ^{x} = \mathrm{e}.
+    \end{equation}
+\end{proof}
+
+\begin{proposition}
+    设 $f\colon \mathbb{R} \to \mathbb{Z}_{+},\ g\colon \mathbb{Z}_{+} \to \mathbb{R}$ 满足 $\displaystyle \lim_{x \to x_0} f\left( x \right) = + \infty,\ \lim_{n \to +\infty} g\left( n \right)  = A$, 则
+    \begin{equation}
+        \lim_{x \to x_0} g \left( f \left( x \right)  \right) = A.
+    \end{equation}
+\end{proposition}
+\begin{proof}
+    只需把条件的定义拼起来.
+\end{proof}
+
+\noindent
+\textbf{推论:}\ $\displaystyle \lim_{x \to -\infty} \left( 1 + \frac{1}{x} \right) ^{x} = \mathrm{e}$.
+\begin{proof}
+    令$f \left( x \right) = -x$, $g \left( y \right) = \left( 1 - \frac{1}{y} \right) ^{-y}$, (这自动满足修正方案一)则 
+    \begin{equation}
+        \begin{gathered}
+            \lim_{y \to +\infty} \left( 1 - \frac{1}{y} \right) ^{-y} 
+            = \lim_{y \to +\infty}\left( \frac{y-1}{y} \right) ^{-y} 
+            = \lim_{y \to +\infty} \left( 1 + \frac{1}{y-1} \right) ^{y} 
+            \\
+            = \lim_{y \to +\infty} \left( 1 + \frac{1}{y-1} \right) ^{y-1} \cdot \left( 1 + \frac{1}{y -1} \right) = \mathrm{e}.
+        \end{gathered}
+    \end{equation}
+\end{proof}
+
+做换元$t = \frac{1}{x}$也有类似结论, 总结起来
+\begin{equation}
+  \begin{cases}
+    \displaystyle \lim_{x \to \infty} \left( 1 + \frac{1}{x} \right) ^{x} = \mathrm{e} 
+    \\ 
+    \displaystyle \lim_{t \to 0} \left( 1 + t \right) ^{\frac{1}{t}} = \mathrm{e}
+  \end{cases}
+\end{equation}
+
+\begin{proposition}
+    设 $\displaystyle \lim_{x \to a} u \left( x \right) = A, \ \lim_{x \to a} v \left( x \right) = B$, 则
+    \begin{equation}
+        \lim_{x \to a}  u \left( x \right) ^{v \left( x \right) } = A^{B}.
+    \end{equation}
+\end{proposition}
+\begin{proof}
+    \begin{equation}
+      u \left( x \right) ^{v \left( x \right) } = \mathrm{e} ^{v \left( x \right) \ln u \left( x \right) }
+    \end{equation}
+    
+    \noindent\textbf{于是证明分为两步}
+    \begin{enumerate}
+        \item 先证 $\displaystyle \lim_{x \to a} \ln u \left( x \right) = \ln A$.
+        \item 再证: 若$\displaystyle \lim_{x \to a} f \left( x \right) = C$, 则$\displaystyle \lim_{x \to a} \mathrm{e}^{f \left( x \right) } = \mathrm{e}^{C}$.
+    \end{enumerate}
+
+    \textbf{证明第一步}\ 
+    令$g \left( y \right) = \ln y$, 这满足修正二. 由于$\forall A > 0$, 有$\displaystyle \lim_{y \to A} \ln y = A$(引理\ref{指数和对数的极限}, 下证).
+    由此, 结合复合函数极限定理, 可得
+    \begin{equation}
+      \lim_{x \to a} g \circ u \left( x \right) = \lim_{x \to a} \ln u \left( x \right) = \ln A.
+    \end{equation}
+
+    \textbf{证明第二步}\
+    令$h \left( y \right) = \mathrm{e}^{y}$, 这满足修正二. 由于$\displaystyle \lim_{y \to C} \mathrm{e}^{y} = \mathrm{e}^{C}$.(引理\ref{指数和对数的极限}, 下证)
+    由此, 结合复合函数极限定理, 可得
+    \begin{equation}
+      \lim_{x \to a} h \circ f \left( x \right) = \lim_{x \to a} \mathrm{e}^{f \left( x \right) } = \mathrm{e}^{C}.
+    \end{equation}
+\end{proof}
+
+\begin{lemma}\label{指数和对数的极限}
+    \begin{itemize}
+        \item $\displaystyle \forall A > 0,\ \lim_{y \to A} \ln y = A$.
+        \item $\displaystyle \forall C \in \mathbb{R},\ \lim_{y \to C} \mathrm{e}^{y} = \mathrm{e}^{C}$.
+    \end{itemize}
+\end{lemma}
+\begin{proof}[证明引理第一条]
+    对于$\forall \varepsilon > 0$, 取$\delta = \min \{ A - A \mathrm{e}^{-1} , A \mathrm{e}^{\varepsilon} - A \}$, 则
+    $0 < \left| y - A \right| < \delta$, 有$A \mathrm{e}^{- \varepsilon} < y < A \mathrm{e}^{\varepsilon}$, 进而
+    \begin{equation}
+      \mathrm{e}^{-\varepsilon} < \frac{y}{A} < \mathrm{e}^{\varepsilon}
+    \end{equation}
+    即
+    \begin{equation}
+      \left| \ln y - \ln A \right| = \left| \ln \frac{y}{A} \right| < \varepsilon
+    \end{equation}
+\end{proof}
+
+\begin{proof}[证明引理第二条]
+    我们只证$\displaystyle \lim_{y \to C^{+}} \mathrm{e}^{y} = \mathrm{e}^{C}$. $\displaystyle \lim_{y \to C^{-}} \mathrm{e}^{y} = \mathrm{e}^{C}$的证明类似, 或者可以通过这个结论换元得到.
+    
+    为此, $\forall \varepsilon > 0$, 取一个正整数$n > \frac{\mathrm{e}^{1+C}}{\varepsilon} $, 令 $\delta = \frac{1}{n}$, 则 $0 < y - C < \delta$ 时, 有
+    \begin{equation}
+      \left( 1 + \frac{\varepsilon}{\mathrm{e}^{C}} \right) ^{n} \ge n \frac{\varepsilon}{\mathrm{e}^{C}} > \mathrm{e},
+    \end{equation}
+    进而, 
+    \begin{equation}
+      \mathrm{e}^{\frac{1}{n}} < 1 + \frac{\varepsilon}{\mathrm{e}^{C}}.
+    \end{equation}
+    由此知,
+    \begin{equation}
+      C < \mathrm{e}^{y} - \mathrm{e}^{C} = \mathrm{e}^{C} \left( \mathrm{e}^{y-C} - 1 \right) < \mathrm{e}^{C} \left( \mathrm{e}^{\frac{1}{n}} - 1 \right) < \mathrm{e}^{C} \frac{\varepsilon}{\mathrm{e}^{C}} = \varepsilon.
+    \end{equation}
+\end{proof}
+
+\begin{proposition}
+    设 $\lim_{x \to x_0} f \left( x \right) = 0,\ \lim_{x \to x_0} f \left( x \right) g \left( x \right) = k $, 则
+    \begin{equation}
+      \lim_{x \to x_0} \left[ 1 + f \left( x \right)  \right] ^{g \left( x \right) } = \mathrm{e}^{k}.
+    \end{equation}
+\end{proposition}
+\begin{proof}
+    只需证
+    \begin{equation}
+      \lim_{x \to x_0} \left[ g \left( x \right)  \ln \left( 1 + f \left( x \right)  \right)  \right] = k.
+    \end{equation}
+    常\&史.书上提供如下方法:
+
+    考虑
+    \begin{equation}
+      q \left( y \right) = \begin{cases} 
+        \frac{\ln \left( 1 + y \right) }{y}, & y \neq 0 
+        \\ 
+        1, & y = 0. 
+      \end{cases}
+    \end{equation}
+    对$f \& q$使用复合极限, 满足修正二, 可得
+    \begin{equation}
+      \lim q \left( f \left( x \right)  \right) = 1
+    \end{equation}
+\end{proof}
