@@ -115,7 +115,7 @@ $\exists \varepsilon > 0$, $\forall \delta > 0$, $\exists \left| x - x_0 \right|
     $\mathscr{T}_{\text{离散}} \equiv \{ X \text{ 的所有子集} \} $称为离散拓扑.
 \end{example}
 
-在度量空间中, 我们可以有一些非平凡的拓扑. 令$\left( X, d \right) $为一个度量空间, 定义开球为$B_{x}\left( r \right)  = \{ y \in X | d\left( y,x \right) < r \}$ .令
+在度量空间中, 我们可以有一些非平凡的拓扑. 令$\left( X, d \right) $为一个度量空间, 定义开球为$B_{r}\left( x \right)  = \{ y \in X | d\left( y,x \right) < r \}$ .令
 \begin{equation}
     \mathscr{T} = \{ U \subseteq X | U \text{可以表示为开球之并} \}
 \end{equation}
@@ -133,6 +133,27 @@ $\exists \varepsilon > 0$, $\forall \delta > 0$, $\exists \left| x - x_0 \right|
         U \cap V = \bigcup_{\alpha, \beta} U_{\alpha} \cap V_{\beta} 
     \end{equation}
     我们只需证$U_{\alpha} \cap V_{\beta}$是开球之并即可. 
-    
-    令$z \in U_{\alpha} \cap V_{\beta}$, 令$r = \min \left\{ r_{\alpha}, r_{\beta} \right\} $, 则$B_{z}\left( r \right) \subseteq U_{\alpha} \cap V_{\beta} $, 故$U \cap V$是开球之并.
+    设$U_{\alpha} = B_{r}\left( x \right)$, $V_{\beta} = B_{s}\left( y \right) $, 则对于
+    \begin{equation}
+      \forall z \in B_{r}\left( x \right) \cap B_{s}\left( y \right) 
+    \end{equation}
+    取
+    \begin{equation}
+      0 < t < \min \{ r - d \left( x,z \right) , s - d \left( y, z \right) \}.
+    \end{equation}
+
+    从而
+    \begin{equation}
+      B_{t} \left( z \right) \subseteq B_{r}\left( x \right) , \quad B_{t} \left( z \right) \subseteq B_{s}\left( y \right)
+    \end{equation}
+    所以有
+    \begin{equation}
+      B_{t}\left( z \right) \subseteq U_{\alpha} \cap V_{\beta}
+    \end{equation}
+
+    于是
+    \begin{equation}
+      U_{\alpha} \cap V_{\beta} = \bigcup_{z} B_{t} \left( z \right).
+    \end{equation}
+    我们就证明了开集之交仍是开集.
 \end{proof}
