@@ -73,6 +73,44 @@
   N(A)\bot C(A^{\mathrm{T}}).
 \end{equation}
 
+\begin{example}
+  对于两个矩阵 $A$, $B$, 有
+  \begin{equation}
+    \operatorname{rank} \left( A + B \right) \le \operatorname{rank} A + \operatorname{rank} B.
+  \end{equation}
+\end{example}
+
+\begin{proof}
+  令 $A = \begin{bmatrix} v_1, v_2, \cdots, v_n \end{bmatrix}$, $B = \begin{bmatrix} w_1, w_2, \cdots, w_n \end{bmatrix}$, 则
+  \begin{equation}
+      A + B = \begin{bmatrix} v_1 + w_1, v_2 + w_2, \cdots, v_n + w_n \end{bmatrix}.
+  \end{equation}
+  这个矩阵的列空间是 $A$ 和 $B$ 的列空间的直和, 即$A \oplus B$.
+  
+  另一方面,
+  \begin{equation}
+    \operatorname{rank} \left( A \oplus B \right) \le \operatorname{rank} A + \operatorname{rank} B.
+  \end{equation}
+\end{proof}
+
+\begin{example}
+  一个矩阵 $A$, $A^{2} = A$当且仅当
+  \begin{equation}
+    \operatorname{rank} A + \operatorname{rank} \left( I -A \right) = n.
+  \end{equation}
+\end{example}
+\begin{proof}
+  因为 $A^{2} = A$, 即 $A \left( I - A \right) = 0$, 所以 $C\left( I - A \right) \subset N \left( A \right)$, 即
+  \begin{equation}
+    \operatorname{rank} A + \operatorname{rank} \left( I -A \right) \le n.
+  \end{equation}
+  另一方面, 因为
+  \begin{equation}
+    \operatorname{rank} I \ge \operatorname{rank} \left( I - A \right) + \operatorname{rank} A,
+  \end{equation}
+  所以 $\operatorname{rank} A + \operatorname{rank} \left( I - A \right) = n$.
+\end{proof}
+
 \section{正交投影}
 
 如果$Ax=b$无解, $b \notin C(A)$. 在这种情况, 我们寻找一个最接近的$b' \in C(A)$, 此时$e=\vec{b}-\vec{b}' \bot C(A)$.
