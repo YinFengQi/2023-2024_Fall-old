@@ -1,0 +1,138 @@
+% !TeX root = 高等微积分.tex
+
+复合极限定理中的修正二给出了$\lim_{x \to x_0} g\left( x \right) = g\left( x_0 \right) $, 这可以给出一个定义.
+
+\begin{definition}
+    设$f$在$x_0$的某开球邻域中有定义, 称$f$在$x_0$处连续, 如果以下条件之一成立:
+    \begin{itemize}
+        \item $\displaystyle \lim_{x \to x_0} f\left( x \right) = f\left( x_0 \right) $
+        
+        \item 对于$\forall \varepsilon > 0$, $\exists \delta > 0$, 当$\left| x - x_0 \right| < \delta$时, 有$\left| f\left( x \right) - f\left( x_0 \right)  \right| < \varepsilon$.
+        
+        \item 对与$f\left( x_0 \right) $的任何开球邻域$B_{\varepsilon}\left( f\left( x_0 \right)  \right) $, 都存在$x_0$的开球邻域, 使得
+        \begin{equation}
+            f\left( B_{\delta} \left( x_0 \right) \subseteq B_{\varepsilon}\left( f\left( x_0 \right)  \right)  \right).
+        \end{equation}
+
+        \item 对于$f \left( x_0 \right) $的任何一个邻域$V$, 都存在$x_0$的一个邻域$U$, 使得$f \left( U \right) \subseteq V$.
+    \end{itemize}
+\end{definition}
+对于上面的定义, 我们可以通过不连续的例子来理解, $f$在$x_0$处不连续$\iff$
+
+$\exists \varepsilon > 0$, $\forall \delta > 0$, $\exists \left| x - x_0 \right| < \delta $, 使得$\left| f\left( x \right) - f\left( x_0 \right)  \right| \geq \varepsilon$. 这可以说成$f$在$x_0$处撕开了定义域$D$.
+
+\begin{example}
+    判断连续性
+    \begin{equation}
+      f \left( x \right)  = \begin{cases} 
+        \sin \frac{1}{x^{\alpha}}, & x \neq 0 
+        \\ 
+        0, & x = 0
+      \end{cases}
+    \end{equation}
+    \textbf{解}
+
+    当$\alpha > 0$时, $\lim_{x \to 0} f\left( x \right) $不存在, 故不连续.
+
+    当$\alpha = 0$时, $\lim_{x \to 0} f \left( x \right) = \sin 1 \neq f \left( 0 \right) $. 故$f$在$0$处不连续.
+
+    当$\alpha < 0$时, 令$\alpha = - \beta, \ (\beta > 0 )$, 则$\lim_{x \to 0} f \left( x \right) = 0 = f\left( 0 \right) $, 故$f$在$0$处连续.
+\end{example}
+
+\begin{definition}
+    称$x$为$f$的连续点, 如果$f$在$x$处连续, 称$x$为$f$的间断点, 如果$f$在$x$处不连续.
+
+    间断点也可以分为几类: 
+    \begin{itemize}
+        \item 本性间断点, $\displaystyle \lim_{x \to x_0} f\left( x \right) $不存在.
+        \item 可去间断点, $\displaystyle \lim_{x \to x_0} f\left( x \right) $存在, 但不等于$f \left( x_0 \right) $
+    \end{itemize}
+\end{definition}
+对于可去间断点, 我们可以通过定义$\tilde{f} \left( x_0 \right) = \begin{cases} 
+  f \left( x \right) , & x \neq x_0 
+  \\ 
+  \lim_{x \to x_0} f\left( x \right), & x = x_0 
+\end{cases} $使得$x_0$变为$\tilde{f}$的连续点.
+
+\begin{proposition}[用序列极限刻画函数连续]
+    $f\left( x \right) $ 连续当且仅当
+    对于所有以 $x_0$ 为极限的点列 $\{ x_n \}_{n=1}^{\infty}$, 总有 $\displaystyle \lim_{n \to \infty} f\left( x_n \right) = f \left( x_0 \right) $.
+\end{proposition}
+
+\begin{proof}
+    从充分性和必要性分别证明.
+
+    \textbf{``$\implies$'':}
+    
+    设$f$在$x_0$处连续, 设$\displaystyle \lim_{n \to \infty} x_n = x_0$, 来证$\displaystyle \lim_{n \to \infty} f \left( x_n \right) = f \left( x_0 \right) $.
+
+    这可以用复合极限定理来证明, 令$h \left( n \right) \equiv  x_n,\ \forall n \in \mathbb{Z}_{+}$, 则$\displaystyle \lim_{n \to \infty} h \left( n \right) = x_0$, 由于$f$在$x_0$处连续, 故
+    \begin{equation}
+        \lim_{n \to \infty} f \left( h \left( n \right) \right) = f \left( x_0 \right),
+    \end{equation}
+    这满足复合极限定理的修正二, 所以$\displaystyle \lim_{n \to \infty} f \left( x_n \right) = f \left( x_0 \right) $.
+
+    \textbf{``$\impliedby$'':}
+
+    设序列极限等于$f\left( x_0 \right) $成立, 来证$f$在$x_0$处连续, 即证$\displaystyle \lim_{x \to x_0} f\left( x \right)  = f\left( x_0 \right) $.
+
+    \textbf{反证法}. 设$x\to x_0$时, $f\left( x \right) $不以$f\left( x_0 \right) $为极限, 即$\exists  \varepsilon > 0$, $\forall \delta > 0$, $\exists 0 < \left| x-x_0 \right| < \delta$, 使$\left| f\left( x \right) - f\left( x_0 \right) \right| \ge  \varepsilon$成立.
+    
+    特别的, 对$\delta = \frac{1}{n}$, 则$\exists 0 < \left| x_n - x_0 \right| < \frac{1}{n}$, 使得$\left| f\left( x_n \right) - f\left( x_0 \right)  \right| \geq \varepsilon$. 
+    
+    由于
+    \begin{equation}
+        \lim_{n \to \infty} f\left( x_n \right) = f\left( x_0 \right),
+    \end{equation}
+    矛盾!
+\end{proof}
+
+\begin{definition}
+    设$f\colon D \to \mathbb{R}$, $D$满足$D$中每一点都有一个开球邻域包含在$D$中, 称$f$是$D$上的连续函数/映射, 记为$f \in C \left( D ; \mathbb{R} \right) $, 如果$f$在$D$的每一点处都连续.
+\end{definition}
+
+\begin{definition}
+    称$D$是$\mathbb{R}$的一个开集(open set), 如果$\forall x_0 \in D$, 都存在$B_{r}\left( x_0 \right) \subseteq D$.
+\end{definition}
+
+下面我们可以考虑如何定义一般的映射的连续性.
+\begin{definition}
+    对于一般的$X, Y$, 称$f\colon X \to Y$在$x_0$处连续, 如果对于$Y$中任意开集$V$, $f^{-1} \left( V \right) $是$X$中的开集.
+\end{definition}
+
+\begin{definition}
+    设$X$是一个集合, 所谓$X$上的一个拓扑结构, 是指$X$的一个子集族$\mathscr{T}$, 称$\mathscr{T}$的成员此拓扑的开集, 满足以下三条公理
+    \begin{enumerate}
+        \item $\varnothing, X \in \mathscr{T}$.
+        \item $\mathscr{T}$中有限多个集合之交仍属于$\mathscr{T}$.
+        \item $\mathscr{T}$中任意多个(可以是无穷个)集合之并仍属于$\mathscr{T}$.
+    \end{enumerate}
+    称$\left( X , \mathscr{T}\right) $为一个拓扑空间. 在上下文可以得出$\mathscr{T}$的时候, 也简称$X$为一个拓扑空间.
+\end{definition}
+
+\begin{example}
+    $\mathscr{T}_{\text{平凡}} \equiv \{ \varnothing, X \}$称为平凡拓扑.
+    $\mathscr{T}_{\text{离散}} \equiv \{ X \text{ 的所有子集} \} $称为离散拓扑.
+\end{example}
+
+在度量空间中, 我们可以有一些非平凡的拓扑. 令$\left( X, d \right) $为一个度量空间, 定义开球为$B_{x}\left( r \right)  = \{ y \in X | d\left( y,x \right) < r \}$ .令
+\begin{equation}
+    \mathscr{T} = \{ U \subseteq X | U \text{可以表示为开球之并} \}
+\end{equation}
+我们断言, $\mathscr{T}_{d}$满足拓扑公理, 称之为度量$d$诱导的拓扑.
+\begin{proof}
+    公理三是显然的. 公理一也是显然的, 构造如下
+    \begin{equation}
+      \varnothing = \text{0个开球之并},\quad X = \bigcup_{x \in X} B_{1}\left( x \right)
+    \end{equation}
+
+    公理二需要证明.
+
+    设$U,V \in \mathscr{T}_{d}$, $U = \bigcup_{\alpha} U_{\alpha}$, $V = \bigcup_{\beta} V_{\beta}$. 
+    \begin{equation}
+        U \cap V = \bigcup_{\alpha, \beta} U_{\alpha} \cap V_{\beta} 
+    \end{equation}
+    我们只需证$U_{\alpha} \cap V_{\beta}$是开球之并即可. 
+    
+    令$z \in U_{\alpha} \cap V_{\beta}$, 令$r = \min \left\{ r_{\alpha}, r_{\beta} \right\} $, 则$B_{z}\left( r \right) \subseteq U_{\alpha} \cap V_{\beta} $, 故$U \cap V$是开球之并.
+\end{proof}
