@@ -1,0 +1,27 @@
+% !TeX root = 费曼(3).tex
+
+On some coordinate $x$, the energy of the particle may be exceeded by the potential energy, but the particle can still pass through the potential barrier. This is called tunneling. Denote the imaginary momentum as $\kappa = \sqrt{2m \left( E - V\left( x \right)  \right) }$, then the wave function is
+\begin{equation}
+  \psi_{\pm }^{\text{WKB}} = \frac{C_{\pm }}{\sqrt{\kappa\left( x \right) }} \exp \left[ \pm \frac{1}{\hbar} \int_{}^{x} \mathrm{d}x' \, \kappa \left( x' \right)   \right] \mathrm{e}^{- i Et / \hbar}.
+\end{equation}
+
+The decay rate of $\alpha$-decay is 
+\begin{equation}
+  \Gamma \sim \mathrm{e}^{-\frac{a}{\sqrt{E}}}.
+\end{equation}
+and the potential is(outside the nucleus)
+\begin{equation}
+  V \left( r \right) \sim \frac{2 Z e^{2}}{r}.
+\end{equation}
+
+\chapter[哈密顿量矩阵]{Hamiltonian}
+
+The infinitesimal time evolution operator is defined as Hamiltonian
+\begin{equation}
+  \ket{\psi\left( t + \Delta t\right) } = U\left( t + \Delta t, t \right) \ket{\psi\left( t \right) } = \left[ U \left( t,t \right) - \frac{\mathrm{i} }{\hbar} H \left( t \right)  \Delta t \right] \ket{\psi\left( t \right) }
+\end{equation}
+then
+\begin{equation}
+    \mathrm{i} \hbar \frac{\partial }{\partial t} \ket{\psi} = \hat{H} \ket{\psi}.
+\end{equation}
+which is Schr\"{o}dinger equation.
