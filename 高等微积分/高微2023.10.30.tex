@@ -1,0 +1,77 @@
+% !TeX root = 高等微积分.tex
+
+\subsection{连续函数的整体性质}
+\subsubsection{介值定理}
+\begin{theorem}[区间套原理]
+    设有一簇闭区间$[ a_1,b_1 ] \supset [ a_2,b_2 ] \supset \cdots \supset [ a_i,b_i ] $, 且$\displaystyle \lim_{n \to \infty} \left( b_n - a_n \right) = 0$, 则
+    \begin{itemize}
+        \item $\displaystyle \lim_{n \to \infty}a_n , \lim_{n \to \infty} b_n$存在且相等(记为$c$).
+        \item $\bigcap _{n=1} [ a_n, b_n ] = \{ c \}$.
+    \end{itemize}
+\end{theorem}
+\begin{proof}
+    注意到, $a_1 \le  a_2 \le  \cdots \le a_n \le b_n \le b_{n-1} \le  \cdots \le  b_1$.
+    这说明$a_n$序列单调递增, 且有一个上界是$b_1$, $b_n$序列单调递减, 且有一个下界是$a_1$. 
+    
+    由单调收敛定理, 它们都有极限, 记$\displaystyle \lim_{n \to \infty}a_n = A, \ \lim_{n \to \infty}b_n = B$. 由四则运算, $\displaystyle 0 = \lim_{n \to \infty} \left( b_n  - a_n \right) = B - A$.
+
+    \textbf{再证}$\bigcap _{n=1} [ a_n, b_n ] = \{ c \}$.
+    
+    先证$c \in \bigcap_{n=1}^{\infty}[a_n, b_n]$. 由于$a_{n+1} \le  a_n$, 所以$a_n \le  c \le  b_n,\ \forall n$, 说明$c \in [a_n, b_n], \ \forall n$, 从而 $c \in \bigcap_{n=1}^{\infty}[a_n, b_n]$.
+
+    对于$\forall x \in \bigcap_{n=1}^{\infty} [a_n, b_n ]$, 有$a_n 
+    \le x \le b_n, \ \forall n$, 由夹逼定理, $x = c$. 
+    
+    从而$\bigcap_{n=1}^{\infty} [a_n, b_n ] = \{ c \}$.
+\end{proof}
+
+\begin{theorem}[介值定理]
+    设$f$在$[a,b]$上连续, 且$f(a) f(b) < 1$, 则存在$c \in (a,b)$, 使得$f(c) = 0$.
+\end{theorem}
+
+\begin{proof}
+    用反证法, 设$f\left( x \right) $在$\left[ a,b \right] $上处处非零, 不妨设$f\left( a \right) < 0 < f\left( b \right) $(不满足就用$-f$代替$f$).
+
+    令$I_1 = \left[ a,b \right] = \left[ a_1,b_1 \right] $, 构造闭区间的下降列$\left[ a_1,b_1 \right] \supseteq \left[ a_2,b_2 \right] \supseteq \cdots $, 满足$\left| b_n - a_n \right| = \frac{1}{2} \left| b_{n-1} - a_{n-1} \right| $.
+
+    在构造好$I_n$的基础上, $I_{n+1}$为$I_n$左半, 若$f\left( \frac{a_n + b_n}{2} \right) > 0$, 反之右半. 由$\lim \left( b_n - a_n \right)  = \lim \frac{b-a}{2^{n}} = 0 $.
+    
+    由区间套原理知$\displaystyle \lim_{n \to \infty} a_n = \lim_{n \to \infty}b_n \equiv  c$. 由于$f$在$\left[ a,b \right] $上连续, 所以
+    \begin{equation}
+        0\ge   \lim_{n \to \infty} f\left( a_n \right) = f\left( c \right) = \lim_{n \to \infty} f\left( b_n \right) \ge 0
+    \end{equation}
+    从而$f\left( c \right) = 0$, 矛盾.
+\end{proof}
+
+\textbf{推论}\ 设$f\colon [ a,b ] \to  \mathbb{R}$连续, 设$V$介于$f\left( a \right) $和$f\left( b \right) $之间, 则$\exists c \in \left[ a,b \right] $使 $f\left( c \right) = V$.
+\begin{proof}
+    若$V = f\left( a \right) $或$V = f\left( b \right) $, 结论自动成立. 除此之外对$f$做平移$g\left( x \right)  = f\left( x \right)  - V$即可.
+\end{proof}
+
+\subsubsection{最值/有界性定理}
+
+\begin{definition}
+    称子集族$\mathscr{U} = \{ u_{\alpha} \colon \alpha \in \text{指标集}A \}$为$D$的一个覆盖(covering), 如果
+    \begin{equation}
+        \bigcup_{\alpha \in A} u_{\alpha} \supseteq D .
+    \end{equation}
+
+    如果$\mathscr{U}$的个成员都是$(X, \mathscr{T})$的开集, 则称$\mathscr{U}$是$D$的一个开覆盖(open covering).
+
+    称$\mathscr{U}$的一个子集$\mathscr{V}$为一个子覆盖(subcovering), 如果$\mathscr{V}$也是$D$的一个覆盖. 进一步, 如果$\mathscr{V}$中只有有限个元素, 则称$\mathscr{V}$是$\mathscr{U}$的一个有限子覆盖.
+\end{definition}
+
+\begin{theorem}[有限覆盖定理, Borel]
+    设$\mathscr{U}$是一族开区间构成的族, 且是$D=[a,b]$的一个覆盖, 则$\mathscr{U}$有一个有限子族$\mathscr{V}$也是$D$的覆盖.
+\end{theorem}
+\begin{proof}
+    假设$\mathscr{U}$的任何有限子族都不是$D$的覆盖(简称$D$无有限子覆盖). .
+    
+    令$I_1 = \left[ a,b \right] $, 它无有限子覆盖, 构造闭区间的下降列$I_1 \supseteq I_2 \supseteq \cdots $, 满足$\left| I_n \right| = \frac{1}{2} \left| I_{n-1} \right| $, 且$I_n$皆无$\mathscr{U}$的有限子覆盖. 在构造好$I_n$之后, 它的左右两半不可能都有有限子覆盖, 我们取没有有限子覆盖的一半为$I_{n+1}$.
+
+    由区间套原理可知, $\lim a_n = \lim b_n = c$, $c \in \bigcap_{n=1} ^{\infty} \left[ a_n, b_n \right] $, 特别的, $c \in \left[ a,b \right] $. 
+    
+    记$\mathscr{U} = \{ u_{\alpha} = \mathop{\left( x_{\alpha}, y_{\alpha} \right) }\limits^{}_{\alpha \in A} \}$.从而$\exists u_{\alpha} \ni c$, 即$x_{\alpha} < c < y_{\alpha}$. 由$x_{\alpha} < c = \lim a_n$, $c = \lim b_n < y_{\alpha}$, 则$\exists N, \ \forall n > N$有$x_{\alpha} < a_n, \ b_n < y_{\alpha}$即$I_n$有有限子覆盖$\left( x_\alpha, y_\alpha \right) $, 矛盾!
+
+
+\end{proof}
