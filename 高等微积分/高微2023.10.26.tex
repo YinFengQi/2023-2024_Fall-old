@@ -76,7 +76,53 @@ $B$是$\mathbb{R}^{n}$的闭集 $\iff$ $B^{C}$是$\mathbb{R}^{n}$的开集 $\iff
     $\iff$ $f$下闭集的原像集是闭集 (对$Y$的任何闭集$B$有$f^{-1}\left( B \right) $是$X$的闭集).
 \end{theorem}
 
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Ellipse [id:dp6956114134793403] 
+\draw   (75.8,126.9) .. controls (92.88,60.63) and (149.63,6.9) .. (202.56,6.9) .. controls (255.49,6.9) and (284.55,60.63) .. (267.47,126.9) .. controls (250.4,193.17) and (193.64,246.9) .. (140.71,246.9) .. controls (87.79,246.9) and (58.72,193.17) .. (75.8,126.9) -- cycle ;
+%Shape: Ellipse [id:dp4169675177352954] 
+\draw   (388.8,132.9) .. controls (405.88,66.63) and (462.63,12.9) .. (515.56,12.9) .. controls (568.49,12.9) and (597.55,66.63) .. (580.47,132.9) .. controls (563.4,199.17) and (506.64,252.9) .. (453.71,252.9) .. controls (400.79,252.9) and (371.72,199.17) .. (388.8,132.9) -- cycle ;
+%Shape: Ellipse [id:dp8474608971788034] 
+\draw   (120.88,128.37) .. controls (152.09,94.4) and (204.57,66.85) .. (238.12,66.85) .. controls (271.66,66.85) and (273.56,94.4) .. (242.36,128.37) .. controls (211.16,162.35) and (158.67,189.9) .. (125.13,189.9) .. controls (91.58,189.9) and (89.68,162.35) .. (120.88,128.37) -- cycle ;
+%Shape: Ellipse [id:dp07298221921958703] 
+\draw   (440.94,132.9) .. controls (463.02,108.86) and (500.47,89.37) .. (524.6,89.37) .. controls (548.74,89.37) and (550.4,108.86) .. (528.33,132.9) .. controls (506.26,156.94) and (468.8,176.42) .. (444.67,176.42) .. controls (420.54,176.42) and (418.87,156.94) .. (440.94,132.9) -- cycle ;
+%Curve Lines [id:da21482947459601198] 
+\draw    (171.64,126.9) .. controls (265.87,34.9) and (391.87,8.9) .. (492.87,122.9) ;
+\draw [shift={(492.87,122.9)}, rotate = 228.46] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+\draw [shift={(171.64,126.9)}, rotate = 315.69] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 3.35, y radius= 3.35]   ;
+
+% Text Node
+\draw (144,139.4) node [anchor=north west][inner sep=0.75pt]    {$x_{0}$};
+% Text Node
+\draw (90,31.4) node [anchor=north west][inner sep=0.75pt]    {$X$};
+% Text Node
+\draw (193.88,106.77) node [anchor=north west][inner sep=0.75pt]    {$f^{-1}( V)$};
+% Text Node
+\draw (462,130.4) node [anchor=north west][inner sep=0.75pt]    {$f( x_{0})$};
+% Text Node
+\draw (511,70.4) node [anchor=north west][inner sep=0.75pt]    {$V$};
+% Text Node
+\draw (592,30.4) node [anchor=north west][inner sep=0.75pt]    {$Y$};
+
+
+\end{tikzpicture}
+
+
 第一条推第二条: 
+\begin{proof}[第一条推出第二条]
+    设 $f \in C(X,Y )$ ，设 $V $ 是 $Y $ 中的开集，来证: $f^{-1}(V)$ 是 $X $ 的开集。\\
+    这等价于证明， $f ^{-1} (V)$ 中的每点 $x_0$是 $f^{-1}(V)$ 的内点。\\
+    由 $x_0 \in f^{-1}(V)$，知 $f(x_0) \in V$，由 $f $ 在 $x_0$ 处连续，知存在 $X$ 中的开集 $U$，使 $x_0 \in U$，且 $f(U) \subseteq V$。\\  
+    即 $U \subseteq f^{-1}(V)$，这样，$x_0 \in U_{\text{（开）}} \subseteq f^{-1}(V)$，说明 $x_0$ 是 $f^{-1}(V)$ 的内点。\\
+    又因为 $x_0$ 是 $f^{-1}(V)$ 中任意点，所以 $f^{-1}(V)$ 是开集。
+\end{proof}
+
+
 % 
 % 
 % 
@@ -151,6 +197,9 @@ $B$是$\mathbb{R}^{n}$的闭集 $\iff$ $B^{C}$是$\mathbb{R}^{n}$的开集 $\iff
     $h\colon \mathbb{R}^{2} \to \mathbb{R}, \left( a,b \right)  \mapsto a + b$是连续的.
 \end{lemma}
 \begin{proof}
+    
+
+
     $\forall \varepsilon > 0$, 取$\delta = \frac{\varepsilon}{\sqrt{2}}$, 则$\forall d\left( \left( a,b \right) ,\left( a_0,b_0 \right)  \right) < \delta$, 有
     \begin{equation}
         \begin{aligned}
@@ -164,6 +213,47 @@ $B$是$\mathbb{R}^{n}$的闭集 $\iff$ $B^{C}$是$\mathbb{R}^{n}$的开集 $\iff
             & = \varepsilon.
           \end{aligned}
     \end{equation}
+
+    \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Square [id:dp9170661653714376] 
+\draw   (119.1,81) -- (244,81) -- (244,205.9) -- (119.1,205.9) -- cycle ;
+%Shape: Circle [id:dp10572791246858726] 
+\draw   (146.1,143.45) .. controls (146.1,123.87) and (161.97,108) .. (181.55,108) .. controls (201.13,108) and (217,123.87) .. (217,143.45) .. controls (217,163.03) and (201.13,178.9) .. (181.55,178.9) .. controls (161.97,178.9) and (146.1,163.03) .. (146.1,143.45) -- cycle ;
+%Straight Lines [id:da844014040371049] 
+\draw    (362,164) -- (580.73,164) ;
+\draw [shift={(582.73,164)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Curve Lines [id:da9717239927480394] 
+\draw [line width=3] [line join = round][line cap = round]    ;
+%Straight Lines [id:da9421804366059203] 
+\draw    (181.83,143.18) -- (192.27,132.74) -- (204.42,120.59) ;
+\draw [shift={(205.83,119.18)}, rotate = 135] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (4.37,-1.32) .. controls (2.78,-0.56) and (1.32,-0.12) .. (0,0) .. controls (1.32,0.12) and (2.78,0.56) .. (4.37,1.32)   ;
+\draw [shift={(181.83,143.18)}, rotate = 315] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]      (0, 0) circle [x radius= 1.34, y radius= 1.34]   ;
+%Shape: Polygon [id:ds4718685600955079] 
+\draw   (504.99,141.68) -- (505.22,163.84) -- (421.22,163.84) -- (420.99,141.68) -- cycle ;
+%Curve Lines [id:da49681144914231967] 
+\draw    (205.22,138.51) .. controls (245.02,108.66) and (450.37,105.05) .. (489.97,161.65) ;
+\draw [shift={(490.55,162.51)}, rotate = 236.46] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Brace [id:dp5810445884123745] 
+\draw   (421.33,173.67) .. controls (421.32,178.34) and (423.65,180.67) .. (428.32,180.68) -- (457.23,180.74) .. controls (463.9,180.75) and (467.23,183.09) .. (467.22,187.76) .. controls (467.23,183.09) and (470.56,180.77) .. (477.23,180.78)(474.23,180.78) -- (498.2,180.83) .. controls (502.87,180.84) and (505.21,178.51) .. (505.22,173.84) ;
+
+% Text Node
+\draw (92,86.4) node [anchor=north west][inner sep=0.75pt]    {$\mathbb{R}^{2}$};
+% Text Node
+\draw (182.72,115.57) node [anchor=north west][inner sep=0.75pt]    {$\delta $};
+% Text Node
+\draw (155.19,151.04) node [anchor=north west][inner sep=0.75pt]  [xslant=0.02]  {$( a_{0} ,b_{0})$};
+% Text Node
+\draw (459.33,193.4) node [anchor=north west][inner sep=0.75pt]    {$2\varepsilon $};
+% Text Node
+\draw (551,129.4) node [anchor=north west][inner sep=0.75pt]    {$\mathbb{R}$};
+
+
+\end{tikzpicture}
+
 \end{proof}
 
 \begin{proposition}
