@@ -1,0 +1,104 @@
+% !TeX root = 线性代数.tex
+
+\begin{proposition}
+    如果$A$有$n$个不同的特征值, 那么$A$可以对角化.
+\end{proposition}
+\begin{proof}
+    不同特征值对应的特征向量是线性无关的, 所以可以找到$n$个线性无关的特征向量$\implies$ $A$可以对角化.
+\end{proof}
+
+\textbf{问题二:}\ 矩阵的对角化是否唯一?  \ 不唯一.
+
+\textbf{问题三:}\ 如果一个矩阵可以相似对角化, 那么$P$是否可以选为正交矩阵? \ 不可以.
+
+
+所有矩阵都可以用相似上三角化成若当标准型.
+\begin{definition}
+    一个$m$阶若当块$J_{m}\left( \lambda \right) $为对角元为$\lambda$, 对角元上方为$1$, $J_{m}\left( \lambda \right) = \begin{bmatrix}
+        \lambda & 1 & 0\\
+        0 & \lambda & 1\\
+        0 & 0 & \lambda\\
+       \end{bmatrix}$.
+\end{definition}
+
+所有矩阵都可以化为
+\begin{equation}
+  P ^{-1}A P = \begin{bmatrix}
+   J_{n_1}\left( \lambda_1 \right)  &  &  & \\
+    & J_{n_2}\left( \lambda_2 \right)  &  & \\
+    &  & \ddots & \\
+    &  &  & J_{n_s}\left( \lambda_s \right) \\
+  \end{bmatrix}
+\end{equation}
+其中$\lambda_1,\lambda_2,\cdots,\lambda_s$为特征值, 并且$\sum_{i=1}^{s} n_i = n$.
+
+\subsubsection[对称矩阵]{对称矩阵: 永远可以对角化}
+
+\begin{theorem}
+    对称矩阵的特征值都是实数
+\end{theorem}
+\begin{proof}
+    考虑矩阵方程$S x = \lambda x$, 取复共轭$\bar{S} \bar{x} = \bar{\lambda} \bar{x}$.
+    第一个方程左乘$\bar{x}^{\mathrm{T}}$, 第二个方程左乘$x^{\mathrm{T}}$, 得到
+    \begin{equation}
+      \bar{x}^{\mathrm{T}} S x = \lambda \bar{x}^{\mathrm{T}} x,\ \quad x^{\mathrm{T}} S \bar{x} = \bar{\lambda} x^{\mathrm{T}} \bar{x}.
+    \end{equation}
+    注意到
+    \begin{equation}
+      \bar{x}^{\mathrm{T}} S x = \left( Sx \right) ^{\mathrm{T}} \bar{x} = x^{\mathrm{T}} S^{\mathrm{T}} \bar{x} = x^{\mathrm{T}} S \bar{x}, \qquad \bar{x}^{\mathrm{T}} x = x^{\mathrm{T}} \bar{x}.
+    \end{equation}
+    并且由于$x \neq 0$, 得到$\bar{\lambda} = \lambda$.
+\end{proof}
+
+\begin{theorem}
+    对称矩阵的不同特征值的特征向量正交.
+\end{theorem}
+\begin{proof}
+     考虑两个特征值对应的特征向量$x, y$, 有
+      \begin{equation}
+        x^{\mathrm{T}}S y  =\lambda_1 x^{\mathrm{T}} y = x^{\mathrm{T}} \lambda_2 y = \lambda_2 x^{\mathrm{T}} y.
+      \end{equation}
+      于是
+      \begin{equation}
+        \left( \lambda_1 - \lambda_2 \right) x^{\mathrm{T}} y = 0.
+      \end{equation}
+      由于$\lambda_1 \neq \lambda_2$, 所以$x^{\mathrm{T}} y = 0$.
+\end{proof}
+
+\begin{theorem}
+    任何对称矩阵都可以相似对角化.
+\end{theorem}
+\begin{proof}
+    取一个特征向量$x_1$和特征值$\lambda_1$, 并且规定$x_1$的长度为1. 添加向量构成一组正交归一基$X = \left[ x_1, e_1,e_2,\cdots,e_{n-1} \right] $, 满足
+    \begin{equation}
+      X^{\mathrm{T}}X = I,
+    \end{equation}
+    则
+    \begin{equation}
+      A X = X 
+      \left[
+        \begin{array}{c:ccc}
+            \lambda_1 & \  & a & \  \\
+            \hdashline
+            0 & & & \\
+            \vdots & & B & \\
+            0 & & & \\
+        \end{array} 
+       \right] .
+    \end{equation}
+    由$X$的正交性, 
+    \begin{equation}
+      X^{\mathrm{T}} A X = \left[
+        \begin{array}{c:ccc}
+            \lambda_1 & \  & a & \  \\
+            \hdashline
+            0 & & & \\
+            \vdots & & B & \\
+            0 & & & \\
+        \end{array} 
+       \right] 
+    \end{equation}
+    两边取转置, $\left( X^{\mathrm{T}} A X \right) ^{\mathrm{T}} = X^{\mathrm{T}} A^{\mathrm{T}} X = X ^{\mathrm{T}} AX$, 这说明上式分块矩阵中的$a = 0,\ B = B^{\mathrm{T}}$.
+
+    之后再如上操作即可``正交相似对角化''.
+\end{proof}

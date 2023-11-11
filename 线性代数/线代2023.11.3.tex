@@ -1,0 +1,53 @@
+% !TeX root = 线性代数.tex
+
+\begin{definition}
+    实正定矩阵满足
+    \begin{itemize}
+        \item 对称矩阵
+        \item 特征值都是正的 $\lambda_{i} > 0$
+    \end{itemize}
+\end{definition}
+
+对于正定矩阵, 下面的不等式成立:
+\begin{equation}
+  x^{\mathrm{T}}SX \ge  0
+\end{equation}
+且取等当且仅当$x$为零向量.
+\begin{proof}
+    利用对称矩阵可以正交对角化, 即存在一个正定矩阵$P$, 使得$\Lambda = P^{\mathrm{T}}SP$, $P^{\mathrm{T}}P=I$.
+    有,
+    \begin{equation}
+      x^{\mathrm{T}}Sx = x^{\mathrm{T}} \left( P P^{\mathrm{T}} \right) S \left( P P^{\mathrm{T}} \right) x = \left( P^{\mathrm{T}}x \right) ^{\mathrm{T}} \Lambda \left( P^{\mathrm{T}} x \right) 
+    \end{equation}
+    上式是$P^{\mathrm{T}}x$的每个分量的二次函数.
+\end{proof}
+
+反之, 如果一个矩阵$S$定义的二次型$x^{\mathrm{T}}Sx$满足$x^{\mathrm{T}}Sx \ge 0$且当且仅当$x=0$时取等, 则这个矩阵一定是正交矩阵.
+\begin{proof}
+    需要证明$S$的每个特征值都是正的. 由于$S$是对称矩阵, 所以可以正交对角化, 即存在一个正交矩阵$P$, 使得$P^{\mathrm{T}}SP = \Lambda$, $P^{\mathrm{T}}P=I$. 有$\left( P^{\mathrm{T}}x \right) ^{\mathrm{T}} \Lambda \left( P^{\mathrm{T}} x \right) \ge 0$. 取特殊的向量$
+    P^{\mathrm{T}}x$, 可得$S$的每个特征值都是正的.
+\end{proof}
+
+\begin{proposition}
+    如果$A$是一个可逆矩阵, 那么$S = A^{\mathrm{T}}A$是一个正定矩阵.
+\end{proposition}
+\begin{proof}
+    $S$是对称矩阵, 且$x^{\mathrm{T}}Sx = \left| Ax \right| ^{2}$.
+\end{proof}
+
+\begin{proposition}
+    任意正定矩阵都可以写成$S = A^{\mathrm{T}}A$的形式, 且$A$为可逆矩阵.
+\end{proposition}
+\begin{proof}
+    由于$S$是对称矩阵, 所以可以正交对角化, 即存在一个正交矩阵$P$, 使得$P^{\mathrm{T}}SP = \Lambda$, $P^{\mathrm{T}}P=I$. 令$A = P \sqrt{\Lambda} P^{\mathrm{T}}$, 则$S = A^{\mathrm{T}}A$.
+\end{proof}
+顺序主子式:
+
+\begin{definition}
+    顺序主子阵: 从矩阵的第一行和第一列开始, 依次取第$i$行和第$i$列, 得到的子阵.
+\end{definition}
+
+\begin{proposition}
+    正交矩阵$\iff$所有的顺序主子阵的行列式大于零.
+\end{proposition}
+
