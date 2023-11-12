@@ -1,0 +1,119 @@
+% !TeX root = 线性代数.tex
+
+\subsection{特征值的应用}
+\subsubsection{求$A^{n}$}
+若$A$可以对角化, $\Lambda = P^{-1} A P$, 则
+\begin{equation}
+  A^{n} = P \begin{bmatrix}
+    \lambda_1^{n}&0&\cdots&0\\
+    0&\lambda_2^{n}&\cdots&0\\
+    \vdots&\vdots&\ddots&\vdots\\
+    0&0&\cdots&\lambda_{m}^{n}
+  \end{bmatrix}
+  P ^{-1}.
+\end{equation}
+
+\begin{example}
+    求斐波那契数列的第$100$项.($F_1=F_2=0, F_{n} = F_{n-1} + F_{n-2}$)
+    \\
+    \textbf{解 } 令$u_{k} = \begin{bmatrix}
+     F_{k+1}\\
+     F_{k}\\
+    \end{bmatrix}$, 则有
+    \begin{equation}
+        u_{k+1} = \begin{bmatrix}
+            1&1\\
+            1&0\\
+        \end{bmatrix} u_{k} \equiv A u_k.
+    \end{equation}
+    求$A$的特征值, 特征向量, 可以得到
+    \begin{equation}
+      A^{n} = P \begin{bmatrix}
+       \left( \frac{1+\sqrt{5}}{2} \right) ^{n} & 0\\
+       0 & \left( \frac{1-\sqrt{5}}{2} \right) ^{n}\\
+      \end{bmatrix}
+      P ^{-1},
+    \end{equation}
+    \begin{equation}
+      P = \begin{bmatrix}
+       \frac{1+\sqrt{5}}{2} & \frac{1-\sqrt{5}}{2}\\
+       1 & 1\\
+      \end{bmatrix},
+      \quad
+      P ^{-1} = \frac{\sqrt{5}}{5}\begin{bmatrix}
+       1 & \frac{\sqrt{5}-1}{2}\\
+       -1 & \frac{\sqrt{5}+1}{2}\\
+      \end{bmatrix}
+    \end{equation}
+    于是
+    \begin{equation}
+        \begin{aligned}
+            A ^{n} = \frac{1}{\sqrt{5}}\begin{bmatrix}
+             1 & \frac{\sqrt{5}-1}{2}\\
+             -1 & \frac{\sqrt{5}+1}{2}\\
+              \end{bmatrix}
+              \begin{bmatrix}
+               \left( \frac{1+\sqrt{5}}{2} \right) ^{n} & 0\\
+               0 & \left( \frac{1-\sqrt{5}}{2} \right) ^{n}\\
+              \end{bmatrix}
+              \begin{bmatrix}
+               \frac{1+\sqrt{5}}{2} & \frac{1-\sqrt{5}}{2}\\
+               1 & 1\\
+              \end{bmatrix}
+              \\ \\
+              =
+              \frac{\sqrt{5}}{5}
+              \begin{bmatrix}
+               \left( \frac{1+\sqrt{5}}{2} \right) ^{n+1} - \left( \frac{1-\sqrt{5}}{2} \right) ^{n+1} &\left( \frac{1+\sqrt{5}}{2} \right) ^{n} - \left( \frac{1-\sqrt{5}}{2} \right) ^{n} \\
+               \left( \frac{1+\sqrt{5}}{2} \right) ^{n} - \left( \frac{1-\sqrt{5}}{2} \right) ^{n} & \left( \frac{1+\sqrt{5}}{2} \right) ^{n-1} - \left( \frac{1-\sqrt{5}}{2} \right) ^{n-1}\\
+              \end{bmatrix}
+          \end{aligned}
+    \end{equation}
+    得到
+    \begin{equation}
+      F_n = \frac{\sqrt{5}}{5} \left[ \left( \frac{1+\sqrt{5}}{2} \right) ^{n} - \left( \frac{1-\sqrt{5}}{2} \right)^{n}  \right] 
+    \end{equation}
+\end{example}
+
+\subsubsection{求解矩阵线性微分方程}
+方程$\frac{\mathrm{d}u}{\mathrm{d} t} = Au$, 将$A$对角化之后可以直接求解, 设$\Lambda = P ^{-1} A P$, 则
+\begin{equation}
+  \frac{\mathrm{d}Pu}{\mathrm{d} t} = \Lambda P u,
+\end{equation}
+于是解为
+\begin{equation}
+    u = P e^{\Lambda t} P ^{-1} u_0 = P \begin{bmatrix}
+        e^{\lambda_1 t}&0&\cdots&0\\
+        0&\mathrm{e}^{\lambda_2 t}&\cdots&0\\
+        \vdots&\vdots&\ddots&\vdots\\
+        0&0&\cdots&\mathrm{e}^{\lambda_n t}
+    \end{bmatrix} P ^{-1}.
+\end{equation}
+
+\subsubsection{求解非矩阵二阶微分方程}
+对于方程$u'' + B u' + C u'$, 其中$B, C$都是数, $u= u\left( t \right) $.
+它可以写为下面的形式
+\begin{equation}
+    \frac{\mathrm{d}}{\mathrm{d} t} \begin{bmatrix}
+     u\\
+     u'\\
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+     0 & 1\\
+     -C & -B\\
+    \end{bmatrix}
+    \begin{bmatrix}
+     u\\
+     u'\\
+    \end{bmatrix}.
+\end{equation}
+之后就可以用对角化的方法求解.
+
+\subsubsection{奇异值分解}
+对于任意矩阵都有下列的分解
+\begin{equation}
+    A = U \Sigma V ^{\mathrm{T}},
+\end{equation}
+其中$U$为$m \times m$矩阵, $V$为$n \times n$矩阵, $\Sigma$为$m \times n$矩阵, 且$\Sigma$的对角线上的元素为奇异值.
+
