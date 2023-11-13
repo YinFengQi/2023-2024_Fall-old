@@ -113,7 +113,20 @@
 \subsubsection{奇异值分解}
 对于任意矩阵都有下列的分解
 \begin{equation}
-    A = U \Sigma V ^{\mathrm{T}},
+    A = U \Sigma V^{\mathrm{T}} ,
 \end{equation}
-其中$U$为$m \times m$矩阵, $V$为$n \times n$矩阵, $\Sigma$为$m \times n$矩阵, 且$\Sigma$的对角线上的元素为奇异值.
+其中$U$为$m \times m$矩阵, $V$为$n \times n$的正交矩阵, $\Sigma$为$m \times n$矩阵, $\Sigma$的对角线上的元素为奇异值, 且奇异值按照从大到小排列, 
+\begin{equation}
+   \Sigma = 
+   \begin{bmatrix}
+    \sigma_1^{2} &  &  &  & \\
+     & \sigma_2^{2} &  &  & \\
+     &  & \ddots &  & \\
+     &  &  & 0 & \\
+     &  &  &  & \ddots\\
+   \end{bmatrix}
+\end{equation}
 
+
+
+\boxed{待补充}
