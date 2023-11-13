@@ -1,0 +1,106 @@
+% !TeX root = 高等微积分.tex
+
+\color{red}{$\large \boxed{\text{待补充}}$}
+\color{black}
+
+\begin{definition}
+    称$I$是区间, 如果$I$是$\mathbb{R}^{1}$的凸集. 即$\forall P, A \in I$则线段$PQ \subseteq I$.
+\end{definition}
+
+\begin{proposition}
+    考虑$\inf I = m$(约定, 若无下界令$m$为符号$-\infty$), $\sup I = M$(同, 无上界: $+\infty$).
+
+    $\forall m < x < M$, 有$x \in I$. 由$\frac{m+x}{2} > m = \inf I$, 知$\exists x_1 \in I$使 $\frac{m+x}{2} > x_1$. 同理$\exists x_2 \in I$使 $\frac{x+M}{2} < x_2$. 于是$x_1 < x < x_2$, 由$I$的凸性知$\left[ x_1, x_2 \right]  \in I$.
+    特别的, $x \in I$.
+
+    这样
+    \begin{equation}
+        \left( m.M  \right) \subseteq  I \subseteq \left[ m,M \right] \implies I = \left( m, M \right) \cup \left( \text{端点集的集合} \right) 
+    \end{equation} 
+\end{proposition}
+
+
+\begin{theorem}[反函数定理]
+    设$I$是区间, 设$f \colon I \to \mathbb{R}$是连续单射, 则
+    \begin{itemize}
+        \item $f\left( I \right) $是区间.
+        \item $f^{-1} \colon f\left( I \right) \to I$是连续的.
+    \end{itemize}
+\end{theorem}
+
+\begin{proof}[证明第一条]
+    $\forall f\left( x_1 \right) , f\left( x_2 \right) \in f\left( I \right) $, 对$f\left( x_1 \right) , f\left( x_2 \right) $, 使用介值定理, 线段$f\left( x_1 \right) f\left( x_2 \right) $包含在$f\left( I \right) $中 $\implies f\left( I \right)$是$\mathbb{R}$的区间.
+\end{proof}
+
+\begin{proof}[证明第二条]
+    由$f$连续单射可知$f$严格单调, 不妨设$f$严格递增
+    \begin{enumerate}
+        \item 当$y_0$是$f\left( I \right) $的内点时, 设$f\left( x_0 \right) = y_0$, 则$x_0$是$I$的内点, 则$\forall \varepsilon> 0 $取$0 < \varepsilon^{1} < \varepsilon$使$x \pm \varepsilon^{1} \in  I$.
+        
+        令$\delta = \min \{ y_0 - f\left( x_0 - \varepsilon^{1} \right) , f\left( x_0 + \varepsilon^{1} \right) - y_0 \}$, 这使得$y$介于$f\left( x_0 + \varepsilon^{1} \right) , f\left( x_0 - \varepsilon^{1} \right) $之间. 
+        
+        由介值定理可知, $\exists x \in \left( x_0 - \varepsilon^{1}, x_0 + \varepsilon ^{1} \right) $使得 $f\left( x \right)  = y$. 于是$\left| x - x_0 \right| < \varepsilon^{1} \implies \left| f\left( x \right) - f\left( x_0 \right)  \right| < \varepsilon$, 即$f$在$x_0$处连续.
+        
+        \item 当$y_0$是$f\left( I \right) $的端点, 不妨设是左端点. 类似令$f\left( x_0 \right) = y_0 $, 则$x_0$也是$I$的左端点. 令$\delta = f\left( x_0 + \varepsilon^{1} \right) - y_0$, 则$\forall y \in \left( y_0, y_0 + \delta \right) $, 由介值定理可知, $\exists x \in \left( x_0, x_0 + \varepsilon^{1} \right) $使得$f\left( x \right) = y$. 于是$\left| x - x_0 \right| < \varepsilon^{1} \implies \left| f\left( x \right) - f\left( x_0 \right)  \right| < \varepsilon$, 即$f$在$x_0$处连续.
+    \end{enumerate}
+\end{proof}
+
+\begin{example}[幂函数]
+    分情况三种:
+    \begin{itemize}
+        \item $f\left( x \right) = x^{n}, \ n \in \mathbb{Z}_{+}, \ [0,+\infty) \to  \mathbb{R}$显然$f$连续且严格递增\footnote{这可以用二项式展开
+        \begin{equation}
+          \left( x + h \right) ^{n} = \sum C_{n}^{l} x^{n - l} h^{l} > x^{n}
+        \end{equation}}.
+
+        由反函数定理可知, $f$有连续的反函数$f^{-1}\colon [0, +\infty) \to [0, +\infty)$, 记为$f^{-1} \left( y \right) = y^{\frac{1}{n}}\colon \mathbb{R}_{\ge 0} \to \mathbb{R}_{\ge 0}$
+
+        \item 定义$x^{\frac{m}{n}}\colon \mathbb{R}_{\ge 0}\to \mathbb{R}_{\ge 0}$为$x^{\frac{m}{n}} = \left( x^{\frac{1}{n}} \right) ^{m}$.
+        
+        \item $\forall \alpha \in  \mathbb{R} / \mathbb{Q}$, 取有理数序列$\{ \alpha_{n} \} \to \alpha$, 定义$x^{\alpha} = \lim_{n \to \infty} x^{\alpha_{n}}$.
+    \end{itemize}
+\end{example}
+
+\begin{example}[对数函数]
+    $f\left( x \right) = \mathrm{e}^{x}$有连续反函数$f^{-1}\left( y \right) \xlongequal{\text{记为}} \ln y\colon \mathbb{R}_{+} \to  \mathbb{R}_{+}$.
+\end{example}
+
+\begin{example}[反三角函数]
+    $f\left( x \right) = \sin x \colon \left[ -\frac{\pi}{2}, \frac{\pi}{2} \right] \to  \mathbb{R}$严格递增且连续, $f$有连续的反函数$f^{-1}\left( y \right) \xlongequal{\text{记为}} \arcsin y\colon \left[ -1, 1 \right] \to  \left[ -\frac{\pi}{2}, \frac{\pi}{2} \right] $.
+
+    类似地, $\arccos x \colon [-1, 1 ] \to [0, \pi],\  \arctan x \colon (-\infty, +\infty) \to \left( - \frac{\pi}{2}, \frac{\pi}{2} \right) $.
+\end{example}
+
+
+\subsection{无穷小量与无穷大量}\protect \footnote{这描述的是某些函数具有特定的极限行为, 并不是某一个数是无穷小/无穷大}
+
+\begin{definition}
+    称$x \to x_0$时, $f\left( x \right) $是无穷小量$\iff \lim_{x \to x_0} f\left( x \right) = 0 $, 正/负无穷大量同理.
+\end{definition}
+
+\begin{example}
+    $x \to 0$时, $x, \sin x, x^{n}\ (n\ge 1)$是无穷小量, $\ln \left| x \right| , \frac{1}{x}$是无穷大量.
+\end{example}
+
+引入无穷小量/无穷大量的比较, 
+\begin{itemize}
+    \item $f$是比$g$更高阶的无穷小量$\iff \lim_{x \to 0} \frac{f\left( x \right) }{g\left( x \right) } = 0$.
+    \item $f$是与$g$同阶的无穷小量$\iff \lim_{x \to 0} \frac{f\left( x \right) }{g\left( x \right) } \in \mathbb{R} / \{ 0 \}$.
+    \item $f$是与$g$等价的无穷小量$\iff \lim_{x \to 0} \frac{f\left( x \right) }{g\left( x \right) } = 1$.
+\end{itemize}
+无穷大量的比较同理.
+
+在计算极限时, 可以把某乘积因子替换为与之等价的无穷大/无穷小量, 不改变极限值. 因为
+\begin{equation}
+    \lim \left( f\left( x \right) h\left( x \right)  \right) = \lim \left( \frac{f(x)}{g(x)} g(x)h(x) \right)   
+\end{equation}
+
+\section{微分与导数}
+
+\begin{definition}
+    $f$在某点处的导数定义为
+    \begin{equation}
+      \lim_{h \to 0} \frac{f\left( x_0 + h \right) - f\left( x \right) }{h} \xlongequal{\text{极限换元}} \lim_{x \to x_0} \frac{f\left( x \right) - f\left( x_0 \right) }{x - x_0}.
+    \end{equation}
+    记为$f '\left( x \right) $
+\end{definition}

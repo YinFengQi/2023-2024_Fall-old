@@ -1,0 +1,114 @@
+% !TeX root = 线性代数.tex
+
+\begin{example}
+    计算$A = \begin{bmatrix}
+     3 & 0\\
+     4 & 5\\
+     0 & 0\\
+    \end{bmatrix}$的奇异值分解.
+    \\
+    \textbf{解 } 
+    \begin{equation}
+      A^{\mathrm{T}}A = \begin{bmatrix}
+       3 & 4 & 0\\
+       0 & 5 & 0\\
+      \end{bmatrix}
+      \begin{bmatrix}
+       3 & 0\\
+       4 & 5\\
+       0 & 0\\
+      \end{bmatrix}
+      = 
+      \begin{bmatrix}
+       25 & 20\\
+       20 & 25\\
+      \end{bmatrix}
+    \end{equation}
+    求它的特征值可以得到
+    \begin{equation}
+      \det\left( \lambda I - A \right) = \left( \lambda - 25 \right) ^{2} - 400 = 0,
+    \end{equation}
+    解得$\lambda_1 = 45, \lambda_2 = 5$, 奇异值分别为$\sigma_1 = 3\sqrt{5}, \lambda_2 = 5$, 对应的特征向量分别为
+    \begin{equation}
+      v_1 = \frac{1}{\sqrt{2}}\begin{bmatrix}
+       1\\
+       1\\
+      \end{bmatrix},
+      \quad
+      v_2 = \frac{1}{\sqrt{2}}\begin{bmatrix}
+       1\\
+       -1\\
+      \end{bmatrix}.
+    \end{equation}
+    下面计算$U$,
+    \begin{equation}
+      \begin{aligned}
+        u_1 = \frac{Av_1}{\sigma_1} = \frac{1}{\sqrt{2}} \begin{bmatrix}
+            3 & 0\\
+            4 & 5\\
+            0 & 0\\
+           \end{bmatrix}
+           \begin{bmatrix}
+            1\\
+            1\\
+           \end{bmatrix}
+           =
+           \frac{1}{\sqrt{10}}
+           \begin{bmatrix}
+            1\\
+            3\\
+            0\\
+           \end{bmatrix}
+           \\
+           u_2 = \frac{Av_2}{\sigma_2} = \frac{1}{\sqrt{2}} \begin{bmatrix}
+            3 & 0\\
+            4 & 5\\
+            0 & 0\\
+           \end{bmatrix}
+           \begin{bmatrix}
+              1\\
+              -1\\
+           \end{bmatrix}
+             =
+             \frac{1}{\sqrt{10}}
+           \begin{bmatrix}
+              -3\\
+              1\\
+              0\\
+           \end{bmatrix}
+      \end{aligned}
+    \end{equation}
+    于是
+    \begin{equation}
+      U = \frac{1}{\sqrt{10}}
+      \begin{bmatrix}
+       1 & -3\\
+       3 & 1\\
+       0 & 0\\
+      \end{bmatrix}
+    \end{equation}
+    但是我们需要添加一个向量$v_3 = \begin{bmatrix}
+     0\\
+     0\\
+     1\\
+    \end{bmatrix}$使$U$的列向量构成正交归一基,
+\end{example}
+
+奇异值分解的一个几何理解
+\begin{equation}
+  \begin{cases}
+    A A^{\mathrm{T}} u_i = \sigma_i^{2} v_i, & i=1,2,\cdots,r
+    \\
+    A A^{\mathrm{T}} u_i = 0, &  i=r+1,\cdots,n
+  \end{cases}
+\end{equation}
+有下列事实
+\begin{itemize}
+    \item $u_i, \ i=1,2,\cdots,r \in \mathbb{R}^{m} $ 且在$C\left( A \right) $中, 是$C\left( A \right) $的一组正交归一基.
+    \item $u_i, \ i=r+1,\cdots,n $ 是在$N\left( A^{\mathrm{T}} \right) $中的一组正交归一基, 是$C\left( A \right) $的正交补的一组正交归一基.
+\end{itemize}
+同样地,
+\begin{itemize}
+    \item $v_i, i=1,2,\cdots,r$是$C\left( A^{\mathrm{T}} \right) $的一组正交归一基.
+    \item $vi, i=r+1,\cdots ,n$是$C\left( A^{\mathrm{T}} \right) $的正交补的一组基.
+\end{itemize}
