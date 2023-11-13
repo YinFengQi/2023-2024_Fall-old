@@ -1,0 +1,69 @@
+% !TeX root = 费曼(3).tex
+
+\setcounter{chapter}{10}
+\chapter[更多的双态系统]{More Double-State System}
+
+Pauli matrices, 
+\begin{equation}
+  \sigma_{x} = \begin{bmatrix}
+   0 & 1\\
+   1 & 0\\
+  \end{bmatrix}
+  , \ 
+  \sigma_{y} = \begin{bmatrix}
+   0 & -\mathrm{i} \\
+   \mathrm{i}  & 0\\
+  \end{bmatrix}
+  , \
+  \sigma_{z} = \begin{bmatrix}
+   1 & 0\\
+   0 & -1\\
+  \end{bmatrix}
+\end{equation}
+\begin{equation}
+  \tr \sigma_i = 0,\ \det \sigma_i = -1,\ \sigma_i ^{\dagger} = \sigma_i.
+\end{equation}
+anti-commutator
+\begin{equation}
+    \{ \sigma_i, \sigma_j \} = 2 \delta_{ij}.
+\end{equation}
+commutator
+\begin{equation}
+  [\sigma_{i}, \sigma_j] = 2 i \epsilon_{ijk} \sigma_k.
+\end{equation}
+and we have
+\begin{equation}
+  \left( \vec{A} \cdot \vec{\sigma} \right) \left( \vec{B}\cdot \vec{\sigma} \right) = \vec{A}\cdot \vec{B} + \mathrm{i} \vec{\sigma} \cdot \left( \vec{A} \times \vec{B} \right).
+\end{equation}
+
+Spacial rotation
+\begin{equation}
+  \begin{gathered}
+        D_1^{(1 / 2)} (\phi) = \begin{bmatrix}
+            \cos \frac{\phi}{2} & \mathrm{i} \sin \frac{\phi}{2}\\
+            \mathrm{i} \sin \frac{\phi}{2} & \cos \frac{\phi}{2}\\
+        \end{bmatrix},\\
+        D_2^{(1 / 2)} (\phi) = \begin{bmatrix}
+            \cos \frac{\phi}{2} & \sin \frac{\phi}{2}\\
+            -\sin \frac{\phi}{2} & \cos \frac{\phi}{2}\\
+        \end{bmatrix},\\
+        D_3^{(1 / 2)} (\phi) = \begin{bmatrix}
+            \mathrm{e}^{-\mathrm{i} \phi / 2} & 0\\
+            0 & \mathrm{e}^{\mathrm{i} \phi / 2}\\
+        \end{bmatrix}.
+  \end{gathered}
+\end{equation}
+
+Pauli matrices behave as components of a three-vector. The rotation matrix around x axis is 
+\begin{equation}
+  R_{x} \left( \phi \right) = \begin{bmatrix}
+   1 & 0 & 0\\
+   0 & \cos \phi & \sin \phi\\
+   0 & -\sin \phi & \cos \phi\\
+  \end{bmatrix}
+\end{equation}
+rotation of Pauli matrices is
+\begin{equation}
+  [\sigma_{i}]_{ab} = D \sigma_i D^{\dagger}.
+\end{equation}
+It is an invariant under three rotation.
