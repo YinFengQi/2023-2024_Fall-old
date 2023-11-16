@@ -1,0 +1,258 @@
+% !TeX root = 高等微积分.tex
+\begin{proposition}
+    $f$在$x_0$处是可导的, 当且仅当$f\left( x_0 \pm  \right) $存在且相等.
+\end{proposition}
+
+\begin{example}
+    $f\left( x \right) = \left| x \right| $在$x=0$处是不可导的.
+\end{example}
+
+\begin{proposition}
+    对于一元函数, 可导函数都连续.
+\end{proposition}
+\begin{proof}
+    设$f$在$x_0$处可导, 则$f$在$x_0$处连续.
+    只需证$\lim_{x \to x_0} f\left( x \right) = f\left( x_0 \right) $, 实际上有
+    \begin{equation}
+        \lim_{x \to x_0} \left( f\left( x \right) - f\left( x_0 \right)  \right) = \lim_{x \to x_0} \left( \frac{f\left( x \right) - f\left( x_0 \right) }{x-x_0} \left( x - x_0 \right)  \right) = f'\left( x_0 \right) \cdot 0 = 0.
+    \end{equation}
+\end{proof}
+
+\begin{definition}
+    称$f$在$D$上可导, 如果$f$在$D$中每点处都可导, 也称$f$是$D$上的可导函数.
+    这样得到的映射$D \to \mathbb{R}, x_0\mapsto f'\left( x_0 \right) $.
+\end{definition}
+
+Leibniz引入了符号, $f' = \frac{\mathrm{d}f}{\mathrm{d} x}$, 他想把导数解释为$\mathrm{d}f$与$\mathrm{d}x$之商.
+
+\subsection{计算导数}
+\subsubsection{从定义直接计算}
+\begin{example}
+    $f\left( x \right) = x^{n} ,\ (n\ge 0)$, 当$n=0$时, $f$为常函数, $f' = 0$. 我们之考虑$n \neq 0$的情况.
+    \begin{equation}
+        f'\left( x \right) = \lim_{h \to 0} \frac{\left( x+h \right) ^{n} - x^{n}}{h} = \lim_{h \to 0} \sum_{i=0}^{n} C_{n}^{i} x^{n-i} h^{i-1}= C_{n}^{i} x^{n-1} = n x^{n-1}.
+    \end{equation}
+\end{example}
+
+\begin{example}
+    \begin{equation}
+        \begin{aligned}
+            \sin x' & = \lim_{h \to 0} \frac{\sin\left( x+h \right) - \sin x}{h} = \lim_{h \to 0} \frac{2 \sin \frac{h}{2} \cos \left( x + \frac{h}{2} \right) }{h} 
+            \\
+            & = \lim_{h \to 0} \frac{\sin \frac{h}{2}}{\frac{h}{2}} \lim_{h \to 0} \cos \left( x + \frac{h}{2} \right) = 1 \cdot \cos x.
+        \end{aligned}
+    \end{equation}
+    类似地, $\cos x ' = - \sin x$
+\end{example}
+
+\begin{example}
+    $f \left( x \right) = \mathrm{e}^{x}$.
+    \begin{equation}
+        \left( \mathrm{e}^{x} \right) ' = \lim_{h \to 0} \frac{\mathrm{e}^{x+h} - \mathrm{e}^{x}}{h} = \mathrm{e}^{x} \lim_{h \to 0} \frac{\mathrm{e}^{h}-1}{h} \xlongequal{\text{换元}t \equiv  \mathrm{e}^{h} - 1} \mathrm{e}^{x} \lim_{t \to 0} \frac{t}{\ln \left( 1+t \right) } = \mathrm{e}^{x}.
+    \end{equation}
+\end{example}
+
+\begin{example}
+    \begin{equation}
+        \left( \ln x \right) ' = \lim_{h \to 0} \frac{\ln \left( x + h \right) - \ln x}{h} = \lim_{h \to 0} \ln \left( 1 + \frac{h}{x} \right) ^{\frac{1}{h}} 
+        \xlongequal{\text{换元} t \equiv  \frac{h}{x}} \lim_{t \to 0} \ln \left( 1 + t \right) ^{\frac{1}{xt}} = \ln \mathrm{e}^{\frac{1}{x}} = \frac{1}{x}.
+    \end{equation}
+\end{example}
+
+
+\subsubsection{用导数的四则运算性质}
+\begin{theorem}
+    设$f,g$在$x_0$处可导, 则
+    \begin{equation}
+      \begin{gathered}
+        \left( f \pm g \right) ' = f' \pm g' \\
+        \left( f \cdot g \right) ' = f' \cdot g + f \cdot g' \\
+        \left( \frac{f}{g} \right) ' = \frac{f' \cdot g - f \cdot g'}{g^{2}} \\
+      \end{gathered}
+    \end{equation}
+\end{theorem}
+
+\begin{definition}
+    称$D\colon \{ C^{\infty}\left( E \right)  \} \to  \{ C^{\infty}\left( E \right)  \}$为一个导子, 如果它满足
+    \begin{itemize}
+        \item $D\left( f+g \right) = D\left( f \right) + D\left( g \right) $;
+        \item $D\left( f \cdot g \right) = D\left( f \right) \cdot g + f \cdot D\left( g \right) $;
+    \end{itemize}
+\end{definition}
+
+\begin{proof}[证明Leibniz法则]
+    \begin{equation}
+        \begin{aligned}
+            \left( fg \right) ' \left( x \right)  & = \lim_{h \to 0} \frac{g\left( x+h \right) \left[ f\left( x+h \right) - f\left( x \right)  \right] + f\left( x \right) \left[ g\left( x+h \right) -g\left( x \right)  \right] }{h}
+            \\ 
+            & = f'\left( x \right) g\left( x \right) + f\left( x \right) g'\left( x \right) .
+        \end{aligned}
+    \end{equation}
+\end{proof}
+
+\noindent
+\textbf{推论: }
+\begin{equation}
+  \left( f_1f_2f_3 \right) ' = f_1'f_2f_3 + f_1f_2'f_3 + f_1f_2f_3'.
+\end{equation} 
+这对于任意多个函数相乘也适用.
+
+\begin{example}
+    \begin{equation}
+      \left( \tan x \right) ' = \left( \frac{\sin x}{\cos x} \right) ' = \frac{\cos^{2} x + \sin^{2} x}{\cos^{2} x} = \frac{1}{\cos^{2} x}.
+    \end{equation}
+    类似地, 
+    \begin{equation}
+        \left( \cot x \right) ' = - \frac{1}{\sin^{2} x}.
+    \end{equation}
+\end{example}
+
+\subsubsection{复合函数求导}
+形式化地, 
+\begin{equation}
+  \begin{aligned}
+     \left( g \circ f \right) \left( x \right) 
+    & = \lim_{x \to x_0} \frac{g\left( f\left( x\right)  \right) - g\left( f\left( x_0 \right)  \right) }{x-x_0} 
+    \\
+    & \color{red}= \lim_{x \to x_0} \frac{g\left( f\left( x \right)  \right) - g\left( f\left( x_0 \right)  \right)}{f\left( x \right) - f\left( x_0 \right) } \cdot \frac{f\left( x \right) - f\left( x_0 \right) }{x-x_0}
+    \\
+    & = g'\left( f\left( x_0 \right)  \right) \cdot f'\left( x_0 \right) .
+  \end{aligned}
+\end{equation}
+但上式中标红的步骤是非法的, 因为$f\left( x \right) - f\left( x_0 \right) $可能为$0$.有两种修正方案:
+\begin{enumerate}
+    \item 把除法用乘法和不等式改写.
+    \item 用微分重写(这也适用于高维).
+\end{enumerate}
+
+\begin{theorem}[Chain Rule链式法则]
+    设$f$在$x_0$处可导, $g$在$f\left( x_0 \right) $处可导, 则$g\circ f$在$x_0$处可导, 且
+    \begin{equation}
+      \left( g \circ f \right) \left( x_0 \right) = g'\left( f\left( x_0 \right)  \right) \cdot f'\left( x_0 \right) .
+    \end{equation}
+\end{theorem}
+
+\begin{example}
+    \begin{equation}
+      (x^{x})' = \left( \mathrm{e}^{x \ln x} \right)' = \mathrm{e}^{x \ln x} \left( \ln x + 1 \right) = x^{x} \left( \ln x + 1 \right) .  
+    \end{equation}
+\end{example}
+
+\begin{example}
+    \begin{equation}
+      \left( \ln f\left( x \right)  \right) ' = \frac{1}{f\left( x \right) } f'\left( x \right) .
+    \end{equation}
+    特别地, 当$f\left( x \right)  = \left| x \right| $, 有
+    \begin{equation}
+      \left( \ln \left| x \right|  \right) ' = \frac{1}{\left| x \right| } \cdot \frac{x}{\left| x \right| } = \frac{1}{x}. \quad (x \neq 0)
+    \end{equation}
+\end{example}
+
+\begin{example}
+    $f\left( x \right) = u\left( x \right) ^{v\left( x \right) } $, 有
+    \begin{equation}
+      f'\left( x \right) = \left( u^{v} \right) ' = \left( \mathrm{e}^{v \ln u} \right) ' = \mathrm{e}^{v \ln u} \left( v' \ln u + v \frac{u'}{u} \right) = u^{v} \left( v' \ln u + v \frac{u'}{u} \right) .
+    \end{equation}
+\end{example}
+
+\subsubsection{微分}
+$f$在$x_0$处可导, 则$\exists A \in \mathbb{R}$\footnote{可导$\implies$极限存在$\implies$存在实数$A$等于极限值.}, 使得
+\begin{equation}
+  \lim_{h \to 0} \frac{f\left( x_0 + h \right) - f\left( x_0 \right) - Ah}{h} = 0.
+\end{equation}
+令$\alpha \left( h \right) = f\left( x_0 + h \right) - f\left( x_0 \right) - A h$, 有$\lim_{h \to 0} \frac{\alpha \left( h \right) }{h} = 0$
+
+于是我们发现, $f\left( x \right) $在$x_0$附近可以近似为一个线性函数加上小的误差$f\left( x_0 + h \right) = f\left( x_0 \right) + Ah + \alpha\left( h \right) $.
+\begin{equation}
+  f\left( x_0 + h \right) \sim f\left( x_0 \right)  + Ah
+\end{equation}
+我们可以通过研究线性近似来了解$f$.
+
+\begin{definition}[可微/微分]
+    称$f$在$x_0$处可微, 如果存在线性映射$L\colon \mathbb{R} \to \mathbb{R}$, 使得
+    \begin{equation}
+      f\left( x_0 + h \right) = f\left( x_0 \right) + L\left( h \right) + \alpha\left( h \right) ,
+    \end{equation}
+    且$\displaystyle \lim_{h \to 0} \frac{\alpha\left( h \right) }{h} = 0$.
+    进而称满足上述条件的唯一的$L$为$f$在$x_0$处的微分, 记为$\mathrm{d}f_{x_0}\colon \mathbb{R}\to \mathbb{R} $.
+\end{definition}
+
+\begin{proposition}
+    对于一元函数, 可导与可微等价.
+
+    若$f$在$x_0$处可微, 则其微分为
+    \begin{equation}
+      \mathrm{d} f_{x_0} \left( h \right) = f' \left( x_0 \right) h,\ \forall h
+    \end{equation}.
+\end{proposition}
+
+\begin{definition}[整体微分]
+    称$f$是$D$上的可微函数, 如果$f$在$D$中每一点$x_0$处皆可微, 这样得到一族线性映射.
+    \begin{equation}
+      \{ \mathrm{d} f_{x_0} \colon \mathbb{R}\to \mathbb{R} \}_{x_0 \in D}
+    \end{equation}
+    称此族线性映射为$f$的微分, 记为$\mathrm{d} f$或$Df$.
+\end{definition}
+上述的$\mathrm{d} f_{x_0}$是一个$T(D) \to \mathbb{R}$的映射, 称为 \emph{1-form}. 这时候我们会发现链式法则几乎是显然的.
+
+\begin{theorem}[微分保持映射符合关系]
+    设$f$在$x_0$处连续, $g$在$f\left( x_0 \right) $处连续, 则
+    $g\circ f$在$x_0$处连续且
+    \begin{equation}
+      \mathrm{d}  \left( g \circ f \right) _{x_0} = \mathrm{d} g _{f\left( x_0 \right) } \circ \mathrm{d} f_{x_0}
+    \end{equation}
+\end{theorem}
+
+\begin{proof}
+    设$\mathrm{d} f_{x_0}\left( h \right) = Ah$, $\mathrm{d} g_{f\left( x_0 \right) } \left( v \right) = Bv$, 由微分的定义
+    \begin{equation}
+      f\left( x_0 + h \right) = f\left( x_0 \right) + Ah + \alpha\left( h \right) ,\quad \lim_{h \to 0} \frac{\alpha\left( h \right) }{h} = 0
+    \end{equation}
+    \begin{equation}
+      g \left( f\left( x_0 \right) + v \right) = g\left( f\left( x_0 \right) \right) + Bv + \beta\left( v \right) ,\quad \lim_{v \to 0} \frac{\beta\left( v \right) }{v} = 0
+    \end{equation}
+    复合知, 
+    \begin{equation}
+        \begin{aligned}
+            g\circ f \left( x_0 + h \right) & = g \left( f\left( x_0 \right) + Ah + \alpha\left( h \right)  \right) 
+            \\
+            & = g\left( f\left( x_0 \right) \right) + BAh + B\alpha\left( h \right) + \beta\left( Ah + \alpha\left( h \right)  \right)
+        \end{aligned}
+    \end{equation}
+    只需证$\displaystyle \lim_{h \to 0} \frac{B \alpha \left( h \right) + \beta \left( Ah + \alpha\left( h \right)  \right) }{h} = 0$, 第一项是已知的, 只需证$\displaystyle \lim_{h \to 0} \frac{\beta \left( Ah + \alpha(h) \right) }{h} = 0$.
+    
+    令$q \left( v \right) = 
+    \begin{cases}
+        \frac{\beta(v)}{v}, & v\neq 0
+        \\
+        \lim_{v \to 0} \frac{\beta(v)}{v} = 0 & v = 0.
+    \end{cases}$
+    \\注意到
+    \begin{equation}
+      \lim_{h \to 0} p(h) = \lim_{h \to 0} \left( Ah + \frac{\alpha(h)}{h} h \right) = 0.
+    \end{equation}
+    由复合极限定理知, $\displaystyle \lim_{h \to 0} q\left( p\left( h \right)  \right) = 0,$
+    进而, 
+    \begin{equation}
+      \lim_{h \to 0} \left( q(p(h)) \cdot \frac{Ah + \alpha\left( h \right) }{h} \right) = 0. 
+    \end{equation}
+    注意
+    \begin{equation}
+        \begin{gathered}
+            q(p(h)) \frac{Ah + \alpha(h)}{h} = \begin{cases} 
+                \frac{\beta\left( p(h) \right) }{h} \frac{p(h)}{h}, & p(h) \neq 0  
+                \\ 
+                0, & p(h) = 0  
+              \end{cases}
+              \\
+              = \frac{\beta\left( Ah + \alpha(h) \right) }{h}
+        \end{gathered}
+    \end{equation}
+\end{proof}
+
+\begin{proposition}[Leibniz法则]
+    \begin{equation}
+      \left( fg \right) ^{(n)} = \sum_{k=0}^{n} C_{n}^{k} f^{(n-k)} g^{(k)}
+    \end{equation}
+    用归纳法易证.
+\end{proposition}
