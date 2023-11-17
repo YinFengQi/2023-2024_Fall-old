@@ -1,0 +1,98 @@
+% !TeX root = 线性代数.tex
+
+\subsubsection{奇异值分解的应用}
+\begin{equation}
+  A = U \Sigma V^{\mathrm{T}} = \sum_{i=1}^r \sigma_i u_i v_i^{\mathrm{T}}
+\end{equation}
+其中$U, V$为正交矩阵, $\Sigma$为对角矩阵, 对角线上的元素为奇异值$\sigma_i$.
+
+\paragraph{矩阵近似}
+我们定义矩阵的最大奇异值为其范数, $||A|| = \displaystyle \max_{x\neq  0} \frac{|Ax|}{|x|} = \sigma_{1}$ 在所有秩为$k$的矩阵当中, 有
+\begin{equation}
+  ||A-B|| \ge  ||A - A_k||, \quad A_k = \sum_{i=1}^k \sigma_i u_i v_i^{\mathrm{T}}.
+\end{equation}
+并且有$||A - A_k || = \sigma_{k+1}$.
+\begin{proof}
+    对于一个任意的秩为$k$的矩阵, 有分解
+    \begin{equation}
+      B = X Y^{\mathrm{T}}
+    \end{equation}
+    其中, $X$是一个$ m \times k$矩阵, $Y$是一个$n \times k$矩阵. 
+
+    因为对于矩阵$A$, 存在一个可逆矩阵$P$, 使得$A = PR$, $R$为行约化阶梯形式, 因为$A$的秩为$k$, 所以$R$的后$m-k$行全为零, 所以有
+    \begin{equation}
+      R = \begin{bmatrix}
+       R_1\\
+       0\\
+      \end{bmatrix}.
+    \end{equation}
+    把可逆矩阵$P$写为$P = \begin{bmatrix}
+     P_1 & P_2\\
+    \end{bmatrix}$, 这样有
+    \begin{equation}
+      A = PR = P_1 R_1.
+    \end{equation}
+    这样令$X = P_1$, $Y^{\mathrm{T}} = R_1$. 这样就得到了分解$A = XY^{\mathrm{T}}$.
+
+    可以找到一个特殊向量,
+    \begin{equation}
+      w = \sum_{i=1}^{k+1} y_i v_i,
+    \end{equation}
+    使得$Y^{\mathrm{T}}w = 0$. (不妨令$y_1^{2} + y_2^{2}+ \cdots +y_{k+1}^{2} = 1$)这样就有
+    \begin{equation}
+        \begin{aligned}
+            ||A-B||^{2} \ge |(A-B)w|^{2} & = |Aw|^{2} =w^{\mathrm{T}}A^{\mathrm{T}}Aw\\
+            & = y_{1}^{2} \sigma_1^{2} + \cdots + y_{k+1}^{2} \sigma_{k+1}^{2} \\
+            &\ge  \sigma_{k+1}^{2}
+        \end{aligned}
+    \end{equation}
+\end{proof}
+
+\paragraph{$QS$分解}
+用奇异值分解可以得到一个$QS$分解
+\begin{equation}
+    \begin{aligned}
+        A = U\Sigma V^{\mathrm{T}} & = U V^{\mathrm{T}}V \Sigma V^{\mathrm{T}} 
+        \\
+        & =\left( U V^{\mathrm{T}} \right) \left( V\Sigma V^{\mathrm{T}} \right) 
+        \\
+        & \equiv QS
+    \end{aligned}
+\end{equation}
+其中$S$为一个对称矩阵, 且为一个半正定矩阵, $Q$为一个正交矩阵.
+
+\begin{proof}[验证$S$为半正定矩阵]
+    \begin{equation}
+      x^{\mathrm{T}} S x = x^{\mathrm{T}} V \Sigma V^{\mathrm{T}} x = \left( V^{\mathrm{T}} x \right) ^{\mathrm{T}} \Sigma \left( V^{\mathrm{T}} x \right) \ge 0
+    \end{equation}
+\end{proof}
+
+\paragraph{广义逆}
+通过奇异值分解可以定义广义逆
+\begin{equation}
+  A^{+} = V \Sigma^{+} U^{\mathrm{T}},
+\end{equation}
+其中
+\begin{equation}
+  \Sigma^{+} = \begin{bmatrix}
+   \sigma_1^{-1} &  &  &  & \\
+    & \sigma_2^{-1} &  &  & \\
+    &  & \ddots &  & \\
+    &  &  & \sigma_r^{-1} & \\
+    &  &  &  & 0\\
+    \end{bmatrix}
+\end{equation}
+满足
+\begin{equation}
+    A A^{+} A = A, \quad A^{+} A A^{+} = A^{+}.
+\end{equation}
+
+对于一个不可逆的$A$, $Ax = b$有多个解, $x = A^{+}b$是最佳解, 且是满足投影方程$A^{\mathrm{T}}A x = A^{\mathrm{T}} b$的最短的向量.
+
+\section{线性映射}
+线性映射的性质
+\begin{itemize}
+    \item 把零向量映射到零向量
+    \item 所有映射到零向量的在$x$中的向量称为核, 记为$\ker f$
+    \item $f$在$Y$中的像称为值域, 记为$\Im f$
+\end{itemize}
