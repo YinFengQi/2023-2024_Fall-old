@@ -1,0 +1,100 @@
+% !TeX root = 线性代数.tex
+
+\begin{definition}
+    线性映射$f\colon \mathbb{R}^{n} \to \mathbb{R}^{m}, v \mapsto f(v)$, 满足
+    \begin{equation}
+      f\left( c_1 v_1 + c_2 v_2 + \cdots + c_n v_n \right) = c_1 f\left( v_1 \right) + c_2 f\left( v_2 \right) + \cdots  + c_n f\left( v_n \right) .
+    \end{equation}
+\end{definition}
+
+根据定义, 线性映射满足
+\begin{itemize}
+    \item $f\left( 0_{\mathbb{R}^{n}} \right) = 0_{\mathbb{R}^{m}}$, 根据定义, $f\left( v-v \right) = f\left( v \right) - f\left( v \right) = 0_{\mathbb{R}^{m}}$.
+    
+    \item 因为线性映射保持线性性, 且$\mathbb{R}^{n}$中任何一个向量都可以用一组基的线性组合表示 $v = c_1 v_1 + c_2 v_2 + \cdots +c_n v_n$, 故
+    \begin{equation}
+      f\left( v \right) = c_1 f\left( v_1 \right) + c_2 f\left( v_2 \right) + \cdots +c_n f\left( v_n \right) .
+    \end{equation}
+    所以线性映射的可以完全由它对于基的映射决定.
+
+\end{itemize}
+
+\paragraph{线性映射的矩阵}
+下面在$\mathbb{R}^{m}$和$\mathbb{R}^{n}$中分别取一组基
+\begin{equation}
+  \begin{gathered}
+    \left( v_1,v_2,\cdots,v_n \right) \subset \mathbb{R}^{n},
+    \\
+    \left( w_1,w_2,\cdots,w_m \right) \subset \mathbb{R}^{m}.
+  \end{gathered}
+\end{equation}
+线性映射的像和原像都可以用各自空间的基的线性组合表示出来. 将$f$作用于$\mathbb{R}^{n}$中的基, 并分解在$\mathbb{R}^{m}$中的基上,
+\begin{equation}
+  f\left( v_i \right) = w_1 a_{i 1} + w_{2} a_{i 2} + \cdots + w_m a_{i m},
+\end{equation}
+线性映射$f$在基$\left( v_1,v_2,\cdots,v_n \right) \left( w_1,w_2,\cdots,w_m \right) $中的表示矩阵为
+\begin{equation}
+  \left( A \right) _{ij} = a_{ij}
+\end{equation}
+
+线性映射和矩阵的一些性质
+给定一个线性映射$f$和$\mathbb{R}^{n}$和$\mathbb{R}^{m}$中的两组基$\left( v_1,v_2,\cdots,v_n \right) , \ \left( w_1,w_2,\cdots,w_m \right) $, 这给出了$f$在这组基下的表示矩阵.
+
+考虑$f$中的任意向量$\vec{x}$,
+\begin{equation}
+  \vec{x} = x_1 v_1 + x_2 v_2 + \cdots + x_n v_n,
+\end{equation}
+那么
+\begin{equation}
+    \begin{aligned}
+        f\left( \vec{x} \right) & = x_1 f\left( v_1 \right) + x_2 f\left( v_2 \right) + \cdots + x_n f\left( v_n \right)
+        \\
+        & = \sum_{j=1}^{n} w_j \sum_{i=1}^{m} a_{ij} x_i. 
+    \end{aligned}
+\end{equation}
+所以$f\left( \vec{x} \right) $在$\{ w_{i} \}$上的展开系数为$Ax$.
+
+\paragraph{换基公式}
+下面我们换一组基, 
+\begin{equation}
+  v_i ' = \sum_{j=1}^{n} P_{ji} v_j, \quad w_i ' = \sum_{j=1}^{m} Q_{ji} w_j.
+\end{equation}
+$P, Q$为可逆矩阵, 把上述换基的形式写为矩阵乘法
+\begin{equation}
+  V' = V P, \quad W' = W Q.
+\end{equation}
+在新的基下的表示矩阵为
+\begin{equation}
+  f\left( v_i' \right) = f\left( \sum_{j=1}^{n} v_j P_{ji} \right) = \sum_{j=1}^{n} f\left( v_j \right) P_{ji} = \sum_{j=1}^{n} \sum_{k=1}^{m} w_k a_{jk} P_{ji}.
+\end{equation}
+再利用$W = W' Q^{-1}$, 得到
+\begin{equation}
+  f\left( v_i' \right) = \sum_{j=1}^{n} \sum_{k=1}^{m} w_k a_{jk} P_{ji} = \sum_{j=1}^{n} \sum_{k=1}^{m} \sum_{l=1}^{m} w_l' Q^{-1}_{lk} a_{kj} P_{ji}
+  = \sum_{l=1}^{m} w_l' \sum_{k=1}^{m} \sum_{j=1}^{n} Q^{-1}_{lk} a_{kj} P_{ji}.
+\end{equation}
+写成矩阵乘法的形式
+\begin{equation}
+  A' = Q^{-1} A P.
+\end{equation}
+
+\begin{proposition}
+    选一组基后, $\Im (f) = \{ Ax, x \text{ 为任意的$n \times 1$矩阵} \}$, 
+    \begin{equation}
+      \operatorname{dim} \ker (f) + \operatorname{dim} \Im (f) = n.
+    \end{equation}
+\end{proposition}
+\begin{proof}
+    选一组$\ker (f)$中的基$v_1,v_2,\cdots,v_s$, 添加向量构成$\mathbb{R}^{n}$的一组基, 考虑集合
+    \begin{equation}
+      \operatorname{span} \left\{ f(v_1),f(v_2), \cdots, f(v_{s}), f(v_{s+1}) \cdots,f(v_n) \right\} 
+    \end{equation}
+    于是
+    \begin{equation}
+      \Im (f) = \operatorname{span} \left\{ f(v_1), \cdots, f(v_n) \right\} =\operatorname{span} \left\{ 0, f(v_{s+1}), \cdots, f(v_n) \right\}  .
+    \end{equation}
+    下面证明$\operatorname{span} \left\{ f(v_{s+1}), \cdots, f(v_n) \right\} $中的向量线性无关. 
+    
+    用方程$x_{s+1} f(v_{s+1}) + \cdots s_n f(v_n) = 0$只有零解的性质易证.
+\end{proof}
+
+线性映射和矩阵是 \emph{isomorphic} 的, 映射的复合, 映射的逆, 都对应矩阵的乘法, 矩阵的逆.
