@@ -1,0 +1,38 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings, intersections, arrows.meta, positioning}
+
+\begin{document}
+\begin{tikzpicture}
+
+\def\a{2}
+\def\b{6}
+
+\def\z{.8}
+\def\Aone{.7}
+\def\Atwo{.9}
+
+\draw (0,0)  +(-\a, 0) -- +(\a, 0) +(0, -\a) -- +(0, \a);
+\draw (\b,0) +(-\a, 0) -- +(\a, 0) +(0, -\a) -- +(0, \a);
+
+\node at ({\z * \a}, {\z* \a}) {$z$};
+\node at ({\b + \z * \a}, {\z* \a}) {$z$};
+
+\draw (0,0) + ({\Aone * \a}, {\Atwo * \a}) -- +({\Aone * \a}, {\Aone * \a}) -- +({\Atwo * \a}, {\Aone * \a});
+\draw (\b,0) + ({\Aone * \a}, {\Atwo * \a}) -- +({\Aone * \a}, {\Aone * \a}) -- +({\Atwo * \a}, {\Aone * \a});
+
+\begin{scope}[very thick, decoration ={
+    markings,
+    mark = at position 0.7 with {\arrow{Stealth}}
+    }]
+
+    \draw[blue, postaction = {decorate}] (0, 0) +(-5: -\a) -- +(-5 : \a);
+    \draw[blue, postaction = {decorate}] (\b,0) +(0, {.75 * \a}) -- +(0, -{.75 * \a});
+
+    \node at (-20:{.8 * \a}) {$z = (1 - \mathrm{i} 0^{+}) t$};
+    \node at ({\b + .4 * \a}, {-.4 * \a}) {$z = - \mathrm{i} \tau$};
+\end{scope}
+
+
+\end{tikzpicture}
+\end{document}
