@@ -1,0 +1,112 @@
+% !TeX root = 高等微积分.tex
+\subsection{反函数求导}
+若$f$是连续单射$f\colon D\to \mathbb{R}$, 则$f$有反函数$f^{-1}$, \textbf{问:}$f^{-1}$是否可导? 如何求导?
+
+\begin{proposition}
+    若$f$与$f^{-1}$皆可导, 则有
+    \begin{equation}
+      \left( \mathrm{d} f^{-1} \right) _{f\left( x_0 \right) } = \left( \mathrm{d} f_{x_0} \right) ^{-1}, \quad \left( f^{-1} \right) ' \left( f\left( x_0 \right)  \right) f'\left( x_0 \right) = 1
+    \end{equation}
+\end{proposition}
+\begin{proof}
+    由于
+    \begin{equation}
+      f \circ f^{-1} = \operatorname{id} _{D} ,\quad f^{-1} \circ f = \operatorname{id}_{f(D)}
+    \end{equation}
+    用链式法则, 有
+    \begin{equation}
+        \begin{cases}
+          \left( \mathrm{d} f^{-1} \right) _{f\left( x_0 \right) } \circ \mathrm{d} f_{x_0} = \operatorname{Id},
+          \\
+          \mathrm{d} f_{x_0} \circ \left( \mathrm{d} f^{-1} \right) _{f\left( x_0 \right) } = \operatorname{Id}
+        \end{cases}
+    \end{equation}
+    可知
+    \begin{equation}
+      \left( \mathrm{d} f^{-1} \right) _{f\left( x_0 \right) } = \left( \mathrm{d} f_{x_0} \right) ^{-1}.
+    \end{equation}
+\end{proof}
+
+\begin{example}
+    $f\left( x \right) = x^{3}$, 在$\mathbb{R}$上严格单调, 但$f^{-1}$在$y = 0$处不可导.
+
+    严格单调可导函数的反函数未必可导, 因为若$f^{-1}$在$f\left( x_0 \right) $处可导$\implies f'\left( x_0 \right) \neq 0$.
+\end{example}
+
+\begin{theorem}
+    设$f\colon D\to \mathbb{R}$是连续单射, 且$D$是区间, 若$f$在$x_0$处可导且$f'\left( x_0 \right) \neq 0$, 则$f^{-1}$在$f\left( x_0 \right) $处可导. 且有
+    \begin{equation}
+      \left( f^{-1} \right) ' \left( f\left( x_0 \right)  \right)  = \frac{1}{f'\left( x_0 \right) }.
+    \end{equation} 
+\end{theorem}
+
+\begin{proof}
+    由导数的定义计算
+    \begin{equation}
+      \left( f^{-1} \right) ' \left( f\left( x_0 \right)  \right) = \lim_{y \to f\left( x_0 \right) } \frac{f^{-1}\left( y \right) - f^{-1}\left( f\left( x_0 \right)  \right) }{y - f\left( x_0 \right) }.
+    \end{equation}
+    用复合极限定理
+    ,定义$g\colon D / \{ x_0 \} \to \mathbb{R}, u \mapsto g(u) = \frac{u-x_0}{f\left( u \right) - f\left( x_0 \right) }$, 复合为
+    \begin{equation}
+      h(y) = g\left( f^{-1}\left( y \right)  \right) = \frac{f^{-1}\left( y \right) - x_0}{y - f\left( x_0 \right) }
+    \end{equation}
+    注意到
+    \begin{equation}
+      \lim_{y \to f\left( x_0 \right) } f^{-1}\left( y \right) \xlongequal{\text{已证 $f^{-1}$ 连续}} f^{-1}\left( \lim_{y \to f\left( x_0 \right) } y \right) = x_0.
+    \end{equation}
+    故有
+    \begin{equation}
+      \lim_{u \to x_0} g\left( u \right) = \lim_{u \to x_0} \frac{u-x_0}{f\left( u \right) - f\left( x_0 \right) } \xlongequal{\text{四则运算}} \frac{1}{f'\left( x_0 \right) }.
+    \end{equation}
+    修正方案I自动成立, 由$f$单知$\forall y \neq f\left( x_0 \right) $有$f^{-1}\left( y \right) \neq x_0$.
+    这样由复合极限定理得到
+    \begin{equation}
+      \left( f^{-1} \right) ' \left( f\left( x_0 \right)  \right) = \frac{1}{f' \left( x_0 \right) }.
+    \end{equation}
+\end{proof}
+
+\noindent
+\textbf{推论: }设$f^{-1}$是$f$的反函数, 且$f$是可导函数, 则
+\begin{equation}
+  \left( f^{-1} \right) ' \left( f\left( x \right)  \right) = \frac{1}{f'\left( x \right) }, \quad (\forall f'\left( x_0 \right) \neq  0).
+\end{equation}
+
+\begin{example}
+    \begin{equation}
+        \left( \arcsin x \right)' =\frac{1}{\sin' \arcsin x } = \frac{1}{\cos\left( \arcsin x \right) } = \frac{1}{\sqrt{1-x^{2}}}.
+    \end{equation}
+\end{example}
+
+\begin{example}
+    \begin{equation}
+      \left( \arccos x \right) ' = \frac{1}{\cos' \arccos x} = \frac{1}{- \sin \arccos x } = \frac{1}{- \sqrt{1-x^{2}}}
+    \end{equation}
+\end{example}
+
+\begin{example}
+    \begin{equation}
+      \left( \arctan x \right) ' = \frac{1}{\tan ' \arctan x} = \cos^{2} \arctan x = \frac{1}{1 + x^{2}}
+    \end{equation}
+\end{example}
+
+\subsection{复合函数的高阶导}
+\begin{equation}
+  \begin{gathered}
+    h^{(1)} = g'\left( f\left( x \right)  \right) f'\left( x \right) \\
+    h^{(2)} = g'' \left( f\left( x \right)  \right) f'\left( x \right) + g' \left( f\left( x \right)  \right) f''\left( x \right) \\
+    h^{(3)} = g''' f' f' f' + g'' f'' f' + g'' f' f'' + g' f'''
+  \end{gathered}
+\end{equation}
+
+\begin{definition}
+    所谓$1, 2 , \ldots ,n$的一个分组方式$P = \{ A_1,A_2,\cdots,A_k \}$, 其中$A_1,A_2,\cdots,A_k$是$\{ 1,2,\cdots,n \}$的无交的非空子集, 且满足
+    \begin{equation}
+      A_1 \cup A_2 \cup  \cdots \cup A_k = \{ 1,2,\cdots,n \}
+    \end{equation}.
+\end{definition}
+求导就是把求导算子分配到每一项的因式上.
+\begin{theorem}
+    \begin{equation}
+      \left( g\circ f \right) ^{n} (x) = \sum_{\text{所有分组方案$P = \{A_1, \cdots, A_k\}$}}g^{(\text{组数})} f^{(|A_1|)} \cdots f^{(|A_k|)}
+    \end{equation}
+\end{theorem}

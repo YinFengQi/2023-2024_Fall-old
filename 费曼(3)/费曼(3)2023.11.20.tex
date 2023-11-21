@@ -1,0 +1,42 @@
+% !TeX root = 费曼(3).tex
+
+\section[Neutrino Oscillation]{中微子震荡}
+There are three generations of neutrinos, their flavour eigenstate and energy-momentum eigenstate are not the same. The neutrino oscillation is the phenomenon that the neutrino flavour eigenstate changes with time. The neutrino oscillation is the evidence of \emph{neutrino mass}.
+
+% what is definition of flavour eigenstate
+For simplicity, we consider a two-state system, the eigenstates of  interaction and mass are related vy an orthogonal matrix
+\begin{equation}
+    \begin{pmatrix}
+        \nu_e \\ \nu_\mu
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        \cos\theta & -\sin\theta \\
+        \sin\theta & \cos\theta
+    \end{pmatrix}
+    \begin{pmatrix}
+        \nu_1 \\ \nu_2
+    \end{pmatrix}
+\end{equation}
+a plane wave would be 
+\begin{equation}
+  \ket{v_i(x)} = \mathrm{e}^{i p_i x} \ket{v_i}.
+\end{equation}
+
+The oscillation can be calculated as
+\begin{align}
+  \bra{v_e} \ket{v_e (x)} & = \left( \bra{v_1} \cos \theta - \bra{v_2} \sin \theta \right) \times \left( \mathrm{e}^{\mathrm{i}  p_1 x} \ket{v_1} \cos \theta - \mathrm{e}^{\mathrm{i}  p_2 x} \ket{v_2} \sin \theta \right)
+  \\
+  & = \mathrm{e}^{\mathrm{i} p_1 x} \cos^{2} \theta + \mathrm{e}^{\mathrm{i} p_2 x} \sin^{2} \theta
+\end{align}
+then the probability
+\begin{equation}
+  P = 1 - \sin ^{2} 2\theta \sin ^{2} \frac{\left( m_1^{2} - m_2^{2} \right) x }{4E}
+\end{equation}
+
+\chapter[氢原子的超精细结构]{Hydrogen Atom Hyperfine structure: Spin-Spin Interaction}
+
+A single state can be written as $\ket{\vec{p}, \sigma}$, and a two- (or multi-) particle state can be expressed as 
+\begin{equation}
+  \ket{\vec{p}_1, \sigma_1; \vec{p}_2, \sigma_2; \cdots}
+\end{equation}
