@@ -1,0 +1,63 @@
+% !TeX root = 费曼(3).tex
+States like this lives in a space called tensor product of Hilbert spaces
+\begin{equation}
+  \mathcal{H}_{A} \otimes \mathcal{H}_{B} = \operatorname{span} \{ \ket{j_{A}} \otimes \ket{j_{B}} \}.
+\end{equation}
+this has distributive and combining property.
+
+This method is not a proper description of identical particles, since we cannot assign labels to particles and tell the momenta with index.
+A permutation symmetry state for Bosons is constructed to avoid the problem, the case fow two particles is
+\begin{equation}
+  \ket{p_1, \sigma_1; p_1, \sigma_2} = \frac{1}{2!} \left( \ket{p_1, \sigma_1} \otimes \ket{p_2, \sigma_2} + \ket{p_2, \sigma_2} \otimes  \ket{p_1, \sigma_1} \right) 
+\end{equation}
+For Fermions, an anti-symmetry form is similar, interestingly accompanied with a structure of \emph{wedge product}.
+
+The Hamiltonian in the product space should be a Hermitian operator,
+\begin{equation}
+  \mathcal{H}_{e} \otimes \mathcal{H}_{p},
+\end{equation}
+and it should be 
+\begin{equation}
+  \{ 1^{e}, \sigma_i^{e} \} \otimes \{ 1^{e}, \sigma_i^{e} \}.
+\end{equation}
+elements in this space would be like
+\begin{equation}
+  \begin{gathered}
+    \Sigma_{00} \equiv  1^{e} \otimes 1^{p}, \\
+    \Sigma_{i 0} \equiv  \sigma_{i}^{e} \otimes 1^{p}, \\
+    \Sigma_{i j} \equiv  \sigma_{i}^{e} \otimes \sigma_{j}^{p}.
+  \end{gathered}
+\end{equation}
+By symmetry, the coupling Hamiltonian have to be
+\begin{equation}
+  H = c_{00} \Sigma_{00} + c_{11} \left( \Sigma_{11} + \Sigma_{22} + \Sigma_{33} \right) 
+\end{equation}
+or written in a compact form,
+\begin{equation}
+  H = A \vec{\sigma}^{e} \cdot \vec{\sigma}^{p} + B
+\end{equation}
+a shift of Hamiltonian is not physical, thus the coupling term would be
+\begin{equation}
+  H = A \vec{\sigma}^{e} \cdot \vec{\sigma}^{p}
+\end{equation}
+
+\section{Origin of Coupling}
+Particle with spin excites magnetic field around itself, namely
+\begin{equation}
+  \vec{B} = \frac{\mu_0}{4\pi}\left[ \frac{3\vec{r} \left( \vec{\mu}_{p} \cdot \vec{r} \right) }{r^{5}} - \frac{\vec{\mu}_{p}}{r^{3}} \right] - \frac{2\mu_0}{3} \vec{\mu}_{p} \delta^{(3)} \left( \vec{r} \right) 
+\end{equation}
+the delta function contributes a contact term.
+\begin{equation}
+  V = \frac{\mu_0}{4\pi} \left[ \frac{\vec{\mu}_{e}\cdot \vec{\mu}_{p}}{r^{3}} - \frac{3\left( \vec{\mu}_{e} \cdot \vec{r} \right) \left( \vec{\mu}_{p} \cdot \vec{r} \right) }{r^{5}} \right] - \frac{2\mu_0}{3} \vec{\mu}_{e} \cdot \vec{\mu}_{p} \delta^{(3)} \left( \vec{r} \right) 
+\end{equation}
+
+\section{Solving the States}
+\begin{equation}
+  H = \begin{pmatrix}
+   A &  &  & \\
+    & -A & 2A & \\
+    & 2A & -A & \\
+    &  &  & A\\
+  \end{pmatrix}
+\end{equation}
+and we can find that there are triple-degenerated states and a single state.
