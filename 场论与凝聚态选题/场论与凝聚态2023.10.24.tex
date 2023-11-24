@@ -81,9 +81,7 @@ We have came to the conclusion that a theory with locality (of course with Hermi
 
 
 
-In the following it will be convinced that \emph{if and only if} the generate functional of a Euclidean field theory is real and positive\footnote{
-    Always guaranteed as long as it has locality and unitarity.
-}, it has a \emph{classical stat. mech. interpretation}.
+In the following it will be convinced that \emph{if and only if} the generative functional of a Euclidean field theory is real and positive, it has a \emph{classical stat. mech. interpretation}.
 
 Sufficiency can be easily verified, as we have
 \begin{equation}
@@ -92,14 +90,21 @@ Sufficiency can be easily verified, as we have
 no imaginary part appears in the expression of $\mathcal{Z}$.
 \footnote{The integration of $\mathcal{D} \phi $ can be approximated by summation on a large amount of field configurations, which turns out to be Mont Carlo method for stat. mech.}
 
-Proof of necessity is carried out by utilizing locality, as path integral can be performed in a certain subset on spacetime.\footnote{but the momentum coordinate doesn't have this property of locality.}
-Splitting the base manifold into small parts, 
+Proof of necessity is carried out by utilizing locality, as path integral can be performed in a certain subset on spacetime.\footnote{but there's no locality in momentum space.}
+\begin{figure}
+    \centering
+    \includegraphics{figures/splited_base_manifold.pdf}
+    \caption{Splited base manifold}
+    \label{split_manifold}
+\end{figure}
+Splitting the base manifold into small parts, as shown in Fig\ref{split_manifold}, the path integral on each sub-manifold is fully determined by the b.c. on each $\partial\Sigma'_{i}$. Hence the path integral on $\Sigma'$ can be expressed as
+\begin{equation}
+    \mathcal{Z}_{\Sigma'} = \int \left( \text{b.c. of all boundary} \right) \prod_{i} \mathcal{Z}_{\Sigma' _{i} \text{ (b.c.)}}.
+\end{equation}
+Given that locality and unitarity guarantee that all $\mathcal{Z}_{\Sigma'_{i}}$ are \emph{real and positive}, such $\mathcal{Z}_{\Sigma'_{i}}$ is undoubtedly doable to be turned into the form of $\mathrm{e}^{- \tilde{\beta} \left( \cdots \right) }$, thus there always exists an effective Hamiltonian density and corresponding inverse temperature to match this QFT with a stat.~mech. interpretation.
 
 
 
-
-
-
-\section[When do Symmetries Break Spontaneously]{SSB: What is Broken? Why no Tunneling?}
+\section[When do Symmetries Break Spontaneously]{SSB: What is Broken? No Tunneling?}
 
 A name of ambiguity was designated to refer as the physical picture behind SSB, resulting a widespread misconstruction among juvenile learners, that ``\emph{a potential with minimal value at non-zero field strength will lead to SSB as vacuum state is static and tends to minimize its Hamiltonian.}'' But such explanation will be no longer compatible if one try to replicate this in a statistic field theory and he would eventually figure out that the ensemble expectation value of field strength in ground state will remain zero. 
