@@ -1,0 +1,25 @@
+% !TeX root = 线性代数.tex
+
+可以定义线性变换的行列式, 行列式的值是和基的选取无关的.
+
+对于线性空间$\mathbb{R}^{m}$和$\mathbb{R}^{n}$, 线性映射$f\colon \mathbb{R}^{n} \to  \mathbb{R}^{m}$, 这些线性映射构成一个空间$M_{m \times n}\left( \mathbb{R} \right) $, 这个空间是一个线性空间.
+\begin{proof}
+    如果$f_1, f_2$为线性映射, 则有
+    \begin{equation}
+      \left( f_1 + f_2 \right) \left( c_1v_1 + c_2v_2+ \cdots + c_n v_n \right) = c_1 \left( f_1 + f_2 \right) \left( v_1 \right) + \cdots + c_n \left( f_1 + f_2 \right) \left( v_n \right) .
+    \end{equation}
+    所以映射在加法也是线性映射.
+    \begin{equation}
+      \left( cf \right) \left( v \right) = c f\left( v \right) 
+    \end{equation}
+    在乘法下也是线性映射.
+\end{proof}
+
+\begin{definition}
+    $V$的对偶空间$V'$为$f\colon V\to \mathbb{R}$的线性映射构成的空间.
+\end{definition}
+对偶空间的一组基为
+\begin{equation}
+  \left( e^{*1},e^{*2},\cdots,e^{*n} \right) , \quad e^{*i} e_j = \delta_{j}^{i}
+\end{equation}
+其中$\delta^{j}_{i}$为 Kr\"onecker 符号.
