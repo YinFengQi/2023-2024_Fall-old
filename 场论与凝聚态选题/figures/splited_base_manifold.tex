@@ -6,7 +6,11 @@
 \usepackage[active,tightpage]{preview}
 \PreviewEnvironment{tikzpicture}
 \setlength\PreviewBorder{1pt}
-%
+% 
+% 借鉴了tikz.net的一个作品, 以下是原作信息:
+% 
+% 
+% 
 % File name: differential-of-surface-area.tex
 % Description: 
 % A geometric representation of the differential of surface area is shown.
@@ -44,6 +48,22 @@
     \pgfmathsetmacro{\c}{5*\step}
     \pgfmathsetmacro{\d}{6*\step}
 
+
+    % 大框
+    \filldraw[draw=black,thick,fill=gray!10] 
+        plot[domain=\yi:\yf,smooth,variable=\t] 
+        ({\xi},{\t},{funcion(\xi,\t)}) 
+        --
+        plot[domain=\xi:\xf,smooth,variable=\t] 
+        ({\t},{\yf},{funcion(\t,\yf)}) 
+        --
+        plot[domain=\yf:\yi,smooth,variable=\t] 
+        ({\xf},{\t},{funcion(\xf,\t)}) 
+        --
+        plot[domain=\xf:\xi,smooth,variable=\t] 
+        ({\t},{\yi},{funcion(\t,\yi)}) 
+        -- cycle;
+    
 	% 曲面上的网格
 	\foreach \x in {0,\step,...,\xf}{
 		\draw plot[domain=0:\yf,smooth,variable=\t] ({\x},{\t},{funcion(\x,\t)});
@@ -52,7 +72,7 @@
 		\draw plot[domain=0:\yf,smooth,variable=\t] ({\t},{\y},{funcion(\t,\y)});
 	}
 
-    % 粗框
+    % 小框
     \filldraw[draw=blue,thick,fill=blue!20] 
         plot[domain=\c:\d,smooth,variable=\t] 
         ({\a},{\t},{funcion(\a,\t)}) 
@@ -66,9 +86,11 @@
         plot[domain=\b:\a,smooth,variable=\t] 
         ({\t},{\c},{funcion(\t,\c)}) 
         -- cycle;
-        
+
     % 箭头和文字
-        \draw[thick,draw=blue,->] (0,2,0) node[above right, blue] {$\Sigma_{i}'$} -- ({2.5*\step}, {5.5*\step},{funcion({2.5*\step}, {5.5*\step})});
+        \draw[thick,draw=blue,->] (0,2,0)  -- ({2.5*\step}, {5.5*\step},{funcion({2.5*\step}, {5.5*\step})});
+
+        \node[blue] at (0,2.15,.15) {$\Sigma'_{i}$};
         
         \node at (0,1.2,-2.5) {$\displaystyle \Sigma' = \bigcup_{i} \Sigma_{i}'$};
 \end{tikzpicture}
