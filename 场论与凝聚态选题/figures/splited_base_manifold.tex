@@ -1,0 +1,74 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{math}
+\usepackage{ifthen}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{1pt}
+%
+% File name: differential-of-surface-area.tex
+% Description: 
+% A geometric representation of the differential of surface area is shown.
+% 
+% Date of creation: October, 23rd, 2021.
+% Date of last modification: October, 9th, 2022.
+% Author: Efraín Soto Apolinar.
+% https://www.aprendematematicas.org.mx/author/efrain-soto-apolinar/instructing-courses/
+% Source: page 120 of the 
+% Glosario Ilustrado de Matem\'aticas Escolares.
+% https://tinyurl.com/5udm2ufy
+%
+% Terms of use:
+% According to TikZ.net
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+% Your commitment to the terms of use is greatly appreciated.
+%
+\begin{document}
+%
+\tdplotsetmaincoords{80}{100}
+%
+\begin{tikzpicture}[tdplot_main_coords,scale=1.5]
+	% the function $z = f(x,y)$
+	\tikzmath{function funcion(\x,\y)
+    {return .25*sin((0.5*\x + 1.5*\y + .6)r)-.2*\x-.3*\y;
+    };}
+	\pgfmathsetmacro{\step}{pi/10.0} % step size
+	\pgfmathsetmacro{\xi}{0}	% initial value for x
+	\pgfmathsetmacro{\xf}{1.0*pi}	% final value for x
+	\pgfmathsetmacro{\yi}{0}	% initial value for y
+	\pgfmathsetmacro{\yf}{1.0*pi}	% final value for y
+
+    \pgfmathsetmacro{\a}{2*\step}     % 画框的范围, 以下
+    \pgfmathsetmacro{\b}{3*\step}
+    \pgfmathsetmacro{\c}{5*\step}
+    \pgfmathsetmacro{\d}{6*\step}
+
+	% 曲面上的网格
+	\foreach \x in {0,\step,...,\xf}{
+		\draw plot[domain=0:\yf,smooth,variable=\t] ({\x},{\t},{funcion(\x,\t)});
+	}
+	\foreach \y in {0,\step,...,\yf}{
+		\draw plot[domain=0:\yf,smooth,variable=\t] ({\t},{\y},{funcion(\t,\y)});
+	}
+
+    % 粗框
+    \filldraw[draw=blue,thick,fill=blue!20] 
+        plot[domain=\c:\d,smooth,variable=\t] 
+        ({\a},{\t},{funcion(\a,\t)}) 
+        --
+        plot[domain=\a:\b,smooth,variable=\t] 
+        ({\t},{\d},{funcion(\t,\d)}) 
+        --
+        plot[domain=\d:\c,smooth,variable=\t] 
+        ({\b},{\t},{funcion(\b,\t)}) 
+        --
+        plot[domain=\b:\a,smooth,variable=\t] 
+        ({\t},{\c},{funcion(\t,\c)}) 
+        -- cycle;
+        
+    % 箭头和文字
+        \draw[thick,draw=blue,->] (0,2,0) node[above right, blue] {$\Sigma_{i}'$} -- ({2.5*\step}, {5.5*\step},{funcion({2.5*\step}, {5.5*\step})});
+        \node at (0,0,-1.8) {$\Sigma'$};
+\end{tikzpicture}
+\end{document}

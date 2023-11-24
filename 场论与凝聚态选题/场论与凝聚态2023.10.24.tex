@@ -13,7 +13,7 @@ We' ve seen that a quantum field theory in $d+1$-dim spacetime can be reinterpre
 
 Let us first compare the behaviors between QFT and stat. mech.
 \footnote{
-    The properties mentioned in the table are only valid with an implicit assumption that the base manifold on which the field lives is orientable.
+    The properties mentioned in the table are only valid with an implicit assumption that the base manifold of the field is orientable.
 }
 \begin{center}
     \begin{tabular}{|c|c|}
@@ -45,7 +45,7 @@ Let us first compare the behaviors between QFT and stat. mech.
 
         \multicolumn{2}{|c|}{
             \parbox[h]{15cm}{The partition function of a locally defined theory can be splited into two parts, each on half of the base manifold. 
-            For $\Sigma = \parbox[c]{2.8cm}{\includegraphics{figure_orientable_base.pdf}}$,
+            For $\Sigma = \parbox{2.8cm}{\includegraphics{figures/orientable_base.pdf}}$,
             the degree of freedom is the arbitrary boundary condition on $\partial \Sigma''$.
             By treating $\mathcal{Z}_{\Sigma''}$ and $\mathcal{Z}_{\bar{\Sigma}''}$ as functionals of $\left. \phi \right|_{\partial \Sigma''}$.
             we have 
@@ -80,18 +80,26 @@ Let us first compare the behaviors between QFT and stat. mech.
 We have came to the conclusion that a theory with locality (of course with Hermitian Hamiltonian whilst) is always accompanied by a real and positive partition function $\mathcal{Z}$.
 
 
-% might exist mistakes to be corrected
 
-% In the following it will be convinced that \emph{if and only if} a Euclidean QFT admits \emph{Monte Carlo}, this QFT has a \emph{classical stat. mech. interpretation}.
+In the following it will be convinced that \emph{if and only if} the generate functional of a Euclidean field theory is real and positive\footnote{
+    Always guaranteed as long as it has locality and unitarity.
+}, it has a \emph{classical stat. mech. interpretation}.
 
-% Sufficiency can be easily verified, as we have
-% \begin{equation}
-%   \mathcal{Z} = \int \mathcal{D} \phi  \, \exp\left( - \beta \int \mathrm{d} ^{d+1} r' \, \mathcal{H}(\phi) \right),
-% \end{equation}
-% where the integration of $\mathcal{D} \phi $ can be approximated by summation on a large amount of field configurations, which turns out to be Mont Carlo method. 
+Sufficiency can be easily verified, as we have
+\begin{equation}
+  \mathcal{Z} = \int \mathcal{D} \phi  \, \exp\left( - \beta \int \mathrm{d} ^{d+1} r' \, \mathcal{H}(\phi) \right),
+\end{equation}
+no imaginary part appears in the expression of $\mathcal{Z}$.
+\footnote{The integration of $\mathcal{D} \phi $ can be approximated by summation on a large amount of field configurations, which turns out to be Mont Carlo method for stat. mech.}
 
-% Proof of necessity is carried out by utilizing locality
+Proof of necessity is carried out by utilizing locality, as path integral can be performed in a certain subset on spacetime.\footnote{but the momentum coordinate doesn't have this property of locality.}
+Splitting the base manifold into small parts, 
+
+
+
+
+
 
 \section[When do Symmetries Break Spontaneously]{SSB: What is Broken? Why no Tunneling?}
 
-A name of ambiguity was designated to refer as the physical picture behind SSB, resulting a widespread misconstruction among juvenile learners, that ``\emph{a potential with minimal value at non-zero field strength will lead to SSB as vacuum state is static and tends to minimize its Hamiltonian.}'' But such explanation will be no longer compatible if one try to replicate this in a statistic field theory and he would eventually figure out that the ensemble expectation value of field strength in ground state will remain zero.
+A name of ambiguity was designated to refer as the physical picture behind SSB, resulting a widespread misconstruction among juvenile learners, that ``\emph{a potential with minimal value at non-zero field strength will lead to SSB as vacuum state is static and tends to minimize its Hamiltonian.}'' But such explanation will be no longer compatible if one try to replicate this in a statistic field theory and he would eventually figure out that the ensemble expectation value of field strength in ground state will remain zero. 

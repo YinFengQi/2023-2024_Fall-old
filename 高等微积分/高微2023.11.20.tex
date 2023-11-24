@@ -110,3 +110,25 @@
       \left( g\circ f \right) ^{n} (x) = \sum_{\text{所有分组方案$P = \{A_1, \cdots, A_k\}$}}g^{(\text{组数})} f^{(|A_1|)} \cdots f^{(|A_k|)}
     \end{equation}
 \end{theorem}
+
+\begin{proof}
+  采用归纳法, 几乎是显然的.
+\end{proof}
+
+\begin{example}
+  $h\left( x \right) = \mathrm{e}^{\frac{\alpha}{2} x^{2}}$, 求$h^{(n)} (0)$.
+  
+  令
+  \begin{equation}
+    g(y) = \mathrm{e}^{y}, \quad f(x) = \frac{\alpha}{2} x^{2}, h\left( x \right) = \left( g\circ f \right) (x).
+  \end{equation}
+
+  经过计算可得
+  \begin{equation}
+    \left. \frac{\mathrm{d}^n}{\mathrm{d} x^n} \right|_{x = 0} \mathrm{e}^{ \frac{\alpha}{2} x^{2}} = \begin{cases} 
+      0, & n\text{ 为奇数,} 
+      \\ 
+      \alpha ^{\frac{n}{2}} \cdot \left( n -1 \right) !!, & n \text{ 为偶数} 
+    \end{cases}
+  \end{equation}
+\end{example}

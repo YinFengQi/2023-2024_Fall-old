@@ -1,0 +1,105 @@
+% !TeX root = 高等微积分.tex
+
+\begin{definition}
+    称$x_0$是$f$的极大值点, 如果$\exists x_0$的开邻域使$f$在$U$中处处有定义且
+    \begin{equation}
+      f\left( x \right) \le f\left( x_0 \right) ,\quad \forall x \in U,
+    \end{equation}
+    极小值同理.
+\end{definition}
+\begin{theorem}[Fermat]\label{Fermat_exterme_point}
+    设$x_0$是$f$的极大值点, 且$f$在$x_0$处可导, 则$f'\left( x_0 \right) = 0$.
+\end{theorem}
+\begin{proof}
+    不妨设$x_0$是极大值点, 则
+    \begin{equation}
+      f'\left( x_0^{-} \right) = \lim_{x \to x_0^{-}} \frac{f\left( x \right) - f\left( x_0 \right) }{x-x_0} \ge 0,
+    \end{equation}
+    且
+    \begin{equation}
+      f'\left( x_0^{+} \right) = \lim_{x \to x_0^{+}} \frac{f\left( x \right) - f\left( x_0 \right) }{x-x_0} \le 0.
+    \end{equation}
+    可知$f'\left( x_0 \right) = 0$.
+\end{proof}
+
+\begin{definition}
+    称$x_0$是$f$的\emph{Critical Point}如果$f'\left( x_0 \right) = 0$.
+
+    对多元函数则全部偏导数为零$\frac{\partial f}{\partial x_1}\left( \vec{a} \right) = \frac{\partial f}{\partial x_2}\left( \vec{a} \right) = \cdots = \frac{\partial f}{\partial x_n} \left( \vec{a} \right) = 0$称为临界点.
+    \begin{equation}
+      \operatorname{Crit}\left( f \right) = \{ f\text{ 的临界点} \}.
+    \end{equation}
+\end{definition}
+
+\begin{theorem}[罗尔定理]
+    设$f$在$[a,b]$上连续且在$(a,b)$上处处可导, 若$f\left( a \right) = f\left( b \right) $, 则$\exists c \in (a,b)$使$f'\left( c \right) = 0$.
+\end{theorem}
+\begin{proof}
+    又最值定理, $f$在$[a,b]$上有最大值和最小值.
+    \begin{itemize}
+        \item 若$f$有一个最大/小值点$x_0 \in (a,b)$, 则由定理\ref{Fermat_exterme_point}可知, $f'\left( x_0 \right) = 0$.
+        \item 若$f$的最大最小值都属于$\{ a,b \}$, 结合$f\left( a \right) = f\left( b \right) $可知, $f$为常值函数.
+    \end{itemize}
+\end{proof}
+
+\begin{example}
+    设$f$是$n$次多项式, 且$f$有$n$个不同的根$a_1<a_2<\cdots<a_n$,
+    \begin{equation}
+      f\left( x \right) = \left( x-a_1 \right)  \left( x-a_2 \right)  \cdots \left( x-a_n \right) 
+    \end{equation}
+    对于每个$[a_1,a_2 ] , [a_2, a_3 ], \cdots $使用罗尔定理
+    \begin{equation}
+      \implies \exists b_i \in [a_i, a_{i+1}] \text{ 使 } f'\left( b_i \right) = 0.
+    \end{equation}
+    于是$f'$有唯一的因式分解
+    \begin{equation}
+      f'\left( x \right) = n \left( x-b_1 \right) \left( x-b_2 \right) \cdots \left( x- b_n \right) .
+    \end{equation}
+    展开后有
+    \begin{equation}
+      \begin{cases}
+        \displaystyle \frac{a_1 + a_2 + \cdots +a_n}{n} = \frac{b_1 + b_2 + \cdots b_{n}}{n-1}
+        \\
+        \displaystyle \sum_{i<j} a_i a_j / C_{n}^{2} = \sum_{i<j} b_{i} b_{j} / C_{n-1}^{2}
+        \\
+        \makebox[6cm][c]{\vdots}
+        \\
+        \displaystyle \sum_{i_1 < \cdots < i_{n-1}} a_{i_1} a_{i_2} \cdots a_{i_{n-1}} / C_{n}^{n-1} = b_1 b_2 \cdots b_{n-1} / C_{n-1} ^{n-1}.
+      \end{cases}
+    \end{equation}
+\end{example}
+
+\begin{theorem}[Lagrange中值定理]
+    设$f \in C^{1}(a,b)$, 则$\exists c\in (a,b)$, 使
+    \begin{equation}
+      f'\left( c \right) = \frac{f\left( b \right) - f\left( a \right) }{b - a}.
+    \end{equation}
+\end{theorem}
+\begin{proof}
+    令
+    \begin{equation}
+      g\left( x \right) = f\left( x \right) - \left( \frac{f\left( b \right) - f\left( a \right)}{b-a} \left( x-a \right) + f\left( a \right)  \right) ,
+    \end{equation}
+    则对于$g\left( x \right) $使用罗尔定理可得.
+\end{proof}
+由拉格朗日中值定理可以得到单调性与导数正负号的关系.
+
+\begin{example}
+    $\displaystyle \frac{x}{1+x} < \ln \left( 1+x \right) < x$, 令$f\left( x \right) = \ln \left( 1+x \right) $, 有
+    \begin{equation}
+      \frac{f\left( x \right) - f\left( 0 \right) }{x - 0} = f'\left( \xi \right) = \frac{1}{1+\xi} \in \left( \frac{1}{1+x}, 1 \right) 
+    \end{equation}
+    故
+    \begin{equation}
+      \ln \left( 1+x \right) \in \left( \frac{x}{1+x}, x \right) 
+    \end{equation}
+\end{example}
+
+\begin{theorem}[柯西中值定理]
+    对于$h = f \circ g^{-1}$使用Lagrange中值定理, 可得
+    \begin{equation}
+      \exists \xi \in  (a,b) , \text{ 使 } \frac{f\left( b \right) - f\left( a \right) }{g\left( b \right) - g\left( a \right) } = \frac{f'\left( \xi \right) }{g'\left( \xi \right) }
+    \end{equation}
+\end{theorem}
+
+洛必达法则
