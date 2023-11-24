@@ -78,7 +78,7 @@
 \subsubsection{求解矩阵线性微分方程}
 方程$\frac{\mathrm{d}u}{\mathrm{d} t} = Au$, 将$A$对角化之后可以直接求解, 设$\Lambda = P ^{-1} A P$, 则
 \begin{equation}
-  \frac{\mathrm{d}Pu}{\mathrm{d} t} = \Lambda P u,
+  \frac{\mathrm{d}(P^{-1}u)}{\mathrm{d} t} = \Lambda P^{-1} u,
 \end{equation}
 于是解为
 \begin{equation}
@@ -87,11 +87,11 @@
         0&\mathrm{e}^{\lambda_2 t}&\cdots&0\\
         \vdots&\vdots&\ddots&\vdots\\
         0&0&\cdots&\mathrm{e}^{\lambda_n t}
-    \end{bmatrix} P ^{-1}.
+    \end{bmatrix} P ^{-1} u_0.
 \end{equation}
 
 \subsubsection{求解非矩阵二阶微分方程}
-对于方程$u'' + B u' + C u'$, 其中$B, C$都是数, $u= u\left( t \right) $.
+对于方程$u'' + B u' + C u$, 其中$B, C$都是数, $u= u\left( t \right) $.
 它可以写为下面的形式
 \begin{equation}
     \frac{\mathrm{d}}{\mathrm{d} t} \begin{bmatrix}
