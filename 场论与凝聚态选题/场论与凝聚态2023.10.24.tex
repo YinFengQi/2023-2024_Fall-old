@@ -107,3 +107,24 @@ Given that locality and unitarity guarantee that all $\mathcal{Z}_{\Sigma'_{i}}$
 \section[When do Symmetries Break Spontaneously]{SSB: What is Broken? Why no Tunneling?}
 
 A name of ambiguity was designated to refer as the physical picture behind SSB, resulting a widespread misconstruction among juvenile learners, that ``\emph{a potential with minimal value at non-zero field strength will lead to SSB as vacuum state is static and tends to minimize its Hamiltonian.}'' But such explanation will be no longer compatible if one try to replicate this in a statistic field theory and he would eventually figure out that the ensemble expectation value of field strength in ground state will remain zero. 
+
+To answer the question of what is breaking, we need to investigate a simplest case, that is, a $0$-dim field. 
+\begin{figure}[hp]
+    \centering
+    \includegraphics{figures/double_minimum_potential.pdf}
+    \caption{$1$-dim field in a double-minimal potential}
+    \label{1d_double_minimal}
+\end{figure}
+The picture of a $0$-dim field is generally characterized by Fig\ref{1d_double_minimal}. Directly from the figure, one can discover that the vacuum expectation value of $\phi$ is $0$, even though the field is trapped in a potential with two valleys. The key is that as long as the shape of potential is not so sharp, a non-zero tunneling amplitude will gradually expunge any symmetry-broken state as time evolutes. We need to get a approach to form a \emph{naturally} infinite potential barrier, i.e. at least one parameter of the system should go to infinite under some limit.
+
+In a system with infinite degrees of freedom, we describe it by a Hamiltonian density, thus
+\begin{equation}
+    V\left( \phi=0 \right) \propto \text{ volume of space}.
+\end{equation}
+Hence, a spontaneous symmetry broken only appears under thermodynamic limit.
+
+In the following we need to develop a well-defined language of SSB, since the ambiguity of describing SSB as a shifted vacuum expectation field strength will keep bothering us as long as we are motivated to investigate phenomena of SSB in stat. mech.
+A double-minimum potential would lead to degeneracy of ground state. To avoid this, we introduce a background magnetic field $B$, the free energy will be modified to
+\begin{equation}
+  F = \tilde{F} - B \tilde{M} \cdot \text{Vol}.
+\end{equation}
