@@ -1,0 +1,36 @@
+% !TeX root = 线性代数.tex
+
+$V^{*}$中的一个线性函数可以展开
+\begin{equation}
+  f = f_1 e^{*1} + f_2 e^{*2} + \cdots + f_n e^{*n}
+\end{equation}
+坐标变换时, $V$和$V^{*}$的基分别按照协变和逆变来变化. $V$中的基换为
+\begin{equation}
+  e'_{i} = \sum_{j=1}^{3} e_j P^{j} _{\ i}.
+\end{equation}
+$V$中向量的坐标变为
+\begin{equation}
+  x' = P^{-1} x.
+\end{equation}
+根据定义$V^{*}$中的对偶基仍然有
+\begin{equation}
+  {e'}^{*i} \left( e_{j}' \right) = \delta_{j}^{i}
+\end{equation}
+于是
+\begin{equation}
+  {e'}^{*i} =e^{*i}  \left( P^{-1} \right) ^{\mathrm{T}}
+\end{equation}
+指标全部缩并的式子在坐标变换下不变.
+
+\begin{definition}
+    两个线性空间同构, 如果两个空间存在可逆线性映射.
+\end{definition}
+\begin{proposition}
+    $V$和$V^{* *}$有一个自然的同构. 其中$V^{* *}$中的元素$v^{* *}\left( f \right) = f\left( v \right) $.
+\end{proposition}
+
+\subsection{内积的推广}
+定义一个对称双线性函数$g\colon V \times V \to \mathbb{R}$, 我们在$\left( e_1,e_2,\cdots,e_n \right) $这组基上面可以得到一个矩阵
+\begin{equation}
+  g_{ij} \equiv g\left( e_i, e_j \right) 
+\end{equation}
