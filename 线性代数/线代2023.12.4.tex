@@ -1,0 +1,25 @@
+% !TeX root = 线性代数.tex
+
+\subsection{不变子空间}
+
+\begin{definition}
+    一个线性映射的一个不变子空间$V$, 如果对于任何属于$V$的向量$v$, 都有$f\left( v \right) \subset V$.
+\end{definition}
+\begin{example}
+    $f$的一个特征值$\lambda$的特征向量子空间是一个不变子空间.
+\end{example}
+\begin{example}
+    $\ker \left( f \right) $和$\Im \left( f \right) $也是$f$的不变子空间.
+\end{example}
+
+\begin{definition}
+    两个线性子空间的交$V_1 \cap V_2 = \{ v \in V_1 \text{且} v \in V_2 \}$, 这还是个线性子空间, 在加法和数乘下封闭.
+\end{definition}
+
+\begin{definition}
+    给定一个线性空间$V$, 以及它的一个线性子空间$U$, 定义他的商空间$W = V / U$, 其中的元素为一个等价类$[v]$, 等价关系为$v_1 \sim v_2$, 若$v_1 = v_2 + u,\ u \in U$.
+\end{definition}
+不难验证, 商空间的等价类在加法和数乘下保持不变.
+商空间的维数为$\operatorname{dim} \left( V / U \right) =\operatorname{dim} V - \operatorname{dim} U$.
+
+线性空间的直和分解(略).
