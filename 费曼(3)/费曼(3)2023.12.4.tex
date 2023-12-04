@@ -1,0 +1,29 @@
+% !TeX root = 费曼(3).tex
+\setcounter{chapter}{14}
+\chapter[海森堡模型]{Heisenburg Model}
+
+On each vertex, $H_n = \operatorname{span} \{ \ket{\pm } \}$(not to be confused with Ising model).
+
+\begin{equation}
+  H = - \frac{A}{2} \sum_{n} \vec{\sigma}_{n} \cdot \vec{\sigma}_{n+1}
+  = - A \sum_{n} \left( S_{n, n+1} - 1 \right) .
+\end{equation}
+where the $S_{n, n+1}$ exchanges the state of $n$ and $(n+1)$th vertex.
+
+Under the basis of $\{ \ket{x_n} \}$, 
+\begin{equation}
+  H = \begin{pmatrix}
+   \ddots &  &  &  &  & \\
+    & 2A & -A &  &  & \\
+    & -A & 2A & -A &  & \\
+    &  & -A & 2A & -A & \\
+    &  &  & -A & \ddots & \ddots\\
+    &  &  &  & \ddots & \\
+  \end{pmatrix}
+\end{equation}
+Instantly, we find that
+\begin{equation}
+  E\left( k \right) = 2A \left( 1-\cos kb \right). 
+\end{equation}
+
+This gapless excitation reflects a spontaneously symmetry broken, which comes from the vacuum degeneracy. In this case, we can find that as long as the spin chain are aligned, its energy is zero. Thus we can find that the system acquires a continuum symmetry of $SO(3)$. Goldstone's theorem tells us that each broken continuum symmetry is correspond to a gapless excitation.
