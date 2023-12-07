@@ -1,0 +1,40 @@
+% !TeX root = 高等微积分.tex
+
+\section{泰勒公式}
+\begin{theorem}
+    设$f$在$I$上处处有$n$阶导数, 则$\forall a \neq b \in  I$, $\exists \xi $严格介于$a,b$之间, 使得
+    \begin{equation}
+      f\left( b \right) - \sum_{k=0}^{n-1} \frac{f^{(k)}\left( x \right) }{k!} \left( b-x \right) ^{k} =
+      \begin{cases}
+        \frac{f^{(0)}\left( \xi \right) }{n!} \left( b-a \right)^{n}, &\text{Lagrange余项}
+        \\
+        \frac{g\left( b \right) - g\left( a \right) }{g'\left( \xi \right) } \frac{f^{(n)}\left( \xi \right) }{\left( n-1 \right) !}\left( b - \xi \right) ^{n-1} ,& \text{Cauchy余项}
+      \end{cases}
+    \end{equation}
+\end{theorem}
+\begin{proof}
+    设辅助函数
+    \begin{equation}
+      F\left( x \right) = \sum_{k=0}^{n-1} \frac{f^{(k)}\left( x \right) }{k!} \left( b-x \right) ^{k}
+    \end{equation}
+    对$F$用Cauchy中值定理, 
+    \begin{equation}
+      \frac{F\left( b \right) - F\left( a \right) }{g\left( b \right) - g\left( a \right) } = \frac{F'\left( \xi \right) }{g'\left( \xi \right) }, \ \exists \xi
+    \end{equation}
+    于是
+    \begin{equation}
+      f\left( b \right) - \sum_{k=0}^{n-1} \frac{f^{(k)}\left( x \right) }{k!} \left( b-x \right) ^{k} = \frac{g\left( b \right) - g\left( a \right) }{g'\left( \xi \right) } \frac{f^{(n)}\left( \xi \right) }{\left( n-1 \right) !}\left( b - \xi \right) ^{n-1}
+    \end{equation}
+\end{proof}
+
+Taylor公式应用:
+\begin{itemize}
+    \item $\displaystyle \mathrm{e} = \lim_{n \to \infty}\left( 1 + \frac{1}{1!} + \frac{1}{2!} + \cdots + \frac{1}{n!} \right) $用Taylor公式是直接的.
+    \begin{equation}
+      \left| \mathrm{e}^{x} - \sum_{k=0}^{n} \frac{x^{k}}{k!} \right| = \left| \frac{\mathrm{e}^{\xi_{x}}}{\left( n+1 \right) !}x^{n+1} \right| \le \frac{\left| x \right| ^{n+1}}{\left( n+1 \right)!} \max \{ \mathrm{e}^{0}, \mathrm{e}^{x} \}
+    \end{equation}
+    注意到余项在$n\to \infty$的极限下趋于零, 由夹逼定理可知, 
+    \begin{equation}
+      \mathrm{e}^{x} = \lim_{n \to \infty} \left( 1 + \frac{x}{1!} + \frac{x}{2!} + \cdots + \frac{x}{n!} \right) = \sum_{n=0}^{\infty} \frac{x^{n}}{n!}, \quad \left( \forall x \in \mathbb{R} \right) 
+    \end{equation}
+\end{itemize}
