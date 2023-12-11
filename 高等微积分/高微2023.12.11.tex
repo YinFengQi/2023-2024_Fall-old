@@ -1,0 +1,69 @@
+% !TeX root = 高等微积分.tex
+
+\section{积分学}
+
+回忆: 导子 $D\colon \{ \text{$I$ 上的可导函数}  \}\to \{ \text{$I$ 上的函数} \}$
+满足 Leibniz 律, 满足线性性. 
+
+
+问: $D$ 是否满射? 显然是否定的, 由 Darboux 中值定理, $f$ 的导函数 $f'$ 一定能取遍它自己的一切中间值. 我们可以构造一个不连续的函数 $f$, 它不是任何函数的导数.
+
+\begin{proposition}
+  若在区间 $I$ 上有 $D\left( F \right) = D \left( G \right)$, 则 $F - G$ 一定为常值函数. 
+\end{proposition}
+\begin{proof}
+  由条件知 $\left( F - G \right)' (x) = 0 , \ \forall x \in I$, 用 Lagrangian 中值定理可知, $F-G$ 是常值函数.
+\end{proof}
+
+引入记号
+\begin{equation}
+  \{ \text{$f$ 的原函数} \} = \int f(x) \, \mathrm{d} x + C
+\end{equation}
+
+导子的性质可以对应到不定积分的线性性, 分部积分公式, 换元法则.
+
+\subsection{Riemann 积分}
+分为四步: 剖分, 选代表点, 面积近似
+\begin{equation}
+  \operatorname{area} \left( D \right) \simeq \sum_{i=1}^{n}  f(\xi _{i}) \Delta x_{i}
+\end{equation} 
+相信, 当剖分越来越细时, 上述近似越来越好.
+
+\begin{definition}[Riemann 积分]
+  如果存在 $I \in \mathbb{R}$, 满足 $\forall \varepsilon > 0$, $\exists \delta > 0$ 对于任何剖分 $P$ 以及任何选点方式都有
+  \begin{equation}
+    \left| \left( \sum_{i=1}^{n}  f\left( \xi _{i} \right)\Delta x_{i} \right) - I \right| < \varepsilon
+  \end{equation}
+则记$I = \int _{a}^{b} f\left( x \right)\, \mathrm{d} x$, 若上述极限不存在, 则称 $f$ 不可积.
+\end{definition}
+
+\begin{proposition}
+  若 $f$ 在 $[a,b]$ 上可积, 则 $f$ 在 $[a,b]$ 上有界.
+\end{proposition}
+\begin{proof}
+  使用反证法, 利用无界性选一个函数值足够大的点就可以破坏 $\left| \left( \sum  f\left( \xi _{i} \right)\Delta x_{i} \right) - I \right| < \varepsilon $
+\end{proof}
+
+判断 $f$ 是否可积, 可以只用剖分 $P$ 来描述可积性. 
+\begin{definition}
+  设 $P = \{ x_0 = a < x_1 < \cdots < x_{n} = b \}$ 是 $[a,b]$ 的分拆.
+  定义 $P$ 给出的
+  \begin{itemize}
+    \item Darboux 上和
+      \begin{equation}
+        U \left( P , f \right) = \sum_{i=1}^{n} \left( \sup_{x \in I_{i}} \left( f(x) \right) \cdot |I_{i}| \right)
+      \end{equation}
+      
+    \item Darboux 下和
+      \begin{equation}
+        L \left( P , f \right) = \sum_{i=1}^{n} \left( \inf_{x \in I_{i}} \left( f(x) \right) \cdot |I_{i}| \right)
+      \end{equation}
+  \end{itemize}
+  不难发现$ L\left( P,f \right) \le U(P,f)$.
+\end{definition}
+称 $P'$ 为 $P$ 的加细, 若 $P'$ 是由向 $P$ 加新的分点而得到的分拆.
+由 $\sup$ 和 $\inf$ 的性质可知, 
+\begin{equation}
+  U\left( P,f \right) \ge U(P',f) , \quad L \left( P, f \right) \le L \left( P', f \right)
+\end{equation}
+于是可积性的定义

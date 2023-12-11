@@ -3,3 +3,6 @@
 *.out
 *.gz
 *.toc
+*.xdv
+*.fdb_latexmk
+*.fls
