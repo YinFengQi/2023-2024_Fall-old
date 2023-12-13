@@ -1,0 +1,52 @@
+% !TeX root = 场论与凝聚态.tex
+
+\section{Mixed Anomaly between $U(1)$ and $\tilde{U}(1)$}
+In XY model, the expression of weight is
+\begin{equation}
+  \text{weight} = \frac{1}{T} \sum_{l} \left( \cos (\mathrm{d} \theta_{l}) -1\right).
+\end{equation}
+There exists a $U(1)$ global symmetry,
+\begin{equation}
+  \theta_{v} \to \theta_{v} + \alpha_{v},\quad \alpha \in U(1), \quad \mathrm{d} \alpha = 0 \mod 2\pi.
+\end{equation}
+
+We have known the order parameter of $U(1)$ global symmetry is $\mathrm{e}^{\mathrm{i}\theta_{v}}$, which \textbf{transforms with the global $U(1)$ symmetry transformation}.
+We can construct invariant observables with order parameters, to determent the correlation scale or other properties of the system. Non-trivial observables should be $\left< \mathrm{e}^{\mathrm{i} \theta} \mathrm{e}^{- \mathrm{i}\theta_{v'}} \right>$ or more generally, 
+\begin{equation}
+  \left< \mathrm{e}^{ \mathrm{i} \sum_{v} B_v \theta _{v}} \right> =
+  \begin{cases}
+    0, & B_v \neq \nabla W_l \\
+    $non zero$, & B_v = \nabla W \ ({}= \mathrm{d} ^{*} W)
+  \end{cases}
+\end{equation}
+for the later case, we can obtain the following equation by lattice integration by part. If $B_v = \mathrm{d} ^{*} \left( W_l \right)$,
+\begin{equation}
+  \left< \mathrm{e}^{\mathrm{i}\sum_{v} B_v \theta_{v}} \right> = \left< \mathrm{e}^{\mathrm{i}\sum_{v} \left( \mathrm{d}^{*} \theta_{l} \right)W_l} \right>
+\end{equation}
+which is an invariant under $U(1)$.
+
+\subsection{XY Model in $U(1)$ Background}
+Coupling to a $U(1)$ background field, the weight of XY model becomes
+\begin{equation}
+  \text{weight} = \frac{1}{T} \sum_{l}  \left[ \cos \left( \mathrm{d} \theta_{l} - q A_l \right) -1 \right].
+\end{equation}
+In this case, $U(1)$ global symmetry manifests as $U(1)$ invariance, as we require $A_l$ transforms with $\theta_{v}$
+\begin{equation}
+  \begin{cases}
+    \theta_{v} \to \theta_{v} + \alpha _{v}, & \alpha \in  U(1) \\
+    A_l \to A_l + \mathrm{d} \alpha _{l}
+  \end{cases}
+\end{equation}
+where now $\alpha _{v}$ is \emph{arbitrary}, without restriction of $\mathrm{d} \alpha _{l} = 0 \mod 2 \pi $.
+
+Note that the transformation $A_{l} \to A_{l} + \mathrm{d} \alpha _{l}$ gives
+\begin{equation}
+  \mathcal{Z}[A] = \mathcal{Z}[A + \mathrm{d} \alpha],
+\end{equation}
+which means different backgrounds (with the difference of a total derivation) are equivalent.
+
+This $A_l$ seems like a electromagnetic field, let us check its current behaviour. Take a Fourier transformation (or Poisson resummation), in current representation we get
+\begin{equation}
+  \prod{l} I_{j l} \left( \frac{1}{T} \right) \mathrm{e}^{\mathrm{i} j_{l} \left( \mathrm{d} \theta_{l} + q A_l \right)}
+\end{equation}
+we hope that $A_l$ should be $2 \pi $ periodic, thus $q$ must be a integer.\footnote{We can also couple the $\theta _{v}$ to a series of $A_l$'s, in this case, $\frac{q}{q'}$ must be a }
