@@ -1,0 +1,48 @@
+% !TeX root = 费曼(3).tex
+
+Any infinitisimal transformation of a continumm symmetry can be expanded around the identity element,
+\begin{equation}
+  U \sim I + \frac{\mathrm{i}}{\hbar} \epsilon J 
+\end{equation}
+where $J$ is the basis of tangent space on identity element.
+
+\subsubsection[螺旋度]{Helicity}
+For a spin-$1$ particle, it only has two polarization mode, a quantum number of helicity $h \equiv \frac{\vec{J}\cdot \vec{p}}{|\vec{p}|}$can be used to distinguish its polarization modes, and $h = \pm S$
+
+\chapter[角动量]{Angular Momentum}
+
+The represent matrix of spin-$j$ system should be $\left( 2j+1 \right) \times \left( 2j+1 \right)$, the first step should be finding a ste of basic states as building block of our results.
+
+We will use spin-$\frac{1}{2}$ state to construct a spin-$j$ state, the highest-weight state is a tensor product
+\begin{equation}
+   \bigotimes \underbrace{\ket{+} \ket{+} \cdots \ket{+}}_{\text{$2j$}} 
+\end{equation}
+generally, a basic state would be in the form of an all-symmetry tensor product
+\begin{equation}
+   \prod \left( \ket{+}^{u} \ket{-}^{v} \right) \equiv \sum_{\text{all permutations}} \frac{1}{C_{u+v}^{u}}\bigotimes \underbrace{\ket{+} \ket{+} \cdots \ket{+}}_{u} \underbrace{\ket{+} \ket{+} \cdots \ket{+}}_{v}
+\end{equation}
+whose $z$-angular momentum is $j_{z} = \frac{1}{2} \left( u-v \right)$.
+Finally we get the state of
+\begin{equation}
+  \ket{j, m} \equiv \sqrt{C_{2j}^{j+m}} \prod \left( \ket{+} ^{j+m} \ket{-}^{j-m} \right)
+\end{equation}
+It can be verified that
+\begin{equation}
+  \bra{j,m'} \ket{j,m} = \delta_{m m'}.
+\end{equation}
+our space is $\operatorname{span}\{ \ket{j,m} \}, \ m = -j, -j+1, \cdots , j-1, j$.
+
+We use the parameters of Euler angels, 
+\begin{equation}
+  D^{(j)} \left[ R\left( \gamma, \beta, \alpha \right) \right] = R_{z} \left( \beta \right) R_{y} \left( \gamma \right) R_{z} \left( \alpha \right)
+\end{equation}
+We fist handel the rotation along $z$-axis, 
+\begin{equation}
+\begin{aligned}
+  R^{(j)}_{z} \left( \phi  \right) \ket{j,m} & = \sqrt{C_{2j}^{j+m}} \prod \left( \left[ R_{z}^{(\frac{1}{2})} (\phi) \ket{+}\right]^{j+m} \left[ R_{z}^{(\frac{1}{2})} (\phi) \ket{-}\right]^{j-m} \right)
+  \\
+  & = \sqrt{C_{2j}^{j+m}} \prod \left( \left[ \mathrm{e}^{+ \mathrm{i} \frac{\phi }{2}} \ket{+} \right]^{j+m} \left[ \mathrm{e}^{- \mathrm{i} \frac{\phi }{2}} \ket{-} \right]^{j-m}\right)
+  \\
+  & = \mathrm{e}^{\mathrm{i} m \phi } \ket{j, m}.
+\end{aligned}
+\end{equation}
