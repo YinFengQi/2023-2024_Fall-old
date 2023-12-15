@@ -49,4 +49,29 @@ This $A_l$ seems like a electromagnetic field, let us check its current behaviou
 \begin{equation}
   \prod{l} I_{j l} \left( \frac{1}{T} \right) \mathrm{e}^{\mathrm{i} j_{l} \left( \mathrm{d} \theta_{l} + q A_l \right)}
 \end{equation}
-we hope that $A_l$ should be $2 \pi $ periodic, thus $q$ must be a integer.\footnote{We can also couple the $\theta _{v}$ to a series of $A_l$'s, in this case, $\frac{q}{q'}$ must be a }
+we hope that $A_l$ should be $2 \pi $ periodic, thus $q$ must be a integer.\footnote{We can also couple the $\theta _{v}$ to a series of $A_l$'s, in this case, $\frac{q}{q'}$ must be a rational number.}
+
+The operator correlation transforms as 
+\begin{equation}
+  \left< \mathrm{e}^{\mathrm{i} \theta_{v}} \mathrm{e}^{- \mathrm{i} \theta _{v'}} \right>_{A} = \mathrm{e}^{\mathrm{i} \left( \alpha _{v} - \alpha _{v'} \right) } \left< \mathrm{e}^{\mathrm{i} \theta _{v}} \mathrm{e}^{-\mathrm{i} \theta _{v'}} \right>_{A + \mathrm{d} \alpha}
+\end{equation}
+
+\subsection{Villain Model in $U(1)$ Background}
+In Villain model, we have made the substitution,
+\begin{equation}
+  \cos (\mathrm{d} \theta) -1 \to \frac{1}{2} \mathrm{d} \theta^{2}
+\end{equation}
+thus it has no natural $2 \pi $ periodicity. We add this manually, by introducing a dynamical degree of freedom $m$ to be summed in path integral. The weight of Villain model is
+\begin{equation}
+  - \frac{1}{2T} \sum_{l} \bigl( \underbrace{\mathrm{d} \theta + 2 \pi m}_{\gamma _{l}} - A \bigr)_{l}^{2}.
+\end{equation}
+$m$ transforms with $\theta $ and $A_l$,
+\begin{equation}
+  \begin{cases}
+    A_l \to A_l + \mathrm{d} \alpha _{l} + 2 \pi k_{l}, \\
+    \theta_{v} \to \theta _{v} + \alpha _{l} + 2 \pi n_v, \\
+    m_l \to m_l + k_l - \mathrm{d} n_l,
+  \end{cases}
+  \quad \alpha _{v} \in (-\pi ,\pi ],\ k_l, n_v \in \mathbb{Z}
+\end{equation}
+

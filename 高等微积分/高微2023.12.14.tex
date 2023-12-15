@@ -1,0 +1,122 @@
+% !TeX root = 高等微积分.tex
+
+由此可以得到, 对于两个剖分 $P_1, P_2$, 它们的并为 $P = P_1 \cup P_2$,$P$ 是 $P_1, P_2$ 的公共加细, 于是有
+\begin{equation}
+  L(P_2,f) \le L(P, f) \le U(P,f) \le U(p_1,f)
+\end{equation}
+所以任何一个下和小于任何一个上和.
+令 
+\begin{equation}
+  U = \inf \{ U(p,f) | \forall \text{剖分$P$}\}, \quad L = \sup \{ F(P,f) | \forall \text{剖分$P$} \}
+\end{equation}
+
+\begin{proposition}
+  $L = U \iff $ $ \forall \varepsilon > 0$ , $\exists \text{剖分}P$使得
+  \begin{equation}
+    U(P,f) - L(P,f) < \varepsilon.
+  \end{equation}
+\end{proposition}
+\begin{proof}
+  从充分和必要性两方面来证明.
+
+  ``$\implies $'':
+  设 $U = L$, 则由确界定义, 
+  \begin{equation}
+    \begin{aligned}
+      \exists U(P_1, f) & < U + \frac{\varepsilon}{2}, \\
+      \exists L(P_2,f) < L - \frac{\varepsilon}{2},
+    \end{aligned}
+  \end{equation}
+  令 $P = P_1 \cup P_2$, 则
+  \begin{equation}
+    U(P,f) - L(P,f) \le U(P_1,f) - L(P_2,f) < \left( U + \frac{\varepsilon}{2} \right) - \left( L - \frac{\varepsilon}{2} \right) < \varepsilon.
+  \end{equation}
+
+  ``$\impliedby $'':
+  设右边成立, 则
+  \begin{equation}
+    U-L \le  U(P,f) - L(P,f) < \varepsilon
+  \end{equation}
+  由 $\varepsilon$ 任意性知 $U = L$.
+\end{proof}
+
+\begin{theorem}
+  $f$ 可积, 当且仅当 $L = U$, 并且有
+  \begin{equation}
+    \int_{a}^{b} f(x) \, \mathrm{d}x = L = U.
+  \end{equation}
+\end{theorem}
+
+\begin{theorem}
+  连续函数一定可积.
+\end{theorem}
+\begin{proof}
+  设 $f \in C\left( [a,b] \right)$, 则 $f$ 在 $[a,b]$ 上一致连续.
+  从而 $\varepsilon > 0, \ \exists \delta > 0$, 使得 $\forall \left| x-y \right| < \delta$ 有
+  \begin{equation}
+    \left| f(x) - f(y) \right| < \frac{\varepsilon}{b-a}
+  \end{equation}
+  这样, 取剖分 $P$ 的每个 $I_i$, $\forall x, y \in I_i$ 有 $\left| x-y \right|< \varepsilon$,
+  \begin{equation}
+    \implies \left| f(x) - f(y) \right| < \frac{\varepsilon}{b-a}
+  \end{equation}
+  于是
+  \begin{equation}
+    U(P,f) - L(P,f) = \sum_{i}  \left( \sup_{I_i} f(x) - \inf_{I_i} f(x) \right) \left| I_i \right| \le \frac{\varepsilon}{b-a} \left( b-a \right) = \varepsilon.
+  \end{equation}
+\end{proof}
+
+\begin{theorem}
+  单调有界函数皆可积.
+\end{theorem}
+\begin{proof}
+  不妨设 $f$ 递增, 取剖分 $P$ 为均匀剖分, 
+  \begin{equation}
+    x_i = a + \frac{i}{N} \left( b-a \right), \quad (0 \le i \le N)
+  \end{equation}
+  从而
+  \begin{equation}
+    \begin{aligned}
+      U(P,f) - L(P,f) & = \sum_{i=1}^{N} \left( \sup _{I_i} f(x) - \inf _{I_i} f(x) \right)\left| I_i \right|
+    \\
+                      & = \sum_{i=1}^{N} \left( f(x_{i}) - f(x_{i-1}) \right) \frac{b-a}{N} \\
+                      & = \left( f(b) - f(a) \right) \frac{b-a}{N} < \varepsilon
+    \end{aligned}
+  \end{equation}
+  上式的最后一个不等号只要 $N$ 足够大就可以做到.
+\end{proof}
+
+\begin{theorem}[Riemann-Lebesgue]
+  $f$ 在 $[a,b]$ 上可积, 当且仅当 $f$ 在 $[a,b]$ 上有界, 且 $f$ 在 $[a,b]$ 上的所有间断点构成的集合是零测的.
+\end{theorem}
+
+\begin{definition}
+  称 $\mathbb{R}$ 的子集 $E$ 是零测集, 如果 $\forall \varepsilon > 0$, 存在可数多个开区间 $I_1, I_2, \cdots$ 使得 
+  \begin{equation}
+    \bigcup_{i=1}^{+ \infty} I_i \supseteq E
+  \end{equation}
+  且
+  \begin{equation}
+    \sum_{i=1}^{+ \infty} \left| I_i \right| < \varepsilon. 
+  \end{equation}
+\end{definition}
+
+\begin{example}
+  \begin{itemize}
+    \noindent
+    \item 有限集皆是零测. 
+    \item 可数集也是零测的.
+  \end{itemize}
+\end{example}
+
+上面第二条来自于以下命题:
+\begin{proposition}
+  可数多个零测集之并也是零测集.
+\end{proposition}
+\begin{proof}
+  设 $E_1, E_2, \cdots $ 都是零测集, 由 $E_n$ 零测的定义可知, 存在一族开区间 $I_{n 1}, I_{n 2}, \cdots $, 使得
+  \begin{equation}
+    \bigcup_{i=1}^{+\infty } I_{n i} \supseteq E, \text{ 且 } \sum_{i=1}^{\infty }  \left| I_{ni} \right| < \frac{\varepsilon}{2^{n}}
+  \end{equation}
+  这样, 
+\end{proof}
