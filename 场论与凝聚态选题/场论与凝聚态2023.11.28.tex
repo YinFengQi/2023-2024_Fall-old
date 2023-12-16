@@ -30,7 +30,7 @@ Coupling to a $U(1)$ background field, the weight of XY model becomes
 \begin{equation}
   \text{weight} = \frac{1}{T} \sum_{l}  \left[ \cos \left( \mathrm{d} \theta_{l} - q A_l \right) -1 \right].
 \end{equation}
-In this case, $U(1)$ global symmetry manifests as $U(1)$ invariance, as we require $A_l$ transforms with $\theta_{v}$
+In this case, $U(1)$ global symmetry manifests as $U(1)$ gauge invariance, as we require $A_l$ transforms with $\theta_{v}$
 \begin{equation}
   \begin{cases}
     \theta_{v} \to \theta_{v} + \alpha _{v}, & \alpha \in  U(1) \\
@@ -82,7 +82,7 @@ $v_p$ isn't a invariant now.
 
 We need to find a well-defined vortex. A simple choice would be
 \begin{equation}
-  \overline{v_p} \equiv \frac{\mathrm{d} \left( \gamma - A \right)}{2 pi},
+  \bar{v}_{p} \equiv \frac{\mathrm{d} \left( \gamma - A \right)}{2 \pi },
 \end{equation}
 which is an invariant under gauge transformation,  but it is \emph{no longer an integer}.
 
@@ -91,9 +91,25 @@ Recalling that we have defined a vortex operator $V_p$ under the limit of $u \to
   - \frac{u}{2} \sum_{p} \left( v_p - V_p \right)^{2} \xlongrightarrow[u \to +\infty]{\text{H-S trans.}} \mathrm{i} \sum_{p} \tilde{\theta}_{p} \left( v_p - V_p \right).
 \end{equation}
 This can be viewed as a Lagrangian constrain multiplier to restrict the vortex number equal to $V_p$.\footnote{Or get the same result by completing the integration getting a $\delta$ function.}
-If we let $V_p \to V_p + \mathrm{d} k_p$, the theory is compatible with the transformation. However, $A_l$ and $V_p$ are no longer independent, i.e., they together form $U(1)$ background. The $U(1)$ field is described by
+If we let $V_p \to V_p + \mathrm{d} k_p$, the theory is compatible with the transformation. However, $A_l$ and $V_p$ cannot be viewed as independent, i.e., they together form $U(1)$ background. The $U(1)$ field is described by
 \begin{equation}
   \left( \mathrm{d} A - 2\pi V \right)_{p} \in \mathbb{R}.
 \end{equation}
-instead of the previous one $\mathrm{d} A_l \in U\left(1\right)$. This $\mathrm{d} A - 2\pi V$ can be regarded as a Villainized electromagnetic field, which indicates that \emph{a $2\pi $ flux cannot be distinguished with a vortex}.
+instead of the previous one $\mathrm{d} A_l \in U\left(1\right)$. This $\mathrm{d} A - 2\pi V$ can be regarded as a Villainized version of electromagnetic field, which indicates that \emph{a $2\pi $ flux cannot be distinguished with a vortex}.
 
+Both two choice are OK for finite $u$, but interesting things happen when $u \to \infty $
+We make a Hubbard-Stratonovich transformation and get the presentation of $\tilde{\theta}$. 
+\begin{enumerate}
+  \item $\displaystyle \mathrm{i} \sum_{p} \tilde{\theta} _{p} \left( \mathrm{d} m - \frac{\mathrm{d} A}{2\pi } \right)_{p}$, $\tilde{\theta}_{p}$ losses $2\pi $ periodicity. There's no global $\tilde{U}(1)$ symmetry and $\tilde{\theta}_{p}$ lives in $\mathbb{R}$ instead.
+  \item $\displaystyle \mathrm{i}\sum_{p} \tilde{\theta}_{p} \left( \mathrm{d} m - V \right)_{p}$, $V_p$ is part of $U(1)$ background, and $\tilde{\theta}$ is actually $2\pi $ periodic.
+    
+    But let us recall how we identified this $\tilde{U}(1)$ symmetry. By lattice integration by part, we convert $\mathrm{i}\sum_{l} \tilde{\theta}_{l} \mathrm{d} m_l$ to $\mathrm{i}\sum_{l} \tilde{\mathrm{d} } \tilde{\theta}_{l*} m_l $. We want to be able to consider all possible $U(1)$ background, but some $V_p$ will explicitly break $\tilde{U}(1)$ when there exists no $L_p \in \mathbb{Z}$ such $V_p = \mathrm{d} L_p$, leading to the result that the $\delta$ function in $\mathcal{Z}$ will never be met, thus
+    \begin{equation}
+      \mathcal{Z} = 0 \quad \text{for certain backgrounds $V_p$}.
+    \end{equation}
+\end{enumerate}
+This aberrant phenomenon is called \emph{mixed anomaly}.
+
+In conclusion, when coupling with \emph{a non-trivial $U(1)$ background}, a system with $U(1)$ and $\tilde{U}(1)$ symmetry suffers from $\tilde{U}(1)$ explicitly broken.
+
+In traditional QFT, people believe that anomaly is due to non-invariance of path integral measurement, which is, however, presentation dependent and doesn't reveal the true picture.
