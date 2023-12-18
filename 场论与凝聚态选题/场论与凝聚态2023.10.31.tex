@@ -38,12 +38,29 @@ in which $h$ and $-h$ are equivalent for the $\mathbb{Z}_2$ global symmetry. The
 \begin{equation}
   \prod{v} \sigma _{v}^{x}. \quad \text{(one for each part of the space)}
 \end{equation}
-Note that we doesn't need to flip all spins as our base spacetime may consist separate parts which do not interact with each other.
+Note that we doesn't need to flip all spins as our basis spacetime may consist separate parts which do not interact with each other.
+The $\mathbb{Z}_2$ symmetry broken term in this model would be $- \sum_{v} B \sigma _{v}^{z}$, and our order parameter is $\sigma _{v}^{z}$.
+\begin{itemize}
+  \item $H_{\text{quantum}}$ in $d+1$ spacetime can b mapped to $H_{\text{classical}}$ in $d'=d+1$ space, but anisotropic $\tilde{J}_{d}\neq \tilde{J}_{\tau }$.
+\end{itemize}
 
+Now let us investigate this system through its partition function
+\begin{equation}
+  \mathcal{Z} = \left( \prod{v} \sum_{x=\pm 1}  \right)\mathrm{e}^{-\frac{E}{T}}
+\end{equation}
+where $E = \sum_{l} (-J) s_v s_{v'} - \sum_{v} B_v s_v$. 
 
-
-
-
-
+Derivations of $\mathcal{Z}$'s logarithm gives statistic observables
+\begin{equation}
+  M = \frac{1}{\text{Vol}} \frac{\partial F}{\partial B} = \frac{\left( \prod_{v} \sum_{s_v = \pm 1}  \right) s_{v_0} \mathrm{e}^{-\frac{E}{T}}}{\mathcal{Z}} = \langle s_{u_0}\rangle
+\end{equation}
+and
+\begin{equation}
+  \begin{aligned}
+    \chi = \left. \frac{\partial M}{\partial B} \right|_{B=0} 
+    & = \frac{1}{T} \sum_{v_1} \left( \langle s_{v_0} s_{v_1} \rangle - \langle s_{v_0}\rangle \langle s_{v_1}\rangle \right)_{B=0} \\
+    & = \frac{1}{T} \sum_{v_1} \langle s_{v_0} s_{v_1}\rangle
+  \end{aligned}
+\end{equation}
 
 % TODO 

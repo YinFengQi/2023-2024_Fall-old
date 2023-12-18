@@ -1,0 +1,51 @@
+% !TeX root = 线性代数.tex
+
+\begin{definition}
+  群是一个集合 $G$ 和一个运算 $\circ$, 满足三个性质
+  \begin{itemize}
+    \item 结合律.
+    \item 存在一个单位元. 
+    \item 每个元素都存在一个逆元.
+  \end{itemize}
+\end{definition}
+
+群的基本分类:
+交换群, 有限群.
+
+\begin{example}
+  所有可逆矩阵的子集, 所有正交矩阵的集合是一个子群.
+\end{example}
+
+\begin{definition}
+  环是一个集合 $R$ 加上两个运算 $(R, +, *)$, 满足性质
+  \begin{itemize}
+    \item $R$ 和加法构成一个交换群, 加法单位元记为 $0$.
+    \item $R$ 和乘法构成一个含幺半群, 单位元记为 $1$.
+    \item 满足左右分配律.
+  \end{itemize}
+\end{definition}
+
+\begin{example}
+  整数 $\mathbb{Z}$ 和通常的加法和乘法构成整数环.
+\end{example}
+\begin{example}
+  多项式环, 每个元素为一个多项式, 系数为实数或复数,
+  \begin{equation}
+    P_n (x) = a_n x^{n} + \cdots + a_0,
+  \end{equation}
+  加法运算和乘法运算如通常定义.
+\end{example}
+
+\begin{definition}
+  环之间的同态, 单位元映射到单位元, 保持加法和乘法关系.
+\end{definition}
+
+\begin{definition}
+  环的子集构成一个环, 称为子环. 
+
+  环的子集 $I$ 在加法下封闭, 且$\forall s \in R, \forall r \in I, \ sr \in I$, 这样的 $I$ 称为一个理想.
+\end{definition}
+
+\begin{definition}
+  域: 一个环满足 $F \setminus \{ 0 \}$ 关于乘法是一个交换群, 则这个环是一个域.
+\end{definition}
