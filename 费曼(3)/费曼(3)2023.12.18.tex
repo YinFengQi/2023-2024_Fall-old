@@ -1,0 +1,35 @@
+% !TeX root = 费曼(3).TeX
+whose corresponding \emph{Wigner matrix} element is
+\begin{equation}
+  \bra{j, m'} R_z^{(j)} (\phi) \ket{j,m} = \delta_{m,m'} \mathrm{e}^{\mathrm{i}m \phi}.
+\end{equation}
+
+A rotation of the system along the $y$-axis is to rotate each component subsystem in their own spinor space,
+\begin{equation}
+  R_y ^{(j)} (\theta) \ket{j,m} = \sqrt{C_{2j}^{j+m}} \prod \left( \left[ \cos \theta \ket{+} - \sin \theta \ket{-} \right]^{j+m} \times \left[ \cos \theta \ket{-} + \sin \theta \ket{+} \right]^{j-m} \right)
+\end{equation}
+we assume with a undetermined coefficient $A_{j+m'}$, that
+\begin{equation}
+  R_y ^{(j)} (\theta) \ket{j,m} = \sum_{m'=-j}^{j} \frac{A_{j+m'}}{\sqrt{C_{2j}^{j+m'}}} \ket{j, m'}
+\end{equation}
+now we need an identity in which we can compare each term to set the value of $A_{j+m'}$, which yields
+\begin{equation}
+  \left[ \cos \theta \ket{+} - \sin \theta \ket{-} \r^{j+m}\right] = 
+  \sum_{l=0}^{j+m} C_{j+m}^{l} \left( \cos \theta \ket{+} \right)^{l} \left( - \sin \ket{-} \right)^{j+m-l}.
+\end{equation}
+With some efforts, it's not easy to verify that
+\begin{equation}
+  \begin{aligned}
+    \bra{j,m'} R_y^{(j)} (\theta) \ket{j,m} 
+    & = \sqrt{\left( j+m' \right)! \left( j-m' \right)! \left( j+m \right)! \left( j-m \right)!} 
+    \\
+    & \times \sum_{k} \frac{(-)^{m-m'+k} \left( \cos \frac{\theta}{2} \right)^{2j-m+m'-2k} \times \left( \sin \frac{\theta}{2} \right)^{m-m'+2k}}{k! \left( m-m'+k \right)! \left( j-m-k \right)! \left( j+m'-k \right)!}.
+  \end{aligned}
+\end{equation}
+The matrix element on the left hand is called ``\emph{Wigner小d矩阵}'' $d_{m,m'}^{j}(\theta)$. 
+
+The $d_{m,m'}(\theta)$ is related to some special function
+\begin{equation}
+  d_{m,m'}^{j}(\theta) = P_{k} ^{(a,b)},
+\end{equation}
+the Jacobi polynomial.
