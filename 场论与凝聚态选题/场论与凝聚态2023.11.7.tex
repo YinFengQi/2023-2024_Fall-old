@@ -1,0 +1,34 @@
+% !TeX root = 场论与凝聚态.tex
+
+\section{Classical $U(1)$ Theory}
+
+Assigning a $U(1)$ valued field on each vertex, and we can write the partition function as
+\begin{equation}
+  \mathcal{Z} = \left( \prod_{\text{vertex}} \int_{-\pi }^{\pi } \frac{\mathrm{d} \theta_{v}}{2\pi } \right) \prod_{\text{link}} W \left( \mathrm{e}^{\mathrm{i} \mathrm{d}  \theta_{l}} \right),
+\end{equation}
+where $W$ is a statistical weight periodic in $\theta$, and other symbolic conventions are used as in lattice exterior derivative.
+
+An realization of this model is separated superconductors with Joseph coupling, as shown in Fig. \ref{fig:superconductor-of-joseph-interaction}.
+\begin{figure}[ht]
+    \centering
+    \incfig{superconductor-of-joseph-interaction}
+    \caption{Superconductor of Joseph Interaction}
+    \label{fig:superconductor-of-joseph-interaction}
+\end{figure}
+
+This system acquires a $U(1)$ global symmetry\footnote{
+  Also a $\mathbb{Z}_2$ symmetry, i.e., reflection for rotor or charge conjugation for superconductor.
+}, invariant under transformation of $\mathrm{e}^{\mathrm{i}\alpha}$, in which $\alpha$ satisfies $\mathrm{d} \alpha _{l} = 0$. Note that $\alpha$ might be different in uncoupled areas.
+In classical statistical mechanic this model is called \emph{linear sigma model}, and in condensed matter, called \emph{XY model}.
+
+The $\theta$ is $2\pi $ periodic, thus its spectrum is a series of integer, inferring that the conjugate momentum of $\theta$ is integer-quantized --- the property of angular momentum.
+A usual choice for $W(\theta)$ is 
+\begin{equation}
+  W = \exp \left( \frac{\cos \mathrm{d} \theta -1}{T} \right)
+\end{equation}
+
+Under low temperature, we can expand the weight as (to the spirit of renormalization group)
+\begin{equation}
+  \exp \left( \frac{\cos  \mathrm{d} \theta_{l} - 1}{T} \right) \sim \exp \left( - \frac{\mathrm{d} \theta_{l}^{2}}{2T} \right) 
+\end{equation}
+which lost the $2\pi $ periodicity.
