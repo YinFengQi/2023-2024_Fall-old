@@ -119,8 +119,8 @@
 \begin{equation}
    \Sigma = 
    \begin{bmatrix}
-    \sigma_1^{2} &  &  &  & \\
-     & \sigma_2^{2} &  &  & \\
+    \sigma_1 &  &  &  & \\
+     & \sigma_2 &  &  & \\
      &  & \ddots &  & \\
      &  &  & 0 & \\
      &  &  &  & \ddots\\
@@ -128,6 +128,30 @@
 \end{equation}
 
 
+\begin{proof}
+  我们知道, $A^{\mathrm{T}} A$ 和 $A$ 的秩是一样的, 我们考察 $A^{\mathrm{T}}A$ 的特征向量的性质.
 
-\color{red}$\large \boxed{\text{待补充}}$
-\color{black}
+  \begin{itemize}
+    \item $A^{\mathrm{T}}A$ 是对称矩阵, 特征值大于等于零, 特征向量正交.
+    \item 用这 $n$ 个特征向量得到一组正交标准化基 $\{ v_i \}, \ i=1,2,\cdots,n$.
+    \item 令 $ u_i = \frac{1}{||A v_i ||} A v_i = \frac{1}{\sqrt{\lambda_i}} A v_i,\ i=1,2,\cdots,r$, 它们互相正交且模长为一, 扩充它们得到一组正交标准化基 $\{ u_i \}$.
+  \end{itemize}
+  于是有
+  \begin{equation}
+    \begin{gathered}
+      A \left[ v_1,v_2,\cdots,v_r, v_{r+1},v_{r+2},\cdots,v_n \right] = 
+    \left[ \sqrt{\lambda_1} u_1, \sqrt{\lambda_2 }u_2,\cdots,\sqrt{\lambda_r}u_r, 0 , \cdots ,0\right] \\
+    = \left[ u_1,u_2,\cdots,u_r, u_{r+1}, \cdots , u_n \right] \begin{bmatrix}
+     \sqrt{\lambda_1} &  &  &  & \\
+      & \ddots &  &  & \\
+      &  & \sqrt{\lambda_r} &  & \\
+      &  &  & 0 & \\
+      &  &  &  & \ddots\\
+    \end{bmatrix}
+    \end{gathered}
+  \end{equation}
+  利用$V$的正交性, 可以得到
+  \begin{equation}
+    A_{m \times n} = U_{m \times  m} \Sigma_{m \times  n} V^{\mathrm{T}}_{n \times n}
+  \end{equation}
+\end{proof}
