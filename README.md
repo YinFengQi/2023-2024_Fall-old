@@ -7,4 +7,4 @@
 
 ---
 
-此仓库已经更换至[新的仓库](https://github.com/YinFengQi/2023-2024_Fall-old), 新仓库使用了git LFS管理, .git 文件夹不记录大二进制文件的历史信息, 体积更小.
+此仓库已经更换至[新的仓库](https://github.com/YinFengQi/2023-2024_Fall), 新仓库使用了git LFS管理, .git 文件夹不记录大二进制文件的历史信息, 体积更小.
